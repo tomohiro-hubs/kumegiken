@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { assetPath } from "@/lib/assetPath";
 
 export default function Page() {
   return (
@@ -19,12 +20,12 @@ export default function Page() {
 
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '40px' }} className="reveal">
         <div>
-          <img src="/images/deteriorated-building.jpg" alt="施工前" style={{ aspectRatio: '4/3', width: '100%', objectFit: 'cover', borderRadius: '8px' }} />
+          <img src={assetPath("/images/deteriorated-building.jpg")} alt="施工前" style={{ aspectRatio: '4/3', width: '100%', objectFit: 'cover', borderRadius: '8px' }} />
             <p style={{ textAlign: 'center', fontWeight: '600', marginTop: '8px', color: 'var(--color-text-light)' }}>施工前</p>
           <p style={{ textAlign: 'center', fontSize: '13px', color: 'var(--color-text-muted)', marginTop: '8px' }}>Before：防水層の劣化・ひび割れ</p>
         </div>
         <div>
-          <img src="/images/waterproofing-rooftop.jpg" alt="施工後" style={{ aspectRatio: '4/3', width: '100%', objectFit: 'cover', borderRadius: '8px' }} />
+          <img src={assetPath("/images/waterproofing-rooftop.jpg")} alt="施工後" style={{ aspectRatio: '4/3', width: '100%', objectFit: 'cover', borderRadius: '8px' }} />
             <p style={{ textAlign: 'center', fontWeight: '600', marginTop: '8px', color: 'var(--color-text-light)' }}>施工後</p>
           <p style={{ textAlign: 'center', fontSize: '13px', color: 'var(--color-text-muted)', marginTop: '8px' }}>After：ウレタン防水施工完了</p>
         </div>

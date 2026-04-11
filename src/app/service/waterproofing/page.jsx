@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { assetPath } from "@/lib/assetPath";
 
 export default function Page() {
   return (
@@ -13,7 +14,7 @@ export default function Page() {
   <section className="content-section">
     <div className="container container--narrow">
       <div className="article-content">
-        <div className="reveal" style={{ marginBottom: '40px' }}><img src="/images/waterproofing-rooftop.jpg" alt="防水工事の現場" style={{ aspectRatio: '16/9', width: '100%', objectFit: 'cover', borderRadius: '16px' }} /></div>
+        <div className="reveal" style={{ marginBottom: '40px' }}><img src={assetPath("/images/waterproofing-rooftop.jpg")} alt="防水工事の現場" style={{ aspectRatio: '16/9', width: '100%', objectFit: 'cover', borderRadius: '16px' }} /></div>
         <div className="reveal">
           <p>防水工事は、建物の寿命を左右する最も重要な工事の一つです。久米技建は防水工事の専門会社として創業し、豊富な経験と確かな技術でお客様の建物を雨水から守り続けています。</p>
 

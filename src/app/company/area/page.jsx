@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { assetPath } from "@/lib/assetPath";
 
 export default function Page() {
   return (
@@ -17,7 +18,7 @@ export default function Page() {
 <section className="content-section"><div className="container">
   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px', alignItems: 'start' }}>
     <div className="reveal">
-      <img src="/images/team-group.jpg" alt="久米技建チーム - 関西圏を中心に対応" style={{ minHeight: '400px', width: '100%', objectFit: 'cover', borderRadius: '16px' }} />
+      <img src={assetPath("/images/team-group.jpg")} alt="久米技建チーム - 関西圏を中心に対応" style={{ minHeight: '400px', width: '100%', objectFit: 'cover', borderRadius: '16px' }} />
     </div>
     <div className="reveal">
       <h2 style={{ fontSize: '24px', fontWeight: '700', color: 'var(--color-primary)', marginBottom: '24px' }}>主要対応エリア</h2>

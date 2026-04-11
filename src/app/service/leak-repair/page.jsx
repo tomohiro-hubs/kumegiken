@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { assetPath } from "@/lib/assetPath";
 
 export default function Page() {
   return (
@@ -12,7 +13,7 @@ export default function Page() {
   <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href="/" className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href="/service" className="breadcrumb__link">サービス</a></li><li className="breadcrumb__separator">›</li><li>雨漏り調査・補修</li></ol></div></nav>
 
   <section className="content-section"><div className="container container--narrow"><div className="article-content">
-    <div className="reveal" style={{ marginBottom: '40px' }}><img src="/images/leak-repair.jpg" alt="雨漏り調査・補修の現場" style={{ aspectRatio: '16/9', width: '100%', objectFit: 'cover', borderRadius: '16px' }} /></div>
+    <div className="reveal" style={{ marginBottom: '40px' }}><img src={assetPath("/images/leak-repair.jpg")} alt="雨漏り調査・補修の現場" style={{ aspectRatio: '16/9', width: '100%', objectFit: 'cover', borderRadius: '16px' }} /></div>
     <div style={{ background: '#fff3e0', border: '2px solid #e8740c', borderRadius: '12px', padding: '24px', marginBottom: '40px', textAlign: 'center' }} className="reveal">
       <p style={{ fontSize: '18px', fontWeight: '700', color: '#e8740c', marginBottom: '8px' }}><i className="fas fa-exclamation-triangle"></i> 雨漏りは放置すると被害が拡大します</p>
       <p style={{ fontSize: '14px', color: 'var(--color-text-light)' }}>建物内部への水の侵入は、構造体の腐食やカビの発生など深刻な被害を引き起こします。<br />早期発見・早期補修が被害を最小限に抑える鍵です。</p>

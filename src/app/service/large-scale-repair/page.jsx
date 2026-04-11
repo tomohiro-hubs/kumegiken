@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { assetPath } from "@/lib/assetPath";
 
 export default function Page() {
   return (
@@ -15,7 +16,7 @@ export default function Page() {
     <div className="container container--narrow">
       <div className="article-content">
         <div className="reveal" style={{ marginBottom: '40px' }}>
-          <img src="/images/large-scale-aerial.jpg" alt="大規模修繕工事の現場" style={{ aspectRatio: '16/9', width: '100%', objectFit: 'cover', borderRadius: '16px' }} />
+          <img src={assetPath("/images/large-scale-aerial.jpg")} alt="大規模修繕工事の現場" style={{ aspectRatio: '16/9', width: '100%', objectFit: 'cover', borderRadius: '16px' }} />
         </div>
 
         <div className="reveal">
@@ -98,7 +99,7 @@ export default function Page() {
       </div>
       <div className="works__grid" style={{ gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))' }}>
         <a href="/works/osaka-building-large-scale-repair-01" className="work-card reveal">
-          <div className="work-card__image"><img src="/images/scaffold-install.jpg" alt="大規模修繕" style={{ width: '100%', minHeight: '180px', objectFit: 'cover' }} /><span className="work-card__category">大規模修繕</span></div>
+          <div className="work-card__image"><img src={assetPath("/images/scaffold-install.jpg")} alt="大規模修繕" style={{ width: '100%', minHeight: '180px', objectFit: 'cover' }} /><span className="work-card__category">大規模修繕</span></div>
           <div className="work-card__body"><div className="work-card__meta"><span className="work-card__meta-item"><i className="fas fa-map-marker-alt"></i> 大阪市</span><span className="work-card__meta-item"><i className="fas fa-building"></i> ビル</span></div><h3 className="work-card__title">オフィスビル大規模修繕工事</h3></div>
         </a>
       </div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { assetPath } from "@/lib/assetPath";
 
 export default function Page() {
   return (
@@ -7,7 +8,7 @@ export default function Page() {
 <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href="/" className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li>採用情報</li></ol></div></nav>
 
 <section className="content-section"><div className="container">
-  <div className="reveal" style={{ marginBottom: '48px' }}><img src="/images/recruit-training.jpg" alt="先輩職人による技術指導の様子" style={{ width: '100%', borderRadius: '16px', aspectRatio: '16/9', objectFit: 'cover' }} /></div>
+  <div className="reveal" style={{ marginBottom: '48px' }}><img src={assetPath("/images/recruit-training.jpg")} alt="先輩職人による技術指導の様子" style={{ width: '100%', borderRadius: '16px', aspectRatio: '16/9', objectFit: 'cover' }} /></div>
   
   <div className="article-content reveal" style={{ marginBottom: '60px' }}>
     <h2>久米技建が求める人材</h2>
@@ -29,7 +30,7 @@ export default function Page() {
     {/* 職人の声 */}
     <div style={{ background: 'var(--color-bg-light)', borderRadius: '16px', padding: '30px', boxShadow: 'var(--shadow-sm)' }} className="reveal">
       <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
-        <img src="/images/staff-01.png" alt="防水職人" style={{ width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover' }} />
+        <img src={assetPath("/images/staff-01.png")} alt="防水職人" style={{ width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover' }} />
         <div>
           <p style={{ fontSize: '12px', color: 'white', background: 'var(--color-primary)', display: 'inline-block', padding: '2px 8px', borderRadius: '4px', marginBottom: '4px', fontWeight: '700' }}>防水工（入社5年目）</p>
           <h3 style={{ fontSize: '15px', fontWeight: '700' }}>未経験から手に職をつけられました</h3>
@@ -40,7 +41,7 @@ export default function Page() {
     {/* 施工管理の声 */}
     <div style={{ background: 'var(--color-bg-light)', borderRadius: '16px', padding: '30px', boxShadow: 'var(--shadow-sm)' }} className="reveal">
       <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
-        <img src="/images/staff-02.png" alt="施工管理" style={{ width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover' }} />
+        <img src={assetPath("/images/staff-02.png")} alt="施工管理" style={{ width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover' }} />
         <div>
           <p style={{ fontSize: '12px', color: 'white', background: 'var(--color-accent)', display: 'inline-block', padding: '2px 8px', borderRadius: '4px', marginBottom: '4px', fontWeight: '700' }}>施工管理（中途入社）</p>
           <h3 style={{ fontSize: '15px', fontWeight: '700' }}>自社職人だから品質に妥協しない</h3>
@@ -51,7 +52,7 @@ export default function Page() {
     {/* 営業職の声 */}
     <div style={{ background: 'var(--color-bg-light)', borderRadius: '16px', padding: '30px', boxShadow: 'var(--shadow-sm)' }} className="reveal">
       <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
-        <img src="/images/staff-03.png" alt="営業職" style={{ width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover' }} />
+        <img src={assetPath("/images/staff-03.png")} alt="営業職" style={{ width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover' }} />
         <div>
           <p style={{ fontSize: '12px', color: 'white', background: 'var(--color-text-main)', display: 'inline-block', padding: '2px 8px', borderRadius: '4px', marginBottom: '4px', fontWeight: '700' }}>営業職（中途入社）</p>
           <h3 style={{ fontSize: '15px', fontWeight: '700' }}>お客様目線の提案ができる喜び</h3>

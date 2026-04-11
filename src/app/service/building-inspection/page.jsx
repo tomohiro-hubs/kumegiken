@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { assetPath } from "@/lib/assetPath";
 
 export default function Page() {
   return (
@@ -7,7 +8,7 @@ export default function Page() {
   <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href="/" className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href="/service" className="breadcrumb__link">サービス</a></li><li className="breadcrumb__separator">›</li><li>建物診断</li></ol></div></nav>
 
   <section className="content-section"><div className="container container--narrow"><div className="article-content">
-    <div className="reveal" style={{ marginBottom: '40px' }}><img src="/images/inspection-scene.jpg" alt="建物診断の現場" style={{ aspectRatio: '16/9', width: '100%', objectFit: 'cover', borderRadius: '16px' }} /></div>
+    <div className="reveal" style={{ marginBottom: '40px' }}><img src={assetPath("/images/inspection-scene.jpg")} alt="建物診断の現場" style={{ aspectRatio: '16/9', width: '100%', objectFit: 'cover', borderRadius: '16px' }} /></div>
     <div className="reveal">
       <div style={{ background: 'var(--color-accent-light)', borderLeft: '4px solid var(--color-accent)', padding: '24px', borderRadius: '0 8px 8px 0', marginBottom: '32px' }}>
         <p style={{ fontSize: '16px', fontWeight: '700', color: 'var(--color-primary)', marginBottom: '8px' }}>久米技建の建物診断は「正直な診断」です</p>

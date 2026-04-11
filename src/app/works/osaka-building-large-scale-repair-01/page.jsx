@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { assetPath } from "@/lib/assetPath";
 
 export default function Page() {
   return (
@@ -16,8 +17,8 @@ export default function Page() {
       <tr><th>費用目安</th><td>2,000〜3,000万円</td></tr>
     </tbody></table>
     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '40px' }} className="reveal">
-      <div><img src="/images/deteriorated-building.jpg" alt="施工前" style={{ aspectRatio: '4/3', width: '100%', objectFit: 'cover', borderRadius: '8px' }} /><p style={{ textAlign: 'center', fontWeight: '600', marginTop: '8px', color: 'var(--color-text-light)' }}>施工前</p></div>
-      <div><img src="/images/building-completed.jpg" alt="施工後" style={{ aspectRatio: '4/3', width: '100%', objectFit: 'cover', borderRadius: '8px' }} /><p style={{ textAlign: 'center', fontWeight: '600', marginTop: '8px', color: 'var(--color-text-light)' }}>施工後</p></div>
+      <div><img src={assetPath("/images/deteriorated-building.jpg")} alt="施工前" style={{ aspectRatio: '4/3', width: '100%', objectFit: 'cover', borderRadius: '8px' }} /><p style={{ textAlign: 'center', fontWeight: '600', marginTop: '8px', color: 'var(--color-text-light)' }}>施工前</p></div>
+      <div><img src={assetPath("/images/building-completed.jpg")} alt="施工後" style={{ aspectRatio: '4/3', width: '100%', objectFit: 'cover', borderRadius: '8px' }} /><p style={{ textAlign: 'center', fontWeight: '600', marginTop: '8px', color: 'var(--color-text-light)' }}>施工後</p></div>
     </div>
     <div className="article-content reveal">
       <h2>施工内容</h2>

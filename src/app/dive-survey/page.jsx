@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { assetPath } from "@/lib/assetPath";
 
 export default function Page() {
   return (
@@ -11,7 +12,7 @@ export default function Page() {
 </section>
 
 <section className="content-section"><div className="container">
-  <div className="reveal" style={{ marginBottom: '48px' }}><img src="/images/dive-survey.jpg" alt="水中点検の様子" style={{ width: '100%', borderRadius: '16px', aspectRatio: '16/9', objectFit: 'cover' }} /></div>
+  <div className="reveal" style={{ marginBottom: '48px' }}><img src={assetPath("/images/dive-survey.jpg")} alt="水中点検の様子" style={{ width: '100%', borderRadius: '16px', aspectRatio: '16/9', objectFit: 'cover' }} /></div>
   <div className="section-heading reveal"><span className="section-heading__en">Features</span><h2 className="section-heading__ja">水中点検事業の特徴</h2><span className="section-heading__line"></span></div>
   <div className="dive-feature">
     <div className="dive-feature-card reveal"><div className="dive-feature-card__icon">🤿</div><h3 className="dive-feature-card__title">専門ダイバーによる点検</h3><p className="dive-feature-card__text">潜水士の資格を持つ専門ダイバーが、水中構造物の劣化状況を直接確認。目視では確認できない部分まで詳細に調査します。</p></div>

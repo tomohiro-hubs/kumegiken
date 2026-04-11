@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { assetPath } from "@/lib/assetPath";
 
 export default function Page() {
   return (
@@ -7,7 +8,7 @@ export default function Page() {
   <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href="/" className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href="/service" className="breadcrumb__link">サービス</a></li><li className="breadcrumb__separator">›</li><li>外壁塗装</li></ol></div></nav>
 
   <section className="content-section"><div className="container container--narrow"><div className="article-content">
-    <div className="reveal" style={{ marginBottom: '40px' }}><img src="/images/painting-work.jpg" alt="外壁塗装の現場" style={{ aspectRatio: '16/9', width: '100%', objectFit: 'cover', borderRadius: '16px' }} /></div>
+    <div className="reveal" style={{ marginBottom: '40px' }}><img src={assetPath("/images/painting-work.jpg")} alt="外壁塗装の現場" style={{ aspectRatio: '16/9', width: '100%', objectFit: 'cover', borderRadius: '16px' }} /></div>
     <div className="reveal">
       <p>外壁塗装は、建物の美観を回復するだけでなく、外壁材を紫外線や風雨から保護する重要な工事です。適切なタイミングでの塗り替えが、建物の寿命を大きく延ばします。</p>
       <h2>外壁塗装の塗料の種類</h2>

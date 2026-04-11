@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { assetPath } from "@/lib/assetPath";
 
 export default function Page() {
   return (
@@ -7,7 +8,7 @@ export default function Page() {
   <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href="/" className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href="/service" className="breadcrumb__link">サービス</a></li><li className="breadcrumb__separator">›</li><li>シーリング工事</li></ol></div></nav>
 
   <section className="content-section"><div className="container container--narrow"><div className="article-content">
-    <div className="reveal" style={{ marginBottom: '40px' }}><img src="/images/sealing-work.jpg" alt="シーリング工事の現場" style={{ aspectRatio: '16/9', width: '100%', objectFit: 'cover', borderRadius: '16px' }} /></div>
+    <div className="reveal" style={{ marginBottom: '40px' }}><img src={assetPath("/images/sealing-work.jpg")} alt="シーリング工事の現場" style={{ aspectRatio: '16/9', width: '100%', objectFit: 'cover', borderRadius: '16px' }} /></div>
     <div className="reveal">
       <p>シーリング（コーキング）は、建物の外壁パネル間の目地やサッシ周り、ALC板の継ぎ目などに充填されるゴム状の防水材です。経年劣化により硬化・ひび割れが発生し、そこから雨水が侵入して建物内部を傷めてしまいます。</p>
       <h2>シーリングの劣化サイン</h2>

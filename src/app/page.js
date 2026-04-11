@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { assetPath } from "@/lib/assetPath";
 import VoiceCarousel from "@/components/VoiceCarousel";
 
 export default function Home() {
@@ -7,7 +8,7 @@ export default function Home() {
 {/* ========== HERO / FIRST VIEW ========== */}
   <section className="hero">
     <div className="hero__bg">
-      <div className="hero__bg-img" style={{ width: '100%', height: '100%', background: "url('/images/hero-main.jpg') center/cover no-repeat" }}>
+      <div className="hero__bg-img" style={{ width: '100%', height: '100%', background: `url('${assetPath("/images/hero-main.jpg")}') center/cover no-repeat` }}>
       </div>
       <div className="hero__bg-overlay"></div>
     </div>
@@ -51,7 +52,7 @@ export default function Home() {
         {/* Reason 1 */}
         <div className="reason__item reveal">
           <div className="reason__image">
-            <img src="/images/inspection-scene.jpg" alt="正直な建物診断の様子" style={{ aspectRatio: '4/3', width: '100%', objectFit: 'cover', borderRadius: '12px' }} />
+            <img src={assetPath("/images/inspection-scene.jpg")} alt="正直な建物診断の様子" style={{ aspectRatio: '4/3', width: '100%', objectFit: 'cover', borderRadius: '12px' }} />
             <span className="reason__image-badge">Reason 01</span>
           </div>
           <div className="reason__body">
@@ -66,7 +67,7 @@ export default function Home() {
         {/* Reason 2 */}
         <div className="reason__item reveal">
           <div className="reason__image">
-            <img src="/images/waterproofing-hands.jpg" alt="防水工事の専門技術" style={{ aspectRatio: '4/3', width: '100%', objectFit: 'cover', borderRadius: '12px' }} />
+            <img src={assetPath("/images/waterproofing-hands.jpg")} alt="防水工事の専門技術" style={{ aspectRatio: '4/3', width: '100%', objectFit: 'cover', borderRadius: '12px' }} />
             <span className="reason__image-badge">Reason 02</span>
           </div>
           <div className="reason__body">
@@ -81,7 +82,7 @@ export default function Home() {
         {/* Reason 3 */}
         <div className="reason__item reveal">
           <div className="reason__image">
-            <img src="/images/team-group.jpg" alt="自社職人チーム" style={{ aspectRatio: '4/3', width: '100%', objectFit: 'cover', borderRadius: '12px' }} />
+            <img src={assetPath("/images/team-group.jpg")} alt="自社職人チーム" style={{ aspectRatio: '4/3', width: '100%', objectFit: 'cover', borderRadius: '12px' }} />
             <span className="reason__image-badge">Reason 03</span>
           </div>
           <div className="reason__body">
@@ -110,7 +111,7 @@ export default function Home() {
       <div className="service__grid">
         <a href="/service/large-scale-repair" className="service-card reveal">
           <div className="service-card__image">
-            <img src="/images/large-scale-aerial.jpg" alt="大規模修繕事業" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <img src={assetPath("/images/large-scale-aerial.jpg")} alt="大規模修繕事業" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             <span className="service-card__tag">人気No.1</span>
           </div>
           <div className="service-card__body">
@@ -122,7 +123,7 @@ export default function Home() {
 
         <a href="/service/waterproofing" className="service-card reveal reveal--delay-1">
           <div className="service-card__image">
-            <img src="/images/waterproofing-rooftop.jpg" alt="防水事業" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <img src={assetPath("/images/waterproofing-rooftop.jpg")} alt="防水事業" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             <span className="service-card__tag">技術のルーツ</span>
           </div>
           <div className="service-card__body">
@@ -134,7 +135,7 @@ export default function Home() {
 
         <a href="/service/painting" className="service-card reveal reveal--delay-2">
           <div className="service-card__image">
-            <img src="/images/painting-work.jpg" alt="外壁塗装" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <img src={assetPath("/images/painting-work.jpg")} alt="外壁塗装" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </div>
           <div className="service-card__body">
             <h3 className="service-card__title">外壁塗装</h3>
@@ -145,7 +146,7 @@ export default function Home() {
 
         <a href="/dive-survey" className="service-card reveal">
           <div className="service-card__image">
-            <img src="/images/dive-survey.jpg" alt="水中点検" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <img src={assetPath("/images/dive-survey.jpg")} alt="水中点検" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             <span className="service-card__tag">専門対応</span>
           </div>
           <div className="service-card__body">
@@ -170,7 +171,7 @@ export default function Home() {
       <div className="works__grid">
         <a href="/works/nishinomiya-mansion-waterproofing-01" className="work-card reveal" data-category="waterproofing">
           <div className="work-card__image">
-            <img src="/images/waterproofing-rooftop.jpg" alt="屋上ウレタン防水改修工事" style={{ width: '100%', minHeight: '180px', objectFit: 'cover' }} />
+            <img src={assetPath("/images/waterproofing-rooftop.jpg")} alt="屋上ウレタン防水改修工事" style={{ width: '100%', minHeight: '180px', objectFit: 'cover' }} />
             <span className="work-card__category">防水工事</span>
           </div>
           <div className="work-card__body">
@@ -184,7 +185,7 @@ export default function Home() {
 
         <a href="/works/osaka-building-large-scale-repair-01" className="work-card reveal reveal--delay-1" data-category="large-scale-repair">
           <div className="work-card__image">
-            <img src="/images/scaffold-install.jpg" alt="オフィスビル大規模修繕工事" style={{ width: '100%', minHeight: '180px', objectFit: 'cover' }} />
+            <img src={assetPath("/images/scaffold-install.jpg")} alt="オフィスビル大規模修繕工事" style={{ width: '100%', minHeight: '180px', objectFit: 'cover' }} />
             <span className="work-card__category">大規模修繕</span>
           </div>
           <div className="work-card__body">
@@ -198,7 +199,7 @@ export default function Home() {
 
         <a href="/works/kobe-mansion-painting-01" className="work-card reveal reveal--delay-2" data-category="painting">
           <div className="work-card__image">
-            <img src="/images/building-completed.jpg" alt="分譲マンション外壁塗装工事" style={{ width: '100%', minHeight: '180px', objectFit: 'cover' }} />
+            <img src={assetPath("/images/building-completed.jpg")} alt="分譲マンション外壁塗装工事" style={{ width: '100%', minHeight: '180px', objectFit: 'cover' }} />
             <span className="work-card__category">外壁塗装</span>
           </div>
           <div className="work-card__body">
@@ -308,7 +309,7 @@ export default function Home() {
     <div className="container">
       <div className="message__inner">
         <div className="message__image reveal">
-          <img src="/images/president_photo.jpg" alt="代表取締役 久米涼平" style={{ aspectRatio: '3/4', width: '100%', objectFit: 'cover', borderRadius: '12px', minHeight: '400px' }} />
+          <img src={assetPath("/images/president_photo.jpg")} alt="代表取締役 久米涼平" style={{ aspectRatio: '3/4', width: '100%', objectFit: 'cover', borderRadius: '12px', minHeight: '400px' }} />
         </div>
         <div className="message__content reveal reveal--delay-1">
           <span className="message__label">Message</span>
@@ -337,7 +338,7 @@ export default function Home() {
 
       <div className="area__inner">
         <div className="area__map reveal">
-          <img src="/images/team-group.jpg" alt="久米技建のチーム - 関西圏を中心に対応" style={{ width: '100%', minHeight: '300px', objectFit: 'cover', borderRadius: '12px' }} />
+          <img src={assetPath("/images/team-group.jpg")} alt="久米技建のチーム - 関西圏を中心に対応" style={{ width: '100%', minHeight: '300px', objectFit: 'cover', borderRadius: '12px' }} />
         </div>
         <div className="reveal reveal--delay-1">
           <h3 style={{ fontSize: '20px', fontWeight: 700, color: 'var(--color-primary)', marginBottom: '8px' }}>兵庫県・大阪府を中心に対応</h3>
@@ -380,7 +381,7 @@ export default function Home() {
       <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
         <a href="/column/waterproofing-guide" className="column-card reveal">
           <div className="column-card__image">
-            <img src="/images/waterproofing-hands.jpg" alt="防水工事ガイド" style={{ width: '100%', minHeight: '120px', objectFit: 'cover' }} />
+            <img src={assetPath("/images/waterproofing-hands.jpg")} alt="防水工事ガイド" style={{ width: '100%', minHeight: '120px', objectFit: 'cover' }} />
           </div>
           <div className="column-card__body">
             <div className="column-card__date">2026.03.15</div>
@@ -391,7 +392,7 @@ export default function Home() {
 
         <a href="/column/large-scale-repair-guide" className="column-card reveal">
           <div className="column-card__image">
-            <img src="/images/large-scale-aerial.jpg" alt="大規模修繕ガイド" style={{ width: '100%', minHeight: '120px', objectFit: 'cover' }} />
+            <img src={assetPath("/images/large-scale-aerial.jpg")} alt="大規模修繕ガイド" style={{ width: '100%', minHeight: '120px', objectFit: 'cover' }} />
           </div>
           <div className="column-card__body">
             <div className="column-card__date">2026.03.01</div>
@@ -402,7 +403,7 @@ export default function Home() {
 
         <a href="/column/leak-cause-and-fix" className="column-card reveal">
           <div className="column-card__image">
-            <img src="/images/leak-repair.jpg" alt="雨漏り対処法" style={{ width: '100%', minHeight: '120px', objectFit: 'cover' }} />
+            <img src={assetPath("/images/leak-repair.jpg")} alt="雨漏り対処法" style={{ width: '100%', minHeight: '120px', objectFit: 'cover' }} />
           </div>
           <div className="column-card__body">
             <div className="column-card__date">2026.02.20</div>

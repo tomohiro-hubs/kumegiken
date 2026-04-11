@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { assetPath } from "@/lib/assetPath";
 
 export default function Page() {
   return (
@@ -21,7 +22,7 @@ export default function Page() {
 	    <div className="container container--narrow">
       <div className="message__inner" style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '48px', alignItems: 'start' }}>
         <div className="reveal">
-          <img src="/images/president_photo.jpg" alt="代表取締役 久米涼平" style={{ aspectRatio: '3/4', width: '100%', objectFit: 'cover', borderRadius: '16px', minHeight: '350px' }} />
+          <img src={assetPath("/images/president_photo.jpg")} alt="代表取締役 久米涼平" style={{ aspectRatio: '3/4', width: '100%', objectFit: 'cover', borderRadius: '16px', minHeight: '350px' }} />
           <div style={{ textAlign: 'center', marginTop: '16px' }}>
             <p style={{ fontSize: '13px', color: 'var(--color-text-muted)' }}>代表取締役</p>
             <p style={{ fontSize: '20px', fontWeight: '700', color: 'var(--color-primary)' }}>久米 涼平</p>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { assetPath } from "@/lib/assetPath";
 
 export default function Page() {
   return (
@@ -12,7 +13,7 @@ export default function Page() {
   <p>建物の屋上やバルコニー、外壁などから雨水が侵入するのを防ぐ「防水工事」。建物の寿命を左右する重要な工事であるにもかかわらず、工法の違いや費用の目安がわかりにくいと感じている方も多いのではないでしょうか。</p>
   <p>この記事では、防水工事の基礎知識から、主な工法の種類、費用相場、選び方のポイントまでを徹底的に解説します。</p>
 
-  <div style={{ margin: '30px 0' }}><img src="/images/waterproofing-rooftop.jpg" alt="防水工事の施工風景" style={{ width: '100%', borderRadius: '12px', aspectRatio: '16/9', objectFit: 'cover' }} /></div>
+  <div style={{ margin: '30px 0' }}><img src={assetPath("/images/waterproofing-rooftop.jpg")} alt="防水工事の施工風景" style={{ width: '100%', borderRadius: '12px', aspectRatio: '16/9', objectFit: 'cover' }} /></div>
 
   <h2>防水工事とは？</h2>
   <p>防水工事とは、建物の屋上、バルコニー、外壁、地下などに防水層を設けて、雨水や地下水が建物内部に侵入するのを防ぐ工事です。RC造やSRC造の建物では、コンクリート自体に微細な隙間があるため、防水工事なしでは水が浸透してしまいます。</p>

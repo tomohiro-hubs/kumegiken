@@ -99,53 +99,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Scroll Reveal Animation ---
   const revealElements = document.querySelectorAll('.reveal');
-
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('revealed');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  });
-
-  revealElements.forEach(el => revealObserver.observe(el));
-
-  // --- Counter Animation ---
-  const counters = document.querySelectorAll('[data-count]');
-
-  const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const target = entry.target;
-        const countTo = parseInt(target.getAttribute('data-count'));
-        const duration = 2000;
-        const startTime = performance.now();
-
-        function updateCount(currentTime) {
-          const elapsed = currentTime - startTime;
-          const progress = Math.min(elapsed / duration, 1);
-          const easeOut = 1 - Math.pow(1 - progress, 3);
-          const current = Math.floor(countTo * easeOut);
-          target.textContent = current.toLocaleString();
-
-          if (progress < 1) {
-            requestAnimationFrame(updateCount);
-          } else {
-            target.textContent = countTo.toLocaleString();
-          }
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target);
         }
-
-        requestAnimationFrame(updateCount);
-        counterObserver.unobserve(target);
-      }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
     });
-  }, { threshold: 0.5 });
 
-  counters.forEach(counter => counterObserver.observe(counter));
+    revealElements.forEach(el => revealObserver.observe(el));
+  } else {
+    revealElements.forEach(el => el.classList.add('revealed'));
+  }
 
   // --- Works Filter ---
   const filterBtns = document.querySelectorAll('.works__filter-btn');
@@ -169,6 +139,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // --- Column Category Filter ---
+  const columnFilterButtons = document.querySelectorAll('.column-filter__btn');
+  const columnCards = document.querySelectorAll('.column-list .column-card[data-category]');
+
+  columnFilterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const filter = button.getAttribute('data-filter');
+
+      columnFilterButtons.forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-pressed', 'false');
+      });
+
+      button.classList.add('active');
+      button.setAttribute('aria-pressed', 'true');
+
+      columnCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        const isVisible = filter === 'all' || category === filter;
+        card.style.display = isVisible ? '' : 'none';
+        if (isVisible) {
+          card.style.animation = 'fadeInUp 0.35s ease forwards';
+        }
+      });
+    });
+  });
+
   // --- Smooth Scroll for anchor links ---
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
@@ -183,69 +180,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-
-  // --- Simulation Calculator ---
-  const simForm = document.querySelector('#simulation-form');
-  if (simForm) {
-    initSimulation();
-  }
-
-  function initSimulation() {
-    const inputs = simForm.querySelectorAll('input[type="radio"], input[type="range"], input[type="number"]');
-    inputs.forEach(input => {
-      input.addEventListener('change', calculateEstimate);
-      input.addEventListener('input', calculateEstimate);
-    });
-
-    calculateEstimate();
-  }
-
-  function calculateEstimate() {
-    const buildingType = document.querySelector('input[name="building-type"]:checked')?.value;
-    const workType = document.querySelector('input[name="work-type"]:checked')?.value;
-    const areaInput = document.querySelector('#area-input');
-    const area = areaInput ? parseFloat(areaInput.value) || 0 : 0;
-    const floorsInput = document.querySelector('#floors-input');
-    const floors = floorsInput ? parseInt(floorsInput.value) || 1 : 1;
-
-    // Price per sqm ranges by work type
-    const priceRanges = {
-      'waterproofing': { min: 4000, max: 8000 },
-      'painting': { min: 3000, max: 6000 },
-      'large-scale-repair': { min: 8000, max: 15000 },
-      'sealing': { min: 800, max: 1500 },
-      'leak-repair': { min: 5000, max: 12000 },
-      'building-inspection': { min: 200, max: 500 }
-    };
-
-    // Building type multiplier
-    const multipliers = {
-      'mansion': 1.0,
-      'building': 1.1,
-      'house': 0.9,
-      'factory': 1.2,
-      'apartment': 0.95
-    };
-
-    const range = priceRanges[workType] || { min: 3000, max: 8000 };
-    const multiplier = multipliers[buildingType] || 1.0;
-    const floorMultiplier = 1 + (floors - 1) * 0.05;
-
-    const minPrice = Math.round(area * range.min * multiplier * floorMultiplier / 10000) * 10000;
-    const maxPrice = Math.round(area * range.max * multiplier * floorMultiplier / 10000) * 10000;
-
-    const resultMin = document.querySelector('#result-min');
-    const resultMax = document.querySelector('#result-max');
-    const resultSection = document.querySelector('.sim-result');
-
-    if (resultMin && resultMax && area > 0) {
-      resultMin.textContent = minPrice.toLocaleString();
-      resultMax.textContent = maxPrice.toLocaleString();
-      if (resultSection) resultSection.style.display = '';
-    } else if (resultSection) {
-      resultSection.style.display = 'none';
-    }
-  }
 
   // --- Contact Form Validation ---
   const contactForm = document.querySelector('#contact-form');

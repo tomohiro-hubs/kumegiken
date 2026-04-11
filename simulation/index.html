@@ -1,68 +1,555 @@
-<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>見積もりシミュレーション | 株式会社久米技建</title><meta name="description" content="久米技建の見積もりシミュレーション。建物種別・工事種別・面積を入力するだけで、概算費用がすぐにわかります。"><link rel="canonical" href="https://kumegiken.co.jp/simulation/"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Noto+Sans+JP:wght@300;400;500;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"><link rel="stylesheet" href="../css/style.css"></head><body>
-<header class="header header--scrolled" id="header"><div class="header__inner"><div class="header__logo"><a href="../index.html"><div><span class="header__logo-text">久米技建</span><span class="header__logo-sub">KUME GIKEN Co., Ltd.</span></div></a></div><nav class="header__nav"><a href="../reason/index.html" class="header__nav-link">選ばれる理由</a><div class="header__nav-item"><a href="../service/index.html" class="header__nav-link header__nav-link--has-sub">サービス</a><div class="header__dropdown"><a href="../service/large-scale-repair/index.html" class="header__dropdown-link">大規模修繕工事</a><a href="../service/waterproofing/index.html" class="header__dropdown-link">防水工事</a><a href="../service/painting/index.html" class="header__dropdown-link">外壁塗装</a><a href="../service/sealing/index.html" class="header__dropdown-link">シーリング工事</a><a href="../service/leak-repair/index.html" class="header__dropdown-link">雨漏り調査・補修</a><a href="../service/building-inspection/index.html" class="header__dropdown-link">建物診断</a></div></div><a href="../works/index.html" class="header__nav-link">施工事例</a><a href="../contact/index.html" class="header__nav-link">お問い合わせ</a></nav><div class="header__cta"><a href="../contact/index.html" class="btn btn--primary btn--sm"><i class="fas fa-envelope"></i> お問い合わせ</a></div><button class="header__hamburger" aria-label="メニュー"><span></span><span></span><span></span></button></div></header>
-<div class="mobile-overlay"></div><nav class="mobile-nav"><a href="../index.html" class="mobile-nav__link">トップページ</a><a href="../service/index.html" class="mobile-nav__link">サービス一覧</a><a href="../contact/index.html" class="mobile-nav__link">お問い合わせ</a><div class="mobile-nav__cta"><a href="tel:0798-78-6880" class="btn btn--outline"><i class="fas fa-phone"></i> 電話で相談</a><a href="../contact/index.html" class="btn btn--primary"><i class="fas fa-envelope"></i> 無料見積もり</a></div></nav>
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>見積もりシミュレーション | 株式会社久米技建</title>
+    <meta
+      name="description"
+      content="久米技建の見積もりシミュレーション。入力するだけで概算費用がすぐにわかります。"
+    />
+    <link rel="canonical" href="https://kumegiken.co.jp/simulation/" />
 
-<section class="page-hero"><span class="page-hero__label">Simulation</span><h1 class="page-hero__title">見積もりシミュレーション</h1><p class="page-hero__description">建物情報を入力するだけで、概算費用がすぐにわかります</p></section>
-<nav class="breadcrumb"><div class="container"><ol class="breadcrumb__list"><li><a href="../index.html" class="breadcrumb__link">ホーム</a></li><li class="breadcrumb__separator">›</li><li>見積もりシミュレーション</li></ol></div></nav>
-
-<section class="content-section"><div class="container container--narrow">
-  <div style="background:#fff8e1;border:1px solid #ffc107;border-radius:8px;padding:16px;margin-bottom:32px;font-size:13px;color:#7b6100;text-align:center;" class="reveal">
-    <i class="fas fa-info-circle"></i> こちらはあくまで概算です。正確なお見積もりは現地調査後にお出しします。
-  </div>
-
-  <form id="simulation-form">
-    <div class="sim-card reveal">
-      <h3 style="font-size:18px;font-weight:700;color:var(--color-primary);margin-bottom:16px;"><span style="color:var(--color-accent);font-family:var(--font-en);margin-right:8px;">01</span>建物種別を選択</h3>
-      <div class="sim-radio-group">
-        <div><input type="radio" name="building-type" value="mansion" id="bt-mansion" class="sim-radio" checked><label for="bt-mansion" class="sim-radio-label"><i class="fas fa-building"></i> マンション</label></div>
-        <div><input type="radio" name="building-type" value="building" id="bt-building" class="sim-radio"><label for="bt-building" class="sim-radio-label"><i class="fas fa-city"></i> ビル</label></div>
-        <div><input type="radio" name="building-type" value="house" id="bt-house" class="sim-radio"><label for="bt-house" class="sim-radio-label"><i class="fas fa-home"></i> 戸建て</label></div>
-        <div><input type="radio" name="building-type" value="apartment" id="bt-apartment" class="sim-radio"><label for="bt-apartment" class="sim-radio-label"><i class="fas fa-hotel"></i> アパート</label></div>
-        <div><input type="radio" name="building-type" value="factory" id="bt-factory" class="sim-radio"><label for="bt-factory" class="sim-radio-label"><i class="fas fa-industry"></i> 工場・倉庫</label></div>
-      </div>
-    </div>
-
-    <div class="sim-card reveal">
-      <h3 style="font-size:18px;font-weight:700;color:var(--color-primary);margin-bottom:16px;"><span style="color:var(--color-accent);font-family:var(--font-en);margin-right:8px;">02</span>工事種別を選択</h3>
-      <div class="sim-radio-group">
-        <div><input type="radio" name="work-type" value="waterproofing" id="wt-wp" class="sim-radio" checked><label for="wt-wp" class="sim-radio-label"><i class="fas fa-tint"></i> 防水工事</label></div>
-        <div><input type="radio" name="work-type" value="painting" id="wt-pt" class="sim-radio"><label for="wt-pt" class="sim-radio-label"><i class="fas fa-paint-roller"></i> 外壁塗装</label></div>
-        <div><input type="radio" name="work-type" value="large-scale-repair" id="wt-ls" class="sim-radio"><label for="wt-ls" class="sim-radio-label"><i class="fas fa-building"></i> 大規模修繕</label></div>
-        <div><input type="radio" name="work-type" value="sealing" id="wt-sl" class="sim-radio"><label for="wt-sl" class="sim-radio-label"><i class="fas fa-fill-drip"></i> シーリング</label></div>
-        <div><input type="radio" name="work-type" value="leak-repair" id="wt-lr" class="sim-radio"><label for="wt-lr" class="sim-radio-label"><i class="fas fa-umbrella"></i> 雨漏り補修</label></div>
-        <div><input type="radio" name="work-type" value="building-inspection" id="wt-bi" class="sim-radio"><label for="wt-bi" class="sim-radio-label"><i class="fas fa-search"></i> 建物診断</label></div>
-      </div>
-    </div>
-
-    <div class="sim-card reveal">
-      <h3 style="font-size:18px;font-weight:700;color:var(--color-primary);margin-bottom:16px;"><span style="color:var(--color-accent);font-family:var(--font-en);margin-right:8px;">03</span>施工面積・階数を入力</h3>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
-        <div class="form-group">
-          <label class="form-label">施工面積（㎡）</label>
-          <input type="number" id="area-input" class="form-input" placeholder="例：300" min="1" value="300">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Noto+Sans+JP:wght@300;400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header class="header header--scrolled" id="header">
+      <div class="header__inner">
+        <div class="header__logo">
+          <a href="../index.html">
+            <div>
+              <span class="header__logo-text">久米技建</span>
+              <span class="header__logo-sub">KUME GIKEN Co., Ltd.</span>
+            </div>
+          </a>
         </div>
-        <div class="form-group">
-          <label class="form-label">階数</label>
-          <input type="number" id="floors-input" class="form-input" placeholder="例：5" min="1" max="50" value="5">
+
+        <nav class="header__nav">
+          <a href="../index.html#reason" class="header__nav-link">選ばれる理由</a>
+          <div class="header__nav-item">
+            <a href="../service/index.html" class="header__nav-link header__nav-link--has-sub">サービス</a>
+            <div class="header__dropdown">
+              <a href="../service/large-scale-repair/index.html" class="header__dropdown-link">大規模修繕事業</a>
+              <a href="../service/waterproofing/index.html" class="header__dropdown-link">防水事業</a>
+              <a href="../service/painting/index.html" class="header__dropdown-link">外壁塗装</a>
+              <a href="../dive-survey/index.html" class="header__dropdown-link">水中点検</a>
+            </div>
+          </div>
+          <a href="../works/index.html" class="header__nav-link">施工事例</a>
+          <a href="../index.html#flow" class="header__nav-link">施工の流れ</a>
+          <a href="../index.html#voice" class="header__nav-link">お客様の声</a>
+          <a href="../column/index.html" class="header__nav-link">コラム</a>
+          <div class="header__nav-item">
+            <a href="../company/index.html" class="header__nav-link header__nav-link--has-sub">会社情報</a>
+            <div class="header__dropdown">
+              <a href="../company/index.html" class="header__dropdown-link">会社概要</a>
+              <a href="../company/message/index.html" class="header__dropdown-link">代表メッセージ</a>
+              <a href="../company/staff/index.html" class="header__dropdown-link">スタッフ紹介</a>
+              <a href="../company/area/index.html" class="header__dropdown-link">対応エリア</a>
+              <a href="../company/history/index.html" class="header__dropdown-link">沿革</a>
+            </div>
+          </div>
+        </nav>
+
+        <div class="header__cta">
+          <a href="../contact/index.html" class="btn btn--primary btn--sm"
+            ><i class="fas fa-envelope"></i> お問い合わせ</a
+          >
+        </div>
+        <button class="header__hamburger" aria-label="メニュー">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="mobile-overlay"></div>
+    <nav class="mobile-nav">
+      <a href="../index.html" class="mobile-nav__link">トップページ</a>
+      <a href="../index.html#reason" class="mobile-nav__link">選ばれる理由</a>
+      <a href="../service/index.html" class="mobile-nav__link">サービス一覧</a>
+      <a href="../works/index.html" class="mobile-nav__link">施工事例</a>
+      <a href="../index.html#flow" class="mobile-nav__link">施工の流れ</a>
+      <a href="../index.html#voice" class="mobile-nav__link">お客様の声</a>
+      <a href="../column/index.html" class="mobile-nav__link">コラム</a>
+      <a href="../company/index.html" class="mobile-nav__link">会社情報</a>
+      <a href="../recruit/index.html" class="mobile-nav__link">採用情報</a>
+      <a href="../contact/index.html" class="mobile-nav__link">お問い合わせ</a>
+      <div class="mobile-nav__cta">
+        <a href="tel:0798-78-6880" class="btn btn--outline"><i class="fas fa-phone"></i> 電話で相談</a>
+        <a href="../contact/index.html" class="btn btn--primary"><i class="fas fa-envelope"></i> 無料見積もり</a>
+      </div>
+    </nav>
+
+    <section class="page-hero">
+      <span class="page-hero__label">Simulation</span>
+      <h1 class="page-hero__title">見積もりシミュレーション</h1>
+      <p class="page-hero__description">入力するだけで、概算費用がすぐにわかります</p>
+    </section>
+
+    <nav class="breadcrumb">
+      <div class="container">
+        <ol class="breadcrumb__list">
+          <li><a href="../index.html" class="breadcrumb__link">ホーム</a></li>
+          <li class="breadcrumb__separator">›</li>
+          <li>見積もりシミュレーション</li>
+        </ol>
+      </div>
+    </nav>
+
+    <section class="content-section sim-content">
+      <div class="container container--narrow">
+        <div class="sim-intro reveal">
+          <div class="sim-intro__main">
+            <p class="sim-intro__eyebrow">3分で完了 / すぐに概算</p>
+            <h2 class="sim-intro__title">条件を選ぶだけで、費用レンジをその場で確認できます</h2>
+            <p class="sim-intro__text">
+              現地調査前の目安として、まずは概算を確認してください。入力内容は最後にお問い合わせへ引き継げます。
+            </p>
+          </div>
+        </div>
+
+        <div class="sim-attention reveal">
+          <i class="fas fa-info-circle"></i>
+          こちらはあくまで概算です。正確なお見積もりは現地調査後にお出しします。
+        </div>
+
+        <div class="sim-layout">
+          <aside class="sim-side reveal">
+            <div class="sim-side__panel">
+              <h3 class="sim-side__title">入力ガイド</h3>
+              <p class="sim-side__text">「工事種別」と「縦横サイズ」を選ぶと、すぐに結果を確認できます。</p>
+              <div class="sim-progress">
+                <div class="sim-progress__head">
+                  <span>入力進捗</span>
+                  <strong id="sim-progress-text">0%</strong>
+                </div>
+                <div class="sim-progress__bar">
+                  <span id="sim-progress-bar"></span>
+                </div>
+              </div>
+              <dl class="sim-side__meta">
+                <div>
+                  <dt>現在の工事</dt>
+                  <dd id="sim-current-option">未選択</dd>
+                </div>
+                <div>
+                  <dt>概算面積</dt>
+                  <dd><span id="sim-current-area">0</span> ㎡</dd>
+                </div>
+              </dl>
+            </div>
+          </aside>
+
+          <div class="sim-main">
+            <form id="simulation-form">
+          <div class="sim-card reveal">
+            <h3 class="sim-step-title">
+              <span class="sim-step-no">01</span>建物種別
+            </h3>
+            <div class="sim-tabs" role="tablist" aria-label="建物種別">
+              <button type="button" class="tab-btn" data-tab="building" role="tab">
+                戸建・アパート
+              </button>
+              <button type="button" class="tab-btn" data-tab="apartment" role="tab">
+                ビル・マンション
+              </button>
+              <button type="button" class="tab-btn" data-tab="house" role="tab">
+                工場・商業施設
+              </button>
+            </div>
+          </div>
+
+          <div class="sim-card reveal">
+            <h3 class="sim-step-title">
+              <span class="sim-step-no">02</span>ご希望の工事
+            </h3>
+            <div class="sim-option-grid">
+              <button type="button" class="sim-option-btn" data-option="roof">
+                屋上防水工事
+              </button>
+              <button type="button" class="sim-option-btn" data-option="exterior">外壁防水工事</button>
+              <button type="button" class="sim-option-btn" data-option="balcony">
+                ベランダ・バルコニー防水工事
+              </button>
+              <button type="button" class="sim-option-btn" data-option="wall">外壁塗装工事</button>
+              <button type="button" class="sim-option-btn" data-option="general">総合改修工事</button>
+            </div>
+          </div>
+
+          <div class="sim-card reveal">
+            <h3 class="sim-step-title">
+              <span class="sim-step-no">03</span>建物の築年数
+            </h3>
+            <div class="sim-option-grid sim-option-grid--compact">
+              <button type="button" class="sim-option-btn" data-age="less10">築10年未満</button>
+              <button type="button" class="sim-option-btn" data-age="10to20">築10〜20年</button>
+              <button type="button" class="sim-option-btn" data-age="20to30">築20〜30年</button>
+              <button type="button" class="sim-option-btn" data-age="over30">築30年以上</button>
+            </div>
+          </div>
+
+          <div class="sim-card reveal">
+            <h3 class="sim-step-title">
+              <span class="sim-step-no">04</span>屋上の構造
+            </h3>
+            <div class="sim-option-grid sim-option-grid--compact">
+              <button type="button" class="sim-option-btn" data-structure="concrete">
+                鉄筋コンクリート造り
+              </button>
+              <button type="button" class="sim-option-btn" data-structure="steel">鉄骨造り</button>
+              <button type="button" class="sim-option-btn" data-structure="mixed">
+                鉄骨鉄筋コンクリート造り
+              </button>
+            </div>
+
+            <div id="roof-shape-section" class="sim-conditional" style="display: none">
+              <h3 class="section-header">屋根の形状</h3>
+              <div class="sim-option-grid sim-option-grid--compact" id="roof-shape-options">
+                <button type="button" class="sim-option-btn" data-roof-shape="flat">陸屋根</button>
+                <button type="button" class="sim-option-btn" data-roof-shape="slope">勾配屋根</button>
+              </div>
+            </div>
+
+            <div id="roof-method-section" class="sim-conditional" style="display: none">
+              <h3 class="section-header">屋根工法</h3>
+              <div class="sim-option-grid sim-option-grid--compact" id="roof-method-options">
+                <button type="button" class="sim-option-btn" data-roof-method="paint">
+                  屋根塗装
+                </button>
+                <button type="button" class="sim-option-btn" data-roof-method="cover">
+                  屋根カバー工法
+                </button>
+                <button type="button" class="sim-option-btn" data-roof-method="replace">
+                  屋根の葺き替え
+                </button>
+              </div>
+            </div>
+
+            <div id="wall-material-section" class="sim-conditional" style="display: none">
+              <h3 class="section-header">外壁の素材</h3>
+              <div class="sim-option-grid sim-option-grid--compact" id="wall-material-options">
+                <button type="button" class="sim-option-btn" data-wall-material="mortar">
+                  モルタル
+                </button>
+                <button type="button" class="sim-option-btn" data-wall-material="siding">
+                  サイディング
+                </button>
+                <button type="button" class="sim-option-btn" data-wall-material="tile">タイル</button>
+                <button type="button" class="sim-option-btn" data-wall-material="unknown">
+                  わからない
+                </button>
+              </div>
+            </div>
+
+            <div id="floor-count-section" class="sim-conditional" style="display: none">
+              <h3 class="section-header">建物の階数</h3>
+              <div class="sim-dimension">
+                <div class="sim-input-group">
+                  <label class="form-label" for="floor-count">階数</label>
+                  <div class="sim-inline">
+                    <input type="number" id="floor-count" class="form-input" min="1" value="" placeholder="例: 2" />
+                    <span class="sim-unit">階</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="balcony-count-section" class="sim-conditional" style="display: none">
+              <h3 class="section-header">バルコニーの個数</h3>
+              <div class="sim-dimension">
+                <div class="sim-input-group">
+                  <label class="form-label" for="balcony-count">個数</label>
+                  <div class="sim-inline">
+                    <input type="number" id="balcony-count" class="form-input" min="1" value="" placeholder="例: 1" />
+                    <span class="sim-unit">箇所</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sim-card reveal">
+            <h3 class="sim-step-title">
+              <span class="sim-step-no">05</span>屋上既存の防水工法
+            </h3>
+            <div class="sim-option-grid sim-option-grid--compact">
+              <button type="button" class="sim-option-btn" data-waterproof="urethane">
+                ウレタン防水
+              </button>
+              <button type="button" class="sim-option-btn" data-waterproof="frp">FRP防水</button>
+              <button type="button" class="sim-option-btn" data-waterproof="sheet">
+                塩ビ・ゴムシート防水
+              </button>
+              <button type="button" class="sim-option-btn" data-waterproof="asphalt">
+                アスファルト防水
+              </button>
+              <button type="button" class="sim-option-btn" data-waterproof="concrete">保護コンクリート</button>
+              <button type="button" class="sim-option-btn" data-waterproof="unknown">わからない</button>
+            </div>
+          </div>
+
+          <div class="sim-card reveal">
+            <h3 class="section-header">屋上面積の実測 屋上面積とは？</h3>
+            <div class="dimension-inputs sim-dimension-inputs">
+              <div class="sim-input-group">
+                <label class="form-label" for="width">縦</label>
+                <div class="sim-inline">
+                  <input type="number" id="width" class="form-input" min="1" value="" placeholder="例: 10" />
+                  <span class="sim-unit">m</span>
+                </div>
+              </div>
+              <div class="sim-input-group">
+                <label class="form-label" for="height">横</label>
+                <div class="sim-inline">
+                  <input type="number" id="height" class="form-input" min="1" value="" placeholder="例: 10" />
+                  <span class="sim-unit">m</span>
+                </div>
+              </div>
+            </div>
+            <p class="sim-help">※ 面積は「縦×横」で概算します。</p>
+          </div>
+
+              <div class="sim-actions reveal">
+                <button type="button" id="calculate-btn" class="btn btn--primary btn--lg">
+                  <i class="fas fa-calculator"></i> 結果を表示する
+                </button>
+                <button type="button" id="simulation-reset" class="btn btn--outline btn--lg">
+                  入力をリセット
+                </button>
+              </div>
+            </form>
+
+            <div class="sim-result reveal" id="result-area" style="margin-top: 32px; display: none">
+          <div style="max-width: 640px; margin: 0 auto">
+            <p class="sim-result__kicker">概算お見積り</p>
+            <div class="sim-result__range" id="total-price-range">0円〜0円</div>
+            <p class="sim-result__note">
+              ※ 上記は概算です。正確な金額は現地調査後にお見積もりいたします。
+            </p>
+          </div>
+
+          <div class="sim-breakdown">
+            <div class="price-details">
+              <div class="detail-header">見積り内訳</div>
+
+              <div id="roof-details" class="work-details">
+                <h4>屋上防水工事</h4>
+                <div id="flat-roof-details">
+                  <div class="detail-row">
+                    <div class="detail-label">高圧洗浄またはケレン清掃</div>
+                    <div class="detail-value" id="roof-cleaning-price">0円〜0円</div>
+                  </div>
+                  <div class="detail-row">
+                    <div class="detail-label">下地調整</div>
+                    <div class="detail-value" id="roof-repair-price">0円〜0円</div>
+                  </div>
+                  <div class="detail-row">
+                    <div class="detail-label">本防水</div>
+                    <div class="detail-value" id="roof-prep-price">0円〜0円</div>
+                  </div>
+                  <div class="detail-row">
+                    <div class="detail-label">トップコート（防水層保護塗料）</div>
+                    <div class="detail-value" id="roof-main-price">0円〜0円</div>
+                  </div>
+                  <div class="detail-row">
+                    <div class="detail-label">シーリングなど各所仕上げ</div>
+                    <div class="detail-value" id="roof-sealing-price">0円〜0円</div>
+                  </div>
+                </div>
+
+                <div id="sloped-roof-details" style="display: none">
+                  <div class="detail-row">
+                    <div class="detail-label">高圧洗浄またはケレン清掃</div>
+                    <div class="detail-value" id="roof-cleaning-price-sloped">0円〜0円</div>
+                  </div>
+                  <div class="detail-row">
+                    <div class="detail-label">下地調整・既存屋根撤去</div>
+                    <div class="detail-value" id="roof-prep-remove-price">0円〜0円</div>
+                  </div>
+                  <div class="detail-row" id="roof-paint-row">
+                    <div class="detail-label">屋根塗装</div>
+                    <div class="detail-value" id="roof-paint-price">0円〜0円</div>
+                  </div>
+                  <div class="detail-row" id="roof-cover-row" style="display: none">
+                    <div class="detail-label">屋根カバー工法</div>
+                    <div class="detail-value" id="roof-cover-price">0円〜0円</div>
+                  </div>
+                  <div class="detail-row" id="roof-replace-row" style="display: none">
+                    <div class="detail-label">屋根葺き替え</div>
+                    <div class="detail-value" id="roof-replace-price">0円〜0円</div>
+                  </div>
+                </div>
+
+                <div class="detail-row subtotal-row">
+                  <div class="detail-label">小計</div>
+                  <div class="detail-value" id="roof-total">0円〜0円</div>
+                </div>
+              </div>
+
+              <div id="exterior-details" class="work-details">
+                <h4>外壁防水工事</h4>
+                <div class="detail-row">
+                  <div class="detail-label">作業用仮設足場</div>
+                  <div class="detail-value" id="exterior-scaffold-price">0円〜0円</div>
+                </div>
+                <div class="detail-row">
+                  <div class="detail-label">既存シーリング撤去など</div>
+                  <div class="detail-value" id="exterior-remove-price">0円〜0円</div>
+                </div>
+                <div class="detail-row">
+                  <div class="detail-label">本防水・塗装</div>
+                  <div class="detail-value" id="exterior-waterproof-price">0円〜0円</div>
+                </div>
+                <div class="detail-row subtotal-row">
+                  <div class="detail-label">小計</div>
+                  <div class="detail-value" id="exterior-total">0円〜0円</div>
+                </div>
+              </div>
+
+              <div id="wall-details" class="work-details">
+                <h4>外壁塗装工事</h4>
+                <div class="detail-row">
+                  <div class="detail-label">作業用仮設足場</div>
+                  <div class="detail-value" id="wall-scaffold-price">0円〜0円</div>
+                </div>
+                <div class="detail-row">
+                  <div class="detail-label">既存シーリング撤去など</div>
+                  <div class="detail-value" id="wall-remove-price">0円〜0円</div>
+                </div>
+                <div class="detail-row">
+                  <div class="detail-label">外壁塗装・シーリング</div>
+                  <div class="detail-value" id="wall-paint-price">0円〜0円</div>
+                </div>
+                <div class="detail-row">
+                  <div class="detail-label">付帯部塗装</div>
+                  <div class="detail-value" id="wall-accessory-price">0円〜0円</div>
+                </div>
+                <div class="detail-row subtotal-row">
+                  <div class="detail-label">小計</div>
+                  <div class="detail-value" id="wall-total">0円〜0円</div>
+                </div>
+              </div>
+
+              <div id="balcony-details" class="work-details">
+                <h4>バルコニー防水工事</h4>
+                <div class="detail-row">
+                  <div class="detail-label">高圧洗浄またはケレン清掃</div>
+                  <div class="detail-value" id="balcony-cleaning-price">0円〜0円</div>
+                </div>
+                <div class="detail-row">
+                  <div class="detail-label">下地調整</div>
+                  <div class="detail-value" id="balcony-repair-price">0円〜0円</div>
+                </div>
+                <div class="detail-row">
+                  <div class="detail-label">本防水</div>
+                  <div class="detail-value" id="balcony-prep-price">0円〜0円</div>
+                </div>
+                <div class="detail-row">
+                  <div class="detail-label">トップコート（防水層保護塗料）</div>
+                  <div class="detail-value" id="balcony-main-price">0円〜0円</div>
+                </div>
+                <div class="detail-row">
+                  <div class="detail-label">シーリングなど各所仕上げ</div>
+                  <div class="detail-value" id="balcony-sealing-price">0円〜0円</div>
+                </div>
+                <div class="detail-row subtotal-row">
+                  <div class="detail-label">小計</div>
+                  <div class="detail-value" id="balcony-total">0円〜0円</div>
+                </div>
+              </div>
+
+              <div class="detail-row total-row">
+                <div class="detail-label">合計</div>
+                <div class="detail-value" id="total-price">0円〜0円</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 24px; text-align: center">
+            <a href="../contact/index.html" class="btn btn--primary btn--lg"
+              ><i class="fas fa-envelope"></i> 正式な見積もりを依頼する</a
+            >
+          </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </form>
+    </section>
 
-  <div class="sim-result reveal" style="margin-top:32px;">
-    <p style="font-size:14px;color:rgba(255,255,255,0.7);margin-bottom:8px;">概算費用</p>
-    <div style="display:flex;align-items:center;justify-content:center;gap:16px;">
-      <span class="sim-result__price"><span id="result-min">0</span></span>
-      <span class="sim-result__unit">〜</span>
-      <span class="sim-result__price"><span id="result-max">0</span></span>
-      <span class="sim-result__unit">円</span>
-    </div>
-    <p style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:16px;">※ 上記は概算です。正確な金額は現地調査後にお見積もりいたします。</p>
-    <div style="margin-top:24px;"><a href="../contact/index.html" class="btn btn--primary btn--lg"><i class="fas fa-envelope"></i> 正式な見積もりを依頼する</a></div>
-  </div>
-</div></section>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__inner">
+          <div>
+            <div class="footer__brand">
+              <div class="footer__logo">株式会社久米技建</div>
+              <div class="footer__logo-sub">KUME GIKEN Co., Ltd.</div>
+            </div>
+            <div class="footer__company-info">
+              〒663-8113 兵庫県西宮市甲子園口2丁目<br />
+              TEL: 0798-78-6880
+            </div>
+          </div>
 
-<footer class="footer"><div class="container"><div class="footer__inner"><div><div class="footer__brand"><div class="footer__logo">株式会社久米技建</div><div class="footer__logo-sub">KUME GIKEN Co., Ltd.</div></div><div class="footer__company-info">〒663-8113 兵庫県西宮市甲子園口2丁目<br>TEL: 0798-78-6880</div></div><div><div class="footer__nav-title">サービス</div><a href="../service/large-scale-repair/index.html" class="footer__nav-link">大規模修繕工事</a><a href="../service/waterproofing/index.html" class="footer__nav-link">防水工事</a><a href="../service/painting/index.html" class="footer__nav-link">外壁塗装</a></div><div><div class="footer__nav-title">コンテンツ</div><a href="../reason/index.html" class="footer__nav-link">選ばれる理由</a><a href="../works/index.html" class="footer__nav-link">施工事例</a><a href="../column/index.html" class="footer__nav-link">コラム</a></div><div><div class="footer__nav-title">企業情報</div><a href="../company/index.html" class="footer__nav-link">会社概要</a><a href="../contact/index.html" class="footer__nav-link">お問い合わせ</a></div></div><div class="footer__bottom"><div class="footer__copyright">&copy; 2026 KUME GIKEN Co., Ltd.</div><div class="footer__bottom-links"><a href="../privacy/index.html" class="footer__bottom-link">プライバシーポリシー</a></div></div></div></footer>
-<div class="fixed-cta"><div class="fixed-cta__inner"><a href="tel:0798-78-6880" class="fixed-cta__btn fixed-cta__btn--phone"><i class="fas fa-phone-alt"></i> 電話で相談</a><a href="../contact/index.html" class="fixed-cta__btn fixed-cta__btn--contact"><i class="fas fa-envelope"></i> 無料見積もり</a></div></div>
-<button class="back-to-top" aria-label="ページ上部へ戻る"><i class="fas fa-chevron-up"></i></button>
-<script src="../js/main.js"></script></body></html>
+          <div>
+            <div class="footer__nav-title">サービス</div>
+            <a href="../service/large-scale-repair/index.html" class="footer__nav-link">大規模修繕事業</a>
+            <a href="../service/waterproofing/index.html" class="footer__nav-link">防水事業</a>
+            <a href="../service/painting/index.html" class="footer__nav-link">外壁塗装</a>
+            <a href="../dive-survey/index.html" class="footer__nav-link">水中点検</a>
+          </div>
+
+          <div>
+            <div class="footer__nav-title">コンテンツ</div>
+            <a href="../index.html#reason" class="footer__nav-link">選ばれる理由</a>
+            <a href="../works/index.html" class="footer__nav-link">施工事例</a>
+            <a href="../column/index.html" class="footer__nav-link">コラム</a>
+            <a href="../simulation/index.html" class="footer__nav-link">見積もりシミュレーション</a>
+          </div>
+
+          <div>
+            <div class="footer__nav-title">企業情報</div>
+            <a href="../company/index.html" class="footer__nav-link">会社概要</a>
+            <a href="../contact/index.html" class="footer__nav-link">お問い合わせ</a>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <div class="footer__copyright">&copy; 2026 KUME GIKEN Co., Ltd.</div>
+          <div class="footer__bottom-links">
+            <a href="../privacy/index.html" class="footer__bottom-link">プライバシーポリシー</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="fixed-cta">
+      <div class="fixed-cta__inner">
+        <a href="tel:0798-78-6880" class="fixed-cta__btn fixed-cta__btn--phone"
+          ><i class="fas fa-phone-alt"></i> 電話で相談</a
+        >
+        <a href="../contact/index.html" class="fixed-cta__btn fixed-cta__btn--contact"
+          ><i class="fas fa-envelope"></i> 無料見積もり</a
+        >
+      </div>
+    </div>
+    <button class="back-to-top" aria-label="ページ上部へ戻る">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+    <button type="button" class="sim-mobile-calc" id="sim-mobile-calc">
+      <i class="fas fa-calculator"></i> 結果を表示する
+    </button>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/simulation.js"></script>
+  </body>
+</html>

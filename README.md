@@ -30,11 +30,9 @@
 | ページ名 | パス | 状態 |
 |---|---|---|
 | トップページ | `/index.html` | ✅ 完成 |
-| 選ばれる理由 | `/reason/index.html` | ✅ 完成 |
+| 選ばれる理由 | `/index.html#reason` | ✅ 完成 |
 | サービス一覧 | `/service/index.html` | ✅ 完成 |
 | 施工事例一覧 | `/works/index.html` | ✅ 完成（フィルタリング機能付き） |
-| 施工の流れ | `/flow/index.html` | ✅ 完成 |
-| お客様の声 | `/voice/index.html` | ✅ 完成 |
 | コラム一覧 | `/column/index.html` | ✅ 完成 |
 | 会社概要 | `/company/index.html` | ✅ 完成 |
 | 採用情報 | `/recruit/index.html` | ✅ 完成 |
@@ -46,12 +44,10 @@
 ### 第2階層：サービス個別ページ
 | ページ名 | パス | 状態 |
 |---|---|---|
-| 大規模修繕工事 | `/service/large-scale-repair/index.html` | ✅ 完成 |
-| 防水工事 | `/service/waterproofing/index.html` | ✅ 完成 |
+| 大規模修繕事業 | `/service/large-scale-repair/index.html` | ✅ 完成 |
+| 防水事業 | `/service/waterproofing/index.html` | ✅ 完成 |
 | 外壁塗装 | `/service/painting/index.html` | ✅ 完成 |
-| シーリング工事 | `/service/sealing/index.html` | ✅ 完成 |
-| 雨漏り調査・補修 | `/service/leak-repair/index.html` | ✅ 完成（緊急CTA付き） |
-| 建物診断 | `/service/building-inspection/index.html` | ✅ 完成 |
+| 水中点検 | `/dive-survey/index.html` | ✅ 完成 |
 
 ### 第2階層：施工事例個別ページ
 | ページ名 | パス | 状態 |
@@ -183,7 +179,7 @@
 index.html                    トップページ
 css/style.css                 共通スタイルシート
 js/main.js                    共通JavaScript
-reason/index.html             選ばれる理由
+index.html#reason             選ばれる理由
 service/
   ├── index.html              サービス一覧
   ├── large-scale-repair/     大規模修繕工事
@@ -198,8 +194,6 @@ works/
   ├── osaka-building-large-scale-repair-01/
   ├── kobe-mansion-painting-01/
   └── amagasaki-shop-leak-repair-01/
-flow/index.html               施工の流れ
-voice/index.html              お客様の声
 column/
   ├── index.html              コラム一覧
   └── waterproofing-guide/    防水工事ガイド

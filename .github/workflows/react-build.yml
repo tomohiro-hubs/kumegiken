@@ -10,9 +10,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: react-app
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -22,16 +19,15 @@ jobs:
         with:
           node-version: 20
           cache: npm
-          cache-dependency-path: react-app/package-lock.json
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
+      - name: Build Next.js
         run: npm run build
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
-          name: react-app-dist
-          path: react-app/dist
+          name: nextjs-build
+          path: .next

@@ -379,7 +379,7 @@ input, textarea, select {
   box-shadow: var(--shadow-lg);
   min-width: 240px;
   padding: 12px 0;
-  opacity: 0;
+  opacity: 1;
   visibility: hidden;
   transition: var(--transition);
   z-index: 100;
@@ -443,7 +443,7 @@ input, textarea, select {
 }
 
 .header__hamburger.active span:nth-child(2) {
-  opacity: 0;
+  opacity: 1;
 }
 
 .header__hamburger.active span:nth-child(3) {
@@ -509,7 +509,7 @@ input, textarea, select {
   height: 100%;
   background: rgba(0,0,0,0.5);
   z-index: 998;
-  opacity: 0;
+  opacity: 1;
   visibility: hidden;
   transition: var(--transition);
 }
@@ -737,7 +737,7 @@ input, textarea, select {
 
 .service__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
 }
 
@@ -1000,13 +1000,52 @@ input, textarea, select {
   padding: var(--section-padding);
 }
 
-.voice__grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+.voice-carousel {
+  --voice-gap: 30px;
+}
+
+.voice-carousel__header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 24px;
+}
+
+.voice-carousel__controls {
+  display: flex;
+  gap: 12px;
+}
+
+.voice-carousel__button {
+  width: 52px;
+  height: 52px;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background: var(--color-white);
+  color: var(--color-primary);
+  font-size: 20px;
+  font-weight: var(--fw-bold);
+  transition: var(--transition);
+}
+
+.voice-carousel__button:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+.voice-carousel__viewport {
+  overflow: hidden;
+}
+
+.voice-carousel__track {
+  display: flex;
+  gap: var(--voice-gap);
+  transition: transform var(--transition-slow);
+  will-change: transform;
 }
 
 .voice-card {
+  flex: 0 0 calc((100% - var(--voice-gap)) / 2);
   background: var(--color-white);
   border: 1px solid var(--color-border-light);
   border-radius: var(--radius-lg);
@@ -1063,6 +1102,27 @@ input, textarea, select {
 .voice-card__detail {
   color: var(--color-text-muted);
   margin-top: 2px;
+}
+
+.voice-carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.voice-carousel__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(26, 39, 68, 0.18);
+  transition: var(--transition);
+}
+
+.voice-carousel__dot.is-active {
+  width: 34px;
+  border-radius: 999px;
+  background: var(--color-accent);
 }
 
 /* --- Message Section (CEO) --- */
@@ -1260,14 +1320,14 @@ input, textarea, select {
 /* PC Float Button */
 .fixed-cta__float {
   position: fixed;
-  bottom: 30px;
+  bottom: 96px;
   right: 30px;
   display: flex;
   flex-direction: column;
   gap: 12px;
   z-index: 900;
   transform: translateY(100px);
-  opacity: 0;
+  opacity: 1;
   transition: var(--transition);
 }
 
@@ -1784,7 +1844,7 @@ input, textarea, select {
 /* --- Back to Top --- */
 .back-to-top {
   position: fixed;
-  bottom: 100px;
+  bottom: 30px;
   right: 30px;
   width: 48px;
   height: 48px;
@@ -1796,7 +1856,7 @@ input, textarea, select {
   justify-content: center;
   font-size: 18px;
   box-shadow: var(--shadow-md);
-  opacity: 0;
+  opacity: 1;
   visibility: hidden;
   transition: var(--transition);
   z-index: 800;
@@ -1859,10 +1919,6 @@ input, textarea, select {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .voice__grid {
-    grid-template-columns: 1fr;
-  }
-
   .message__inner {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -1894,6 +1950,29 @@ input, textarea, select {
 
   .section-heading__ja {
     font-size: 24px;
+  }
+
+  .voice-carousel {
+    --voice-gap: 20px;
+  }
+
+  .voice-carousel__header {
+    justify-content: center;
+  }
+
+  .voice-carousel__button {
+    width: 46px;
+    height: 46px;
+  }
+
+  .voice-card {
+    flex-basis: 100%;
+    padding: 28px 24px;
+  }
+
+  .voice-card__text {
+    font-size: 14px;
+    line-height: 1.9;
   }
 
   .service__grid {
@@ -2016,6 +2095,11 @@ input, textarea, select {
   .info-table td {
     font-size: 13px;
   }
+
+  .back-to-top {
+    bottom: 80px;
+    right: 20px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -2067,7 +2151,7 @@ input, textarea, select {
 /* --- Loading animation --- */
 @keyframes fadeInUp {
   from {
-    opacity: 0;
+    opacity: 1;
     transform: translateY(20px);
   }
   to {

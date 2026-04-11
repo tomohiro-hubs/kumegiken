@@ -1,19 +1,19 @@
 /** @type {import('next').NextConfig} */
+const isGithubPagesBuild = process.env.GITHUB_PAGES === 'true';
+const repoName = 'kumegiken';
+
 const nextConfig = {
-  async redirects() {
-    return [
-      {
-        source: '/:path*.html',
-        destination: '/:path*',
-        permanent: true,
-      },
-      {
-        source: '/index.html',
-        destination: '/',
-        permanent: true,
-      }
-    ]
+  output: 'export',
+  trailingSlash: true,
+  images: {
+    unoptimized: true,
   },
-}
+  ...(isGithubPagesBuild
+    ? {
+        basePath: `/${repoName}`,
+        assetPrefix: `/${repoName}/`,
+      }
+    : {}),
+};
 
 module.exports = nextConfig

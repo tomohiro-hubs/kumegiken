@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 
 export default function Page() {
@@ -9,7 +10,7 @@ export default function Page() {
     <h1 className="page-hero__title">防水工事</h1>
     <p className="page-hero__description">久米技建の技術的ルーツ。建物を雨水から守る専門技術</p>
   </section>
-  <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href="/" className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href="/service" className="breadcrumb__link">サービス</a></li><li className="breadcrumb__separator">›</li><li>防水工事</li></ol></div></nav>
+  <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/service")} className="breadcrumb__link">サービス</a></li><li className="breadcrumb__separator">›</li><li>防水工事</li></ol></div></nav>
 
   <section className="content-section">
     <div className="container container--narrow">
@@ -56,7 +57,7 @@ export default function Page() {
     </div>
   </section>
 
-  <section className="cta-section"><div className="container"><h2 className="cta-section__title reveal">防水工事のご相談はお気軽に</h2><p className="cta-section__text reveal">建物の防水が気になったら、まずは無料診断から。</p><div className="cta-section__buttons reveal"><a href="/contact" className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> 無料相談・お見積もり</a><a href="/simulation" className="btn btn--outline btn--lg"><i className="fas fa-calculator"></i> 見積もりシミュレーション</a></div></div></section>
+  <section className="cta-section"><div className="container"><h2 className="cta-section__title reveal">防水工事のご相談はお気軽に</h2><p className="cta-section__text reveal">建物の防水が気になったら、まずは無料診断から。</p><div className="cta-section__buttons reveal"><a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> 無料相談・お見積もり</a><a href={routePath("/simulation")} className="btn btn--outline btn--lg"><i className="fas fa-calculator"></i> 見積もりシミュレーション</a></div></div></section>
 
   
     </main>

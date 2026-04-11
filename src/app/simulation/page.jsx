@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { routePath } from "@/lib/routePath";
 
 export default function Page() {
   return (
@@ -12,7 +13,7 @@ export default function Page() {
     <nav className="breadcrumb">
       <div className="container">
         <ol className="breadcrumb__list">
-          <li><a href="/" className="breadcrumb__link">ホーム</a></li>
+          <li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li>
           <li className="breadcrumb__separator">›</li>
           <li>見積もりシミュレーション</li>
         </ol>
@@ -389,7 +390,7 @@ export default function Page() {
           </div>
 
           <div style={{ marginTop: '24px', textAlign: 'center' }}>
-            <a href="/contact" className="btn btn--primary btn--lg"
+            <a href={routePath("/contact")} className="btn btn--primary btn--lg"
               ><i className="fas fa-envelope"></i> 正式な見積もりを依頼する</a
             >
           </div>

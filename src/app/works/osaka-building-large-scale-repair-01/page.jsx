@@ -1,11 +1,12 @@
 import Link from "next/link";
+import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 
 export default function Page() {
   return (
     <main>
       <section className="page-hero"><span className="page-hero__label">Works</span><h1 className="page-hero__title">大阪市 ビル 大規模修繕工事</h1></section>
-  <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href="/" className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href="/works" className="breadcrumb__link">施工事例</a></li><li className="breadcrumb__separator">›</li><li>大阪市 ビル 大規模修繕工事</li></ol></div></nav>
+  <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/works")} className="breadcrumb__link">施工事例</a></li><li className="breadcrumb__separator">›</li><li>大阪市 ビル 大規模修繕工事</li></ol></div></nav>
 
   <section className="content-section"><div className="container container--narrow">
     <table className="info-table" style={{ marginBottom: '40px' }}><tbody>
@@ -31,10 +32,10 @@ export default function Page() {
         <li>シーリングは変成シリコン系で打替え</li>
       </ul>
     </div>
-    <div style={{ textAlign: 'center', marginTop: '48px' }}><a href="/works" className="btn btn--outline-dark">← 施工事例一覧に戻る</a></div>
+    <div style={{ textAlign: 'center', marginTop: '48px' }}><a href={routePath("/works")} className="btn btn--outline-dark">← 施工事例一覧に戻る</a></div>
   </div></section>
 
-  <section className="cta-section"><div className="container"><h2 className="cta-section__title">大規模修繕のご相談はお気軽に</h2><div className="cta-section__buttons"><a href="/contact" className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> 無料相談・お見積もり</a></div></div></section>
+  <section className="cta-section"><div className="container"><h2 className="cta-section__title">大規模修繕のご相談はお気軽に</h2><div className="cta-section__buttons"><a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> 無料相談・お見積もり</a></div></div></section>
 
   
     </main>

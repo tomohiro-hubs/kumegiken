@@ -1,10 +1,11 @@
 import Link from "next/link";
+import { routePath } from "@/lib/routePath";
 
 export default function Page() {
   return (
     <main>
       <section className="page-hero"><span className="page-hero__label">Partner</span><h1 className="page-hero__title">協力会社お問い合わせ</h1><p className="page-hero__description">共に建物を守るビジネスパートナーを募集しています</p></section>
-<nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href="/" className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li>協力会社お問い合わせ</li></ol></div></nav>
+<nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li>協力会社お問い合わせ</li></ol></div></nav>
 <section className="content-section"><div className="container container--narrow">
   <div className="article-content reveal">
     <p>株式会社久米技建では、事業拡大に伴い、協力会社・ビジネスパートナーを募集しております。以下の分野で協力していただける企業様からのお問い合わせをお待ちしています。</p>
@@ -31,7 +32,7 @@ export default function Page() {
       <a href="tel:0798-78-6880" style={{ fontFamily: 'var(--font-en)', fontSize: '28px', fontWeight: '900', color: 'white', textDecoration: 'none' }}><i className="fas fa-phone-alt"></i> 0798-78-6880</a>
       <p style={{ fontSize: '12px', marginTop: '8px', opacity: '0.6' }}>受付時間：平日 9:00〜18:00（担当：総務部）</p>
     </div>
-    <div style={{ textAlign: 'center' }}><a href="/contact" className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> メールでお問い合わせ</a></div>
+    <div style={{ textAlign: 'center' }}><a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> メールでお問い合わせ</a></div>
   </div>
 </div></section>
   

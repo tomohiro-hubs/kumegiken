@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 
 export default function Page() {
@@ -8,7 +9,7 @@ export default function Page() {
   <span className="page-hero__label">Dive Survey</span>
   <h1 className="page-hero__title" style={{ fontSize: 'clamp(24px,4vw,42px)' }}>水中点検・調査事業</h1>
   <p className="page-hero__description">ダム・港湾施設・橋梁の水中部分を、<br />専門ダイバーが安全かつ正確に点検・調査</p>
-  <div style={{ marginTop: '24px' }}><a href="/contact" className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> お問い合わせ</a></div>
+  <div style={{ marginTop: '24px' }}><a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> お問い合わせ</a></div>
 </section>
 
 <section className="content-section"><div className="container">
@@ -43,7 +44,7 @@ export default function Page() {
   </div>
 </div></section>
 
-<section className="cta-section"><div className="container"><h2 className="cta-section__title">水中点検のご相談</h2><p className="cta-section__text">まずはお気軽にお問い合わせください。</p><div className="cta-section__phone"><a href="tel:0798-78-6880" className="cta-section__phone-number" style={{ color: 'white', textDecoration: 'none' }}><i className="fas fa-phone-alt"></i> 0798-78-6880</a></div><div className="cta-section__buttons"><a href="/contact" className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> お問い合わせ</a></div></div></section>
+<section className="cta-section"><div className="container"><h2 className="cta-section__title">水中点検のご相談</h2><p className="cta-section__text">まずはお気軽にお問い合わせください。</p><div className="cta-section__phone"><a href="tel:0798-78-6880" className="cta-section__phone-number" style={{ color: 'white', textDecoration: 'none' }}><i className="fas fa-phone-alt"></i> 0798-78-6880</a></div><div className="cta-section__buttons"><a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> お問い合わせ</a></div></div></section>
 
   
     </main>

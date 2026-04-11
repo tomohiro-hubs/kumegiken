@@ -1,10 +1,11 @@
 import Link from "next/link";
+import { routePath } from "@/lib/routePath";
 
 export default function Page() {
   return (
     <main>
       <section className="page-hero"><span className="page-hero__label">Privacy Policy</span><h1 className="page-hero__title">プライバシーポリシー</h1></section>
-<nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href="/" className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li>プライバシーポリシー</li></ol></div></nav>
+<nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li>プライバシーポリシー</li></ol></div></nav>
 <section className="content-section"><div className="container container--narrow"><div className="article-content">
   <p>株式会社久米技建（以下「当社」）は、お客様の個人情報の保護に細心の注意を払い、以下のプライバシーポリシーに基づき、個人情報の適切な取り扱いと保護に努めます。</p>
   <h2>1. 個人情報の定義</h2>

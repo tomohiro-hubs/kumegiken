@@ -1,17 +1,18 @@
 import Link from "next/link";
+import { routePath } from "@/lib/routePath";
 
 export default function Page() {
   return (
     <main>
       <section className="page-hero"><span className="page-hero__label">History</span><h1 className="page-hero__title">沿革</h1><p className="page-hero__description">2016年の創業からの歩み</p></section>
-<nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href="/" className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href="/company" className="breadcrumb__link">会社情報</a></li><li className="breadcrumb__separator">›</li><li>沿革</li></ol></div></nav>
+<nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/company")} className="breadcrumb__link">会社情報</a></li><li className="breadcrumb__separator">›</li><li>沿革</li></ol></div></nav>
 <section style={{ background: 'var(--color-bg-light)', padding: '20px 0' }}>
   <div className="container" style={{ display: 'flex', justifyContent: 'center', gap: '8px', flexWrap: 'wrap' }}>
-    <a href="/company" className="btn btn--sm btn--outline-dark" style={{ borderRadius: '50px' }}>会社概要</a>
-    <a href="/company/message" className="btn btn--sm btn--outline-dark" style={{ borderRadius: '50px' }}>代表メッセージ</a>
-    <a href="/company/staff" className="btn btn--sm btn--outline-dark" style={{ borderRadius: '50px' }}>スタッフ紹介</a>
-    <a href="/company/area" className="btn btn--sm btn--outline-dark" style={{ borderRadius: '50px' }}>対応エリア</a>
-    <a href="/company/history" className="btn btn--sm" style={{ background: 'var(--color-primary)', color: 'white', borderRadius: '50px' }}>沿革</a>
+    <a href={routePath("/company")} className="btn btn--sm btn--outline-dark" style={{ borderRadius: '50px' }}>会社概要</a>
+    <a href={routePath("/company/message")} className="btn btn--sm btn--outline-dark" style={{ borderRadius: '50px' }}>代表メッセージ</a>
+    <a href={routePath("/company/staff")} className="btn btn--sm btn--outline-dark" style={{ borderRadius: '50px' }}>スタッフ紹介</a>
+    <a href={routePath("/company/area")} className="btn btn--sm btn--outline-dark" style={{ borderRadius: '50px' }}>対応エリア</a>
+    <a href={routePath("/company/history")} className="btn btn--sm" style={{ background: 'var(--color-primary)', color: 'white', borderRadius: '50px' }}>沿革</a>
   </div>
 </section>
 <section className="content-section"><div className="container container--narrow">

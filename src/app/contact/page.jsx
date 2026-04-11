@@ -1,4 +1,5 @@
 "use client";
+import { routePath } from "@/lib/routePath";
 
 import Link from "next/link";
 import { useState } from "react";
@@ -69,7 +70,7 @@ export default function Page() {
   return (
     <main>
       <section className="page-hero"><span className="page-hero__label">Contact</span><h1 className="page-hero__title">お問い合わせ</h1><p className="page-hero__description">無料建物診断・お見積もり・ご相談など、お気軽にお問い合わせください</p></section>
-  <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href="/" className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li>お問い合わせ</li></ol></div></nav>
+  <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li>お問い合わせ</li></ol></div></nav>
 
   {/* Phone CTA */}
   <section className="content-section" style={{ padding: '60px 0 30px' }}>
@@ -82,7 +83,7 @@ export default function Page() {
         </div>
         <div style={{ background: 'var(--color-bg-light)', padding: '32px', borderRadius: '16px', textAlign: 'center' }}>
           <p style={{ fontSize: '14px', marginBottom: '8px', color: 'var(--color-text-light)' }}>概算費用を知りたい方</p>
-          <a href="/simulation" className="btn btn--primary"><i className="fas fa-calculator"></i> 見積もりシミュレーション</a>
+          <a href={routePath("/simulation")} className="btn btn--primary"><i className="fas fa-calculator"></i> 見積もりシミュレーション</a>
           <p style={{ fontSize: '12px', marginTop: '8px', color: 'var(--color-text-muted)' }}>24時間いつでもご利用いただけます</p>
         </div>
       </div>
@@ -177,7 +178,7 @@ export default function Page() {
           <div style={{ margin: '24px 0', padding: '20px', background: 'var(--color-bg-light)', borderRadius: '8px' }}>
             <label style={{ display: 'flex', gap: '12px', alignItems: 'flex-start', cursor: 'pointer' }}>
               <input type="checkbox" name="agreement" checked={formData.agreement} onChange={handleChange} className={errors.agreement ? 'error' : ''} style={{ marginTop: '4px' }} />
-              <span style={{ fontSize: '13px', color: 'var(--color-text-light)', lineHeight: '1.8' }}><a href="/privacy" style={{ color: 'var(--color-accent)', textDecoration: 'underline' }}>プライバシーポリシー</a>に同意の上、送信してください。</span>
+              <span style={{ fontSize: '13px', color: 'var(--color-text-light)', lineHeight: '1.8' }}><a href={routePath("/privacy")} style={{ color: 'var(--color-accent)', textDecoration: 'underline' }}>プライバシーポリシー</a>に同意の上、送信してください。</span>
             </label>
           </div>
 

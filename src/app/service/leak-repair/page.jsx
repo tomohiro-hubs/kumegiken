@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 
 export default function Page() {
@@ -10,7 +11,7 @@ export default function Page() {
     <p className="page-hero__description">雨漏りの原因を突き止め、根本から解決。緊急対応もお任せください。</p>
     <div style={{ marginTop: '24px' }}><a href="tel:0798-78-6880" className="btn btn--primary btn--lg"><i className="fas fa-phone-alt"></i> 今すぐ電話相談 0798-78-6880</a></div>
   </section>
-  <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href="/" className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href="/service" className="breadcrumb__link">サービス</a></li><li className="breadcrumb__separator">›</li><li>雨漏り調査・補修</li></ol></div></nav>
+  <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/service")} className="breadcrumb__link">サービス</a></li><li className="breadcrumb__separator">›</li><li>雨漏り調査・補修</li></ol></div></nav>
 
   <section className="content-section"><div className="container container--narrow"><div className="article-content">
     <div className="reveal" style={{ marginBottom: '40px' }}><img src={assetPath("/images/leak-repair.jpg")} alt="雨漏り調査・補修の現場" style={{ aspectRatio: '16/9', width: '100%', objectFit: 'cover', borderRadius: '16px' }} /></div>
@@ -40,7 +41,7 @@ export default function Page() {
     </div>
   </div></div></section>
 
-  <section className="cta-section" style={{ background: 'linear-gradient(135deg,#6f3030,#4f2020)' }}><div className="container"><h2 className="cta-section__title">雨漏りでお困りの方は今すぐお電話を</h2><div className="cta-section__phone"><a href="tel:0798-78-6880" className="cta-section__phone-number" style={{ color: 'white', textDecoration: 'none' }}><i className="fas fa-phone-alt"></i> 0798-78-6880</a><div className="cta-section__phone-sub">受付時間：平日 9:00〜18:00</div></div><div className="cta-section__buttons"><a href="/contact" className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> 緊急のお問い合わせ</a></div></div></section>
+  <section className="cta-section" style={{ background: 'linear-gradient(135deg,#6f3030,#4f2020)' }}><div className="container"><h2 className="cta-section__title">雨漏りでお困りの方は今すぐお電話を</h2><div className="cta-section__phone"><a href="tel:0798-78-6880" className="cta-section__phone-number" style={{ color: 'white', textDecoration: 'none' }}><i className="fas fa-phone-alt"></i> 0798-78-6880</a><div className="cta-section__phone-sub">受付時間：平日 9:00〜18:00</div></div><div className="cta-section__buttons"><a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> 緊急のお問い合わせ</a></div></div></section>
 
   
     </main>

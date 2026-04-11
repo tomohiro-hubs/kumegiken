@@ -1,11 +1,12 @@
 import Link from "next/link";
+import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 
 export default function Page() {
   return (
     <main>
       <section className="page-hero recruit-hero"><span className="page-hero__label">Recruit</span><h1 className="page-hero__title">採用情報</h1><p className="page-hero__description">私たちと一緒に、「建物を守るプロ集団」として働きませんか？<br />経験者も未経験者も、それぞれが活躍できる環境を用意しています。</p></section>
-<nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href="/" className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li>採用情報</li></ol></div></nav>
+<nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li>採用情報</li></ol></div></nav>
 
 <section className="content-section"><div className="container">
   <div className="reveal" style={{ marginBottom: '48px' }}><img src={assetPath("/images/recruit-training.jpg")} alt="先輩職人による技術指導の様子" style={{ width: '100%', borderRadius: '16px', aspectRatio: '16/9', objectFit: 'cover' }} /></div>
@@ -66,19 +67,19 @@ export default function Page() {
 <section className="content-section content-section--gray"><div className="container container--narrow">
   <div className="section-heading reveal"><span className="section-heading__en">Job Opening</span><h2 className="section-heading__ja">募集職種</h2><span className="section-heading__line"></span></div>
   <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-    <a href="/recruit/waterproofing-craftsman" style={{ display: 'block', background: 'white', borderRadius: '16px', padding: '32px', boxShadow: 'var(--shadow-sm)', transition: 'var(--transition)' }} className="reveal">
+    <a href={routePath("/recruit/waterproofing-craftsman")} style={{ display: 'block', background: 'white', borderRadius: '16px', padding: '32px', boxShadow: 'var(--shadow-sm)', transition: 'var(--transition)' }} className="reveal">
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
         <div><span style={{ display: 'inline-block', background: 'var(--color-accent)', color: 'white', fontSize: '11px', fontWeight: '700', padding: '4px 12px', borderRadius: '3px', marginBottom: '8px' }}>積極採用中</span><h3 style={{ fontSize: '20px', fontWeight: '700', color: 'var(--color-primary)' }}>防水工・塗装工（職人）</h3><p style={{ fontSize: '14px', color: 'var(--color-text-light)', marginTop: '4px' }}>正社員 / 経験者優遇・未経験者歓迎</p></div>
         <span style={{ color: 'var(--color-accent)', fontWeight: '700', fontSize: '14px' }}>募集要項を見る →</span>
       </div>
     </a>
-    <a href="/recruit/construction-manager" style={{ display: 'block', background: 'white', borderRadius: '16px', padding: '32px', boxShadow: 'var(--shadow-sm)', transition: 'var(--transition)' }} className="reveal">
+    <a href={routePath("/recruit/construction-manager")} style={{ display: 'block', background: 'white', borderRadius: '16px', padding: '32px', boxShadow: 'var(--shadow-sm)', transition: 'var(--transition)' }} className="reveal">
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
         <div><h3 style={{ fontSize: '20px', fontWeight: '700', color: 'var(--color-primary)' }}>施工管理技士</h3><p style={{ fontSize: '14px', color: 'var(--color-text-light)', marginTop: '4px' }}>正社員 / 1級・2級建築施工管理技士優遇</p></div>
         <span style={{ color: 'var(--color-accent)', fontWeight: '700', fontSize: '14px' }}>募集要項を見る →</span>
       </div>
     </a>
-    <a href="/recruit/sales" style={{ display: 'block', background: 'white', borderRadius: '16px', padding: '32px', boxShadow: 'var(--shadow-sm)', transition: 'var(--transition)' }} className="reveal">
+    <a href={routePath("/recruit/sales")} style={{ display: 'block', background: 'white', borderRadius: '16px', padding: '32px', boxShadow: 'var(--shadow-sm)', transition: 'var(--transition)' }} className="reveal">
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
         <div><h3 style={{ fontSize: '20px', fontWeight: '700', color: 'var(--color-primary)' }}>営業職（法人・個人営業）</h3><p style={{ fontSize: '14px', color: 'var(--color-text-light)', marginTop: '4px' }}>正社員 / 業界経験者優遇・未経験者歓迎</p></div>
         <span style={{ color: 'var(--color-accent)', fontWeight: '700', fontSize: '14px' }}>募集要項を見る →</span>
@@ -113,7 +114,7 @@ export default function Page() {
     </div>
   </div>
 </div></section>
-<section className="cta-section"><div className="container"><h2 className="cta-section__title">ご応募・ご質問はこちら</h2><p className="cta-section__text">まずはお気軽にお問い合わせください。見学も歓迎します。</p><div className="cta-section__phone"><a href="tel:0798-78-6880" className="cta-section__phone-number" style={{ color: 'white', textDecoration: 'none' }}><i className="fas fa-phone-alt"></i> 0798-78-6880</a><div className="cta-section__phone-sub">採用担当まで</div></div><div className="cta-section__buttons"><a href="/contact" className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> 応募・お問い合わせ</a></div></div></section>
+<section className="cta-section"><div className="container"><h2 className="cta-section__title">ご応募・ご質問はこちら</h2><p className="cta-section__text">まずはお気軽にお問い合わせください。見学も歓迎します。</p><div className="cta-section__phone"><a href="tel:0798-78-6880" className="cta-section__phone-number" style={{ color: 'white', textDecoration: 'none' }}><i className="fas fa-phone-alt"></i> 0798-78-6880</a><div className="cta-section__phone-sub">採用担当まで</div></div><div className="cta-section__buttons"><a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> 応募・お問い合わせ</a></div></div></section>
   
     </main>
   );

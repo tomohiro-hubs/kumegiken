@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 
 export default function Page() {
@@ -10,7 +11,7 @@ export default function Page() {
     <p className="page-hero__description">建物の長寿命化と資産価値の維持を実現する、包括的な修繕工事</p>
   </section>
 
-  <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href="/" className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href="/service" className="breadcrumb__link">サービス</a></li><li className="breadcrumb__separator">›</li><li>大規模修繕工事</li></ol></div></nav>
+  <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/service")} className="breadcrumb__link">サービス</a></li><li className="breadcrumb__separator">›</li><li>大規模修繕工事</li></ol></div></nav>
 
   <section className="content-section">
     <div className="container container--narrow">
@@ -61,7 +62,7 @@ export default function Page() {
 
           <div style={{ background: 'var(--color-primary)', color: 'white', padding: '30px', borderRadius: '12px', margin: '30px 0', textAlign: 'center' }}>
             <p style={{ fontSize: '15px', marginBottom: '16px', color: 'rgba(255,255,255,0.8)' }}>概算費用をすぐに知りたい方はこちら</p>
-            <a href="/simulation" className="btn btn--primary"><i className="fas fa-calculator"></i> 見積もりシミュレーション</a>
+            <a href={routePath("/simulation")} className="btn btn--primary"><i className="fas fa-calculator"></i> 見積もりシミュレーション</a>
           </div>
 
           <h2>対応可能な建物</h2>
@@ -98,16 +99,16 @@ export default function Page() {
         <h2 className="section-heading__ja">大規模修繕の施工事例</h2>
       </div>
       <div className="works__grid" style={{ gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))' }}>
-        <a href="/works/osaka-building-large-scale-repair-01" className="work-card reveal">
+        <a href={routePath("/works/osaka-building-large-scale-repair-01")} className="work-card reveal">
           <div className="work-card__image"><img src={assetPath("/images/scaffold-install.jpg")} alt="大規模修繕" style={{ width: '100%', minHeight: '180px', objectFit: 'cover' }} /><span className="work-card__category">大規模修繕</span></div>
           <div className="work-card__body"><div className="work-card__meta"><span className="work-card__meta-item"><i className="fas fa-map-marker-alt"></i> 大阪市</span><span className="work-card__meta-item"><i className="fas fa-building"></i> ビル</span></div><h3 className="work-card__title">オフィスビル大規模修繕工事</h3></div>
         </a>
       </div>
-      <div style={{ textAlign: 'center', marginTop: '40px' }}><a href="/works" className="btn btn--outline-dark">すべての施工事例を見る →</a></div>
+      <div style={{ textAlign: 'center', marginTop: '40px' }}><a href={routePath("/works")} className="btn btn--outline-dark">すべての施工事例を見る →</a></div>
     </div>
   </section>
 
-  <section className="cta-section"><div className="container"><h2 className="cta-section__title reveal">大規模修繕のご相談はお気軽に</h2><p className="cta-section__text reveal">まずは無料の建物診断から。最適な修繕計画をご提案します。</p><div className="cta-section__phone reveal"><a href="tel:0798-78-6880" className="cta-section__phone-number" style={{ color: 'white', textDecoration: 'none' }}><i className="fas fa-phone-alt"></i> 0798-78-6880</a><div className="cta-section__phone-sub">受付時間：平日 9:00〜18:00</div></div><div className="cta-section__buttons reveal"><a href="/contact" className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> 無料相談・お見積もり</a><a href="/simulation" className="btn btn--outline btn--lg"><i className="fas fa-calculator"></i> 見積もりシミュレーション</a></div></div></section>
+  <section className="cta-section"><div className="container"><h2 className="cta-section__title reveal">大規模修繕のご相談はお気軽に</h2><p className="cta-section__text reveal">まずは無料の建物診断から。最適な修繕計画をご提案します。</p><div className="cta-section__phone reveal"><a href="tel:0798-78-6880" className="cta-section__phone-number" style={{ color: 'white', textDecoration: 'none' }}><i className="fas fa-phone-alt"></i> 0798-78-6880</a><div className="cta-section__phone-sub">受付時間：平日 9:00〜18:00</div></div><div className="cta-section__buttons reveal"><a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> 無料相談・お見積もり</a><a href={routePath("/simulation")} className="btn btn--outline btn--lg"><i className="fas fa-calculator"></i> 見積もりシミュレーション</a></div></div></section>
 
   
     </main>

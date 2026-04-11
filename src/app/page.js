@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 import VoiceCarousel from "@/components/VoiceCarousel";
 
@@ -24,11 +25,11 @@ export default function Home() {
         ビル・マンションオーナー様の資産価値を守り続けます。
       </p>
       <div className="hero__cta reveal reveal--delay-3">
-        <a href="/contact" className="btn btn--primary btn--lg">
+        <a href={routePath("/contact")} className="btn btn--primary btn--lg">
           <i className="fas fa-file-alt"></i> 無料診断のお申し込み
           <span className="btn__arrow">→</span>
         </a>
-        <a href="/simulation" className="btn btn--outline btn--lg">
+        <a href={routePath("/simulation")} className="btn btn--outline btn--lg">
           <i className="fas fa-calculator"></i> お見積もりシミュレーション
         </a>
       </div>
@@ -109,7 +110,7 @@ export default function Home() {
       </div>
 
       <div className="service__grid">
-        <a href="/service/large-scale-repair" className="service-card reveal">
+        <a href={routePath("/service/large-scale-repair")} className="service-card reveal">
           <div className="service-card__image">
             <img src={assetPath("/images/large-scale-aerial.jpg")} alt="大規模修繕事業" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             <span className="service-card__tag">人気No.1</span>
@@ -121,7 +122,7 @@ export default function Home() {
           </div>
         </a>
 
-        <a href="/service/waterproofing" className="service-card reveal reveal--delay-1">
+        <a href={routePath("/service/waterproofing")} className="service-card reveal reveal--delay-1">
           <div className="service-card__image">
             <img src={assetPath("/images/waterproofing-rooftop.jpg")} alt="防水事業" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             <span className="service-card__tag">技術のルーツ</span>
@@ -133,7 +134,7 @@ export default function Home() {
           </div>
         </a>
 
-        <a href="/service/painting" className="service-card reveal reveal--delay-2">
+        <a href={routePath("/service/painting")} className="service-card reveal reveal--delay-2">
           <div className="service-card__image">
             <img src={assetPath("/images/painting-work.jpg")} alt="外壁塗装" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </div>
@@ -144,7 +145,7 @@ export default function Home() {
           </div>
         </a>
 
-        <a href="/dive-survey" className="service-card reveal">
+        <a href={routePath("/dive-survey")} className="service-card reveal">
           <div className="service-card__image">
             <img src={assetPath("/images/dive-survey.jpg")} alt="水中点検" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             <span className="service-card__tag">専門対応</span>
@@ -169,7 +170,7 @@ export default function Home() {
       </div>
 
       <div className="works__grid">
-        <a href="/works/nishinomiya-mansion-waterproofing-01" className="work-card reveal" data-category="waterproofing">
+        <a href={routePath("/works/nishinomiya-mansion-waterproofing-01")} className="work-card reveal" data-category="waterproofing">
           <div className="work-card__image">
             <img src={assetPath("/images/waterproofing-rooftop.jpg")} alt="屋上ウレタン防水改修工事" style={{ width: '100%', minHeight: '180px', objectFit: 'cover' }} />
             <span className="work-card__category">防水工事</span>
@@ -183,7 +184,7 @@ export default function Home() {
           </div>
         </a>
 
-        <a href="/works/osaka-building-large-scale-repair-01" className="work-card reveal reveal--delay-1" data-category="large-scale-repair">
+        <a href={routePath("/works/osaka-building-large-scale-repair-01")} className="work-card reveal reveal--delay-1" data-category="large-scale-repair">
           <div className="work-card__image">
             <img src={assetPath("/images/scaffold-install.jpg")} alt="オフィスビル大規模修繕工事" style={{ width: '100%', minHeight: '180px', objectFit: 'cover' }} />
             <span className="work-card__category">大規模修繕</span>
@@ -197,7 +198,7 @@ export default function Home() {
           </div>
         </a>
 
-        <a href="/works/kobe-mansion-painting-01" className="work-card reveal reveal--delay-2" data-category="painting">
+        <a href={routePath("/works/kobe-mansion-painting-01")} className="work-card reveal reveal--delay-2" data-category="painting">
           <div className="work-card__image">
             <img src={assetPath("/images/building-completed.jpg")} alt="分譲マンション外壁塗装工事" style={{ width: '100%', minHeight: '180px', objectFit: 'cover' }} />
             <span className="work-card__category">外壁塗装</span>
@@ -213,7 +214,7 @@ export default function Home() {
       </div>
 
       <div style={{ textAlign: 'center', marginTop: '48px' }} className="reveal">
-        <a href="/works" className="btn btn--outline-dark">
+        <a href={routePath("/works")} className="btn btn--outline-dark">
           すべての施工事例を見る <span className="btn__arrow">→</span>
         </a>
       </div>
@@ -360,7 +361,7 @@ export default function Home() {
             <span className="area__tag">その他関西圏</span>
           </div>
           <div style={{ marginTop: '24px' }}>
-            <a href="/company/area" className="btn btn--outline-dark btn--sm">
+            <a href={routePath("/company/area")} className="btn btn--outline-dark btn--sm">
               対応エリアの詳細 <span className="btn__arrow">→</span>
             </a>
           </div>
@@ -379,7 +380,7 @@ export default function Home() {
       </div>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-        <a href="/column/waterproofing-guide" className="column-card reveal">
+        <a href={routePath("/column/waterproofing-guide")} className="column-card reveal">
           <div className="column-card__image">
             <img src={assetPath("/images/waterproofing-hands.jpg")} alt="防水工事ガイド" style={{ width: '100%', minHeight: '120px', objectFit: 'cover' }} />
           </div>
@@ -390,7 +391,7 @@ export default function Home() {
           </div>
         </a>
 
-        <a href="/column/large-scale-repair-guide" className="column-card reveal">
+        <a href={routePath("/column/large-scale-repair-guide")} className="column-card reveal">
           <div className="column-card__image">
             <img src={assetPath("/images/large-scale-aerial.jpg")} alt="大規模修繕ガイド" style={{ width: '100%', minHeight: '120px', objectFit: 'cover' }} />
           </div>
@@ -401,7 +402,7 @@ export default function Home() {
           </div>
         </a>
 
-        <a href="/column/leak-cause-and-fix" className="column-card reveal">
+        <a href={routePath("/column/leak-cause-and-fix")} className="column-card reveal">
           <div className="column-card__image">
             <img src={assetPath("/images/leak-repair.jpg")} alt="雨漏り対処法" style={{ width: '100%', minHeight: '120px', objectFit: 'cover' }} />
           </div>
@@ -414,7 +415,7 @@ export default function Home() {
       </div>
 
       <div style={{ textAlign: 'center', marginTop: '48px' }} className="reveal">
-        <a href="/column" className="btn btn--outline-dark">
+        <a href={routePath("/column")} className="btn btn--outline-dark">
           コラム一覧を見る <span className="btn__arrow">→</span>
         </a>
       </div>
@@ -433,10 +434,10 @@ export default function Home() {
         <div className="cta-section__phone-sub">受付時間：平日 9:00〜18:00</div>
       </div>
       <div className="cta-section__buttons reveal">
-        <a href="/contact" className="btn btn--primary btn--lg">
+        <a href={routePath("/contact")} className="btn btn--primary btn--lg">
           <i className="fas fa-envelope"></i> 無料相談・お見積もり
         </a>
-        <a href="/simulation" className="btn btn--outline btn--lg">
+        <a href={routePath("/simulation")} className="btn btn--outline btn--lg">
           <i className="fas fa-calculator"></i> 見積もりシミュレーション
         </a>
       </div>

@@ -1,11 +1,12 @@
 import Link from "next/link";
+import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 
 export default function Page() {
   return (
     <main>
       <section className="page-hero"><span className="page-hero__label">Column</span><h1 className="page-hero__title">防水工事とは？<br />種類・工法・費用相場を徹底解説</h1></section>
-<nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href="/" className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href="/column" className="breadcrumb__link">コラム</a></li><li className="breadcrumb__separator">›</li><li>防水工事とは？</li></ol></div></nav>
+<nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/column")} className="breadcrumb__link">コラム</a></li><li className="breadcrumb__separator">›</li><li>防水工事とは？</li></ol></div></nav>
 
 <section className="content-section"><div className="container container--narrow"><div className="article-content">
   <p style={{ fontSize: '13px', color: 'var(--color-text-muted)', marginBottom: '24px' }}>最終更新日：2026年3月15日 / カテゴリ：防水工事</p>
@@ -64,10 +65,10 @@ export default function Page() {
 
   <div style={{ background: 'var(--color-primary)', color: 'white', padding: '30px', borderRadius: '12px', margin: '40px 0', textAlign: 'center' }}>
     <p style={{ fontSize: '16px', fontWeight: '700', marginBottom: '16px' }}>防水工事のご相談はお気軽に</p>
-    <a href="/contact" className="btn btn--primary"><i className="fas fa-envelope"></i> 無料相談・お見積もり</a>
+    <a href={routePath("/contact")} className="btn btn--primary"><i className="fas fa-envelope"></i> 無料相談・お見積もり</a>
   </div>
 
-  <div style={{ textAlign: 'center', marginTop: '48px' }}><a href="/column" className="btn btn--outline-dark">← コラム一覧に戻る</a></div>
+  <div style={{ textAlign: 'center', marginTop: '48px' }}><a href={routePath("/column")} className="btn btn--outline-dark">← コラム一覧に戻る</a></div>
 </div></div></section>
   
     </main>

@@ -1,1 +1,7 @@
 @import url("../src/app/globals.css");
+
+/* Fallback for legacy static pages on GitHub Pages branch deploy */
+.reveal {
+  opacity: 1 !important;
+  transform: none !important;
+}

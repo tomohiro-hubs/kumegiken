@@ -2,12 +2,18 @@ import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 
+export const metadata = {
+  title: "防水工事（ウレタン・シート・FRP・アスファルト）",
+  description:
+    "ウレタン防水・シート防水・FRP防水・アスファルト防水。久米技建は防水工事の専門技術で、屋上・バルコニー・外壁からの雨水侵入を防ぎます。",
+};
+
 export default function Page() {
   return (
     <main>
       <section className="page-hero">
     <span className="page-hero__label">Waterproofing</span>
-    <h1 className="page-hero__title">防水工事</h1>
+    <h1 className="page-hero__title">防水工事（ウレタン・シート・FRP）｜久米技建</h1>
     <p className="page-hero__description">久米技建の技術的ルーツ。建物を雨水から守る専門技術</p>
   </section>
   <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/service")} className="breadcrumb__link">サービス</a></li><li className="breadcrumb__separator">›</li><li>防水工事</li></ol></div></nav>
@@ -18,6 +24,12 @@ export default function Page() {
         <div className="reveal" style={{ marginBottom: '40px' }}><img src={assetPath("/images/waterproofing-rooftop.jpg")} alt="防水工事の現場" style={{ aspectRatio: '16/9', width: '100%', objectFit: 'cover', borderRadius: '16px' }} /></div>
         <div className="reveal">
           <p>防水工事は、建物の寿命を左右する最も重要な工事の一つです。久米技建は防水工事の専門会社として創業し、豊富な経験と確かな技術でお客様の建物を雨水から守り続けています。</p>
+
+          <h2>兵庫・大阪の防水工事なら久米技建</h2>
+          <p>西宮市・神戸市・尼崎市・大阪市など、兵庫県・大阪府を中心に防水工事へ対応しています。対応地域の詳細は
+            <a href={routePath("/company/area")}> 対応エリアページ</a>
+            からご確認ください。
+          </p>
 
           <h2>防水工法の種類</h2>
           <p>建物の用途、構造、立地条件に応じて最適な防水工法をご提案します。</p>

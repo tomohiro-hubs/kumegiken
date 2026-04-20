@@ -7,7 +7,7 @@ export default function Page() {
     <main>
       <section className="page-hero dive-hero" style={{ paddingBottom: '100px' }}>
   <span className="page-hero__label">Dive Survey</span>
-  <h1 className="page-hero__title" style={{ fontSize: 'clamp(24px,4vw,42px)' }}>水中点検・調査事業</h1>
+  <h1 className="page-hero__title" style={{ fontSize: 'clamp(24px,4vw,42px)' }}>水中点検・調査事業｜ダム・港湾・橋梁</h1>
   <p className="page-hero__description">ダム・港湾施設・橋梁の水中部分を、<br />専門ダイバーが安全かつ正確に点検・調査</p>
   <div style={{ marginTop: '24px' }}><a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> お問い合わせ</a></div>
 </section>

@@ -1,10 +1,27 @@
 import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "株式会社久米技建",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "甲子園町5番7号 河津ビル1F",
+    addressLocality: "西宮市",
+    addressRegion: "兵庫県",
+    postalCode: "663-8152",
+    addressCountry: "JP",
+  },
+  telephone: "0798-78-6880",
+  url: "https://kumegiken.co.jp",
+};
+
 export default function Page() {
   return (
     <main>
-      <section className="page-hero"><span className="page-hero__label">Company</span><h1 className="page-hero__title">会社概要</h1></section>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+      <section className="page-hero"><span className="page-hero__label">Company</span><h1 className="page-hero__title">会社概要｜株式会社久米技建</h1></section>
   <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li>会社概要</li></ol></div></nav>
 
   {/* Sub Navigation */}

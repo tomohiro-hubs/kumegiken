@@ -4,6 +4,12 @@ import { assetPath } from "@/lib/assetPath";
 import { serviceCards } from "@/lib/serviceCards";
 import VoiceCarousel from "@/components/VoiceCarousel";
 
+export const metadata = {
+  title: "大規模修繕・防水工事なら久米技建｜兵庫・大阪の専門会社",
+  description:
+    "西宮市の防水・大規模修繕専門会社。自社職人21名による直営施工、正直な建物診断でマンション・ビルオーナー様の資産価値を守ります。無料診断実施中。",
+};
+
 export default function Home() {
   return (
     <main>

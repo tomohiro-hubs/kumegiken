@@ -4,8 +4,12 @@ import Footer from "@/components/Footer";
 import ScrollRevealProvider from "@/components/ScrollRevealProvider";
 
 export const metadata = {
-  title: "株式会社久米技建 | KUME GIKEN Co., Ltd.",
-  description: "大規模修繕事業・防水事業・外壁塗装・水中点検を自社体制で提供する専門会社",
+  title: {
+    default: "大規模修繕・防水工事なら久米技建｜兵庫・大阪の専門会社",
+    template: "%s｜久米技建",
+  },
+  description:
+    "西宮市の防水・大規模修繕専門会社。自社職人21名による直営施工、正直な建物診断でマンション・ビルオーナー様の資産価値を守ります。無料診断実施中。",
 };
 
 export default function RootLayout({ children }) {

@@ -2,14 +2,64 @@ import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 
+const SITE_URL = "https://kumegiken.co.jp";
+const ARTICLE_PATH = "/column/waterproofing-guide";
+const ARTICLE_TITLE = "西宮市の防水工事費用相場｜工法別の目安と選び方";
+const ARTICLE_DESCRIPTION =
+  "西宮市で防水工事を検討する方向けに、ウレタン防水・シート防水・FRP防水の費用相場と工法選びのポイントを解説します。";
+
+export const metadata = {
+  title: ARTICLE_TITLE,
+  description: ARTICLE_DESCRIPTION,
+};
+
 export default function Page() {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: ARTICLE_TITLE,
+    description: ARTICLE_DESCRIPTION,
+    datePublished: "2026-03-15",
+    dateModified: "2026-03-15",
+    author: {
+      "@type": "Person",
+      name: "久米技建 技術監修チーム",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "株式会社久米技建",
+      url: SITE_URL,
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${SITE_URL}${ARTICLE_PATH}`,
+    },
+  };
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "ホーム", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "コラム", item: `${SITE_URL}/column` },
+      { "@type": "ListItem", position: 3, name: "西宮市の防水工事費用相場", item: `${SITE_URL}${ARTICLE_PATH}` },
+    ],
+  };
+
   return (
     <main>
-      <section className="page-hero"><span className="page-hero__label">Column</span><h1 className="page-hero__title">防水工事とは？<br />種類・工法・費用相場を徹底解説</h1></section>
-<nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/column")} className="breadcrumb__link">コラム</a></li><li className="breadcrumb__separator">›</li><li>防水工事とは？</li></ol></div></nav>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <section className="page-hero"><span className="page-hero__label">Column</span><h1 className="page-hero__title">西宮市の防水工事費用相場<br />工法別の目安と選び方</h1></section>
+<nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/column")} className="breadcrumb__link">コラム</a></li><li className="breadcrumb__separator">›</li><li>西宮市の防水工事費用相場</li></ol></div></nav>
 
 <section className="content-section"><div className="container container--narrow"><div className="article-content">
   <p style={{ fontSize: '13px', color: 'var(--color-text-muted)', marginBottom: '24px' }}>最終更新日：2026年3月15日 / カテゴリ：防水工事</p>
+  <div style={{ background: 'var(--color-bg-light)', borderRadius: '12px', padding: '18px 20px', marginBottom: '24px' }}>
+    <p style={{ margin: 0, fontSize: '14px', lineHeight: '1.8' }}>
+      <strong>監修者：</strong>久米技建 技術監修チーム<br />
+      <strong>専門領域：</strong>防水工事・建物診断・雨漏り補修
+    </p>
+  </div>
 
   <p>建物の屋上やバルコニー、外壁などから雨水が侵入するのを防ぐ「防水工事」。建物の寿命を左右する重要な工事であるにもかかわらず、工法の違いや費用の目安がわかりにくいと感じている方も多いのではないでしょうか。</p>
   <p>この記事では、防水工事の基礎知識から、主な工法の種類、費用相場、選び方のポイントまでを徹底的に解説します。</p>
@@ -62,6 +112,13 @@ export default function Page() {
 
   <h2>まとめ</h2>
   <p>防水工事は建物の寿命を守る重要な工事です。工法の選定は建物の用途、構造、立地条件によって異なりますので、専門家による診断をお勧めします。久米技建では無料の建物診断を実施していますので、お気軽にご相談ください。</p>
+
+  <h2>関連サービス</h2>
+  <ul>
+    <li><a href={routePath("/service/waterproofing")}>防水工事（ウレタン・シート・FRP・アスファルト）</a></li>
+    <li><a href={routePath("/service/building-inspection")}>建物診断</a></li>
+    <li><a href={routePath("/service/leak-repair")}>雨漏り調査・補修</a></li>
+  </ul>
 
   <div style={{ background: 'var(--color-primary)', color: 'white', padding: '30px', borderRadius: '12px', margin: '40px 0', textAlign: 'center' }}>
     <p style={{ fontSize: '16px', fontWeight: '700', marginBottom: '16px' }}>防水工事のご相談はお気軽に</p>

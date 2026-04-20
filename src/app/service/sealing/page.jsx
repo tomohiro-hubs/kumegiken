@@ -12,6 +12,11 @@ export default function Page() {
     <div className="reveal" style={{ marginBottom: '40px' }}><img src={assetPath("/images/sealing-work.jpg")} alt="シーリング工事の現場" style={{ aspectRatio: '16/9', width: '100%', objectFit: 'cover', borderRadius: '16px' }} /></div>
     <div className="reveal">
       <p>シーリング（コーキング）は、建物の外壁パネル間の目地やサッシ周り、ALC板の継ぎ目などに充填されるゴム状の防水材です。経年劣化により硬化・ひび割れが発生し、そこから雨水が侵入して建物内部を傷めてしまいます。</p>
+      <h2>兵庫・大阪のシーリング工事なら久米技建</h2>
+      <p>西宮市・神戸市・尼崎市・大阪市を中心に、兵庫県・大阪府のシーリング打替え工事へ対応しています。
+        <a href={routePath("/company/area")}> 対応エリアページ</a>
+        から対応地域をご確認ください。
+      </p>
       <h2>シーリングの劣化サイン</h2>
       <ul>
         <li>シーリングが硬くなり弾力がない</li>

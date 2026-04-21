@@ -110,7 +110,7 @@ export default function Header() {
         <Link href="/column" className="mobile-nav__link" onClick={closeMobileMenu}>コラム</Link>
         <Link href="/recruit" className="mobile-nav__link" onClick={closeMobileMenu}>採用情報</Link>
         <div className="mobile-nav__cta">
-          <a href="tel:0798-78-6880" className="btn btn--outline"><i className="fas fa-phone"></i> 電話で相談</a>
+          <a href="tel:0798-27-5653" className="btn btn--outline"><i className="fas fa-phone"></i> 電話で相談</a>
           <Link href="/contact" className="btn btn--primary" onClick={closeMobileMenu}><i className="fas fa-envelope"></i> 無料見積もり</Link>
         </div>
       </nav>

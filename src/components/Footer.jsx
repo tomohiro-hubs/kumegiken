@@ -39,10 +39,13 @@ export default function Footer() {
                 <div className="footer__logo-sub">KUME GIKEN Co., Ltd.</div>
               </div>
               <div className="footer__company-info">
-                〒663-8113<br />
-                兵庫県西宮市甲子園口2丁目<br />
-                TEL: 0798-78-6880<br />
-                受付時間: 平日 9:00〜18:00
+                会社名：株式会社久米技建<br />
+                所在地：〒663-8152 兵庫県西宮市甲子園町5-7 河津ビル1F<br />
+                電話番号：0798-27-5653<br />
+                建設業許可番号：兵庫県知事 許可（般-3）第220086号<br />
+                設立年：2016年<br />
+                資本金：記載準備中<br />
+                営業時間：平日 9:00〜18:00
               </div>
             </div>
 
@@ -89,7 +92,7 @@ export default function Footer() {
       {/* ========== FIXED CTA (Mobile) ========== */}
       <div className={`fixed-cta ${showTokens.fixedCta ? 'visible' : ''}`}>
         <div className="fixed-cta__inner">
-          <a href="tel:0798-78-6880" className="fixed-cta__btn fixed-cta__btn--phone">
+          <a href="tel:0798-27-5653" className="fixed-cta__btn fixed-cta__btn--phone">
             <i className="fas fa-phone-alt"></i> 電話で相談
           </a>
           <Link href="/contact" className="fixed-cta__btn fixed-cta__btn--contact">

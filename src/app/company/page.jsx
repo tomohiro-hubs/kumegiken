@@ -2,20 +2,71 @@ import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 
 import { buildMetadata } from "@/lib/seo";
+const SITE_URL = "https://kumegiken.co.jp";
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "株式会社久米技建",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "甲子園町5番7号 河津ビル1F",
+    streetAddress: "甲子園町5-7 河津ビル1F",
     addressLocality: "西宮市",
     addressRegion: "兵庫県",
     postalCode: "663-8152",
     addressCountry: "JP",
   },
-  telephone: "0798-78-6880",
-  url: "https://kumegiken.co.jp",
+  telephone: "0798-27-5653",
+  foundingDate: "2016",
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "18:00",
+    },
+  ],
+  areaServed: ["西宮市", "神戸市", "尼崎市", "大阪市", "兵庫県", "大阪府"],
+  url: SITE_URL,
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "ホーム", item: SITE_URL },
+    { "@type": "ListItem", position: 2, name: "会社概要", item: `${SITE_URL}${routePath("/company")}` },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "対応エリアはどこですか？",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "兵庫県・大阪府を中心に関西圏全域で対応しています。エリア外も案件内容により対応可能です。",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "営業時間と連絡先を教えてください。",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "営業時間は平日9:00〜18:00です。お電話は0798-27-5653で受け付けています。",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "建設業許可番号はありますか？",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "兵庫県知事 許可（般-3）第220086号を取得しています。",
+      },
+    },
+  ],
 };
 
 export const metadata = buildMetadata({
@@ -29,6 +80,8 @@ export default function Page() {
   return (
     <main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <section className="page-hero"><span className="page-hero__label">Company</span><h1 className="page-hero__title">会社概要｜株式会社久米技建</h1></section>
   <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li>会社概要</li></ol></div></nav>
 
@@ -50,11 +103,13 @@ export default function Page() {
         <tr><th>設立</th><td>2016年</td></tr>
         <tr><th>代表取締役</th><td>久米 涼平</td></tr>
         <tr><th>所在地</th><td>
-          【本社】<br />〒663-8152 兵庫県西宮市甲子園町5番7号 河津ビル1F<br /><br />
+          【本社】<br />〒663-8152 兵庫県西宮市甲子園町5-7 河津ビル1F<br /><br />
           【東京営業所】<br />〒178-0063 東京都練馬区東大泉1-19-1-1F
         </td></tr>
-        <tr><th>電話番号</th><td>0798-78-6880</td></tr>
+        <tr><th>電話番号</th><td>0798-27-5653</td></tr>
+        <tr><th>営業時間</th><td>平日 9:00〜18:00</td></tr>
         <tr><th>事業内容</th><td>大規模修繕事業<br />防水事業（ウレタン・シート・FRP・アスファルト）<br />外壁塗装<br />水中点検</td></tr>
+        <tr><th>資本金</th><td>記載準備中</td></tr>
         <tr><th>従業員数</th><td>約25名（自社職人21名・施工管理4名）</td></tr>
         <tr><th>建設業許可</th><td>兵庫県知事 許可（般-3）第220086号</td></tr>
         <tr><th>対応エリア</th><td>兵庫県・大阪府を中心とした関西圏全域</td></tr>
@@ -85,6 +140,18 @@ export default function Page() {
               <iframe src="https://maps.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E7%B7%B4%E9%A6%AC%E5%8C%BA%E6%9D%B1%E5%A4%A7%E6%B3%891%E4%B8%81%E7%9B%AE19-1&hl=ja&z=16&output=embed" width="100%" height="100%" style={{ border: '0' }} allowFullScreen="" loading="lazy"></iframe>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div style={{ marginTop: '60px' }} className="reveal">
+        <h2 style={{ fontSize: '24px', fontWeight: '700', color: 'var(--color-primary)', marginBottom: '24px' }}>よくある質問</h2>
+        <div className="article-content">
+          <h3>対応エリアはどこですか？</h3>
+          <p>兵庫県・大阪府を中心に関西圏全域で対応しています。エリア外についても案件内容に応じてご相談可能です。</p>
+          <h3>営業時間と連絡先を教えてください。</h3>
+          <p>営業時間は平日9:00〜18:00です。お電話は 0798-27-5653 で受け付けています。</p>
+          <h3>建設業許可番号はありますか？</h3>
+          <p>兵庫県知事 許可（般-3）第220086号を取得しています。</p>
         </div>
       </div>
     </div>

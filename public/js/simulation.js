@@ -3,11 +3,16 @@
    （本番サイトの計算ロジックに合わせた実装）
    ============================================ */
 
-document.addEventListener('DOMContentLoaded', () => {
+(() => {
+  function bindSimulation() {
+  const simulationForm = document.getElementById('simulation-form');
+  if (!simulationForm || simulationForm.dataset.simulationBound === '1') return;
+
   const calculateButton = document.getElementById('calculate-btn');
   const mobileCalcButton = document.getElementById('sim-mobile-calc');
   const resetButton = document.getElementById('simulation-reset');
   if (!calculateButton) return;
+  simulationForm.dataset.simulationBound = '1';
 
   const MIN_FACTOR = 0.85;
   const MAX_FACTOR = 1.15;
@@ -530,4 +535,17 @@ document.addEventListener('DOMContentLoaded', () => {
     setText('balcony-main-price', formatRange(total * 0.2, MIN_FACTOR, MAX_FACTOR));
     setText('balcony-sealing-price', formatRange(total * 0.1, MIN_FACTOR, MAX_FACTOR));
   }
-});
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bindSimulation, { once: true });
+  } else {
+    bindSimulation();
+  }
+
+  window.addEventListener('pageshow', bindSimulation);
+  const observer = new MutationObserver(() => {
+    bindSimulation();
+  });
+  observer.observe(document.documentElement, { childList: true, subtree: true });
+})();

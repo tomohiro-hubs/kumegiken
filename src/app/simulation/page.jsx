@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Script from "next/script";
 import { routePath } from "@/lib/routePath";
 
 import { buildMetadata } from "@/lib/seo";
@@ -11,6 +12,7 @@ export const metadata = buildMetadata({
 
 export default function Page() {
   return (
+    <>
     <main>
       <section className="page-hero">
       <span className="page-hero__label">Simulation</span>
@@ -410,5 +412,7 @@ export default function Page() {
 
     
     </main>
+    <Script src={routePath("/js/simulation.js")} strategy="afterInteractive" />
+    </>
   );
 }

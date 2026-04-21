@@ -2,12 +2,20 @@ import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 
+import { buildMetadata } from "@/lib/seo";
+export const metadata = buildMetadata({
+  title: "大規模修繕工事（マンション・ビル）｜久米技建｜兵庫・大阪",
+  description: "兵庫・大阪の大規模修繕工事なら久米技建。建物診断から施工まで一貫対応し、資産価値の維持と長寿命化を実現します。",
+  path: "/service/large-scale-repair",
+  image: "/images/large-scale-aerial.jpg",
+});
+
 export default function Page() {
   return (
     <main>
       <section className="page-hero">
     <span className="page-hero__label">Large-Scale Repair</span>
-    <h1 className="page-hero__title">大規模修繕工事</h1>
+    <h1 className="page-hero__title">大規模修繕工事｜マンション・ビルの長寿命化</h1>
     <p className="page-hero__description">建物の長寿命化と資産価値の維持を実現する、包括的な修繕工事</p>
   </section>
 
@@ -22,6 +30,12 @@ export default function Page() {
 
         <div className="reveal">
           <p>マンション・ビルの大規模修繕工事は、建物の資産価値を維持し、長寿命化を図るために欠かせない工事です。久米技建では、建物診断から施工計画の策定、施工、完了検査、アフターフォローまで、すべてを一貫して対応いたします。</p>
+
+          <h2>兵庫・大阪のマンション大規模修繕なら久米技建</h2>
+          <p>西宮市・神戸市・尼崎市・大阪市を中心に、兵庫県・大阪府のマンションやビルの大規模修繕に対応しています。
+            <a href={routePath("/company/area")}> 対応エリアページ</a>
+            で詳細をご確認いただけます。
+          </p>
 
           <h2>大規模修繕で久米技建が選ばれる理由</h2>
           <p>大規模修繕工事は、数百万円〜数千万円規模の投資判断です。だからこそ、信頼できる施工会社の選定が重要になります。</p>

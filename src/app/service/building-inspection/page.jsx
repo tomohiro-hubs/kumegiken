@@ -2,6 +2,14 @@ import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 
+import { buildMetadata } from "@/lib/seo";
+export const metadata = buildMetadata({
+  title: "建物診断（無料診断対応）｜久米技建｜兵庫・大阪",
+  description: "マンション・ビルの修繕計画に必要な建物診断を実施。現状調査から写真付き診断レポート作成まで、久米技建が正直な診断で対応します。",
+  path: "/service/building-inspection",
+  image: "/images/building-inspection.jpg",
+});
+
 export default function Page() {
   return (
     <main>
@@ -17,6 +25,12 @@ export default function Page() {
       </div>
 
       <p>建物の修繕を検討する際、まず必要なのが正確な建物診断です。建物の劣化状況を専門的に調査し、写真付きの診断レポートとして整理することで、適切な修繕計画と予算立案が可能になります。</p>
+
+      <h2>兵庫・大阪の建物診断なら久米技建</h2>
+      <p>西宮市・神戸市・尼崎市・大阪市など、兵庫県・大阪府を中心にマンション・ビルの建物診断へ対応しています。
+        <a href={routePath("/company/area")}> 対応エリアページ</a>
+        もご参照ください。
+      </p>
 
       <h2>診断レポートの内容</h2>
       <ul>

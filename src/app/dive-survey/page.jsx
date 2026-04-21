@@ -2,12 +2,20 @@ import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 
+import { buildMetadata } from "@/lib/seo";
+export const metadata = buildMetadata({
+  title: "水中点検・調査事業（ダム・港湾・橋梁）｜久米技建",
+  description: "ダム・港湾施設・橋梁の水中点検なら久米技建。専門ダイバーが水中調査から映像記録、診断レポート提出まで対応します。",
+  path: "/dive-survey",
+  image: "/images/dive-survey.jpg",
+});
+
 export default function Page() {
   return (
     <main>
       <section className="page-hero dive-hero" style={{ paddingBottom: '100px' }}>
   <span className="page-hero__label">Dive Survey</span>
-  <h1 className="page-hero__title" style={{ fontSize: 'clamp(24px,4vw,42px)' }}>水中点検・調査事業</h1>
+  <h1 className="page-hero__title" style={{ fontSize: 'clamp(24px,4vw,42px)' }}>水中点検・調査事業｜ダム・港湾・橋梁</h1>
   <p className="page-hero__description">ダム・港湾施設・橋梁の水中部分を、<br />専門ダイバーが安全かつ正確に点検・調査</p>
   <div style={{ marginTop: '24px' }}><a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> お問い合わせ</a></div>
 </section>

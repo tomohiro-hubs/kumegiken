@@ -1,6 +1,14 @@
 import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 
+import { buildMetadata } from "@/lib/seo";
+export const metadata = buildMetadata({
+  title: "プライバシーポリシー｜久米技建",
+  description: "株式会社久米技建のプライバシーポリシーです。個人情報の取得・利用・管理方針について記載しています。",
+  path: "/privacy",
+  image: "/images/hero-main.jpg",
+});
+
 export default function Page() {
   return (
     <main>

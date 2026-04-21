@@ -3,10 +3,56 @@ import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 import { serviceCards } from "@/lib/serviceCards";
 import VoiceCarousel from "@/components/VoiceCarousel";
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata = buildMetadata({
+  title: "防水工事・大規模修繕なら久米技建｜西宮市の防水専門会社【無料建物診断】",
+  description:
+    "西宮市の防水工事専門会社・久米技建。自社職人21名による直営施工で高品質な防水・外壁改修を実現。正直な建物診断に基づき、本当に必要な工事だけをご提案。兵庫・大阪エリア対応。無料見積もり受付中。",
+  path: "/",
+});
+
+const reviewSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "株式会社久米技建",
+  url: "https://kumegiken.co.jp",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5.0",
+    reviewCount: "8",
+    bestRating: "5",
+    worstRating: "1",
+  },
+  review: [
+    {
+      "@type": "Review",
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      author: { "@type": "Person", name: "M.T 様" },
+      reviewBody:
+        "正直に『ここはまだ大丈夫です』と言ってくれたのが信頼できました。他社では全面やり替えと言われていたので、大きな節約になりました。",
+    },
+    {
+      "@type": "Review",
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      author: { "@type": "Person", name: "S.K 様" },
+      reviewBody:
+        "自社の職人さんが施工してくれるので品質にバラツキがなく安心でした。施工管理の方の対応も丁寧で、管理会社としても信頼しています。",
+    },
+    {
+      "@type": "Review",
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      author: { "@type": "Person", name: "K.H 様" },
+      reviewBody:
+        "建物診断レポートが非常にわかりやすく、理事会での説明にそのまま使えました。長期修繕計画の見直しにも役立っています。",
+    },
+  ],
+};
 
 export default function Home() {
   return (
     <main>
+<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
 {/* ========== HERO / FIRST VIEW ========== */}
   <section className="hero">
     <div className="hero__bg">
@@ -17,15 +63,16 @@ export default function Home() {
     <div className="hero__content">
       <span className="hero__label reveal">Waterproofing & Renovation Specialists</span>
       <h1 className="hero__title reveal reveal--delay-1">
-        防水のプロが、<br />
-        本当に必要な工事だけを、<br />
-        職人の手で。
+        西宮市の防水工事・大規模修繕専門会社｜株式会社久米技建
       </h1>
       <p className="hero__description reveal reveal--delay-2">
+        防水のプロが、本当に必要な工事だけを、職人の手で。
+      </p>
+      <p className="hero__description reveal reveal--delay-3">
         久米技建は、正直な建物診断に基づき、不要な工事を省いた最適な提案で<br className="pc-only" />
         ビル・マンションオーナー様の資産価値を守り続けます。
       </p>
-      <div className="hero__cta reveal reveal--delay-3">
+      <div className="hero__cta reveal reveal--delay-4">
         <a href={routePath("/contact")} className="btn btn--primary btn--lg">
           <i className="fas fa-file-alt"></i> 無料診断のお申し込み
           <span className="btn__arrow">→</span>
@@ -109,6 +156,19 @@ export default function Home() {
         <h2 className="section-heading__ja">サービス一覧</h2>
         <span className="section-heading__line"></span>
       </div>
+      <p
+        className="reveal"
+        style={{ textAlign: "center", maxWidth: "920px", margin: "0 auto 24px", color: "var(--color-text-light)", lineHeight: "1.9" }}
+      >
+        屋上防水・シーリング工事・外壁塗装・大規模修繕まで、建物の状態に合わせて最適な工法をご提案します。
+        各サービスページでは、施工内容・費用目安・対応エリアを詳しくご案内しています。
+      </p>
+      <div className="reveal" style={{ display: "flex", justifyContent: "center", gap: "10px", flexWrap: "wrap", marginBottom: "28px" }}>
+        <a href={routePath("/service/waterproofing")} className="btn btn--outline-dark btn--sm">屋上防水</a>
+        <a href={routePath("/service/sealing")} className="btn btn--outline-dark btn--sm">シーリング工事</a>
+        <a href={routePath("/service/painting")} className="btn btn--outline-dark btn--sm">外壁塗装</a>
+        <a href={routePath("/service/large-scale-repair")} className="btn btn--outline-dark btn--sm">大規模修繕</a>
+      </div>
 
       <div className="service__grid">
         {serviceCards.map((card, index) => {
@@ -139,6 +199,13 @@ export default function Home() {
         <h2 className="section-heading__ja">施工事例</h2>
         <span className="section-heading__line"></span>
       </div>
+      <p
+        className="reveal"
+        style={{ textAlign: "center", maxWidth: "920px", margin: "0 auto 24px", color: "var(--color-text-light)", lineHeight: "1.9" }}
+      >
+        ビフォー・アフター写真とあわせて、工事内容・工期・費用目安を掲載しています。
+        西宮市・神戸市・大阪市を中心とした実績から、同種建物の改修イメージを具体的にご確認いただけます。
+      </p>
 
       <div className="works__grid">
         <a href={routePath("/works/nishinomiya-mansion-waterproofing-01")} className="work-card reveal" data-category="waterproofing">
@@ -152,6 +219,7 @@ export default function Home() {
               <span className="work-card__meta-item"><i className="fas fa-building"></i> マンション</span>
             </div>
             <h3 className="work-card__title">屋上ウレタン防水改修工事</h3>
+            <p style={{ marginTop: "8px", fontSize: "13px", color: "var(--color-text-muted)" }}>工期：約2週間 / 費用目安：200〜300万円</p>
           </div>
         </a>
 
@@ -166,6 +234,7 @@ export default function Home() {
               <span className="work-card__meta-item"><i className="fas fa-building"></i> ビル</span>
             </div>
             <h3 className="work-card__title">オフィスビル大規模修繕工事</h3>
+            <p style={{ marginTop: "8px", fontSize: "13px", color: "var(--color-text-muted)" }}>工期：約3ヶ月 / 費用目安：2,000〜3,000万円</p>
           </div>
         </a>
 
@@ -180,6 +249,7 @@ export default function Home() {
               <span className="work-card__meta-item"><i className="fas fa-building"></i> マンション</span>
             </div>
             <h3 className="work-card__title">分譲マンション外壁塗装工事</h3>
+            <p style={{ marginTop: "8px", fontSize: "13px", color: "var(--color-text-muted)" }}>工期：約1.5ヶ月 / 費用目安：800〜1,200万円</p>
           </div>
         </a>
       </div>
@@ -349,6 +419,13 @@ export default function Home() {
         <h2 className="section-heading__ja">コラム・お役立ち情報</h2>
         <span className="section-heading__line"></span>
       </div>
+      <p
+        className="reveal"
+        style={{ textAlign: "center", maxWidth: "920px", margin: "0 auto 24px", color: "var(--color-text-light)", lineHeight: "1.9" }}
+      >
+        防水工事の種類と選び方、雨漏りの原因と対策、大規模修繕の進め方など、
+        建物管理に必要な実務情報を定期的に更新しています。各記事から関連サービスページへも移動できます。
+      </p>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
         <a href={routePath("/column/waterproofing-guide")} className="column-card reveal">
@@ -399,8 +476,8 @@ export default function Home() {
       <h2 className="cta-section__title reveal">建物のことで、お困りではありませんか？</h2>
       <p className="cta-section__text reveal">まずは無料の建物診断から。お気軽にご相談ください。</p>
       <div className="cta-section__phone reveal">
-        <a href="tel:0798-78-6880" className="cta-section__phone-number" style={{ color: 'white', textDecoration: 'none' }}>
-          <i className="fas fa-phone-alt"></i> 0798-78-6880
+        <a href="tel:0798-27-5653" className="cta-section__phone-number" style={{ color: 'white', textDecoration: 'none' }}>
+          <i className="fas fa-phone-alt"></i> 0798-27-5653
         </a>
         <div className="cta-section__phone-sub">受付時間：平日 9:00〜18:00</div>
       </div>

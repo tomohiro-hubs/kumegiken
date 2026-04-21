@@ -1,6 +1,14 @@
 import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 
+import { buildMetadata } from "@/lib/seo";
+export const metadata = buildMetadata({
+  title: "防水職人 募集要項｜採用情報｜久米技建",
+  description: "久米技建の防水職人（正社員）募集要項。未経験可の育成体制、給与、業務内容、待遇を掲載しています。",
+  path: "/recruit/waterproofing-craftsman",
+  image: "/images/recruit-training.jpg",
+});
+
 export default function Page() {
   return (
     <main>

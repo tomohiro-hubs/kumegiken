@@ -2,6 +2,14 @@ import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 
+import { buildMetadata } from "@/lib/seo";
+export const metadata = buildMetadata({
+  title: "対応エリア（兵庫・大阪・関西）｜久米技建",
+  description: "西宮市を拠点に兵庫・大阪を中心とした関西圏で防水工事・大規模修繕に対応。対応可否や近隣エリアのご相談も受け付けています。",
+  path: "/company/area",
+  image: "/images/team-group.jpg",
+});
+
 export default function Page() {
   return (
     <main>

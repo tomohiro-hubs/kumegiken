@@ -2,6 +2,14 @@ import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 
+import { buildMetadata } from "@/lib/seo";
+export const metadata = buildMetadata({
+  title: "外壁塗装（マンション・ビル）｜久米技建｜兵庫・大阪",
+  description: "兵庫・大阪のマンション・ビル外壁塗装に対応。劣化診断から下地補修、塗装仕上げまで一貫して施工します。",
+  path: "/service/painting",
+  image: "/images/painting-work.jpg",
+});
+
 export default function Page() {
   return (
     <main>
@@ -12,6 +20,11 @@ export default function Page() {
     <div className="reveal" style={{ marginBottom: '40px' }}><img src={assetPath("/images/painting-work.jpg")} alt="外壁塗装の現場" style={{ aspectRatio: '16/9', width: '100%', objectFit: 'cover', borderRadius: '16px' }} /></div>
     <div className="reveal">
       <p>外壁塗装は、建物の美観を回復するだけでなく、外壁材を紫外線や風雨から保護する重要な工事です。適切なタイミングでの塗り替えが、建物の寿命を大きく延ばします。</p>
+      <h2>兵庫・大阪の外壁塗装工事なら久米技建</h2>
+      <p>西宮市・神戸市・尼崎市・大阪市など、兵庫県・大阪府のビル・マンション外壁塗装に対応しています。
+        <a href={routePath("/company/area")}> 対応エリアページ</a>
+        もあわせてご確認ください。
+      </p>
       <h2>外壁塗装の塗料の種類</h2>
       <table className="info-table" style={{ margin: '20px 0' }}><tbody>
         <tr><th>塗料</th><th>耐用年数</th><th>費用目安（㎡）</th><th>特徴</th></tr>

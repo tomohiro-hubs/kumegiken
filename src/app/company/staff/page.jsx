@@ -2,6 +2,14 @@ import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 
+import { buildMetadata } from "@/lib/seo";
+export const metadata = buildMetadata({
+  title: "スタッフ紹介｜久米技建",
+  description: "防水工事・大規模修繕を支える久米技建のスタッフをご紹介。資格や専門分野を持つ自社職人・施工管理メンバーが対応します。",
+  path: "/company/staff",
+  image: "/images/team-group.jpg",
+});
+
 export default function Page() {
   return (
     <main>

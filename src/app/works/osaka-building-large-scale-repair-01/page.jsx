@@ -2,6 +2,14 @@ import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 
+import { buildMetadata } from "@/lib/seo";
+export const metadata = buildMetadata({
+  title: "施工事例｜大阪市 ビル 大規模修繕工事｜久米技建",
+  description: "大阪市中央区のオフィスビルで実施した大規模修繕工事の施工事例。外壁補修・塗装・防水・シーリングの実績を掲載。",
+  path: "/works/osaka-building-large-scale-repair-01",
+  image: "/images/large-scale-aerial.jpg",
+});
+
 export default function Page() {
   return (
     <main>

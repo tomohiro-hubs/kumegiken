@@ -181,7 +181,7 @@ export default function Page() {
                 <div className="sim-input-group">
                   <label className="form-label" htmlFor="floor-count">階数</label>
                   <div className="sim-inline">
-                    <input type="number" id="floor-count" className="form-input" min="1" value="" placeholder="例: 2" />
+                    <input type="number" id="floor-count" className="form-input" min="1" placeholder="例: 2" />
                     <span className="sim-unit">階</span>
                   </div>
                 </div>
@@ -194,7 +194,7 @@ export default function Page() {
                 <div className="sim-input-group">
                   <label className="form-label" htmlFor="balcony-count">個数</label>
                   <div className="sim-inline">
-                    <input type="number" id="balcony-count" className="form-input" min="1" value="" placeholder="例: 1" />
+                    <input type="number" id="balcony-count" className="form-input" min="1" placeholder="例: 1" />
                     <span className="sim-unit">箇所</span>
                   </div>
                 </div>
@@ -228,14 +228,14 @@ export default function Page() {
               <div className="sim-input-group">
                 <label className="form-label" htmlFor="width">縦</label>
                 <div className="sim-inline">
-                  <input type="number" id="width" className="form-input" min="1" value="" placeholder="例: 10" />
+                  <input type="number" id="width" className="form-input" min="1" placeholder="例: 10" />
                   <span className="sim-unit">m</span>
                 </div>
               </div>
               <div className="sim-input-group">
                 <label className="form-label" htmlFor="height">横</label>
                 <div className="sim-inline">
-                  <input type="number" id="height" className="form-input" min="1" value="" placeholder="例: 10" />
+                  <input type="number" id="height" className="form-input" min="1" placeholder="例: 10" />
                   <span className="sim-unit">m</span>
                 </div>
               </div>

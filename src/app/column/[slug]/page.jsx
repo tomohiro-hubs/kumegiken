@@ -1,4 +1,5 @@
 import { routePath } from "@/lib/routePath";
+import { buildMetadata } from "@/lib/seo";
 
 const SITE_URL = "https://kumegiken.co.jp";
 const ARTICLE_AUTHOR = "久米技建 技術監修チーム";
@@ -72,16 +73,18 @@ export async function generateMetadata({ params }) {
   const article = articles[slug];
 
   if (!article) {
-    return {
+    return buildMetadata({
       title: "コラム",
       description: "久米技建のコラム一覧です。",
-    };
+      path: "/column",
+    });
   }
 
-  return {
+  return buildMetadata({
     title: article.title,
     description: article.description,
-  };
+    path: routePath(`/column/${slug}`),
+  });
 }
 
 export default async function Page({ params }) {

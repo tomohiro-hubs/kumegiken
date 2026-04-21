@@ -1,6 +1,14 @@
 import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 
+import { buildMetadata } from "@/lib/seo";
+export const metadata = buildMetadata({
+  title: "営業職 募集要項｜採用情報｜久米技建",
+  description: "久米技建の営業職（正社員）募集要項。仕事内容、勤務条件、応募資格、待遇などを掲載しています。",
+  path: "/recruit/sales",
+  image: "/images/recruit-training.jpg",
+});
+
 export default function Page() {
   return (
     <main>

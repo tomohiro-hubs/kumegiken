@@ -2,6 +2,14 @@ import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 
+import { buildMetadata } from "@/lib/seo";
+export const metadata = buildMetadata({
+  title: "採用情報（職人・施工管理・営業）｜久米技建",
+  description: "久米技建の採用情報ページ。防水職人・施工管理・営業職の募集要項や、働く魅力、教育体制についてご紹介します。",
+  path: "/recruit",
+  image: "/images/recruit-training.jpg",
+});
+
 export default function Page() {
   return (
     <main>

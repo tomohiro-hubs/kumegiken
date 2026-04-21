@@ -2,6 +2,14 @@ import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 
+import { buildMetadata } from "@/lib/seo";
+export const metadata = buildMetadata({
+  title: "外壁塗装（マンション・ビル）｜久米技建｜兵庫・大阪",
+  description: "兵庫・大阪のマンション・ビル外壁塗装に対応。劣化診断から下地補修、塗装仕上げまで一貫して施工します。",
+  path: "/service/painting",
+  image: "/images/painting-work.jpg",
+});
+
 export default function Page() {
   return (
     <main>

@@ -2,6 +2,14 @@ import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 
+import { buildMetadata } from "@/lib/seo";
+export const metadata = buildMetadata({
+  title: "建物診断（無料診断対応）｜久米技建｜兵庫・大阪",
+  description: "マンション・ビルの修繕計画に必要な建物診断を実施。現状調査から写真付き診断レポート作成まで、久米技建が正直な診断で対応します。",
+  path: "/service/building-inspection",
+  image: "/images/building-inspection.jpg",
+});
+
 export default function Page() {
   return (
     <main>

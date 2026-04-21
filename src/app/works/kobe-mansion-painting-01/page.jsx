@@ -2,6 +2,14 @@ import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 
+import { buildMetadata } from "@/lib/seo";
+export const metadata = buildMetadata({
+  title: "施工事例｜神戸市 マンション 外壁塗装工事｜久米技建",
+  description: "兵庫県神戸市の分譲マンションで実施した外壁塗装工事の施工事例。工法、工期、費用目安、施工前後を掲載。",
+  path: "/works/kobe-mansion-painting-01",
+  image: "/images/painting-work.jpg",
+});
+
 export default function Page() {
   return (
     <main>

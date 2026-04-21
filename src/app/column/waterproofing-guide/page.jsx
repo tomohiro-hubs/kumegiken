@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
+import { buildMetadata } from "@/lib/seo";
 
 const SITE_URL = "https://kumegiken.co.jp";
 const ARTICLE_PATH = "/column/waterproofing-guide";
@@ -9,8 +10,12 @@ const ARTICLE_DESCRIPTION =
   "西宮市で防水工事を検討する方向けに、ウレタン防水・シート防水・FRP防水の費用相場と工法選びのポイントを解説します。";
 
 export const metadata = {
-  title: ARTICLE_TITLE,
-  description: ARTICLE_DESCRIPTION,
+  ...buildMetadata({
+    title: ARTICLE_TITLE,
+    description: ARTICLE_DESCRIPTION,
+    path: ARTICLE_PATH,
+    image: "/images/waterproofing-rooftop.jpg",
+  }),
 };
 
 export default function Page() {

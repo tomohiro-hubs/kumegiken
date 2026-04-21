@@ -2,6 +2,14 @@ import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 
+import { buildMetadata } from "@/lib/seo";
+export const metadata = buildMetadata({
+  title: "水中点検・調査事業（ダム・港湾・橋梁）｜久米技建",
+  description: "ダム・港湾施設・橋梁の水中点検なら久米技建。専門ダイバーが水中調査から映像記録、診断レポート提出まで対応します。",
+  path: "/dive-survey",
+  image: "/images/dive-survey.jpg",
+});
+
 export default function Page() {
   return (
     <main>

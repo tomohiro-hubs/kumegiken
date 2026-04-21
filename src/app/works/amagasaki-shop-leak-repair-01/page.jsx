@@ -1,6 +1,14 @@
 import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 
+import { buildMetadata } from "@/lib/seo";
+export const metadata = buildMetadata({
+  title: "施工事例｜尼崎市 店舗 雨漏り補修工事｜久米技建",
+  description: "兵庫県尼崎市の店舗で実施した雨漏り調査・屋上防水補修の施工事例。工期や費用目安、施工ポイントを紹介します。",
+  path: "/works/amagasaki-shop-leak-repair-01",
+  image: "/images/leak-repair.jpg",
+});
+
 export default function Page() {
   return (
     <main>

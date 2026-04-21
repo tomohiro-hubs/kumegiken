@@ -1,5 +1,6 @@
 import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
+import { buildMetadata } from "@/lib/seo";
 
 const works = {
   "nishinomiya-building-sealing-01": {
@@ -151,16 +152,19 @@ export async function generateMetadata({ params }) {
   const work = works[slug];
 
   if (!work) {
-    return {
+    return buildMetadata({
       title: "施工事例",
       description: "久米技建の施工事例ページです。",
-    };
+      path: "/works",
+    });
   }
 
-  return {
+  return buildMetadata({
     title: `施工事例｜${work.title}`,
     description: `${work.area}の${work.workType}事例。${work.buildingType}の施工で、工期${work.period}・費用目安${work.budget}。施工前後の比較と施工ポイントを掲載。`,
-  };
+    path: routePath(`/works/${slug}`),
+    image: work.afterImage,
+  });
 }
 
 export default async function Page({ params }) {

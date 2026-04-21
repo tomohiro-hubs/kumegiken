@@ -2,6 +2,14 @@ import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 
+import { buildMetadata } from "@/lib/seo";
+export const metadata = buildMetadata({
+  title: "シーリング工事（打替え・打増し）｜久米技建",
+  description: "外壁目地・サッシ周りのシーリング工事に対応。ひび割れや痩せなどの劣化症状を補修し、雨水侵入を防ぎます。",
+  path: "/service/sealing",
+  image: "/images/sealing-work.jpg",
+});
+
 export default function Page() {
   return (
     <main>

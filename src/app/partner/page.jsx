@@ -1,6 +1,14 @@
 import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 
+import { buildMetadata } from "@/lib/seo";
+export const metadata = buildMetadata({
+  title: "協力会社募集・お問い合わせ｜久米技建",
+  description: "防水・塗装・足場・シーリングなどの協力会社を募集しています。久米技建との協業をご検討の企業様はこちらからお問い合わせください。",
+  path: "/partner",
+  image: "/images/hero-main.jpg",
+});
+
 export default function Page() {
   return (
     <main>

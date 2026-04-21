@@ -2,6 +2,14 @@ import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 
+import { buildMetadata } from "@/lib/seo";
+export const metadata = buildMetadata({
+  title: "施工事例｜西宮市 マンション 屋上防水工事｜久米技建",
+  description: "兵庫県西宮市のマンションで実施した屋上ウレタン防水改修の施工事例。施工面積・工期・費用目安を紹介します。",
+  path: "/works/nishinomiya-mansion-waterproofing-01",
+  image: "/images/waterproofing-rooftop.jpg",
+});
+
 export default function Page() {
   return (
     <main>

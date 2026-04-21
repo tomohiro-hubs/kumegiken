@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 
+import { buildMetadata } from "@/lib/seo";
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -16,6 +17,13 @@ const localBusinessSchema = {
   telephone: "0798-78-6880",
   url: "https://kumegiken.co.jp",
 };
+
+export const metadata = buildMetadata({
+  title: "会社概要｜株式会社久米技建（西宮市）",
+  description: "株式会社久米技建の会社概要ページ。所在地・事業内容・連絡先など、企業情報を掲載しています。",
+  path: "/company",
+  image: "/images/hero-main.jpg",
+});
 
 export default function Page() {
   return (

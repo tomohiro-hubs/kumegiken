@@ -2,6 +2,14 @@ import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 
+import { buildMetadata } from "@/lib/seo";
+export const metadata = buildMetadata({
+  title: "代表メッセージ｜株式会社久米技建",
+  description: "株式会社久米技建 代表からのメッセージ。建物診断への姿勢や、品質にこだわる施工方針についてお伝えします。",
+  path: "/company/message",
+  image: "/images/president-workwear.jpg",
+});
+
 export default function Page() {
   return (
     <main>

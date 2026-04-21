@@ -3,6 +3,14 @@ import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 import { serviceCards } from "@/lib/serviceCards";
 
+import { buildMetadata } from "@/lib/seo";
+export const metadata = buildMetadata({
+  title: "サービス一覧（大規模修繕・防水・外壁塗装ほか）｜久米技建",
+  description: "久米技建のサービス一覧。大規模修繕、防水工事、外壁塗装、シーリング、建物診断、雨漏り補修、水中点検に対応しています。",
+  path: "/service",
+  image: "/images/hero-main.jpg",
+});
+
 export default function Page() {
   return (
     <main>

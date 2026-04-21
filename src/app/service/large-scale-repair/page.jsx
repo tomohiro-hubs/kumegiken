@@ -2,6 +2,14 @@ import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 
+import { buildMetadata } from "@/lib/seo";
+export const metadata = buildMetadata({
+  title: "大規模修繕工事（マンション・ビル）｜久米技建｜兵庫・大阪",
+  description: "兵庫・大阪の大規模修繕工事なら久米技建。建物診断から施工まで一貫対応し、資産価値の維持と長寿命化を実現します。",
+  path: "/service/large-scale-repair",
+  image: "/images/large-scale-aerial.jpg",
+});
+
 export default function Page() {
   return (
     <main>

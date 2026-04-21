@@ -2,6 +2,14 @@ import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 
+import { buildMetadata } from "@/lib/seo";
+export const metadata = buildMetadata({
+  title: "雨漏り調査・補修｜原因特定から根本解決まで｜久米技建",
+  description: "雨漏りの原因調査と補修工事に対応。散水調査や防水補修で再発防止を目指し、兵庫・大阪で迅速に対応します。",
+  path: "/service/leak-repair",
+  image: "/images/leak-repair.jpg",
+});
+
 export default function Page() {
   return (
     <main>

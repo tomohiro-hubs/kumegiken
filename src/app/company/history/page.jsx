@@ -1,6 +1,14 @@
 import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 
+import { buildMetadata } from "@/lib/seo";
+export const metadata = buildMetadata({
+  title: "沿革｜久米技建の歩み",
+  description: "2016年創業から現在までの久米技建の沿革をご紹介。防水工事から大規模修繕・水中点検へと広げてきた事業の歩みを掲載しています。",
+  path: "/company/history",
+  image: "/images/hero-main.jpg",
+});
+
 export default function Page() {
   return (
     <main>

@@ -1,6 +1,14 @@
 import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 
+import { buildMetadata } from "@/lib/seo";
+export const metadata = buildMetadata({
+  title: "見積もりシミュレーション｜久米技建",
+  description: "大規模修繕・防水工事の概算費用を入力形式で確認できる見積もりシミュレーションです。",
+  path: "/simulation",
+  image: "/images/hero-main.jpg",
+});
+
 export default function Page() {
   return (
     <main>

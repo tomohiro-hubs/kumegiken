@@ -1,6 +1,14 @@
 import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 
+import { buildMetadata } from "@/lib/seo";
+export const metadata = buildMetadata({
+  title: "施工管理 募集要項｜採用情報｜久米技建",
+  description: "久米技建の施工管理職（正社員）募集要項。業務内容、給与、応募条件、待遇などを掲載しています。",
+  path: "/recruit/construction-manager",
+  image: "/images/recruit-training.jpg",
+});
+
 export default function Page() {
   return (
     <main>

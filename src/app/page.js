@@ -55,36 +55,30 @@ export default function Home() {
 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
 {/* ========== HERO / FIRST VIEW ========== */}
   <section className="hero">
-    <div className="hero__bg">
-      <div className="hero__bg-img" style={{ width: '100%', height: '100%', background: `url('${assetPath("/images/hero-main.jpg")}') center/cover no-repeat` }}>
-      </div>
-      <div className="hero__bg-overlay"></div>
-    </div>
+    <div className="hero__bg" style={{ backgroundImage: `url('${assetPath("/images/hero-test2-bg.jpg")}')` }}></div>
     <div className="hero__content">
-      <span className="hero__label reveal">Waterproofing & Renovation Specialists</span>
+      <p className="hero__lead reveal">
+        建物<span className="hero__particle">の</span>
+        <span className="text-accent">価値</span>を守り、未来へつなぐ。
+      </p>
       <h1 className="hero__title reveal reveal--delay-1">
-        西宮市の防水工事・大規模修繕専門会社｜株式会社久米技建
+        <span className="hero__line">
+          大規模修繕<span className="hero__particle">と</span>
+        </span>
+        <span className="hero__line">
+          <span className="text-accent">防水塗装</span>
+          <span className="hero__particle">の</span>
+        </span>
+        <span className="hero__line">プロフェッショナル</span>
       </h1>
       <p className="hero__description reveal reveal--delay-2">
-        防水のプロが、本当に必要な工事だけを、職人の手で。
+        <span>確かな技術と誠実な施工で、</span>
+        <span>安心・安全な建物環境を実現します。</span>
       </p>
-      <p className="hero__description reveal reveal--delay-3">
-        久米技建は、正直な建物診断に基づき、不要な工事を省いた最適な提案で<br className="pc-only" />
-        ビル・マンションオーナー様の資産価値を守り続けます。
-      </p>
-      <div className="hero__cta reveal reveal--delay-4">
-        <a href={routePath("/contact")} className="btn btn--primary btn--lg">
-          <i className="fas fa-file-alt"></i> 無料診断のお申し込み
-          <span className="btn__arrow">→</span>
-        </a>
-        <a href={routePath("/simulation")} className="btn btn--outline btn--lg">
-          <i className="fas fa-calculator"></i> お見積もりシミュレーション
-        </a>
-      </div>
+      <p className="hero__tagline reveal reveal--delay-3">For the buildings. For the future.</p>
     </div>
-    <div className="hero__scroll">
-      <span className="hero__scroll-text">Scroll</span>
-      <span className="hero__scroll-line"></span>
+    <div className="hero__badges">
+      <img src={assetPath("/images/hero-badges-overlay.png")} alt="特長バッジ" />
     </div>
   </section>
 

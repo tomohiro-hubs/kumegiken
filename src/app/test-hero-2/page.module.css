@@ -1,0 +1,155 @@
+.page {
+  background: #062d62;
+  min-height: 100vh;
+  padding-top: var(--header-height);
+}
+
+.hero {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.heroImage {
+  position: relative;
+  width: min(100vw, 1536px);
+  aspect-ratio: 3 / 2;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  --design-width: 1536;
+  --hero-scale: min(1, calc(100vw / (var(--design-width) * 1px)));
+  --copy-scale: min(1.2, calc((100vw / (var(--design-width) * 1px)) * 1.2));
+}
+
+.copyBlock {
+  position: absolute;
+  top: 190px;
+  left: 82px;
+  width: 740px;
+  transform: scale(var(--copy-scale));
+  transform-origin: top left;
+}
+
+.lead {
+  position: relative;
+  margin: 0 0 20px;
+  padding-bottom: 10px;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.22;
+  color: #0a376f;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.lead::before {
+  content: "";
+  position: absolute;
+  left: -18px;
+  bottom: 0;
+  width: 28px;
+  height: 20px;
+  border-left: 2px solid #f67809;
+  border-bottom: 2px solid #f67809;
+  transform: skewX(36deg);
+}
+
+.lead::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #f67809;
+}
+
+.copyHeading {
+  margin: 0 0 16px;
+  color: #0a376f;
+  font-size: 72px;
+  font-weight: 900;
+  line-height: 1.14;
+  letter-spacing: 0;
+}
+
+.copyLine {
+  display: block;
+}
+
+.accent {
+  color: #f67809;
+}
+
+.particle {
+  display: inline-block;
+  font-size: 0.6em;
+  line-height: 1;
+}
+
+.subCopy {
+  margin: 0 0 14px;
+  color: #0a376f;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.42;
+  letter-spacing: 0.02em;
+}
+
+.subCopy span {
+  display: block;
+}
+
+.tagline {
+  margin: 0;
+  color: #f67809;
+  font-family: "Times New Roman", "Apple Chancery", "Segoe Script", cursive;
+  font-style: italic;
+  font-size: 20px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.badgesBlock {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  width: calc(1379px * var(--hero-scale) * 0.72);
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+.badgesImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .copyBlock {
+    top: 150px;
+    left: 62px;
+  }
+
+  .badgesBlock {
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroImage {
+    min-height: 560px;
+    background-position: 60% top;
+  }
+
+  .copyBlock {
+    top: 108px;
+    left: 34px;
+  }
+
+  .badgesBlock {
+    bottom: -8px;
+    width: calc(1379px * var(--hero-scale) * 0.749);
+  }
+}

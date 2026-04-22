@@ -1,0 +1,82 @@
+.page {
+  background: #062d62;
+  min-height: 100vh;
+  padding-top: var(--header-height);
+}
+
+.hero {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.heroImage {
+  position: relative;
+  width: min(100vw, 1536px);
+  aspect-ratio: 3 / 2;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  --design-width: 1536;
+  --hero-scale: min(1, calc(100vw / (var(--design-width) * 1px)));
+  --copy-scale: min(1.2, calc((100vw / (var(--design-width) * 1px)) * 1.2));
+}
+
+.copyBlock {
+  position: absolute;
+  top: 120px;
+  left: 32px;
+  width: 740px;
+  transform: scale(var(--copy-scale));
+  transform-origin: top left;
+}
+
+.copyImage {
+  width: 740px;
+  max-width: none;
+  height: auto;
+  display: block;
+}
+
+.badgesBlock {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  width: calc(1379px * var(--hero-scale) * 0.72);
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+.badgesImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .copyBlock {
+    top: 80px;
+    left: 12px;
+  }
+
+  .badgesBlock {
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroImage {
+    min-height: 560px;
+    background-position: 60% top;
+  }
+
+  .copyBlock {
+    top: 38px;
+    left: -16px;
+  }
+
+  .badgesBlock {
+    bottom: -8px;
+    width: calc(1379px * var(--hero-scale) * 0.749);
+  }
+}

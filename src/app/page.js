@@ -95,8 +95,7 @@ export default function Home() {
         {/* Reason 1 */}
         <div className="reason__item reveal">
           <div className="reason__image">
-            <img src={assetPath("/images/inspection-scene.jpg")} alt="正直な建物診断の様子" style={{ aspectRatio: '4/3', width: '100%', objectFit: 'cover', borderRadius: '12px' }} />
-            <span className="reason__image-badge">Reason 01</span>
+            <img src={assetPath("/images/reason-01-generated.jpg")} alt="正直な建物診断の様子" style={{ aspectRatio: '4/3', width: '100%', objectFit: 'cover', borderRadius: '12px' }} />
           </div>
           <div className="reason__body">
             <span className="reason__number en">01</span>
@@ -110,8 +109,7 @@ export default function Home() {
         {/* Reason 2 */}
         <div className="reason__item reveal">
           <div className="reason__image">
-            <img src={assetPath("/images/waterproofing-hands.jpg")} alt="防水工事の専門技術" style={{ aspectRatio: '4/3', width: '100%', objectFit: 'cover', borderRadius: '12px' }} />
-            <span className="reason__image-badge">Reason 02</span>
+            <img src={assetPath("/images/reason-02-generated.jpg")} alt="防水工事の専門技術" style={{ aspectRatio: '4/3', width: '100%', objectFit: 'cover', borderRadius: '12px' }} />
           </div>
           <div className="reason__body">
             <span className="reason__number en">02</span>
@@ -125,8 +123,7 @@ export default function Home() {
         {/* Reason 3 */}
         <div className="reason__item reveal">
           <div className="reason__image">
-            <img src={assetPath("/images/team-group.jpg")} alt="自社職人チーム" style={{ aspectRatio: '4/3', width: '100%', objectFit: 'cover', borderRadius: '12px' }} />
-            <span className="reason__image-badge">Reason 03</span>
+            <img src={assetPath("/images/reason-03-generated.jpg")} alt="自社職人チーム" style={{ aspectRatio: '4/3', width: '100%', objectFit: 'cover', borderRadius: '12px' }} />
           </div>
           <div className="reason__body">
             <span className="reason__number en">03</span>

@@ -174,26 +174,28 @@ export default function Home() {
       {/* ========== HERO / FIRST VIEW ========== */}
       <section className="hero">
         <div className="hero__bg" style={{ backgroundImage: `url('${assetPath("/images/hero-test2-bg.jpg")}')` }}></div>
-        <div className="hero__content">
-          <p className="hero__lead reveal">
-            建物<span className="hero__particle">の</span>
-            <span className="text-accent">価値</span>を守り、未来へつなぐ。
-          </p>
-          <h1 className="hero__title reveal reveal--delay-1">
-            <span className="hero__line">
-              大規模修繕<span className="hero__particle">と</span>
-            </span>
-            <span className="hero__line">
-              <span className="text-accent">防水塗装</span>
-              <span className="hero__particle">の</span>
-            </span>
-            <span className="hero__line">プロフェッショナル</span>
-          </h1>
-          <p className="hero__description reveal reveal--delay-2">
-            <span>確かな技術と誠実な施工で、</span>
-            <span>安心・安全な建物環境を実現します。</span>
-          </p>
-          <p className="hero__tagline reveal reveal--delay-3">For the buildings. For the future.</p>
+        <div className="hero__anchor">
+          <div className="hero__content">
+            <p className="hero__lead reveal">
+              建物<span className="hero__particle">の</span>
+              <span className="text-accent">価値</span>を守り、未来へつなぐ。
+            </p>
+            <h1 className="hero__title reveal reveal--delay-1">
+              <span className="hero__line">
+                大規模修繕<span className="hero__particle">と</span>
+              </span>
+              <span className="hero__line">
+                <span className="text-accent">防水塗装</span>
+                <span className="hero__particle">の</span>
+              </span>
+              <span className="hero__line">プロフェッショナル</span>
+            </h1>
+            <p className="hero__description reveal reveal--delay-2">
+              <span>確かな技術と誠実な施工で、</span>
+              <span>安心・安全な建物環境を実現します。</span>
+            </p>
+            <p className="hero__tagline reveal reveal--delay-3">For the buildings. For the future.</p>
+          </div>
         </div>
         <div className="hero__badges">
           <img src={assetPath("/images/hero-badges-overlay.png")} alt="特長バッジ" />

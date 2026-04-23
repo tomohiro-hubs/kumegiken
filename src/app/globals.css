@@ -550,15 +550,8 @@ input, textarea, select {
 .hero {
   position: relative;
   width: 100%;
-  max-width: 1536px;
-  margin: 0 auto;
-  aspect-ratio: 3 / 2;
-  display: flex;
-  justify-content: center;
+  height: clamp(640px, 66vw, 980px);
   overflow: hidden;
-  --design-width: 1536;
-  --hero-scale: min(1, calc(100vw / (var(--design-width) * 1px)));
-  --copy-scale: min(1.2, calc((100vw / (var(--design-width) * 1px)) * 1.2));
 }
 
 .hero__bg {
@@ -570,14 +563,20 @@ input, textarea, select {
   z-index: 0;
 }
 
+.hero__anchor {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  max-width: 1536px;
+  margin: 0 auto;
+  z-index: 2;
+}
+
 .hero__content {
   position: absolute;
   top: 190px;
   left: 82px;
   width: 740px;
-  transform: scale(var(--copy-scale));
-  transform-origin: top left;
-  z-index: 2;
 }
 
 .hero__lead {
@@ -660,7 +659,7 @@ input, textarea, select {
   position: absolute;
   left: 50%;
   bottom: 14px;
-  width: calc(1379px * var(--hero-scale) * 0.72);
+  width: min(72vw, 990px);
   transform: translateX(-50%);
   z-index: 5;
 }
@@ -1986,9 +1985,27 @@ input, textarea, select {
     display: flex;
   }
 
+  .hero {
+    height: clamp(560px, 72vw, 780px);
+  }
+
   .hero__content {
     top: 150px;
-    left: 62px;
+    left: 42px;
+    width: 640px;
+  }
+
+  .hero__title {
+    font-size: 62px;
+  }
+
+  .hero__lead {
+    font-size: 24px;
+  }
+
+  .hero__description,
+  .hero__tagline {
+    font-size: 18px;
   }
 
   .reason__item {
@@ -2042,6 +2059,38 @@ input, textarea, select {
 
   .section-heading__ja {
     font-size: 24px;
+  }
+
+  .hero {
+    height: 560px;
+  }
+
+  .hero__bg {
+    background-position: 60% top;
+  }
+
+  .hero__content {
+    top: 110px;
+    left: 28px;
+    width: 540px;
+  }
+
+  .hero__title {
+    font-size: 48px;
+  }
+
+  .hero__lead {
+    font-size: 20px;
+  }
+
+  .hero__description,
+  .hero__tagline {
+    font-size: 16px;
+  }
+
+  .hero__badges {
+    bottom: -6px;
+    width: min(94vw, 760px);
   }
 
   .voice-carousel {
@@ -2245,18 +2294,28 @@ input, textarea, select {
     min-height: 560px;
   }
 
-  .hero__bg {
-    background-position: 60% top;
+  .hero__content {
+    top: 98px;
+    left: 18px;
+    width: 420px;
   }
 
-  .hero__content {
-    top: 108px;
-    left: 34px;
+  .hero__title {
+    font-size: 38px;
+  }
+
+  .hero__lead {
+    font-size: 18px;
+  }
+
+  .hero__description,
+  .hero__tagline {
+    font-size: 14px;
   }
 
   .hero__badges {
     bottom: -8px;
-    width: calc(1379px * var(--hero-scale) * 0.749);
+    width: min(96vw, 620px);
   }
 
   .btn--lg {

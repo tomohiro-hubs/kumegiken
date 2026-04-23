@@ -103,11 +103,15 @@ export default function Footer() {
 
       {/* ========== FIXED CTA (PC Float) ========== */}
       <div className={`fixed-cta__float ${showTokens.fixedCta ? 'visible' : ''}`}>
-        <Link href="/contact" className="fixed-cta__float-btn fixed-cta__float-btn--primary">
-          <i className="fas fa-envelope"></i> お問い合わせ
-        </Link>
-        <Link href="/simulation" className="fixed-cta__float-btn fixed-cta__float-btn--secondary">
-          <i className="fas fa-calculator"></i> シミュレーション
+        <Link href="/contact" className="fixed-cta__contact-card" aria-label="お問い合わせはこちら">
+          <span className="fixed-cta__contact-sub">＼ ご相談・お見積りは無料です ／</span>
+          <span className="fixed-cta__contact-main">
+            <span className="fixed-cta__contact-icon">
+              <i className="far fa-envelope"></i>
+            </span>
+            <span>お問い合わせはこちら</span>
+            <span className="fixed-cta__contact-arrow">›</span>
+          </span>
         </Link>
       </div>
 

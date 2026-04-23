@@ -198,6 +198,33 @@ input, textarea, select {
   margin-left: 0;
 }
 
+.section-intro {
+  text-align: center;
+  max-width: 920px;
+  margin: 0 auto 24px;
+  color: var(--color-text-light);
+  line-height: 1.9;
+}
+
+.section-chip-links {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.section-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section-more {
+  text-align: center;
+  margin-top: 48px;
+}
+
 /* --- Buttons --- */
 .btn {
   display: inline-flex;
@@ -652,7 +679,7 @@ input, textarea, select {
 .reason__list {
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  gap: 60px;
 }
 
 .reason__item {
@@ -681,6 +708,18 @@ input, textarea, select {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.reason__image--raw {
+  border-radius: 0;
+  overflow: visible;
+  aspect-ratio: auto;
+}
+
+.reason__image--raw img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 .reason__image-badge {
@@ -892,6 +931,12 @@ input, textarea, select {
   font-weight: var(--fw-bold);
   color: var(--color-primary);
   line-height: 1.5;
+}
+
+.work-card__estimate {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--color-text-muted);
 }
 
 /* --- Flow Section --- */
@@ -1180,34 +1225,81 @@ input, textarea, select {
   background: var(--color-bg-light);
 }
 
-.area__inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
+.area__container {
+  max-width: 1120px;
 }
 
-.area__map {
-  border-radius: var(--radius-lg);
+.area .section-heading {
+  margin-bottom: 16px;
+}
+
+.area__title {
+  text-align: center;
+  font-size: clamp(24px, 2.6vw, 32px);
+  line-height: 1.35;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.area__intro {
+  text-align: center;
+  font-size: 16px;
+  line-height: 2;
+  color: var(--color-text-light);
+  margin: 18px auto 40px;
+}
+
+.area__mapCard {
+  border: 1px solid #dbe2ee;
+  border-radius: 24px;
+  aspect-ratio: 16 / 6.6;
   overflow: hidden;
-  background: var(--color-white);
-  padding: 30px;
-  box-shadow: var(--shadow-sm);
+}
+
+.area__mapImage {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.area__label {
+  margin: 36px auto 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.area__labelLine {
+  width: 56px;
+  height: 1px;
+  background: rgba(26, 39, 68, 0.75);
+}
+
+.area__labelText {
+  font-size: 18px;
+  font-weight: var(--fw-bold);
+  color: var(--color-primary);
+  letter-spacing: 0.04em;
 }
 
 .area__list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
 }
 
 .area__tag {
-  display: inline-block;
-  padding: 6px 16px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 56px;
+  padding: 0 14px;
   background: var(--color-white);
-  border: 1px solid var(--color-border);
+  border: 1px solid #d1d8e4;
   border-radius: 50px;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: var(--fw-medium);
   color: var(--color-text);
 }
@@ -1216,6 +1308,27 @@ input, textarea, select {
   background: var(--color-primary);
   color: var(--color-white);
   border-color: var(--color-primary);
+}
+
+.area__ctaWrap {
+  margin-top: 36px;
+  display: flex;
+  justify-content: center;
+}
+
+.area__cta {
+  min-width: 320px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .area__tag {
+    transition: transform var(--transition), border-color var(--transition);
+  }
+
+  .area__tag:hover {
+    transform: translateY(-2px);
+    border-color: #bfc9d9;
+  }
 }
 
 /* --- CTA Section --- */
@@ -1261,6 +1374,7 @@ input, textarea, select {
   font-weight: var(--fw-bold);
   color: var(--color-white);
   letter-spacing: 0.03em;
+  text-decoration: none;
 }
 
 .cta-section__phone-sub {
@@ -1899,9 +2013,12 @@ input, textarea, select {
     gap: 40px;
   }
 
-  .area__inner {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .area__list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .area__title {
+    font-size: clamp(23px, 3.8vw, 28px);
   }
 
   .footer__inner {
@@ -1998,6 +2115,53 @@ input, textarea, select {
     min-width: fit-content;
     white-space: nowrap;
     text-align: center;
+  }
+
+  .area__mapCard {
+    border-radius: 16px;
+    aspect-ratio: 16 / 8.4;
+  }
+
+  .area__label {
+    margin: 24px auto 20px;
+    gap: 16px;
+  }
+
+  .area__labelLine {
+    width: 42px;
+  }
+
+  .area__labelText {
+    font-size: 16px;
+  }
+
+  .area__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .area__title {
+    font-size: 22px;
+  }
+
+  .area__intro {
+    margin: 14px auto 28px;
+    font-size: 15px;
+    line-height: 1.9;
+  }
+
+  .area__tag {
+    min-height: 50px;
+    font-size: 14px;
+    padding: 0 12px;
+  }
+
+  .area__ctaWrap {
+    margin-top: 24px;
+  }
+
+  .area__cta {
+    min-width: 260px;
   }
 
   .footer__inner {

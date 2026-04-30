@@ -486,39 +486,98 @@ export default function Home() {
       <section className="cta-v2">
         <div className="cta-v2__shell">
           <div className="cta-v2__top reveal">
-            <h2 className="cta-v2__title">建物のことで、お困りではありませんか？</h2>
-            <p className="cta-v2__subtext">専門スタッフが丁寧に対応いたします。ご相談・お見積もりは無料です。</p>
+            <div className="container">
+              <h2 className="cta-v2__title">
+                <span className="cta-v2__title-accent">＼</span>
+                建物のことで、お困りではありませんか？
+                <span className="cta-v2__title-accent">／</span>
+              </h2>
+              <p className="cta-v2__subtext">専門スタッフが丁寧に対応いたします。ご相談・お見積もりは無料です。</p>
 
-            <div className="cta-v2__actions">
-              <a href="tel:0798-27-5653" className="cta-v2__action cta-v2__action--phone">
-                <span className="cta-v2__phone-icon" aria-hidden="true">
-                  <i className="fas fa-phone-alt"></i>
-                </span>
-                <span className="cta-v2__phone-copy">
-                  <span className="cta-v2__phone-label">受付時間 平日9:00-18:00</span>
-                  <span className="cta-v2__phone-number">0798-27-5653</span>
-                </span>
-              </a>
+              <div className="cta-v2__actions">
+                <a href="tel:0798-27-5653" className="cta-v2__action cta-v2__action--phone">
+                  <span className="cta-v2__phone-icon" aria-hidden="true">
+                    <i className="fas fa-phone-alt"></i>
+                  </span>
+                  <span className="cta-v2__phone-copy">
+                    <span className="cta-v2__phone-label">受付時間 平日9:00-18:00</span>
+                    <span className="cta-v2__phone-number">0798-27-5653</span>
+                  </span>
+                </a>
 
-              <a href={routePath("/contact")} className="cta-v2__action cta-v2__action--primary">
-                <span className="cta-v2__primary-copy">
-                  <span className="cta-v2__primary-sub">＼ 30秒で完了・相談無料 ／</span>
-                  <span className="cta-v2__primary-main"><i className="far fa-envelope"></i> 無料で相談する</span>
-                </span>
-                <span className="cta-v2__primary-arrow" aria-hidden="true">›</span>
-              </a>
+                <a href={routePath("/contact")} className="cta-v2__action cta-v2__action--primary">
+                  <span className="cta-v2__primary-copy">
+                    <span className="cta-v2__primary-sub">＼ 30秒で完了・相談無料 ／</span>
+                    <span className="cta-v2__primary-main"><i className="far fa-envelope"></i> 無料で相談する</span>
+                  </span>
+                  <span className="cta-v2__primary-arrow" aria-hidden="true">›</span>
+                </a>
 
-              <a href={routePath("/simulation")} className="cta-v2__action cta-v2__action--secondary">
-                <i className="fas fa-calculator"></i> シミュレーションする
-              </a>
+                <a href={routePath("/simulation")} className="cta-v2__action cta-v2__action--secondary">
+                  <i className="fas fa-calculator"></i> シミュレーションする
+                </a>
+              </div>
+
+              <p className="cta-v2__reassurance">
+                まだ依頼するか決まっていなくても大丈夫です。<span className="cta-v2__reassurance-accent">状況確認だけでもOKです。</span>
+              </p>
             </div>
-
-            <p className="cta-v2__reassurance">
-              まだ依頼するか決まっていなくても大丈夫です。<span className="cta-v2__reassurance-accent">状況確認だけでもOKです。</span>
-            </p>
           </div>
         </div>
       </section>
+
+      {/* ========== CTA SUPPORT FEATURES ========== */}
+      <section className="cta-support reveal">
+        <div className="container">
+          <div className="cta-support__inner">
+            <div className="cta-support__item">
+              <div className="cta-support__icon">
+                <img src={assetPath("/images/icon_quick.png")} alt="現地調査 無料" />
+              </div>
+              <div className="cta-support__text-block">
+                <h3 className="cta-support__title">現地調査 無料</h3>
+                <p className="cta-support__desc">急な雨漏りにも迅速対応。<br />最短でその日のうちに無料調査へお伺いします。</p>
+              </div>
+            </div>
+            
+            <div className="cta-support__item">
+              <div className="cta-support__icon">
+                <img src={assetPath("/images/icon_repair.png")} alt="原因から根本修理" />
+              </div>
+              <div className="cta-support__text-block">
+                <h3 className="cta-support__title">原因から根本修理</h3>
+                <p className="cta-support__desc">表面的な補修ではなく、原因を特定し<br />再発しない根本的な修理を行います。</p>
+              </div>
+            </div>
+
+            <div className="cta-support__item">
+              <div className="cta-support__icon">
+                <img src={assetPath("/images/icon_worker.png")} alt="自社職人が対応" />
+              </div>
+              <div className="cta-support__text-block">
+                <h3 className="cta-support__title">自社職人が対応</h3>
+                <p className="cta-support__desc">経験豊富な自社職人が責任を持って<br />施工。中間マージンもかかりません。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========== CTA ACHIEVEMENT BANNER ========== */}
+      <div className="cta-achievement reveal">
+        <div className="cta-achievement__inner">
+          <div className="cta-achievement__left">
+            <img src={assetPath("/images/laurel.png")} alt="月桂樹" className="cta-achievement__laurel" />
+            <span className="cta-achievement__label">累計施工実績</span>
+            <span className="cta-achievement__number">5,000</span>
+            <span className="cta-achievement__unit">件以上</span>
+          </div>
+          <div className="cta-achievement__divider"></div>
+          <div className="cta-achievement__right">
+            西宮市・神戸市・大阪市を中心に地域密着で対応しています。
+          </div>
+        </div>
+      </div>
     </main>
   );
 }

@@ -58,27 +58,42 @@ const serviceQuickLinks = [
 const reasonItems = [
   {
     number: "01",
-    image: "/images/reason-01-generated.jpg",
-    alt: "正直な建物診断の様子",
-    titleLines: ["正直な診断レポートに基づく、", "必要な工事だけの提案"],
-    text:
-      "私たちは建物の状態を正確に把握し、お客様に「本当に必要な工事」だけをご提案します。不要な工事で費用を膨らませることはありません。第三者的な視点での診断レポートを作成し、透明性の高い情報をもとに、お客様が安心して判断できる環境を整えます。",
+    image: "/images/inspection-scene.jpg",
+    alt: "現地調査へ向かう担当者",
+    question: "01",
+    concern: "調査した人間が、そのまま直す。",
+    concernText: "修繕業界では調査・設計・施工が別会社になるのが一般的。",
+    solutionLead: "久米技建が選ばれる理由",
+    solutionTitle: "情報ロスなく、最適工事を最短で。",
+    solutionText:
+      "久米技建は、建物を診た技術者がそのまま施工計画を立て、\n自ら手を動かします。情報のロスがないから、\n最適な工事を、最短の工程で実現できます。",
+    icon: "fa-regular fa-clock",
   },
   {
     number: "02",
-    image: "/images/reason-02-generated.jpg",
-    alt: "防水工事の専門技術",
-    titleLines: ["防水の専門技術を核にした、", "一貫した施工管理体制"],
-    text:
-      "防水工事の専門会社として創業した技術的ルーツを活かし、調査から施工、アフターフォローまで一貫した管理体制を構築。中間マージンが発生しない直接施工だからこそ、コストを抑えながらも高品質な仕上がりを実現します。施工管理4名が現場を徹底管理しています。",
+    image: "/images/waterproofing-hands.jpg",
+    alt: "防水施工の様子",
+    question: "02",
+    concern: "必要な工事だけを、適正な価格で。",
+    concernText: "中間業者を挟まない技術者直営の体制だから、\nお客様の費用が中間マージンに消えることがありません。",
+    solutionLead: "久米技建が選ばれる理由",
+    solutionTitle: "過剰提案なし、必要な工事だけ。",
+    solutionText:
+      "過剰な工事の提案もしません。\n建物の状態に対して本当に必要な工事だけを\nご提案します。",
+    icon: "fa-solid fa-magnifying-glass",
   },
   {
     number: "03",
-    image: "/images/reason-03-generated.jpg",
-    alt: "自社職人チーム",
-    titleLines: ["自社職人21名の直営施工。", "品質にブレがない。"],
-    text:
-      "久米技建には21名の自社職人が在籍しています。外注に頼らず、教育・訓練を受けた自社の職人が直接施工するため、品質にばらつきがありません。一つひとつの現場に責任を持ち、丁寧な仕事でお客様の信頼にお応えしています。",
+    image: "/images/team-meeting.jpg",
+    alt: "担当者のご説明",
+    question: "03",
+    concern: "直した後も、ずっと見守る。",
+    concernText: "施工して終わりではなく、建物の状態を継続的に管理。",
+    solutionLead: "久米技建が選ばれる理由",
+    solutionTitle: "建物の“かかりつけ”として対応。",
+    solutionText:
+      "定期点検で劣化の兆候を早期発見し、\n万が一の不具合にも自社技術者が迅速に対応します。\n建物の“かかりつけ”として、長くお付き合いください。",
+    icon: "fa-solid fa-helmet-safety",
   },
 ];
 
@@ -115,20 +130,6 @@ const workItems = [
   },
 ];
 
-const areaTags = [
-  { label: "西宮市", active: true },
-  { label: "大阪市" },
-  { label: "神戸市" },
-  { label: "尼崎市" },
-  { label: "宝塚市" },
-  { label: "伊丹市" },
-  { label: "芦屋市" },
-  { label: "吹田市" },
-  { label: "豊中市" },
-  { label: "明石市" },
-  { label: "姫路市" },
-  { label: "その他関西圏" },
-];
 
 const columnItems = [
   {
@@ -157,6 +158,59 @@ const columnItems = [
     title: "雨漏りの原因と応急処置｜プロが教える対処法",
     excerpt:
       "突然の雨漏りに困ったら。雨漏りの主な原因と、すぐにできる応急処置、そしてプロに依頼すべきタイミングをお教えします。",
+  },
+];
+
+const flowItems = [
+  {
+    number: "01",
+    title: "お問い合わせ",
+    text: "お電話・メール・お問い合わせフォームからお気軽にご連絡ください。ご要望を丁寧にヒアリングいたします。",
+    image: "/images/consultation.jpg",
+    alt: "電話で相談するスタッフ",
+  },
+  {
+    number: "02",
+    title: "現地調査",
+    text: "経験豊富な専門スタッフが現地にお伺いし、建物の状態を詳細に調査いたします。もちろん無料です。",
+    image: "/images/inspection-scene.jpg",
+    alt: "現地調査の様子",
+  },
+  {
+    number: "03",
+    title: "診断レポート提出",
+    text: "写真付きの詳細な診断レポートを作成し、建物の現状と今後の修繕計画をわかりやすくご説明します。正直な診断で、本当に必要な工事だけをお伝えします。これが久米技建の最大の強みです。",
+    image: "/images/reason-01-generated.jpg",
+    alt: "診断レポートの説明",
+    highlight: true,
+  },
+  {
+    number: "04",
+    title: "ご相談・お見積もり",
+    text: "診断結果に基づいた工事プランと、明瞭なお見積もりをご提出。ご不明な点は何でもご質問ください。",
+    image: "/images/team-meeting.jpg",
+    alt: "見積もり相談",
+  },
+  {
+    number: "05",
+    title: "施工",
+    text: "自社職人による直営施工で、高品質な仕上がりをお約束。近隣への配慮も徹底して行います。",
+    image: "/images/painting-work.jpg",
+    alt: "施工の様子",
+  },
+  {
+    number: "06",
+    title: "完了検査",
+    text: "施工完了後、お客様立会いのもと仕上がりを確認。細部まで品質チェックを行います。",
+    image: "/images/crack-inspection.jpg",
+    alt: "完了検査の様子",
+  },
+  {
+    number: "07",
+    title: "アフターサポート",
+    text: "施工後も定期的なメンテナンスや点検をサポート。長期的な建物管理のパートナーとしてお付き合いします。",
+    image: "/images/after-support.jpg",
+    alt: "アフターサポート対応",
   },
 ];
 
@@ -215,20 +269,36 @@ export default function Home() {
 
           <div className="reason__list">
             {reasonItems.map((item) => (
-              <div className="reason__item reveal" key={item.number}>
-                <div className="reason__image reason__image--raw">
+              <article className={`reason__item reason__item--${item.number} reveal`} key={item.number}>
+                <div className="reason__copy">
+                  <div className="reason__copyTop">
+                    <span className="reason__number en">{item.number}</span>
+                    <div className="reason__copyMain">
+                      <h3 className="reason__concern">{item.concern}</h3>
+                    </div>
+                  </div>
+                  <p className="reason__concernText">
+                    {item.concernText.split("\n").map((line, index) => (
+                      <span key={`${item.number}-concern-${index}`}>{line}</span>
+                    ))}
+                  </p>
+                  <div className="reason__solution">
+                    <span className="reason__solutionLead">{item.solutionLead}</span>
+                    <h4 className="reason__solutionTitle">
+                      {item.solutionTitle}
+                      <i className={item.icon} aria-hidden="true"></i>
+                    </h4>
+                    <p className="reason__solutionText">
+                      {item.solutionText.split("\n").map((line, index) => (
+                        <span key={`${item.number}-solution-${index}`}>{line}</span>
+                      ))}
+                    </p>
+                  </div>
+                </div>
+                <div className="reason__visual">
                   <img src={assetPath(item.image)} alt={item.alt} />
                 </div>
-                <div className="reason__body">
-                  <span className="reason__number en">{item.number}</span>
-                  <h3 className="reason__title">
-                    {item.titleLines[0]}
-                    <br />
-                    {item.titleLines[1]}
-                  </h3>
-                  <p className="reason__text">{item.text}</p>
-                </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
@@ -246,6 +316,17 @@ export default function Home() {
             屋上防水・シーリング工事・外壁塗装・大規模修繕まで、建物の状態に合わせて最適な工法をご提案します。
             各サービスページでは、施工内容・費用目安・対応エリアを詳しくご案内しています。
           </p>
+          <div className="service__feature reveal reveal--delay-1">
+            <img src={assetPath("/images/service-team-crew.png")} alt="久米技建の自社職人チーム" className="service__featureImage" />
+            <div className="service__featureCopy">
+              <h3 className="service__featureTitle">
+                調べる人間が、直す。
+                <br />
+                だから、見落とさない。
+              </h3>
+              <p className="service__featureLead">建物の劣化を見つけた技術者が、そのまま直す。</p>
+            </div>
+          </div>
           <div className="section-chip-links reveal">
             {serviceQuickLinks.map((link) => (
               <a href={routePath(link.href)} className="btn btn--outline-dark btn--sm" key={link.href}>
@@ -281,10 +362,17 @@ export default function Home() {
             <h2 className="section-heading__ja">施工事例</h2>
             <span className="section-heading__line"></span>
           </div>
-          <p className="section-intro reveal">
-            ビフォー・アフター写真とあわせて、工事内容・工期・費用目安を掲載しています。
-            西宮市・神戸市・大阪市を中心とした実績から、同種建物の改修イメージを具体的にご確認いただけます。
-          </p>
+          <div className="reveal works__featureBanner" style={{ margin: "0 calc(50% - 50vw) 28px", width: "100dvw" }}>
+            <img src={assetPath("/images/area-inspection-banner.png")} alt="現地調査を行う技術者" className="service__featureImage" style={{ objectPosition: "center 34%" }} />
+            <div className="works__featureFade" aria-hidden="true"></div>
+            <p className="works__featureCopy">
+              工事内容・工期・費用目安を掲載しています。
+              <br />
+              西宮市・神戸市・大阪市を中心とした実績から、
+              <br />
+              同種建物の改修イメージを具体的にご確認いただけます。
+            </p>
+          </div>
 
           <div className="works__grid">
             {workItems.map((item, index) => (
@@ -327,77 +415,20 @@ export default function Home() {
           </div>
 
           <div className="flow__timeline">
-            <div className="flow__step reveal">
-              <div className="flow__step-number">01</div>
-              <div className="flow__step-content">
-                <h3 className="flow__step-title">お問い合わせ</h3>
-                <p className="flow__step-text">
-                  お電話・メール・お問い合わせフォームからお気軽にご連絡ください。ご要望を丁寧にヒアリングいたします。
-                </p>
-              </div>
-            </div>
-
-            <div className="flow__step reveal">
-              <div className="flow__step-number">02</div>
-              <div className="flow__step-content">
-                <h3 className="flow__step-title">現地調査</h3>
-                <p className="flow__step-text">
-                  経験豊富な専門スタッフが現地にお伺いし、建物の状態を詳細に調査いたします。もちろん無料です。
-                </p>
-              </div>
-            </div>
-
-            <div className="flow__step flow__step--highlight reveal">
-              <div className="flow__step-number">03</div>
-              <div className="flow__step-content">
-                <h3 className="flow__step-title">診断レポート提出</h3>
-                <p className="flow__step-text">
-                  写真付きの詳細な診断レポートを作成し、建物の現状と今後の修繕計画をわかりやすくご説明します。
-                  <strong>正直な診断</strong>
-                  で、本当に必要な工事だけをお伝えします。これが久米技建の最大の強みです。
-                </p>
-              </div>
-            </div>
-
-            <div className="flow__step reveal">
-              <div className="flow__step-number">04</div>
-              <div className="flow__step-content">
-                <h3 className="flow__step-title">ご相談・お見積もり</h3>
-                <p className="flow__step-text">
-                  診断結果に基づいた工事プランと、明瞭なお見積もりをご提出。ご不明な点は何でもご質問ください。
-                </p>
-              </div>
-            </div>
-
-            <div className="flow__step reveal">
-              <div className="flow__step-number">05</div>
-              <div className="flow__step-content">
-                <h3 className="flow__step-title">施工</h3>
-                <p className="flow__step-text">
-                  自社職人による直営施工で、高品質な仕上がりをお約束。近隣への配慮も徹底して行います。
-                </p>
-              </div>
-            </div>
-
-            <div className="flow__step reveal">
-              <div className="flow__step-number">06</div>
-              <div className="flow__step-content">
-                <h3 className="flow__step-title">完了検査</h3>
-                <p className="flow__step-text">
-                  施工完了後、お客様立会いのもと仕上がりを確認。細部まで品質チェックを行います。
-                </p>
-              </div>
-            </div>
-
-            <div className="flow__step reveal">
-              <div className="flow__step-number">07</div>
-              <div className="flow__step-content">
-                <h3 className="flow__step-title">アフターサポート</h3>
-                <p className="flow__step-text">
-                  施工後も定期的なメンテナンスや点検をサポート。長期的な建物管理のパートナーとしてお付き合いします。
-                </p>
-              </div>
-            </div>
+            {flowItems.map((item, index) => (
+              <article className={`flow__step ${item.highlight ? "flow__step--highlight" : ""} ${getRevealClass(index)}`} key={item.number}>
+                <span className="flow__step-number">{item.number}</span>
+                <div className="flow__card">
+                  <div className="flow__step-content">
+                    <h3 className="flow__step-title">{item.title}</h3>
+                    <p className="flow__step-text">{item.text}</p>
+                  </div>
+                  <div className="flow__step-image">
+                    <img src={assetPath(item.image)} alt={item.alt} />
+                  </div>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -412,74 +443,6 @@ export default function Home() {
           </div>
 
           <VoiceCarousel />
-        </div>
-      </section>
-
-      {/* ========== MESSAGE SECTION ========== */}
-      <section className="message" id="message">
-        <div className="container">
-          <div className="message__inner">
-            <div className="message__image reveal">
-              <img src={assetPath("/images/president_photo.jpg")} alt="代表取締役 久米涼平" />
-            </div>
-            <div className="message__content reveal reveal--delay-1">
-              <span className="message__label">Message</span>
-              <h2 className="message__title">
-                建物と向き合い、
-                <br />
-                人と向き合う仕事を。
-              </h2>
-              <p className="message__text">
-                久米技建は2016年の創業以来、「正直な診断と確かな施工」を信条に歩んできました。私自身、防水職人として現場に立ち、建物と向き合い続けてきた経験から、「本当に必要な工事を、適正な価格で」という思いを貫いています。
-                <br />
-                <br />
-                お客様の大切な資産である建物を、次の世代へ受け継ぐお手伝いをする。それが、私たち久米技建の使命です。
-              </p>
-              <div className="message__name">
-                <div className="message__name-title">代表取締役</div>
-                <div className="message__name-value">久米 涼平</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ========== AREA SECTION ========== */}
-      <section className="area" id="area">
-        <div className="container area__container">
-          <div className="section-heading reveal">
-            <span className="section-heading__en">Area</span>
-            <h2 className="section-heading__ja">対応エリア</h2>
-            <span className="section-heading__line"></span>
-          </div>
-          <h3 className="area__title reveal reveal--delay-1">兵庫県・大阪府を中心に対応</h3>
-          <p className="area__intro reveal reveal--delay-1">
-            西宮市を拠点に、関西圏全域で施工対応が可能です。まずはお気軽にご相談ください。
-          </p>
-
-          <div className="area__mapCard reveal reveal--delay-2">
-            <img src={assetPath("/images/area-map-kansai.jpg")} alt="関西エリアマップ" className="area__mapImage" />
-          </div>
-
-          <div className="area__label reveal reveal--delay-3">
-            <span className="area__labelLine"></span>
-            <span className="area__labelText">対応エリア</span>
-            <span className="area__labelLine"></span>
-          </div>
-
-          <div className="area__list reveal reveal--delay-4">
-            {areaTags.map((tag) => (
-              <span className={`area__tag${tag.active ? " area__tag--active" : ""}`} key={tag.label}>
-                {tag.label}
-              </span>
-            ))}
-          </div>
-
-          <div className="area__ctaWrap reveal reveal--delay-4">
-            <a href={routePath("/company/area")} className="btn btn--outline-dark btn--sm area__cta">
-              対応エリアの詳細 <span className="btn__arrow">→</span>
-            </a>
-          </div>
         </div>
       </section>
 
@@ -520,23 +483,39 @@ export default function Home() {
       </section>
 
       {/* ========== CTA SECTION ========== */}
-      <section className="cta-section">
-        <div className="container">
-          <h2 className="cta-section__title reveal">建物のことで、お困りではありませんか？</h2>
-          <p className="cta-section__text reveal">まずは無料の建物診断から。お気軽にご相談ください。</p>
-          <div className="cta-section__phone reveal">
-            <a href="tel:0798-27-5653" className="cta-section__phone-number">
-              <i className="fas fa-phone-alt"></i> 0798-27-5653
-            </a>
-            <div className="cta-section__phone-sub">受付時間：平日 9:00〜18:00</div>
-          </div>
-          <div className="cta-section__buttons reveal">
-            <a href={routePath("/contact")} className="btn btn--primary btn--lg">
-              <i className="fas fa-envelope"></i> 無料相談・お見積もり
-            </a>
-            <a href={routePath("/simulation")} className="btn btn--outline btn--lg">
-              <i className="fas fa-calculator"></i> 見積もりシミュレーション
-            </a>
+      <section className="cta-v2">
+        <div className="cta-v2__shell">
+          <div className="cta-v2__top reveal">
+            <h2 className="cta-v2__title">建物のことで、お困りではありませんか？</h2>
+            <p className="cta-v2__subtext">専門スタッフが丁寧に対応いたします。ご相談・お見積もりは無料です。</p>
+
+            <div className="cta-v2__actions">
+              <a href="tel:0798-27-5653" className="cta-v2__action cta-v2__action--phone">
+                <span className="cta-v2__phone-icon" aria-hidden="true">
+                  <i className="fas fa-phone-alt"></i>
+                </span>
+                <span className="cta-v2__phone-copy">
+                  <span className="cta-v2__phone-label">受付時間 平日9:00-18:00</span>
+                  <span className="cta-v2__phone-number">0798-27-5653</span>
+                </span>
+              </a>
+
+              <a href={routePath("/contact")} className="cta-v2__action cta-v2__action--primary">
+                <span className="cta-v2__primary-copy">
+                  <span className="cta-v2__primary-sub">＼ 30秒で完了・相談無料 ／</span>
+                  <span className="cta-v2__primary-main"><i className="far fa-envelope"></i> 無料で相談する</span>
+                </span>
+                <span className="cta-v2__primary-arrow" aria-hidden="true">›</span>
+              </a>
+
+              <a href={routePath("/simulation")} className="cta-v2__action cta-v2__action--secondary">
+                <i className="fas fa-calculator"></i> シミュレーションする
+              </a>
+            </div>
+
+            <p className="cta-v2__reassurance">
+              まだ依頼するか決まっていなくても大丈夫です。<span className="cta-v2__reassurance-accent">状況確認だけでもOKです。</span>
+            </p>
           </div>
         </div>
       </section>

@@ -10,6 +10,21 @@ export const metadata = buildMetadata({
   image: "/images/team-group.jpg",
 });
 
+const areaTags = [
+  { label: "西宮市", active: true },
+  { label: "大阪市" },
+  { label: "神戸市" },
+  { label: "尼崎市" },
+  { label: "宝塚市" },
+  { label: "伊丹市" },
+  { label: "芦屋市" },
+  { label: "吹田市" },
+  { label: "豊中市" },
+  { label: "明石市" },
+  { label: "姫路市" },
+  { label: "その他関西圏" },
+];
+
 export default function Page() {
   return (
     <main>
@@ -25,24 +40,29 @@ export default function Page() {
   </div>
 </section>
 <section className="content-section"><div className="container">
-  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px', alignItems: 'start' }}>
-    <div className="reveal">
-      <img src={assetPath("/images/team-group.jpg")} alt="久米技建チーム - 関西圏を中心に対応" style={{ minHeight: '400px', width: '100%', objectFit: 'cover', borderRadius: '16px' }} />
-    </div>
-    <div className="reveal">
-      <h2 style={{ fontSize: '24px', fontWeight: '700', color: 'var(--color-primary)', marginBottom: '24px' }}>主要対応エリア</h2>
-      <h3 style={{ fontSize: '16px', fontWeight: '700', color: 'var(--color-primary)', margin: '20px 0 12px', paddingBottom: '8px', borderBottom: '2px solid var(--color-accent)' }}>兵庫県</h3>
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '24px' }}>
-        <span className="area__tag area__tag--active">西宮市</span><span className="area__tag">神戸市</span><span className="area__tag">尼崎市</span><span className="area__tag">宝塚市</span><span className="area__tag">伊丹市</span><span className="area__tag">芦屋市</span><span className="area__tag">明石市</span><span className="area__tag">姫路市</span><span className="area__tag">加古川市</span><span className="area__tag">三田市</span><span className="area__tag">川西市</span>
-      </div>
-      <h3 style={{ fontSize: '16px', fontWeight: '700', color: 'var(--color-primary)', margin: '20px 0 12px', paddingBottom: '8px', borderBottom: '2px solid var(--color-accent)' }}>大阪府</h3>
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '24px' }}>
-        <span className="area__tag">大阪市</span><span className="area__tag">吹田市</span><span className="area__tag">豊中市</span><span className="area__tag">堺市</span><span className="area__tag">東大阪市</span><span className="area__tag">枚方市</span><span className="area__tag">高槻市</span><span className="area__tag">茨木市</span>
-      </div>
-      <h3 style={{ fontSize: '16px', fontWeight: '700', color: 'var(--color-primary)', margin: '20px 0 12px', paddingBottom: '8px', borderBottom: '2px solid var(--color-accent)' }}>その他</h3>
-      <p style={{ fontSize: '14px', color: 'var(--color-text-light)', lineHeight: '1.9' }}>京都府、奈良県、滋賀県、和歌山県など、関西圏であれば対応可能です。上記以外の地域でもお気軽にご相談ください。</p>
-    </div>
+  <h2 style={{ textAlign: 'center', fontSize: '32px', fontWeight: '700', color: 'var(--color-primary)', marginBottom: '12px' }}>兵庫県・大阪府を中心に対応</h2>
+  <p style={{ textAlign: 'center', fontSize: '16px', color: 'var(--color-text-light)', lineHeight: '2', margin: '0 auto 40px' }}>
+    西宮市を拠点に、関西圏全域で施工対応が可能です。まずはお気軽にご相談ください。
+  </p>
+
+  <div className="area__mapCard reveal">
+    <img src={assetPath("/images/area-map-kansai.jpg")} alt="関西エリアマップ" className="area__mapImage" />
   </div>
+
+  <div className="area__label reveal">
+    <span className="area__labelLine"></span>
+    <span className="area__labelText">対応エリア</span>
+    <span className="area__labelLine"></span>
+  </div>
+
+  <div className="area__list reveal" style={{ marginBottom: '44px' }}>
+    {areaTags.map((tag) => (
+      <span className={`area__tag${tag.active ? " area__tag--active" : ""}`} key={tag.label}>
+        {tag.label}
+      </span>
+    ))}
+  </div>
+
 </div></section>
 <section className="cta-section"><div className="container"><h2 className="cta-section__title">対応エリアのご確認</h2><p className="cta-section__text">上記以外の地域でもお気軽にお問い合わせください。</p><div className="cta-section__buttons"><a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> お問い合わせ</a></div></div></section>
   

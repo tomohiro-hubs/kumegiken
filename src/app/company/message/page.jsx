@@ -29,7 +29,7 @@ export default function Page() {
 	
 	  <section className="content-section">
 	    <div className="container container--narrow">
-      <div className="message__inner" style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '48px', alignItems: 'start' }}>
+      <div className="message__inner" style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '48px', alignItems: 'center' }}>
         <div className="reveal">
           <img src={assetPath("/images/president_photo.jpg")} alt="代表取締役 久米涼平" style={{ aspectRatio: '3/4', width: '100%', objectFit: 'cover', borderRadius: '16px', minHeight: '350px' }} />
           <div style={{ textAlign: 'center', marginTop: '16px' }}>

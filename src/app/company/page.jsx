@@ -69,6 +69,21 @@ const faqSchema = {
   ],
 };
 
+const companyFaqItems = [
+  {
+    question: "対応エリアはどこですか？",
+    answer: "兵庫県・大阪府を中心に関西圏全域で対応しています。エリア外についても案件内容に応じてご相談可能です。",
+  },
+  {
+    question: "営業時間と連絡先を教えてください。",
+    answer: "営業時間は平日9:00〜18:00です。お電話は 0798-27-5653 で受け付けています。",
+  },
+  {
+    question: "建設業許可番号はありますか？",
+    answer: "兵庫県知事 許可（般-3）第220086号を取得しています。",
+  },
+];
+
 export const metadata = buildMetadata({
   title: "会社概要｜株式会社久米技建（西宮市）",
   description: "株式会社久米技建の会社概要ページ。所在地・事業内容・連絡先など、企業情報を掲載しています。",
@@ -145,13 +160,13 @@ export default function Page() {
 
       <div style={{ marginTop: '60px' }} className="reveal">
         <h2 style={{ fontSize: '24px', fontWeight: '700', color: 'var(--color-primary)', marginBottom: '24px' }}>よくある質問</h2>
-        <div className="article-content">
-          <h3>対応エリアはどこですか？</h3>
-          <p>兵庫県・大阪府を中心に関西圏全域で対応しています。エリア外についても案件内容に応じてご相談可能です。</p>
-          <h3>営業時間と連絡先を教えてください。</h3>
-          <p>営業時間は平日9:00〜18:00です。お電話は 0798-27-5653 で受け付けています。</p>
-          <h3>建設業許可番号はありますか？</h3>
-          <p>兵庫県知事 許可（般-3）第220086号を取得しています。</p>
+        <div className="company-faq">
+          {companyFaqItems.map((item) => (
+            <details className="company-faq__item" key={item.question}>
+              <summary className="company-faq__question">{item.question}</summary>
+              <p className="company-faq__answer">{item.answer}</p>
+            </details>
+          ))}
         </div>
       </div>
     </div>

@@ -679,7 +679,7 @@ input, textarea, select {
   display: flex;
   flex-direction: column;
   gap: 18px;
-  max-width: 1030px;
+  max-width: 1150px;
   margin: 0 auto;
 }
 
@@ -687,6 +687,7 @@ input, textarea, select {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: stretch;
+  height: 400px;
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid #d6dde8;
@@ -697,27 +698,28 @@ input, textarea, select {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
+  width: 92px;
+  height: 92px;
+  border-radius: 0;
   background: #0f2a54;
   color: #fff;
-  font-size: 35px;
+  font-size: 56px;
   font-weight: var(--fw-black);
   line-height: 1;
   flex-shrink: 0;
 }
 
 .reason__copy {
-  padding: 18px 18px 0;
+  padding: 22px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .reason__copyTop {
   display: flex;
-  gap: 14px;
-  align-items: center;
+  gap: 22px;
+  align-items: flex-start;
 }
 
 .reason__copyMain {
@@ -725,26 +727,27 @@ input, textarea, select {
 }
 
 .reason__question {
-  margin: 1px 0 6px;
-  font-size: 13px;
+  margin: 2px 0 6px;
+  font-size: clamp(16px, 1.05vw, 20px);
   font-weight: var(--fw-bold);
   color: #152f59;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.01em;
+  line-height: 1.4;
 }
 
 .reason__concern {
   margin: 0;
   color: #102448;
-  font-size: clamp(18px, 1.45vw, 24px);
-  line-height: 1.35;
+  font-size: 32px;
+  line-height: 1.22;
   letter-spacing: 0.01em;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .reason__concernText {
-  margin: 16px 0 0;
-  font-size: 15px;
-  line-height: 1.8;
+  margin: 14px 0 0 114px;
+  font-size: 19px;
+  line-height: 1.6;
   color: #1e2f49;
 }
 
@@ -753,8 +756,80 @@ input, textarea, select {
   display: block;
 }
 
+.reason__item--01 .reason__concernText span:last-child {
+  font-size: 14px;
+}
+
+.reason__item--02 .reason__concernText span:last-child,
+.reason__item--03 .reason__concernText span:last-child {
+  font-size: 14px;
+}
+
+.reason__item--03 .reason__copyTop {
+  margin-bottom: 0;
+}
+
+.reason__item--03 .reason__concernText {
+  margin-top: 0 !important;
+}
+
+.reason__item--03 .reason__concern {
+  margin-bottom: 21px;
+}
+
+@media (max-width: 1200px) {
+  .reason__item {
+    height: auto;
+    min-height: 400px;
+  }
+
+  .reason__copy {
+    justify-content: flex-start;
+    padding: 20px 18px;
+  }
+
+  .reason__copyTop {
+    gap: 16px;
+  }
+
+  .reason__number {
+    width: 74px;
+    height: 74px;
+    font-size: 42px;
+  }
+
+  .reason__question {
+    font-size: 16px;
+    line-height: 1.35;
+  }
+
+  .reason__concern {
+    font-size: clamp(28px, 2.8vw, 32px);
+    line-height: 1.24;
+  }
+
+  .reason__concernText {
+    margin: 12px 0 0;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .reason__solution {
+    margin-top: 16px;
+  }
+
+  .reason__item--03 .reason__concern {
+    margin-bottom: 0;
+  }
+
+  .reason__item--03 .reason__concernText {
+    margin-top: 12px !important;
+  }
+}
+
 .reason__solution {
   margin-top: 20px;
+  margin-bottom: 0;
   background: linear-gradient(135deg, #ff8b1a 0%, #f66f00 100%);
   color: #fff;
   border-radius: 9px;
@@ -849,8 +924,11 @@ input, textarea, select {
   left: 0;
   top: 0;
   bottom: 0;
-  width: min(56vw, 820px);
-  padding: 32px 40px 32px 120px;
+  width: min(72vw, 1152px);
+  padding-top: 32px;
+  padding-right: 40px;
+  padding-bottom: 32px;
+  padding-left: max(24px, calc((100vw - var(--container-width)) / 2 + 24px));
   background: linear-gradient(90deg, rgba(242, 246, 251, 0.98) 0%, rgba(242, 246, 251, 0.92) 72%, rgba(242, 246, 251, 0) 100%);
   color: #172f57;
   display: flex;
@@ -865,6 +943,11 @@ input, textarea, select {
   letter-spacing: 0.01em;
   font-weight: var(--fw-bold);
   white-space: normal;
+  text-decoration-line: underline;
+  text-decoration-color: var(--color-accent);
+  text-decoration-thickness: 4px;
+  text-underline-offset: 10px;
+  text-decoration-skip-ink: none;
 }
 
 .service__featureTitle span {
@@ -997,6 +1080,21 @@ input, textarea, select {
   overflow: hidden;
 }
 
+.works__featureOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 56px 24px;
+  z-index: 2;
+}
+
+.works__featureHeading {
+  margin: 0;
+}
+
 .works__featureFade {
   position: absolute;
   inset: 0;
@@ -1005,18 +1103,15 @@ input, textarea, select {
 }
 
 .works__featureCopy {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  padding-left: 200px;
-  margin: 0;
+  position: static;
+  width: min(92vw, 860px);
+  padding: 0;
+  margin: 65px 0 0;
   font-size: 18px;
   line-height: 1.9;
   font-weight: var(--fw-medium);
   color: #1d355d;
-  z-index: 1;
-  max-width: 860px;
+  text-align: center;
 }
 
 .work-card {
@@ -1167,7 +1262,7 @@ input, textarea, select {
 }
 
 .flow__step-content {
-  padding: 26px 30px 24px 48px;
+  padding: 26px 30px 24px 98px;
 }
 
 .flow__step-title {
@@ -1614,10 +1709,10 @@ input, textarea, select {
 .cta-v2__top {
   position: relative;
   padding: 40px 52px 22px;
-  background:
-    radial-gradient(80% 140% at 20% 40%, rgba(34, 61, 108, 0.42) 0%, rgba(34, 61, 108, 0) 55%),
-    radial-gradient(65% 120% at 82% 40%, rgba(23, 48, 90, 0.4) 0%, rgba(23, 48, 90, 0) 62%),
-    linear-gradient(135deg, #11244a 0%, #0b1a38 48%, #091732 100%);
+  background: url("/images/cta-water-bubbles.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: var(--color-white);
   text-align: center;
 }
@@ -1946,6 +2041,10 @@ input, textarea, select {
   .cta-v2__action {
     min-height: 58px;
     font-size: 15px;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: min(85vw, 387px);
   }
 
   .cta-v2__action--primary {
@@ -2018,7 +2117,7 @@ input, textarea, select {
 }
 
 .cta-achievement__laurel {
-  height: 80px;
+  height: 72px;
   width: auto;
   mix-blend-mode: screen;
   align-self: center;
@@ -2060,11 +2159,11 @@ input, textarea, select {
 @media (max-width: 768px) {
   .cta-achievement {
     height: auto;
-    padding: 40px 20px;
+    padding: 28px 14px;
   }
   .cta-achievement__inner {
     flex-direction: column;
-    gap: 24px;
+    gap: 18px;
     text-align: center;
   }
   .cta-achievement__divider {
@@ -2072,18 +2171,43 @@ input, textarea, select {
     height: 1px;
   }
   .cta-achievement__number {
-    font-size: 42px;
+    font-size: clamp(40px, 10vw, 52px);
   }
   .cta-achievement__left {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    gap: 8px;
+    width: fit-content;
+    max-width: calc(100% - 24px);
+    margin: 0 auto;
+  }
+
+  .cta-achievement__laurel {
+    height: 48px;
+  }
+
+  .cta-achievement__label {
+    font-size: clamp(13px, 4.1vw, 19px);
+  }
+
+  .cta-achievement__unit {
+    font-size: clamp(14px, 4.2vw, 18px);
+  }
+
+  .cta-achievement__right {
+    font-size: 16px;
+    line-height: 1.7;
+    letter-spacing: 0.02em;
+    word-break: keep-all;
   }
 }
 
 /* --- CTA Support Features --- */
 .cta-support {
   background: var(--color-white);
-  height: 200px;
+  min-height: 200px;
   display: flex;
   align-items: center;
   border-bottom: 1px solid #eef1f5;
@@ -2149,6 +2273,12 @@ input, textarea, select {
 }
 
 @media (max-width: 1024px) {
+  .cta-support {
+    height: auto;
+    min-height: 0;
+    padding: 28px 0;
+  }
+
   .cta-support__inner {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -2770,6 +2900,67 @@ input, textarea, select {
   list-style: decimal;
 }
 
+/* --- Company FAQ --- */
+.company-faq {
+  display: grid;
+  gap: 14px;
+}
+
+.company-faq__item {
+  border: 1px solid #d4dce9;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  box-shadow: 0 6px 18px rgba(17, 38, 75, 0.06);
+  overflow: hidden;
+}
+
+.company-faq__question {
+  position: relative;
+  list-style: none;
+  cursor: pointer;
+  padding: 18px 58px 18px 22px;
+  font-size: 18px;
+  font-weight: var(--fw-bold);
+  line-height: 1.5;
+  color: var(--color-primary);
+}
+
+.company-faq__question::-webkit-details-marker {
+  display: none;
+}
+
+.company-faq__question::before,
+.company-faq__question::after {
+  content: "";
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  width: 14px;
+  height: 2px;
+  background: #f58600;
+  transition: transform 0.2s ease;
+}
+
+.company-faq__question::after {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.company-faq__question::before {
+  transform: translateY(-50%);
+}
+
+.company-faq__item[open] .company-faq__question::after {
+  transform: translateY(-50%) rotate(0deg);
+}
+
+.company-faq__answer {
+  margin: 0;
+  padding: 0 22px 18px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #30486f;
+}
+
 /* --- Back to Top --- */
 .back-to-top {
   position: fixed;
@@ -2849,6 +3040,7 @@ input, textarea, select {
   .reason__item {
     grid-template-columns: 1fr;
     gap: 30px;
+    height: auto;
     border-radius: 12px;
   }
 
@@ -2859,12 +3051,77 @@ input, textarea, select {
   }
 
   .reason__copy {
-    padding: 16px 16px 0;
+    padding: 20px 18px 22px;
+    justify-content: flex-start;
+  }
+
+  .reason__copyTop {
+    gap: 14px;
+  }
+
+  .reason__number {
+    width: 64px;
+    height: 64px;
+    font-size: 38px;
+  }
+
+  .reason__question {
+    font-size: 16px;
+    line-height: 1.35;
+  }
+
+  .reason__concern {
+    font-size: clamp(30px, 4.4vw, 38px);
+    line-height: 1.25;
+  }
+
+  .reason__concernText {
+    margin: 12px 0 0;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .reason__solution {
+    margin-top: 16px;
+    margin-bottom: 0;
+  }
+
+  .reason__item--03 .reason__copyTop {
+    margin-bottom: 0;
+  }
+
+  .reason__item--03 .reason__concern {
+    margin-bottom: 0;
+  }
+
+  .reason__item--03 .reason__concernText {
+    margin-top: 12px !important;
   }
 
   .reason__visual {
     min-height: auto;
     aspect-ratio: 16/10;
+  }
+
+  .flow__card {
+    height: auto;
+    min-height: 0;
+    grid-template-columns: 1fr;
+  }
+
+  .flow__step-content {
+    padding: 22px 20px 18px 74px;
+  }
+
+  .flow__step-image {
+    min-height: 220px;
+  }
+
+  .flow__step-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 
   .service__grid {
@@ -2895,10 +3152,9 @@ input, textarea, select {
   }
 
   .works__featureCopy {
-    padding-left: 72px;
     font-size: 16px;
     line-height: 1.75;
-    max-width: 620px;
+    width: min(92vw, 620px);
   }
 
   .message__inner {
@@ -3014,20 +3270,16 @@ input, textarea, select {
     left: 46px;
   }
 
-  .flow__card {
-    grid-template-columns: 1fr 320px;
-  }
-
   .flow__step-title {
     font-size: 24px;
   }
 
   .flow__step-content {
-    padding: 22px 22px 20px 44px;
+    padding: 20px 18px 16px 66px;
   }
 
   .flow__step-image {
-    min-height: 120px;
+    min-height: 200px;
   }
 
   .column-card {
@@ -3113,6 +3365,10 @@ input, textarea, select {
     flex-direction: column;
     gap: 16px;
     text-align: center;
+  }
+
+  .footer {
+    padding-bottom: calc(76px + env(safe-area-inset-bottom));
   }
 
   .page-hero {
@@ -3245,22 +3501,26 @@ input, textarea, select {
     white-space: normal;
   }
 
+  .works__featureOverlay {
+    padding: 42px 20px;
+  }
+
   .works__featureCopy {
-    left: 20px;
-    right: 20px;
-    top: auto;
-    bottom: 18px;
-    transform: none;
-    padding-left: 0;
+    width: auto;
+    padding: 0;
     font-size: 14px;
     line-height: 1.7;
-    max-width: none;
+    text-align: center;
+  }
+
+  .works__featureHeading {
+    margin-bottom: 12px;
   }
 
   .reason__number {
-    width: 48px;
-    height: 48px;
-    font-size: 28px;
+    width: 52px;
+    height: 52px;
+    font-size: 30px;
   }
 
   .flow__timeline {
@@ -3283,11 +3543,10 @@ input, textarea, select {
 
   .flow__card {
     margin-left: 18px;
-    grid-template-columns: 1fr;
   }
 
   .flow__step-content {
-    padding: 18px 16px 16px 52px;
+    padding: 18px 14px 14px 58px;
   }
 
   .flow__step-title {
@@ -3301,16 +3560,22 @@ input, textarea, select {
   }
 
   .flow__step-image {
-    min-height: 132px;
+    min-height: 180px;
   }
 
   .reason__question {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .reason__concern {
-    font-size: 26px;
+    font-size: 32px;
     white-space: normal;
+  }
+
+  .reason__concernText {
+    margin-top: 10px;
+    font-size: 15px;
+    line-height: 1.65;
   }
 
   .reason__solutionTitle {
@@ -3326,6 +3591,21 @@ input, textarea, select {
   .info-table td {
     display: block;
     width: 100%;
+  }
+
+  .company-faq__question {
+    font-size: 16px;
+    padding: 16px 52px 16px 16px;
+  }
+
+  .company-faq__question::before,
+  .company-faq__question::after {
+    right: 18px;
+  }
+
+  .company-faq__answer {
+    padding: 0 16px 16px;
+    font-size: 14px;
   }
 
   .info-table th {

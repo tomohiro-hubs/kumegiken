@@ -61,12 +61,13 @@ const reasonItems = [
     image: "/images/inspection-scene.jpg",
     alt: "現地調査へ向かう担当者",
     question: "01",
-    concern: "調査した人間が、そのまま直す。",
-    concernText: "修繕業界では調査・設計・施工が別会社になるのが一般的。",
-    solutionLead: "久米技建が選ばれる理由",
-    solutionTitle: "情報ロスなく、最適工事を最短で。",
+    concern: "こんな不安はありませんか？",
+    concernText:
+      "業者が変わるたび、話が伝わっているか不安…\n調査した人、判断する人、施工する人が分かれていると、伝達ミスや判断のズレが起きやすくなります。",
+    solutionLead: "久米技建の答え",
+    solutionTitle: "情報ロスなく、最適工事を\n最短工程で。",
     solutionText:
-      "久米技建は、建物を診た技術者がそのまま施工計画を立て、\n自ら手を動かします。情報のロスがないから、\n最適な工事を、最短の工程で実現できます。",
+      "久米技建は、建物を診た技術者がそのまま施工計画を立て、\n必要に応じて自ら現場にも入ります。情報のロスが少ないから、\n最適な工事を、ムダのない工程で進められます。",
     icon: "fa-regular fa-clock",
   },
   {
@@ -74,12 +75,12 @@ const reasonItems = [
     image: "/images/waterproofing-hands.jpg",
     alt: "防水施工の様子",
     question: "02",
-    concern: "必要な工事だけを、適正な価格で。",
-    concernText: "中間業者を挟まない技術者直営の体制だから、\nお客様の費用が中間マージンに消えることがありません。",
-    solutionLead: "久米技建が選ばれる理由",
-    solutionTitle: "過剰提案なし、必要な工事だけ。",
+    concern: "こんな不安はありませんか？",
+    concernText: "直しても、また漏れたらどうしよう…\n原因が特定しにくく、不十分な工事でしばらくの間は不安になりますよね。",
+    solutionLead: "久米技建の答え",
+    solutionTitle: "原因から直すので、再発しにくい！",
     solutionText:
-      "過剰な工事の提案もしません。\n建物の状態に対して本当に必要な工事だけを\nご提案します。",
+      "見えない原因までしっかり特定し、根本から対処します。\nその場しのぎではなく、長期にわたり役立つ\n長く安心が続きます。",
     icon: "fa-solid fa-magnifying-glass",
   },
   {
@@ -87,12 +88,12 @@ const reasonItems = [
     image: "/images/team-meeting.jpg",
     alt: "担当者のご説明",
     question: "03",
-    concern: "直した後も、ずっと見守る。",
-    concernText: "施工して終わりではなく、建物の状態を継続的に管理。",
-    solutionLead: "久米技建が選ばれる理由",
-    solutionTitle: "建物の“かかりつけ”として対応。",
+    concern: "こんな不安はありませんか？",
+    concernText: "どんな人が来るのか不安…\nスタッフの質は仕上がりの印。やっぱり不安ですよね。",
+    solutionLead: "久米技建の答え",
+    solutionTitle: "自社の職人が直接対応します！",
     solutionText:
-      "定期点検で劣化の兆候を早期発見し、\n万が一の不具合にも自社技術者が迅速に対応します。\n建物の“かかりつけ”として、長くお付き合いください。",
+      "外注に任せず、自社の職人が責任を持って対応します。\n責任を持って、丁寧な施工を行いますのでご安心ください。",
     icon: "fa-solid fa-helmet-safety",
   },
 ];
@@ -268,17 +269,22 @@ export default function Home() {
           </div>
 
           <div className="reason__list">
-            {reasonItems.map((item) => (
+            {reasonItems.map((item) => {
+              const concernLines = item.concernText.split("\n");
+              const concernMain = concernLines[0] ?? "";
+              const concernBodyLines = concernLines.slice(1);
+              return (
               <article className={`reason__item reason__item--${item.number} reveal`} key={item.number}>
                 <div className="reason__copy">
                   <div className="reason__copyTop">
                     <span className="reason__number en">{item.number}</span>
                     <div className="reason__copyMain">
-                      <h3 className="reason__concern">{item.concern}</h3>
+                      <p className="reason__question">{item.concern}</p>
+                      <h3 className="reason__concern">{concernMain}</h3>
                     </div>
                   </div>
                   <p className="reason__concernText">
-                    {item.concernText.split("\n").map((line, index) => (
+                    {concernBodyLines.map((line, index) => (
                       <span key={`${item.number}-concern-${index}`}>{line}</span>
                     ))}
                   </p>
@@ -286,7 +292,6 @@ export default function Home() {
                     <span className="reason__solutionLead">{item.solutionLead}</span>
                     <h4 className="reason__solutionTitle">
                       {item.solutionTitle}
-                      <i className={item.icon} aria-hidden="true"></i>
                     </h4>
                     <p className="reason__solutionText">
                       {item.solutionText.split("\n").map((line, index) => (
@@ -299,7 +304,8 @@ export default function Home() {
                   <img src={assetPath(item.image)} alt={item.alt} />
                 </div>
               </article>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -357,21 +363,23 @@ export default function Home() {
       {/* ========== WORKS SECTION ========== */}
       <section className="works" id="works">
         <div className="container">
-          <div className="section-heading reveal">
-            <span className="section-heading__en">Works</span>
-            <h2 className="section-heading__ja">施工事例</h2>
-            <span className="section-heading__line"></span>
-          </div>
           <div className="reveal works__featureBanner" style={{ margin: "0 calc(50% - 50vw) 28px", width: "100dvw" }}>
-            <img src={assetPath("/images/area-inspection-banner.png")} alt="現地調査を行う技術者" className="service__featureImage" style={{ objectPosition: "center 34%" }} />
+            <img src={assetPath("/images/area-inspection-banner.png")} alt="現地調査を行う技術者" className="service__featureImage" style={{ objectPosition: "center 34%", height: "500px" }} />
             <div className="works__featureFade" aria-hidden="true"></div>
-            <p className="works__featureCopy">
-              工事内容・工期・費用目安を掲載しています。
-              <br />
-              西宮市・神戸市・大阪市を中心とした実績から、
-              <br />
-              同種建物の改修イメージを具体的にご確認いただけます。
-            </p>
+            <div className="works__featureOverlay">
+              <div className="section-heading works__featureHeading">
+                <span className="section-heading__en">Works</span>
+                <h2 className="section-heading__ja">施工事例</h2>
+                <span className="section-heading__line"></span>
+              </div>
+              <p className="works__featureCopy">
+                工事内容・工期・費用目安を掲載しています。
+                <br />
+                西宮市・神戸市・大阪市を中心とした実績から、
+                <br />
+                同種建物の改修イメージを具体的にご確認いただけます。
+              </p>
+            </div>
           </div>
 
           <div className="works__grid">
@@ -532,11 +540,11 @@ export default function Home() {
           <div className="cta-support__inner">
             <div className="cta-support__item">
               <div className="cta-support__icon">
-                <img src={assetPath("/images/icon_quick.png")} alt="現地調査 無料" />
+                <img src={assetPath("/images/icon_optimal-fastest.png")} alt="最適工事を最短工事" />
               </div>
               <div className="cta-support__text-block">
-                <h3 className="cta-support__title">現地調査 無料</h3>
-                <p className="cta-support__desc">急な雨漏りにも迅速対応。<br />最短でその日のうちに無料調査へお伺いします。</p>
+                <h3 className="cta-support__title">最適工事を最短工事</h3>
+                <p className="cta-support__desc">急な雨漏りにも迅速対応。状況を確認のうえ、現地を丁寧に調査します。</p>
               </div>
             </div>
             
@@ -546,7 +554,7 @@ export default function Home() {
               </div>
               <div className="cta-support__text-block">
                 <h3 className="cta-support__title">原因から根本修理</h3>
-                <p className="cta-support__desc">表面的な補修ではなく、原因を特定し<br />再発しない根本的な修理を行います。</p>
+                <p className="cta-support__desc">表面的な補修ではなく、原因を特定し再発しない根本的な修理を行います。</p>
               </div>
             </div>
 
@@ -567,7 +575,7 @@ export default function Home() {
       <div className="cta-achievement reveal">
         <div className="cta-achievement__inner">
           <div className="cta-achievement__left">
-            <img src={assetPath("/images/laurel.png")} alt="月桂樹" className="cta-achievement__laurel" />
+            <img src={assetPath("/images/laurel-wreath.png")} alt="月桂樹" className="cta-achievement__laurel" />
             <span className="cta-achievement__label">累計施工実績</span>
             <span className="cta-achievement__number">5,000</span>
             <span className="cta-achievement__unit">件以上</span>

@@ -1,5 +1,7 @@
 import { routePath } from "@/lib/routePath";
 import { buildMetadata } from "@/lib/seo";
+import { notFound } from "next/navigation";
+import JsonLd from "@/components/JsonLd";
 
 const SITE_URL = "https://kumegiken.co.jp";
 const ARTICLE_AUTHOR = "久米技建 技術監修チーム";
@@ -73,11 +75,7 @@ export async function generateMetadata({ params }) {
   const article = articles[slug];
 
   if (!article) {
-    return buildMetadata({
-      title: "コラム",
-      description: "久米技建のコラム一覧です。",
-      path: "/column",
-    });
+    notFound();
   }
 
   return buildMetadata({
@@ -92,14 +90,7 @@ export default async function Page({ params }) {
   const article = articles[slug];
 
   if (!article) {
-    return (
-      <main>
-        <section className="page-hero">
-          <span className="page-hero__label">Column</span>
-          <h1 className="page-hero__title">記事が見つかりませんでした</h1>
-        </section>
-      </main>
-    );
+    notFound();
   }
 
   const articleUrl = `${SITE_URL}${routePath(`/column/${slug}`)}`;
@@ -152,8 +143,8 @@ export default async function Page({ params }) {
 
   return (
     <main>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <JsonLd data={articleSchema} />
+      <JsonLd data={breadcrumbSchema} />
       <section className="page-hero">
         <span className="page-hero__label">Column</span>
         <h1 className="page-hero__title">{article.title}</h1>

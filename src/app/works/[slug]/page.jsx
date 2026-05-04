@@ -1,6 +1,10 @@
 import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 import { buildMetadata } from "@/lib/seo";
+import { notFound } from "next/navigation";
+import JsonLd from "@/components/JsonLd";
+
+const SITE_URL = "https://kumegiken.co.jp";
 
 const works = {
   "nishinomiya-building-sealing-01": {
@@ -152,11 +156,7 @@ export async function generateMetadata({ params }) {
   const work = works[slug];
 
   if (!work) {
-    return buildMetadata({
-      title: "施工事例",
-      description: "久米技建の施工事例ページです。",
-      path: "/works",
-    });
+    notFound();
   }
 
   return buildMetadata({
@@ -172,18 +172,60 @@ export default async function Page({ params }) {
   const work = works[slug];
 
   if (!work) {
-    return (
-      <main>
-        <section className="page-hero">
-          <span className="page-hero__label">Works</span>
-          <h1 className="page-hero__title">施工事例が見つかりませんでした</h1>
-        </section>
-      </main>
-    );
+    notFound();
   }
+
+  const workUrl = `${SITE_URL}${routePath(`/works/${slug}`)}`;
+  const workSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: `${work.title}｜施工事例`,
+    description: `${work.area}の${work.workType}事例。${work.buildingType}の施工で、工期${work.period}・費用目安${work.budget}。`,
+    author: {
+      "@type": "Organization",
+      name: "株式会社久米技建",
+      url: SITE_URL,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "株式会社久米技建",
+      url: SITE_URL,
+    },
+    image: [new URL(assetPath(work.afterImage), SITE_URL).toString()],
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": workUrl,
+    },
+  };
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "ホーム",
+        item: SITE_URL,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "施工事例",
+        item: `${SITE_URL}${routePath("/works")}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: work.title,
+        item: workUrl,
+      },
+    ],
+  };
 
   return (
     <main>
+      <JsonLd data={workSchema} />
+      <JsonLd data={breadcrumbSchema} />
       <section className="page-hero">
         <span className="page-hero__label">Works</span>
         <h1 className="page-hero__title">{work.title}</h1>

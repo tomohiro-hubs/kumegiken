@@ -4,9 +4,9 @@ import { assetPath } from "@/lib/assetPath";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "防水工事（ウレタン・シート・FRP・アスファルト）費用・工法",
+  title: "防水工事（ウレタン・シート・FRP・アスファルト）の費用相場と工法｜久米技建",
   description:
-    "マンション・ビルの防水工事なら久米技建。ウレタン防水4,000〜7,000円/㎡〜。創業以来の専門技術で屋上・バルコニーの雨漏りを根本解決。無料診断対応。",
+    "マンション・ビルの防水工事なら久米技建。ウレタン防水4,000〜7,000円/㎡。創業以来の専門技術で屋上・バルコニーの雨漏りを根本解決。無料診断に対応。",
   path: "/service/waterproofing",
   image: "/images/waterproofing-rooftop.jpg",
 });

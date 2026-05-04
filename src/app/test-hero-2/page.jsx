@@ -6,6 +6,7 @@ export const metadata = buildMetadata({
   title: "ヒーローヘッダーテスト2｜株式会社久米技建",
   description: "ヒーローヘッダー差し替え用のテストページ2です。",
   path: "/test-hero-2",
+  noindex: true,
 });
 
 export default function TestHeroPage() {

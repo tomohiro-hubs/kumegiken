@@ -7,7 +7,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: "防水工事・大規模修繕なら久米技建｜西宮市の防水専門会社【無料建物診断】",
   description:
-    "西宮市の防水工事専門会社・久米技建。自社職人21名による直営施工で高品質な防水・外壁改修を実現。正直な建物診断に基づき、本当に必要な工事だけをご提案。兵庫・大阪エリア対応。無料見積もり受付中。",
+    "西宮市の防水工事専門会社・久米技建。自社職人21名による直営施工で、高品質な防水・外壁改修を実現。正直な建物診断に基づき、本当に必要な工事だけをご提案。兵庫・大阪エリア対応。無料建物診断・見積もり受付中。",
   path: "/",
 });
 
@@ -540,10 +540,10 @@ export default function Home() {
           <div className="cta-support__inner">
             <div className="cta-support__item">
               <div className="cta-support__icon">
-                <img src={assetPath("/images/icon_optimal-fastest.png")} alt="最適工事を最短工事" />
+                <img src={assetPath("/images/icon_optimal-fastest.png")} alt="最適工事を最短工程で" />
               </div>
               <div className="cta-support__text-block">
-                <h3 className="cta-support__title">最適工事を最短工事</h3>
+                <h3 className="cta-support__title">最適工事を最短工程で</h3>
                 <p className="cta-support__desc">急な雨漏りにも迅速対応。状況を確認のうえ、現地を丁寧に調査します。</p>
               </div>
             </div>

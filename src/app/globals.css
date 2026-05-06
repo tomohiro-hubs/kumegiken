@@ -1786,7 +1786,7 @@ input, textarea, select {
 .cta-v2__top {
   position: relative;
   padding: 40px 52px 22px;
-  background: url("/images/footer-cta-bg.png");
+  background: var(--cta-v2-bg-image, url("/images/footer-cta-bg.png"));
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -2169,7 +2169,7 @@ input, textarea, select {
 /* --- CTA Achievement Banner --- */
 .cta-achievement {
   background-color: #031326;
-  background-image: url("/images/footer-achievement-bg.png");
+  background-image: var(--cta-achievement-bg-image, url("/images/footer-achievement-bg.png"));
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

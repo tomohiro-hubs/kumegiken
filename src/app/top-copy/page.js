@@ -370,7 +370,7 @@ export default function TopCopyPage() {
       {/* ========== CTA SECTION ========== */}
       <section className="cta-v2">
         <div className="cta-v2__shell">
-          <div className="cta-v2__top reveal">
+          <div className="cta-v2__top reveal" style={{ "--cta-v2-bg-image": `url('${assetPath("/images/footer-cta-bg.png")}')` }}>
             <div className="container">
               <h2 className="cta-v2__title">
                 <span className="cta-v2__title-accent">＼</span>
@@ -458,7 +458,7 @@ export default function TopCopyPage() {
       </section>
 
       {/* ========== CTA ACHIEVEMENT BANNER ========== */}
-      <div className="cta-achievement reveal">
+      <div className="cta-achievement reveal" style={{ "--cta-achievement-bg-image": `url('${assetPath("/images/footer-achievement-bg.png")}')` }}>
         <div className="cta-achievement__inner">
           <div className="cta-achievement__left">
             <img src={assetPath("/images/laurel-wreath.png")} alt="月桂樹" className="cta-achievement__laurel" />

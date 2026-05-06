@@ -15,7 +15,7 @@
   width: 100%;
   padding: clamp(16px, 2.4vw, 30px);
   background-color: #e2eeff;
-  background-image: url("/images/top-copy-hero-bg.png");
+  background-image: var(--top-copy-hero-bg-image, url("/images/top-copy-hero-bg.png"));
   background-repeat: no-repeat;
   background-position: top center;
   background-size: 100% auto;

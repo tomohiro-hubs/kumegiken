@@ -46,7 +46,11 @@ const ctaItems = [
 
 export default function TopCopyHero() {
   return (
-    <section className={styles.root} aria-labelledby="top-copy-hero-title">
+    <section
+      className={styles.root}
+      aria-labelledby="top-copy-hero-title"
+      style={{ "--top-copy-hero-bg-image": `url('${assetPath("/images/top-copy-hero-bg.png")}')` }}
+    >
       <div className={styles.heroInner}>
         <div className={styles.heroVisual}>
           <div className={styles.copyBlock}>

@@ -48,15 +48,7 @@ export default function TopCopyHero() {
   return (
     <section className={styles.root} aria-labelledby="top-copy-hero-title">
       <div className={styles.heroInner}>
-        <div
-          className={styles.heroVisual}
-          style={{ "--hero-bg-image": `url('${assetPath("/images/hero-test2-bg.jpg")}')` }}
-        >
-          <div className={styles.topBadges}>
-            <p className={styles.badge}>大規模修繕</p>
-            <p className={styles.badge}>防水工事</p>
-          </div>
-
+        <div className={styles.heroVisual}>
           <div className={styles.copyBlock}>
             <h1 id="top-copy-hero-title" className={styles.headline}>
               <span className={styles.headlineLine}>建物の価値を守り、</span>
@@ -75,19 +67,21 @@ export default function TopCopyHero() {
               </span>
             </p>
 
-            <p className={styles.description}>確かな診断力と誠実な施工で、建物を永く守ります。</p>
+            <p className={styles.description}>確かな診断力と誠実な施工で、建物の価値を守ります。</p>
           </div>
 
           <ul className={styles.featureGrid} aria-label="強み">
             {featureItems.map((item) => {
               const Icon = item.icon;
+              const iconClassName =
+                item.number === "03" ? `${styles.featureIcon} ${styles.featureIcon03}` : styles.featureIcon;
               return (
                 <li key={item.number} className={styles.featureCard}>
                   <div className={styles.featureHeadingRow}>
                     <p className={styles.featureNumber}>{item.number}</p>
                     <h2 className={styles.featureTitle}>{item.title}</h2>
                   </div>
-                  <Icon className={styles.featureIcon} />
+                  <Icon className={iconClassName} />
                   <p className={styles.featureText}>{item.text}</p>
                 </li>
               );
@@ -96,7 +90,12 @@ export default function TopCopyHero() {
 
           <aside className={styles.phoneCta} aria-label="無料相談窓口">
             <p className={styles.phoneHead}>
-              <HandshakeIcon className={styles.phoneIcon} />
+              <img
+                src={assetPath("/images/top-copy-handshake-icon.svg")}
+                alt=""
+                aria-hidden="true"
+                className={`${styles.phoneIcon} ${styles.phoneHeadIcon}`}
+              />
               <span>無料診断・ご相談受付中</span>
               <span className={styles.bottomCtaText}>管理組合・オーナー・個人のお客様まで幅広く対応</span>
             </p>
@@ -107,7 +106,12 @@ export default function TopCopyHero() {
                 aria-label="0798-35-8778へ電話する"
                 className={styles.phoneLink}
               >
-                <PhoneIcon className={styles.phoneIcon} />
+                <img
+                  src={assetPath("/images/top-copy-phone-icon.svg")}
+                  alt=""
+                  aria-hidden="true"
+                  className={styles.phoneNumberIcon}
+                />
                 <span className={styles.number}>0798-35-8778</span>
                 <span className={styles.telLabel}>まずはお気軽にご相談ください</span>
               </a>
@@ -151,41 +155,19 @@ function cx(...values) {
 
 function ClipboardSearchIcon({ className }) {
   return (
-    <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false" className={className}>
-      <g fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="9" y="10" width="34" height="46" rx="4" />
-        <path d="M20 10v-2a4 4 0 0 1 8 0v2" />
-        <path d="M16 22h20M16 30h14M16 38h10" />
-        <circle cx="46" cy="46" r="10" />
-        <path d="m53 53 7 7" />
-      </g>
-    </svg>
+    <img src={assetPath("/images/top-copy-icon-01.png")} alt="" aria-hidden="true" className={className} />
   );
 }
 
 function WorkerIcon({ className }) {
   return (
-    <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false" className={className}>
-      <g fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M18 28v-4a14 14 0 0 1 28 0v4" />
-        <path d="M14 28h36v7H14z" />
-        <path d="M22 35v6M32 35v6M42 35v6" />
-        <path d="M12 57V45a10 10 0 0 1 10-10h20a10 10 0 0 1 10 10v12" />
-      </g>
-    </svg>
+    <img src={assetPath("/images/top-copy-icon-02.png")} alt="" aria-hidden="true" className={className} />
   );
 }
 
 function BuildingIcon({ className }) {
   return (
-    <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false" className={className}>
-      <g fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M8 56V24h20v32" />
-        <path d="M28 56V12h28v44" />
-        <path d="M20 56v-9h16v9" />
-        <path d="M14 30h4M14 36h4M14 42h4M34 20h4M42 20h4M50 20h4M34 28h4M42 28h4M50 28h4M34 36h4M42 36h4M50 36h4" />
-      </g>
-    </svg>
+    <img src={assetPath("/images/top-copy-icon-03.png")} alt="" aria-hidden="true" className={className} />
   );
 }
 
@@ -194,19 +176,6 @@ function WaterDropIcon({ className }) {
     <svg viewBox="0 0 36 36" aria-hidden="true" focusable="false" className={className}>
       <circle cx="18" cy="18" r="17" fill="none" stroke="currentColor" strokeWidth="2" />
       <path d="M18 8c-4 6-6 8-6 11a6 6 0 0 0 12 0c0-3-2-5-6-11Z" fill="none" stroke="currentColor" strokeWidth="2" />
-    </svg>
-  );
-}
-
-function HandshakeIcon({ className }) {
-  return (
-    <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false" className={className}>
-      <g fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="m8 27 8-8 9 5 7-6 8 8" />
-        <path d="M14 33 9 28M34 35l5-5" />
-        <path d="m20 28 4 4m-1-8 6 6" />
-        <path d="M6 24 12 12l9 3M42 24 36 12l-8 2" />
-      </g>
     </svg>
   );
 }

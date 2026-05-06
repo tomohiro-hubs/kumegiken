@@ -182,7 +182,7 @@ function getRevealClass(index) {
 
 export default function TopCopyPage() {
   return (
-    <main>
+    <main className="top-copy-page">
       <JsonLd data={reviewSchema} />
 
       <TopCopyHero />

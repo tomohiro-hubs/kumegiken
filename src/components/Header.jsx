@@ -2,8 +2,11 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
+  const pathname = usePathname();
+  const isTopCopyPage = pathname === '/top-copy' || pathname === '/top-copy/';
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openSubMenus, setOpenSubMenus] = useState({});
@@ -46,7 +49,7 @@ export default function Header() {
 
   return (
     <>
-      <header className={`header ${isScrolled ? 'header--scrolled' : ''}`} id="header">
+      <header className={`header ${isScrolled ? 'header--scrolled' : ''} ${isTopCopyPage ? 'header--top-copy' : ''}`} id="header">
         <div className="header__inner">
           <div className="header__logo">
             <Link href="/" onClick={closeMobileMenu}>
@@ -84,7 +87,12 @@ export default function Header() {
             <Link href="/recruit" className="header__nav-link">採用情報</Link>
           </nav>
           <div className="header__cta">
-            <Link href="/contact" className="btn btn--primary btn--sm"><i className="fas fa-envelope"></i> お問い合わせ</Link>
+            <p className="header__cta-lead">お電話でのお問い合わせはこちら</p>
+            <a href="tel:0798-35-8778" className="header__cta-phone" aria-label="0798-35-8778へ電話する">
+              <i className="fas fa-phone-alt" aria-hidden="true"></i>
+              <span>0798-35-8778</span>
+            </a>
+            <p className="header__cta-hours">受付時間 9:00-18:00(月〜金)</p>
           </div>
           <button 
             className={`header__hamburger ${isMobileMenuOpen ? 'active' : ''}`} 

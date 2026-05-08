@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const pathname = usePathname();
-  const isTopCopyPage = pathname === '/top-copy' || pathname === '/top-copy/';
+  const isTopCopyPage = pathname === '/' || pathname === '/top-copy' || pathname === '/top-copy/';
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openSubMenus, setOpenSubMenus] = useState({});

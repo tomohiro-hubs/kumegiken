@@ -3,14 +3,13 @@ import { assetPath } from "@/lib/assetPath";
 import { serviceCards } from "@/lib/serviceCards";
 import VoiceCarousel from "@/components/VoiceCarousel";
 import { buildMetadata } from "@/lib/seo";
-import TopCopyHero from "@/components/TopCopyHero";
-import JsonLd from "@/components/JsonLd";
 
 export const metadata = buildMetadata({
   title: "防水工事・大規模修繕なら久米技建｜西宮市の防水専門会社【無料建物診断】",
   description:
-    "西宮市の防水工事専門会社・久米技建。自社職人21名による直営施工で高品質な防水・外壁改修を実現。正直な建物診断に基づき、本当に必要な工事だけをご提案。兵庫・大阪エリア対応。無料建物診断・見積もり受付中。",
-  path: "/",
+    "西宮市の防水工事専門会社・久米技建。自社職人21名による直営施工で、高品質な防水・外壁改修を実現。正直な建物診断に基づき、本当に必要な工事だけをご提案。兵庫・大阪エリア対応。無料建物診断・見積もり受付中。",
+  path: "/top-backup",
+  noindex: true,
 });
 
 const reviewSchema = {
@@ -133,6 +132,7 @@ const workItems = [
   },
 ];
 
+
 const columnItems = [
   {
     href: "/column/waterproofing-guide",
@@ -222,12 +222,41 @@ function getRevealClass(index) {
   return "reveal";
 }
 
-export default function TopCopyPage() {
+export default function Home() {
   return (
-    <main className="top-copy-page">
-      <JsonLd data={reviewSchema} />
+    <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
 
-      <TopCopyHero />
+      {/* ========== HERO / FIRST VIEW ========== */}
+      <section className="hero">
+        <div className="hero__bg" style={{ backgroundImage: `url('${assetPath("/images/hero-test2-bg.jpg")}')` }}></div>
+        <div className="hero__anchor">
+          <div className="hero__content">
+            <p className="hero__lead reveal">
+              建物<span className="hero__particle">の</span>
+              <span className="text-accent">価値</span>を守り、未来へつなぐ。
+            </p>
+            <h1 className="hero__title reveal reveal--delay-1">
+              <span className="hero__line">
+                大規模修繕<span className="hero__particle">と</span>
+              </span>
+              <span className="hero__line">
+                <span className="text-accent">防水塗装</span>
+                <span className="hero__particle">の</span>
+              </span>
+              <span className="hero__line">プロフェッショナル</span>
+            </h1>
+            <p className="hero__description reveal reveal--delay-2">
+              <span>確かな技術と誠実な施工で、</span>
+              <span>安心・安全な建物環境を実現します。</span>
+            </p>
+            <p className="hero__tagline reveal reveal--delay-3">For the buildings. For the future.</p>
+          </div>
+        </div>
+        <div className="hero__badges">
+          <img src={assetPath("/images/hero-badges-overlay.png")} alt="特長バッジ" />
+        </div>
+      </section>
 
       {/* ========== REASON SECTION ========== */}
       <section className="reason" id="reason">
@@ -246,34 +275,36 @@ export default function TopCopyPage() {
               const concernMain = concernLines[0] ?? "";
               const concernBodyLines = concernLines.slice(1);
               return (
-                <article className={`reason__item reason__item--${item.number} reveal`} key={item.number}>
-                  <div className="reason__copy">
-                    <div className="reason__copyTop">
-                      <span className="reason__number en">{item.number}</span>
-                      <div className="reason__copyMain">
-                        <p className="reason__question">{item.concern}</p>
-                        <h3 className="reason__concern">{concernMain}</h3>
-                      </div>
+              <article className={`reason__item reason__item--${item.number} reveal`} key={item.number}>
+                <div className="reason__copy">
+                  <div className="reason__copyTop">
+                    <span className="reason__number en">{item.number}</span>
+                    <div className="reason__copyMain">
+                      <p className="reason__question">{item.concern}</p>
+                      <h3 className="reason__concern">{concernMain}</h3>
                     </div>
-                    <p className="reason__concernText">
-                      {concernBodyLines.map((line, index) => (
-                        <span key={`${item.number}-concern-${index}`}>{line}</span>
+                  </div>
+                  <p className="reason__concernText">
+                    {concernBodyLines.map((line, index) => (
+                      <span key={`${item.number}-concern-${index}`}>{line}</span>
+                    ))}
+                  </p>
+                  <div className="reason__solution">
+                    <span className="reason__solutionLead">{item.solutionLead}</span>
+                    <h4 className="reason__solutionTitle">
+                      {item.solutionTitle}
+                    </h4>
+                    <p className="reason__solutionText">
+                      {item.solutionText.split("\n").map((line, index) => (
+                        <span key={`${item.number}-solution-${index}`}>{line}</span>
                       ))}
                     </p>
-                    <div className="reason__solution">
-                      <span className="reason__solutionLead">{item.solutionLead}</span>
-                      <h4 className="reason__solutionTitle">{item.solutionTitle}</h4>
-                      <p className="reason__solutionText">
-                        {item.solutionText.split("\n").map((line, index) => (
-                          <span key={`${item.number}-solution-${index}`}>{line}</span>
-                        ))}
-                      </p>
-                    </div>
                   </div>
-                  <div className="reason__visual">
-                    <img src={assetPath(item.image)} alt={item.alt} />
-                  </div>
-                </article>
+                </div>
+                <div className="reason__visual">
+                  <img src={assetPath(item.image)} alt={item.alt} />
+                </div>
+              </article>
               );
             })}
           </div>
@@ -486,13 +517,9 @@ export default function TopCopyPage() {
                 <a href={routePath("/contact")} className="cta-v2__action cta-v2__action--primary">
                   <span className="cta-v2__primary-copy">
                     <span className="cta-v2__primary-sub">＼ 30秒で完了・相談無料 ／</span>
-                    <span className="cta-v2__primary-main">
-                      <i className="far fa-envelope"></i> 無料で相談する
-                    </span>
+                    <span className="cta-v2__primary-main"><i className="far fa-envelope"></i> 無料で相談する</span>
                   </span>
-                  <span className="cta-v2__primary-arrow" aria-hidden="true">
-                    ›
-                  </span>
+                  <span className="cta-v2__primary-arrow" aria-hidden="true">›</span>
                 </a>
 
                 <a href={routePath("/simulation")} className="cta-v2__action cta-v2__action--secondary">
@@ -501,8 +528,7 @@ export default function TopCopyPage() {
               </div>
 
               <p className="cta-v2__reassurance">
-                まだ依頼するか決まっていなくても大丈夫です。
-                <span className="cta-v2__reassurance-accent">状況確認だけでもOKです。</span>
+                まだ依頼するか決まっていなくても大丈夫です。<span className="cta-v2__reassurance-accent">状況確認だけでもOKです。</span>
               </p>
             </div>
           </div>
@@ -515,14 +541,14 @@ export default function TopCopyPage() {
           <div className="cta-support__inner">
             <div className="cta-support__item">
               <div className="cta-support__icon">
-                <img src={assetPath("/images/icon_optimal-fastest.png")} alt="最適工事を最短工事" />
+                <img src={assetPath("/images/icon_optimal-fastest.png")} alt="最適工事を最短工程で" />
               </div>
               <div className="cta-support__text-block">
-                <h3 className="cta-support__title">最適工事を最短工事</h3>
+                <h3 className="cta-support__title">最適工事を最短工程で</h3>
                 <p className="cta-support__desc">急な雨漏りにも迅速対応。状況を確認のうえ、現地を丁寧に調査します。</p>
               </div>
             </div>
-
+            
             <div className="cta-support__item">
               <div className="cta-support__icon">
                 <img src={assetPath("/images/icon_repair.png")} alt="原因から根本修理" />
@@ -539,11 +565,7 @@ export default function TopCopyPage() {
               </div>
               <div className="cta-support__text-block">
                 <h3 className="cta-support__title">自社職人が対応</h3>
-                <p className="cta-support__desc">
-                  経験豊富な自社職人が責任を持って
-                  <br />
-                  施工。中間マージンもかかりません。
-                </p>
+                <p className="cta-support__desc">経験豊富な自社職人が責任を持って<br />施工。中間マージンもかかりません。</p>
               </div>
             </div>
           </div>
@@ -560,7 +582,9 @@ export default function TopCopyPage() {
             <span className="cta-achievement__unit">件以上</span>
           </div>
           <div className="cta-achievement__divider"></div>
-          <div className="cta-achievement__right">西宮市・神戸市・大阪市を中心に地域密着で対応しています。</div>
+          <div className="cta-achievement__right">
+            西宮市・神戸市・大阪市を中心に地域密着で対応しています。
+          </div>
         </div>
       </div>
     </main>

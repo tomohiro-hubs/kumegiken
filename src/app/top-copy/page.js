@@ -58,6 +58,49 @@ const serviceQuickLinks = [
   { href: "/service/large-scale-repair", label: "大規模修繕" },
 ];
 
+const reasonItems = [
+  {
+    number: "01",
+    image: "/images/inspection-scene.jpg",
+    alt: "現地調査へ向かう担当者",
+    question: "01",
+    concern: "こんな不安はありませんか？",
+    concernText:
+      "業者が変わるたび、話が伝わっているか不安…\n調査した人、判断する人、施工する人が分かれていると、伝達ミスや判断のズレが起きやすくなります。",
+    solutionLead: "久米技建の答え",
+    solutionTitle: "情報ロスなく、最適工事を\n最短工程で。",
+    solutionText:
+      "久米技建は、建物を診た技術者がそのまま施工計画を立て、\n必要に応じて自ら現場にも入ります。情報のロスが少ないから、\n最適な工事を、ムダのない工程で進められます。",
+    icon: "fa-regular fa-clock",
+  },
+  {
+    number: "02",
+    image: "/images/waterproofing-hands.jpg",
+    alt: "防水施工の様子",
+    question: "02",
+    concern: "こんな不安はありませんか？",
+    concernText: "直しても、また漏れたらどうしよう…\n原因が特定しにくく、不十分な工事でしばらくの間は不安になりますよね。",
+    solutionLead: "久米技建の答え",
+    solutionTitle: "原因から直すので、再発しにくい！",
+    solutionText:
+      "見えない原因までしっかり特定し、根本から対処します。\nその場しのぎではなく、長期にわたり役立つ\n長く安心が続きます。",
+    icon: "fa-solid fa-magnifying-glass",
+  },
+  {
+    number: "03",
+    image: "/images/team-meeting.jpg",
+    alt: "担当者のご説明",
+    question: "03",
+    concern: "こんな不安はありませんか？",
+    concernText: "どんな人が来るのか不安…\nスタッフの質は仕上がりの印。やっぱり不安ですよね。",
+    solutionLead: "久米技建の答え",
+    solutionTitle: "自社の職人が直接対応します！",
+    solutionText:
+      "外注に任せず、自社の職人が責任を持って対応します。\n責任を持って、丁寧な施工を行いますのでご安心ください。",
+    icon: "fa-solid fa-helmet-safety",
+  },
+];
+
 const workItems = [
   {
     href: "/works/nishinomiya-mansion-waterproofing-01",
@@ -186,6 +229,57 @@ export default function TopCopyPage() {
       <JsonLd data={reviewSchema} />
 
       <TopCopyHero />
+
+      {/* ========== REASON SECTION ========== */}
+      <section className="reason" id="reason">
+        <div className="container">
+          <div className="section-heading reveal">
+            <span className="section-heading__en">Why Choose Us</span>
+            <h2 className="section-heading__ja">
+              久米技建が選ばれる<span className="text-accent">3つの理由</span>
+            </h2>
+            <span className="section-heading__line"></span>
+          </div>
+
+          <div className="reason__list">
+            {reasonItems.map((item) => {
+              const concernLines = item.concernText.split("\n");
+              const concernMain = concernLines[0] ?? "";
+              const concernBodyLines = concernLines.slice(1);
+              return (
+                <article className={`reason__item reason__item--${item.number} reveal`} key={item.number}>
+                  <div className="reason__copy">
+                    <div className="reason__copyTop">
+                      <span className="reason__number en">{item.number}</span>
+                      <div className="reason__copyMain">
+                        <p className="reason__question">{item.concern}</p>
+                        <h3 className="reason__concern">{concernMain}</h3>
+                      </div>
+                    </div>
+                    <p className="reason__concernText">
+                      {concernBodyLines.map((line, index) => (
+                        <span key={`${item.number}-concern-${index}`}>{line}</span>
+                      ))}
+                    </p>
+                    <div className="reason__solution">
+                      <span className="reason__solutionLead">{item.solutionLead}</span>
+                      <h4 className="reason__solutionTitle">{item.solutionTitle}</h4>
+                      <p className="reason__solutionText">
+                        {item.solutionText.split("\n").map((line, index) => (
+                          <span key={`${item.number}-solution-${index}`}>{line}</span>
+                        ))}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="reason__visual">
+                    <img src={assetPath(item.image)} alt={item.alt} />
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
 
       {/* ========== SERVICE SECTION ========== */}
       <section className="service" id="service">

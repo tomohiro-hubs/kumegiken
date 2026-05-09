@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 
 import { buildMetadata } from "@/lib/seo";
@@ -130,37 +129,6 @@ export default function Page() {
         <tr><th>対応エリア</th><td>兵庫県・大阪府を中心とした関西圏全域、および東京都内、埼玉</td></tr>
         <tr><th>主な取引先</th><td>マンション管理組合、不動産管理会社、ビルオーナー、<br />一般法人、個人住宅オーナー</td></tr>
       </tbody></table>
-
-      <div style={{ marginTop: '60px' }} className="reveal">
-        <h2 style={{ fontSize: '24px', fontWeight: '700', color: 'var(--color-primary)', marginBottom: '24px' }}>対応エリア</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px' }}>
-          <div style={{ background: 'linear-gradient(160deg, #f4fbff 0%, #ffffff 70%)', border: '1px solid #d5e8f4', borderRadius: '16px', padding: '28px' }}>
-            <div style={{ display: 'inline-block', fontSize: '12px', fontWeight: '700', color: '#0f4c81', background: '#dff0fb', borderRadius: '999px', padding: '6px 12px', marginBottom: '14px' }}>Kansai Area</div>
-            <h3 style={{ fontSize: '22px', fontWeight: '700', color: 'var(--color-primary)', marginBottom: '14px' }}>関西エリア</h3>
-            <p style={{ fontSize: '14px', color: 'var(--color-text-light)', lineHeight: '1.9', marginBottom: '18px' }}>
-              兵庫県（西宮市・神戸市・芦屋市・尼崎市・宝塚市 ほか）<br />
-              大阪府（大阪市・吹田市・豊中市 ほか）
-            </p>
-            <div style={{ marginBottom: '20px' }}>
-              <div style={{ fontSize: '12px', fontWeight: '700', color: 'var(--color-text-light)', letterSpacing: '0.04em' }}>累計施工実績</div>
-              <div style={{ fontSize: '44px', lineHeight: '1', fontWeight: '900', color: 'var(--color-primary)', marginTop: '4px' }}>1,000<span style={{ fontSize: '20px', marginLeft: '4px' }}>件以上</span></div>
-            </div>
-            <Link href={routePath("/company/area")} className="btn btn--primary btn--sm">詳しく見る</Link>
-          </div>
-
-          <div style={{ background: 'linear-gradient(160deg, #fff8f2 0%, #ffffff 70%)', border: '1px solid #f2ddcb', borderRadius: '16px', padding: '28px' }}>
-            <div style={{ display: 'inline-block', fontSize: '12px', fontWeight: '700', color: '#8a4a16', background: '#fce9d8', borderRadius: '999px', padding: '6px 12px', marginBottom: '14px' }}>Kanto Area</div>
-            <h3 style={{ fontSize: '22px', fontWeight: '700', color: 'var(--color-primary)', marginBottom: '14px' }}>関東エリア</h3>
-            <p style={{ fontSize: '14px', color: 'var(--color-text-light)', lineHeight: '1.9', marginBottom: '12px' }}>
-              関西圏、東京都・埼玉周辺に対応しています。
-            </p>
-            <p style={{ fontSize: '14px', color: 'var(--color-text-light)', lineHeight: '1.9', marginBottom: '20px' }}>
-              2025年に東京支店を開設。関西で培った技術を東京で提供し、信頼される施工体制を着実に広げています。
-            </p>
-            <Link href={routePath("/company/area")} className="btn btn--outline-dark btn--sm">詳しく見る</Link>
-          </div>
-        </div>
-      </div>
 
       <div style={{ marginTop: '60px' }} className="reveal">
         <h2 style={{ fontSize: '24px', fontWeight: '700', color: 'var(--color-primary)', marginBottom: '24px' }}>経営理念</h2>

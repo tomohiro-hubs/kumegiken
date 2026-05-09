@@ -25,7 +25,7 @@ const localBusinessSchema = {
       closes: "18:00",
     },
   ],
-  areaServed: ["西宮市", "神戸市", "尼崎市", "大阪市", "兵庫県", "大阪府"],
+  areaServed: ["西宮市", "神戸市", "尼崎市", "大阪市", "兵庫県", "大阪府", "東京都", "練馬区"],
   url: SITE_URL,
 };
 
@@ -47,7 +47,7 @@ const faqSchema = {
       name: "対応エリアはどこですか？",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "兵庫県・大阪府を中心に関西圏全域で対応しています。エリア外も案件内容により対応可能です。",
+        text: "兵庫県・大阪府を中心とした関西圏、および東京都内、埼玉で対応しています。エリア外も案件内容により対応可能です。",
       },
     },
     {
@@ -72,7 +72,7 @@ const faqSchema = {
 const companyFaqItems = [
   {
     question: "対応エリアはどこですか？",
-    answer: "兵庫県・大阪府を中心に関西圏全域で対応しています。エリア外についても案件内容に応じてご相談可能です。",
+    answer: "兵庫県・大阪府を中心とした関西圏、および東京都内、埼玉で対応しています。エリア外についても案件内容に応じてご相談可能です。",
   },
   {
     question: "営業時間と連絡先を教えてください。",
@@ -127,9 +127,40 @@ export default function Page() {
         <tr><th>資本金</th><td>記載準備中</td></tr>
         <tr><th>従業員数</th><td>約25名（自社職人21名・施工管理4名）</td></tr>
         <tr><th>建設業許可</th><td>兵庫県知事 許可（般-3）第220086号</td></tr>
-        <tr><th>対応エリア</th><td>兵庫県・大阪府を中心とした関西圏全域</td></tr>
+        <tr><th>対応エリア</th><td>兵庫県・大阪府を中心とした関西圏全域、および東京都内、埼玉</td></tr>
         <tr><th>主な取引先</th><td>マンション管理組合、不動産管理会社、ビルオーナー、<br />一般法人、個人住宅オーナー</td></tr>
       </tbody></table>
+
+      <div style={{ marginTop: '60px' }} className="reveal">
+        <h2 style={{ fontSize: '24px', fontWeight: '700', color: 'var(--color-primary)', marginBottom: '24px' }}>対応エリア</h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px' }}>
+          <div style={{ background: 'linear-gradient(160deg, #f4fbff 0%, #ffffff 70%)', border: '1px solid #d5e8f4', borderRadius: '16px', padding: '28px' }}>
+            <div style={{ display: 'inline-block', fontSize: '12px', fontWeight: '700', color: '#0f4c81', background: '#dff0fb', borderRadius: '999px', padding: '6px 12px', marginBottom: '14px' }}>Kansai Area</div>
+            <h3 style={{ fontSize: '22px', fontWeight: '700', color: 'var(--color-primary)', marginBottom: '14px' }}>関西エリア</h3>
+            <p style={{ fontSize: '14px', color: 'var(--color-text-light)', lineHeight: '1.9', marginBottom: '18px' }}>
+              兵庫県（西宮市・神戸市・芦屋市・尼崎市・宝塚市 ほか）<br />
+              大阪府（大阪市・吹田市・豊中市 ほか）
+            </p>
+            <div style={{ marginBottom: '20px' }}>
+              <div style={{ fontSize: '12px', fontWeight: '700', color: 'var(--color-text-light)', letterSpacing: '0.04em' }}>累計施工実績</div>
+              <div style={{ fontSize: '44px', lineHeight: '1', fontWeight: '900', color: 'var(--color-primary)', marginTop: '4px' }}>1,000<span style={{ fontSize: '20px', marginLeft: '4px' }}>件以上</span></div>
+            </div>
+            <Link href={routePath("/company/area")} className="btn btn--primary btn--sm">詳しく見る</Link>
+          </div>
+
+          <div style={{ background: 'linear-gradient(160deg, #fff8f2 0%, #ffffff 70%)', border: '1px solid #f2ddcb', borderRadius: '16px', padding: '28px' }}>
+            <div style={{ display: 'inline-block', fontSize: '12px', fontWeight: '700', color: '#8a4a16', background: '#fce9d8', borderRadius: '999px', padding: '6px 12px', marginBottom: '14px' }}>Kanto Area</div>
+            <h3 style={{ fontSize: '22px', fontWeight: '700', color: 'var(--color-primary)', marginBottom: '14px' }}>関東エリア</h3>
+            <p style={{ fontSize: '14px', color: 'var(--color-text-light)', lineHeight: '1.9', marginBottom: '12px' }}>
+              関西圏、東京都・埼玉周辺に対応しています。
+            </p>
+            <p style={{ fontSize: '14px', color: 'var(--color-text-light)', lineHeight: '1.9', marginBottom: '20px' }}>
+              2025年に東京支店を開設。関西で培った技術を東京で提供し、信頼される施工体制を着実に広げています。
+            </p>
+            <Link href={routePath("/company/area")} className="btn btn--outline-dark btn--sm">詳しく見る</Link>
+          </div>
+        </div>
+      </div>
 
       <div style={{ marginTop: '60px' }} className="reveal">
         <h2 style={{ fontSize: '24px', fontWeight: '700', color: 'var(--color-primary)', marginBottom: '24px' }}>経営理念</h2>
@@ -152,7 +183,7 @@ export default function Page() {
             <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--color-primary)', marginBottom: '12px' }}>東京営業所</h3>
             <p style={{ fontSize: '14px', color: 'var(--color-text-light)', marginBottom: '16px', lineHeight: '1.6' }}>〒178-0063<br />東京都練馬区東大泉1-19-1-1F</p>
             <div style={{ borderRadius: '8px', overflow: 'hidden', background: '#ddd', width: '100%', height: '300px' }}>
-              <iframe src="https://maps.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E7%B7%B4%E9%A6%AC%E5%8C%BA%E6%9D%B1%E5%A4%A7%E6%B3%891%E4%B8%81%E7%9B%AE19-1&hl=ja&z=16&output=embed" width="100%" height="100%" style={{ border: '0' }} allowFullScreen="" loading="lazy"></iframe>
+              <iframe src="https://maps.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E7%B7%B4%E9%A6%AC%E5%8C%BA%E6%9D%B1%E5%A4%A7%E6%B3%891-19-1-1F&hl=ja&z=17&output=embed" width="100%" height="100%" style={{ border: '0' }} allowFullScreen="" loading="lazy"></iframe>
             </div>
           </div>
         </div>

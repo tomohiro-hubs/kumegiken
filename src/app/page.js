@@ -556,7 +556,7 @@ export default function TopCopyPage() {
           <div className="cta-achievement__left">
             <img src={assetPath("/images/laurel-wreath.png")} alt="月桂樹" className="cta-achievement__laurel" />
             <span className="cta-achievement__label">累計施工実績</span>
-            <span className="cta-achievement__number">5,000</span>
+            <span className="cta-achievement__number">1,000</span>
             <span className="cta-achievement__unit">件以上</span>
           </div>
           <div className="cta-achievement__divider"></div>

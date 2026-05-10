@@ -3,14 +3,13 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
+import { siteConfig } from '@/lib/siteConfig';
 
 export default function Header() {
   const pathname = usePathname();
   const isTopCopyPage = pathname === '/' || pathname === '/top-copy' || pathname === '/top-copy/';
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [openSubMenus, setOpenSubMenus] = useState({});
-
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -37,14 +36,6 @@ export default function Header() {
     if (typeof document !== 'undefined') {
       document.body.style.overflow = '';
     }
-  };
-
-  const toggleSubMenu = (e, menuId) => {
-    e.preventDefault();
-    setOpenSubMenus(prev => ({
-      ...prev,
-      [menuId]: !prev[menuId]
-    }));
   };
 
   return (
@@ -88,9 +79,9 @@ export default function Header() {
           </nav>
           <div className="header__cta">
             <p className="header__cta-lead">お電話でのお問い合わせはこちら</p>
-            <a href="tel:0798-35-8778" className="header__cta-phone" aria-label="0798-35-8778へ電話する">
+            <a href={`tel:${siteConfig.phone.tel}`} className="header__cta-phone" aria-label={`${siteConfig.phone.display}へ電話する`}>
               <i className="fas fa-phone-alt" aria-hidden="true"></i>
-              <span>0798-35-8778</span>
+              <span>{siteConfig.phone.display}</span>
             </a>
             <p className="header__cta-hours">受付時間 9:00-18:00(月〜金)</p>
           </div>
@@ -118,7 +109,7 @@ export default function Header() {
         <Link href="/column" className="mobile-nav__link" onClick={closeMobileMenu}>コラム</Link>
         <Link href="/recruit" className="mobile-nav__link" onClick={closeMobileMenu}>採用情報</Link>
         <div className="mobile-nav__cta">
-          <a href="tel:0798-27-5653" className="btn btn--outline"><i className="fas fa-phone"></i> 電話で相談</a>
+          <a href={`tel:${siteConfig.phone.tel}`} className="btn btn--outline"><i className="fas fa-phone"></i> 電話で相談</a>
           <Link href="/contact" className="btn btn--primary" onClick={closeMobileMenu}><i className="fas fa-envelope"></i> 無料見積もり</Link>
         </div>
       </nav>

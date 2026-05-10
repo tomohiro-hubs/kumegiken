@@ -122,7 +122,7 @@ export default function Page() {
     </div>
   </section>
 
-  <section className="cta-section"><div className="container"><h2 className="cta-section__title reveal">大規模修繕のご相談はお気軽に</h2><p className="cta-section__text reveal">まずは無料の建物診断から。最適な修繕計画をご提案します。</p><div className="cta-section__phone reveal"><a href="tel:0798-78-6880" className="cta-section__phone-number" style={{ color: 'white', textDecoration: 'none' }}><i className="fas fa-phone-alt"></i> 0798-78-6880</a><div className="cta-section__phone-sub">受付時間：平日 9:00〜18:00</div></div><div className="cta-section__buttons reveal"><a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> 無料相談・お見積もり</a><a href={routePath("/simulation")} className="btn btn--outline btn--lg"><i className="fas fa-calculator"></i> 見積もりシミュレーション</a></div></div></section>
+  <section className="cta-section"><div className="container"><h2 className="cta-section__title reveal">大規模修繕のご相談はお気軽に</h2><p className="cta-section__text reveal">まずは無料の建物診断から。最適な修繕計画をご提案します。</p><div className="cta-section__phone reveal"><a href="tel:0798-27-5653" className="cta-section__phone-number" style={{ color: 'white', textDecoration: 'none' }}><i className="fas fa-phone-alt"></i> 0798-27-5653</a><div className="cta-section__phone-sub">受付時間：平日 9:00〜18:00</div></div><div className="cta-section__buttons reveal"><a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> 無料相談・お見積もり</a><a href={routePath("/simulation")} className="btn btn--outline btn--lg"><i className="fas fa-calculator"></i> 見積もりシミュレーション</a></div></div></section>
 
   
     </main>

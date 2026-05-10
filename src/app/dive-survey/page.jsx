@@ -51,7 +51,7 @@ export default function Page() {
   </div>
 </div></section>
 
-<section className="cta-section"><div className="container"><h2 className="cta-section__title">水中点検のご相談</h2><p className="cta-section__text">まずはお気軽にお問い合わせください。</p><div className="cta-section__phone"><a href="tel:0798-78-6880" className="cta-section__phone-number" style={{ color: 'white', textDecoration: 'none' }}><i className="fas fa-phone-alt"></i> 0798-78-6880</a></div><div className="cta-section__buttons"><a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> お問い合わせ</a></div></div></section>
+<section className="cta-section"><div className="container"><h2 className="cta-section__title">水中点検のご相談</h2><p className="cta-section__text">まずはお気軽にお問い合わせください。</p><div className="cta-section__phone"><a href="tel:0798-27-5653" className="cta-section__phone-number" style={{ color: 'white', textDecoration: 'none' }}><i className="fas fa-phone-alt"></i> 0798-27-5653</a></div><div className="cta-section__buttons"><a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> お問い合わせ</a></div></div></section>
 
   
     </main>

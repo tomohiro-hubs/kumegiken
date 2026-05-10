@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { siteConfig } from '@/lib/siteConfig';
 
 export default function Footer() {
   const [showTokens, setShowTokens] = useState({
@@ -42,7 +43,7 @@ export default function Footer() {
                 会社名：株式会社久米技建<br />
                 所在地：〒663-8152 兵庫県西宮市甲子園町5-7 河津ビル1F<br />
                 東京営業所：〒178-0063 東京都練馬区東大泉1-19-1-1F<br />
-                電話番号：0798-27-5653<br />
+                電話番号：{siteConfig.phone.display}<br />
                 建設業許可番号：兵庫県知事 許可（般-3）第220086号<br />
                 設立年：創業2016年　設立2021年<br />
                 資本金：500万円<br />
@@ -93,7 +94,7 @@ export default function Footer() {
       {/* ========== FIXED CTA (Mobile) ========== */}
       <div className={`fixed-cta ${showTokens.fixedCta ? 'visible' : ''}`}>
         <div className="fixed-cta__inner">
-          <a href="tel:0798-27-5653" className="fixed-cta__btn fixed-cta__btn--phone">
+          <a href={`tel:${siteConfig.phone.tel}`} className="fixed-cta__btn fixed-cta__btn--phone">
             <i className="fas fa-phone-alt"></i> 電話で相談
           </a>
           <Link href="/contact" className="fixed-cta__btn fixed-cta__btn--contact">

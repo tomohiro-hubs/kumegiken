@@ -78,7 +78,7 @@ export default function Page() {
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }} className="reveal">
         <div style={{ background: 'var(--color-primary)', color: 'white', padding: '32px', borderRadius: '16px', textAlign: 'center' }}>
           <p style={{ fontSize: '14px', marginBottom: '8px', opacity: '0.7' }}>お急ぎの方はお電話ください</p>
-          <a href="tel:0798-78-6880" style={{ fontFamily: 'var(--font-en)', fontSize: '28px', fontWeight: '900', color: 'white', textDecoration: 'none' }}><i className="fas fa-phone-alt"></i> 0798-78-6880</a>
+          <a href="tel:0798-27-5653" style={{ fontFamily: 'var(--font-en)', fontSize: '28px', fontWeight: '900', color: 'white', textDecoration: 'none' }}><i className="fas fa-phone-alt"></i> 0798-27-5653</a>
           <p style={{ fontSize: '12px', marginTop: '8px', opacity: '0.6' }}>受付時間：平日 9:00〜18:00</p>
         </div>
         <div style={{ background: 'var(--color-bg-light)', padding: '32px', borderRadius: '16px', textAlign: 'center' }}>
@@ -129,7 +129,7 @@ export default function Page() {
             </div>
             <div className="form-group">
               <label className="form-label">電話番号 <span className="required">必須</span></label>
-              <input type="tel" name="tel" value={formData.tel} onChange={handleChange} className={`form-input ${errors.tel ? 'error' : ''}`} placeholder="例：0798-78-6880" />
+              <input type="tel" name="tel" value={formData.tel} onChange={handleChange} className={`form-input ${errors.tel ? 'error' : ''}`} placeholder="例：0798-27-5653" />
             </div>
           </div>
 

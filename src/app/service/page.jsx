@@ -14,7 +14,7 @@ export const metadata = buildMetadata({
 export default function Page() {
   return (
     <main>
-      <section className="page-hero page-hero--no-deco" style={{ background: "url('/images/service-hero-bg.png') center / cover no-repeat" }}>
+      <section className="page-hero page-hero--no-deco">
     <span className="page-hero__label">Service</span>
     <h1 className="page-hero__title">サービス一覧</h1>
     <p className="page-hero__description">防水・修繕のプロフェッショナルとして、建物に関わるあらゆるお悩みに対応します。</p>

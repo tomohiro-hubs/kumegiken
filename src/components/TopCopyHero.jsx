@@ -1,5 +1,6 @@
 import { assetPath } from "@/lib/assetPath";
 import { routePath } from "@/lib/routePath";
+import { siteConfig } from "@/lib/siteConfig";
 import styles from "./TopCopyHero.module.css";
 
 const featureItems = [
@@ -106,8 +107,8 @@ export default function TopCopyHero() {
 
             <div className={styles.phoneNumberRow}>
               <a
-                href="tel:0798-35-8778"
-                aria-label="0798-35-8778へ電話する"
+                href={`tel:${siteConfig.phone.tel}`}
+                aria-label={`${siteConfig.phone.display}へ電話する`}
                 className={styles.phoneLink}
               >
                 <img
@@ -116,7 +117,7 @@ export default function TopCopyHero() {
                   aria-hidden="true"
                   className={styles.phoneNumberIcon}
                 />
-                <span className={styles.number}>0798-35-8778</span>
+                <span className={styles.number}>{siteConfig.phone.display}</span>
                 <span className={styles.telLabel}>まずはお気軽にご相談ください</span>
               </a>
               <p className={styles.freeBadge} aria-label="ご相談無料">

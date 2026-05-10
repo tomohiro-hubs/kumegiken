@@ -65,7 +65,7 @@ export default function Page() {
     </div>
   </div></div></section>
 
-  <section className="cta-section"><div className="container"><h2 className="cta-section__title">無料建物診断のお申し込み</h2><p className="cta-section__text">まずは無料の建物診断から。お気軽にご相談ください。</p><div className="cta-section__phone"><a href="tel:0798-78-6880" className="cta-section__phone-number" style={{ color: 'white', textDecoration: 'none' }}><i className="fas fa-phone-alt"></i> 0798-78-6880</a><div className="cta-section__phone-sub">受付時間：平日 9:00〜18:00</div></div><div className="cta-section__buttons"><a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> 無料診断を申し込む</a></div></div></section>
+  <section className="cta-section"><div className="container"><h2 className="cta-section__title">無料建物診断のお申し込み</h2><p className="cta-section__text">まずは無料の建物診断から。お気軽にご相談ください。</p><div className="cta-section__phone"><a href="tel:0798-27-5653" className="cta-section__phone-number" style={{ color: 'white', textDecoration: 'none' }}><i className="fas fa-phone-alt"></i> 0798-27-5653</a><div className="cta-section__phone-sub">受付時間：平日 9:00〜18:00</div></div><div className="cta-section__buttons"><a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> 無料診断を申し込む</a></div></div></section>
 
   
     </main>

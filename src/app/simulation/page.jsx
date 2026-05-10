@@ -42,9 +42,9 @@ export default function Page() {
           </div>
         </div>
 
-        <div className="sim-attention reveal">
+        <div className="sim-attention reveal" style={{ textAlign: 'left' }}>
           <i className="fas fa-info-circle"></i>
-          こちらはあくまで概算です。正確なお見積もりは現地調査後にお出しします。
+          本シミュレーションは2025年時点の単価を基準にした概算です。資材価格の高騰等により、実際のお見積もりは大きく変動する場合があります。電話番号などの個人情報入力は不要で、概算金額をご確認いただけます。
         </div>
 
         <div className="sim-layout">
@@ -257,8 +257,8 @@ export default function Page() {
           <div style={{ maxWidth: '640px', margin: '0 auto' }}>
             <p className="sim-result__kicker">概算お見積り</p>
             <div className="sim-result__range" id="total-price-range">0円〜0円</div>
-            <p className="sim-result__note">
-              ※ 上記は概算です。正確な金額は現地調査後にお見積もりいたします。
+            <p className="sim-result__note" style={{ textAlign: 'left' }}>
+              ※ 上記は2025年時点の概算です。資材価格の変動等により実際の金額は変動します。正式金額は現地調査後のお見積もりとなります。
             </p>
           </div>
 

@@ -38,7 +38,7 @@ export default function Page() {
           </p>
 
           <h2>大規模修繕で久米技建が選ばれる理由</h2>
-          <p>大規模修繕工事は、数百万円〜数千万円規模の投資判断です。だからこそ、信頼できる施工会社の選定が重要になります。</p>
+          <p>大規模修繕工事は、数百万円〜数億円規模の投資判断です。だからこそ、信頼できる施工会社の選定が重要になります。</p>
 
           <section className="lsr-pillars" aria-label="久米技建の品質基準">
             <div className="lsr-pillars__label">Quality Pillars</div>

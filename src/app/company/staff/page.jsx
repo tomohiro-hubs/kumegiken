@@ -48,7 +48,7 @@ export default function Page() {
   <div style={{ textAlign: 'center', marginTop: '60px', padding: '40px', background: 'var(--color-bg-light)', borderRadius: '16px' }} className="reveal">
     <img src={assetPath("/images/team-group.jpg")} alt="久米技建チーム集合写真" style={{ aspectRatio: '16/7', width: '100%', objectFit: 'cover', borderRadius: '8px', minHeight: '250px' }} />
     <p style={{ marginTop: '16px', fontSize: '16px', fontWeight: '700', color: 'var(--color-primary)' }}>久米技建チーム集合写真</p>
-    <p style={{ fontSize: '14px', color: 'var(--color-text-light)' }}>自社職人21名・施工管理4名の総勢25名体制で、お客様の建物をお守りします。</p>
+    <p style={{ fontSize: '14px', color: 'var(--color-text-light)' }}>自社職人・施工管理・協力パートナー（BP）を含め、約40名体制でお客様の建物をお守りしています。</p>
   </div>
 </div></section>
   

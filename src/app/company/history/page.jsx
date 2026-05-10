@@ -24,13 +24,16 @@ export default function Page() {
   </div>
 </section>
 <section className="content-section"><div className="container container--narrow">
+  <h2 className="reveal" style={{ fontSize: '24px', fontWeight: '700', color: 'var(--color-primary)', marginBottom: '24px' }}>沿革</h2>
   <div className="flow__timeline">
-    <div className="flow__step reveal"><div className="flow__step-number" style={{ fontSize: '12px' }}>2016</div><div className="flow__step-content"><h3 className="flow__step-title">株式会社久米技建 設立</h3><p className="flow__step-text">代表・久米涼平が兵庫県西宮市にて創業。防水工事専門会社としてスタート。自社職人による直営施工体制の基盤を構築。</p></div></div>
+    <div className="flow__step reveal"><div className="flow__step-number" style={{ fontSize: '12px' }}>2016</div><div className="flow__step-content"><h3 className="flow__step-title">久米技建 設立</h3><p className="flow__step-text">久米技建として創業。代表・久米涼平が兵庫県西宮市にて創業。防水工事専門会社としてスタート。自社職人による直営施工体制の基盤を構築。</p></div></div>
     <div className="flow__step reveal"><div className="flow__step-number" style={{ fontSize: '12px' }}>2018</div><div className="flow__step-content"><h3 className="flow__step-title">事業領域の拡大</h3><p className="flow__step-text">防水工事に加え、外壁塗装・シーリング工事の受注を開始。総合的な建物メンテナンスサービスを展開。自社職人10名体制へ。</p></div></div>
     <div className="flow__step reveal"><div className="flow__step-number" style={{ fontSize: '12px' }}>2020</div><div className="flow__step-content"><h3 className="flow__step-title">大規模修繕工事への参入</h3><p className="flow__step-text">マンション・ビルの大規模修繕工事を本格的に開始。建物診断サービスの提供も開始し、「正直な診断」の理念を確立。</p></div></div>
-    <div className="flow__step reveal"><div className="flow__step-number" style={{ fontSize: '12px' }}>2022</div><div className="flow__step-content"><h3 className="flow__step-title">組織体制の強化</h3><p className="flow__step-text">自社職人15名・施工管理3名体制へ拡大。品質管理体制の強化と、教育研修制度の整備を実施。年間施工件数300件を突破。</p></div></div>
-    <div className="flow__step reveal"><div className="flow__step-number" style={{ fontSize: '12px' }}>2024</div><div className="flow__step-content"><h3 className="flow__step-title">水中点検事業の開始</h3><p className="flow__step-text">新規事業として水中点検・調査事業を開始。ダム、港湾施設、橋梁の水中部分の点検サービスを提供。</p></div></div>
-    <div className="flow__step reveal"><div className="flow__step-number" style={{ fontSize: '12px' }}>2026</div><div className="flow__step-content"><h3 className="flow__step-title">現在</h3><p className="flow__step-text">自社職人21名・施工管理4名の25名体制。年間施工件数500件以上。関西圏を中心に、信頼のパートナーとして成長を続けています。</p></div></div>
+    <div className="flow__step reveal"><div className="flow__step-number" style={{ fontSize: '12px' }}>2021</div><div className="flow__step-content"><h3 className="flow__step-title">株式会社久米技建 設立</h3><p className="flow__step-text">個人事業から法人化し、株式会社久米技建を設立。経営基盤を強化し、品質管理・安全管理体制を整備。より安定した施工提供体制を確立。</p></div></div>
+    <div className="flow__step reveal"><div className="flow__step-number" style={{ fontSize: '12px' }}>2022</div><div className="flow__step-content"><h3 className="flow__step-title">組織体制の強化</h3><p className="flow__step-text">自社職人15名・施工管理3名体制へ拡大。品質管理体制の強化と、教育研修制度の整備を実施。年間施工件数100件程度。</p></div></div>
+    <div className="flow__step reveal"><div className="flow__step-number" style={{ fontSize: '12px' }}>2025</div><div className="flow__step-content"><h3 className="flow__step-title">東京営業所を設立</h3><p className="flow__step-text">首都圏エリアの対応強化を目的に東京営業所を開設。関西で培った施工品質と直営体制を活かし、関東での案件対応を本格化。東京・埼玉・神奈川を中心に対応エリアを拡大。</p></div></div>
+    <div className="flow__step reveal"><div className="flow__step-number" style={{ fontSize: '12px' }}>2025</div><div className="flow__step-content"><h3 className="flow__step-title">水中点検事業の開始</h3><p className="flow__step-text">新規事業として水中点検・調査事業を開始。ダム、港湾施設、橋梁の水中部分の点検サービスを提供。</p></div></div>
+    <div className="flow__step reveal"><div className="flow__step-number" style={{ fontSize: '12px' }}>2026</div><div className="flow__step-content"><h3 className="flow__step-title">現在</h3><p className="flow__step-text">自社職人・施工管理（BP含む）40名体制。年間施工件数150件以上。関西圏を中心に、信頼のパートナーとして成長を続けています。</p></div></div>
   </div>
 </div></section>
   

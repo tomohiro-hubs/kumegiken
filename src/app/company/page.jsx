@@ -46,7 +46,7 @@ const faqSchema = {
       name: "対応エリアはどこですか？",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "兵庫県・大阪府を中心とした関西圏、および東京都内、埼玉で対応しています。エリア外も案件内容により対応可能です。",
+        text: "兵庫県・大阪府を中心とした関西圏、および東京都内、埼玉、神奈川で対応しています。エリア外についても案件内容に応じてご相談可能です。",
       },
     },
     {
@@ -71,7 +71,7 @@ const faqSchema = {
 const companyFaqItems = [
   {
     question: "対応エリアはどこですか？",
-    answer: "兵庫県・大阪府を中心とした関西圏、および東京都内、埼玉で対応しています。エリア外についても案件内容に応じてご相談可能です。",
+    answer: "兵庫県・大阪府を中心とした関西圏、および東京都内、埼玉、神奈川で対応しています。エリア外についても案件内容に応じてご相談可能です。",
   },
   {
     question: "営業時間と連絡先を教えてください。",
@@ -112,9 +112,10 @@ export default function Page() {
 
   <section className="content-section">
     <div className="container container--narrow">
+      <h2 className="reveal" style={{ fontSize: '24px', fontWeight: '700', color: 'var(--color-primary)', marginBottom: '24px' }}>会社概要</h2>
       <table className="info-table reveal"><tbody>
         <tr><th>会社名</th><td>株式会社久米技建（KUME GIKEN Co., Ltd.）</td></tr>
-        <tr><th>設立</th><td>2016年</td></tr>
+        <tr><th>設立</th><td>創業2016年　設立2021年</td></tr>
         <tr><th>代表取締役</th><td>久米 涼平</td></tr>
         <tr><th>所在地</th><td>
           【本社】<br />〒663-8152 兵庫県西宮市甲子園町5-7 河津ビル1F<br /><br />
@@ -123,18 +124,16 @@ export default function Page() {
         <tr><th>電話番号</th><td>0798-27-5653</td></tr>
         <tr><th>営業時間</th><td>平日 9:00〜18:00</td></tr>
         <tr><th>事業内容</th><td>大規模修繕事業<br />防水事業（ウレタン・シート・FRP・アスファルト）<br />外壁塗装<br />水中点検</td></tr>
-        <tr><th>資本金</th><td>記載準備中</td></tr>
-        <tr><th>従業員数</th><td>約25名（自社職人21名・施工管理4名）</td></tr>
+        <tr><th>資本金</th><td>500万円</td></tr>
+        <tr><th>施工体制</th><td>自社職人・施工管理・協力パートナー（BP）を含め、約40名体制</td></tr>
         <tr><th>建設業許可</th><td>兵庫県知事 許可（般-3）第220086号</td></tr>
-        <tr><th>対応エリア</th><td>兵庫県・大阪府を中心とした関西圏全域、および東京都内、埼玉</td></tr>
+        <tr><th>対応エリア</th><td>兵庫県・大阪府を中心とした関西圏全域、および東京都内、埼玉、神奈川</td></tr>
         <tr><th>主な取引先</th><td>マンション管理組合、不動産管理会社、ビルオーナー、<br />一般法人、個人住宅オーナー</td></tr>
       </tbody></table>
 
       <div style={{ marginTop: '60px' }} className="reveal">
         <h2 style={{ fontSize: '24px', fontWeight: '700', color: 'var(--color-primary)', marginBottom: '24px' }}>経営理念</h2>
-        <div style={{ background: 'var(--color-primary)', color: 'white', padding: '40px', borderRadius: '16px', textAlign: 'center' }}>
-          <p style={{ fontSize: '20px', fontWeight: '700', lineHeight: '2' }}>「正直な診断と確かな施工で、<br />建物と人の暮らしを守り続ける」</p>
-        </div>
+        <img src="/images/philosophy-handwritten.png" alt="誠実な診断、確かな施工。住まいの価値を、未来へ守る。" style={{ width: '70%', height: 'auto', display: 'block', margin: '0 auto' }} />
       </div>
 
       <div style={{ marginTop: '60px' }} className="reveal">

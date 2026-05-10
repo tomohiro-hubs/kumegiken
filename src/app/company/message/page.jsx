@@ -32,10 +32,6 @@ export default function Page() {
       <div className="message__inner" style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '48px', alignItems: 'center' }}>
         <div className="reveal">
           <img src={assetPath("/images/president_photo.jpg")} alt="代表取締役 久米涼平" style={{ aspectRatio: '3/4', width: '100%', objectFit: 'cover', borderRadius: '16px', minHeight: '350px' }} />
-          <div style={{ textAlign: 'center', marginTop: '16px' }}>
-            <p style={{ fontSize: '13px', color: 'var(--color-text-muted)' }}>代表取締役</p>
-            <p style={{ fontSize: '20px', fontWeight: '700', color: 'var(--color-primary)' }}>久米 涼平</p>
-          </div>
         </div>
         <div className="article-content reveal">
           <h2>建物と向き合い、人と向き合う仕事を。</h2>
@@ -47,7 +43,7 @@ export default function Page() {
           <p>お客様の大切な資産である建物を、次の世代へ受け継ぐお手伝いをする。それが、私たち久米技建の使命です。建物のことでお困りのことがあれば、どんな小さなことでもご相談ください。</p>
           <p style={{ textAlign: 'right', marginTop: '40px' }}>
             <span style={{ fontSize: '13px', color: 'var(--color-text-muted)' }}>株式会社久米技建 代表取締役</span><br />
-            <span style={{ fontSize: '24px', fontWeight: '700', color: 'var(--color-primary)' }}>久米 涼平</span>
+            <img src={assetPath("/images/signature-kume-ryohei.png")} alt="久米涼平 署名" style={{ width: '220px', maxWidth: '100%', height: 'auto', marginTop: '8px', display: 'inline-block' }} />
           </p>
         </div>
       </div>

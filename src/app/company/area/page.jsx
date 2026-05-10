@@ -4,7 +4,7 @@ import { routePath } from "@/lib/routePath";
 import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: "対応エリア（関西・東京）｜久米技建",
-  description: "西宮市を拠点に兵庫・大阪を中心とした関西圏、および東京都・埼玉周辺で、防水工事・大規模修繕に対応。対応可否や近隣エリアのご相談も受け付けています。",
+  description: "西宮市を拠点に兵庫・大阪を中心とした関西圏、および東京都・埼玉・神奈川周辺で、防水工事・大規模修繕に対応。対応可否や近隣エリアのご相談も受け付けています。",
   path: "/company/area",
   image: "/images/team-group.jpg",
 });
@@ -12,7 +12,7 @@ export const metadata = buildMetadata({
 export default function Page() {
   return (
     <main>
-      <section className="page-hero"><span className="page-hero__label">Area</span><h1 className="page-hero__title">対応エリア</h1><p className="page-hero__description">関西圏、東京都・埼玉周辺に対応しています</p></section>
+      <section className="page-hero"><span className="page-hero__label">Area</span><h1 className="page-hero__title">対応エリア</h1><p className="page-hero__description">関西圏、東京都・埼玉・神奈川周辺に対応しています</p></section>
 <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/company")} className="breadcrumb__link">会社情報</a></li><li className="breadcrumb__separator">›</li><li>対応エリア</li></ol></div></nav>
 <section style={{ background: 'var(--color-bg-light)', padding: '20px 0' }}>
   <div className="container" style={{ display: 'flex', justifyContent: 'center', gap: '8px', flexWrap: 'wrap' }}>
@@ -43,7 +43,7 @@ export default function Page() {
       <div style={{ display: 'inline-block', fontSize: '12px', fontWeight: '700', color: '#8a4a16', background: '#fce9d8', borderRadius: '999px', padding: '6px 12px', marginBottom: '14px' }}>Kanto Area</div>
       <h3 style={{ fontSize: '22px', fontWeight: '700', color: 'var(--color-primary)', marginBottom: '14px' }}>関東エリア</h3>
       <p style={{ fontSize: '14px', color: 'var(--color-text-light)', lineHeight: '1.9', marginBottom: '12px' }}>
-        関西圏、東京都・埼玉周辺に対応しています。
+        関西圏、東京都・埼玉・神奈川周辺に対応しています。
       </p>
       <p style={{ fontSize: '14px', color: 'var(--color-text-light)', lineHeight: '1.9', marginBottom: '20px' }}>
         2025年に東京支店を開設。関西で培った技術を東京で提供し、信頼される施工体制を着実に広げています。
@@ -65,11 +65,12 @@ export default function Page() {
   <div id="kanto-detail" className="reveal" style={{ background: 'var(--color-bg-light)', borderRadius: '16px', padding: '28px', marginBottom: '44px' }}>
     <h3 style={{ fontSize: '22px', fontWeight: '700', color: 'var(--color-primary)', marginBottom: '12px' }}>関東エリア詳細</h3>
     <p style={{ fontSize: '14px', color: 'var(--color-text-light)', lineHeight: '1.9', marginBottom: '14px' }}>
-      2025年の東京支店開設以降、東京都内・埼玉周辺でのご相談に対応しています。
+      2025年の東京支店開設以降、東京都内・埼玉・神奈川周辺でのご相談に対応しています。
     </p>
     <p style={{ fontSize: '14px', color: 'var(--color-text-light)', lineHeight: '1.9' }}>
       東京都: 港区・渋谷区・新宿区・練馬区 ほか<br />
-      埼玉県: さいたま市・川口市・戸田市 ほか
+      埼玉県: さいたま市・川口市・戸田市 ほか<br />
+      神奈川県: 横浜市・川崎市・相模原市 ほか
     </p>
   </div>
 </div></section>

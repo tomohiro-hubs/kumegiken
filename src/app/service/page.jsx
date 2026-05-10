@@ -31,7 +31,13 @@ export default function Page() {
           return (
             <a href={routePath(card.href)} className={`service-card ${revealClass}`} key={card.key}>
               <div className="service-card__image">
-                <img src={assetPath(card.image)} alt={card.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                <img
+                  src={assetPath(card.image)}
+                  alt={card.title}
+                  loading="lazy"
+                  decoding="async"
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                />
               </div>
               <div className="service-card__body">
                 <h3 className="service-card__title">{card.title}</h3>

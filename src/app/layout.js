@@ -3,10 +3,14 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollRevealProvider from "@/components/ScrollRevealProvider";
 import JsonLd from "@/components/JsonLd";
+import Analytics from "@/components/Analytics";
+import { Inter, Noto_Sans_JP } from "next/font/google";
 
 const SITE_URL = "https://kumegiken.co.jp";
 const ORGANIZATION_ID = `${SITE_URL}/#organization`;
 const WEBSITE_ID = `${SITE_URL}/#website`;
+const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600", "700", "900"], display: "swap", variable: "--font-en-next" });
+const notoSansJp = Noto_Sans_JP({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700", "900"], display: "swap", variable: "--font-ja-next" });
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -17,6 +21,7 @@ const structuredData = {
       name: "株式会社久米技建",
       url: SITE_URL,
       telephone: "+81-798-27-5653",
+      sameAs: [],
       logo: `${SITE_URL}/images/hero-main.jpg`,
       image: `${SITE_URL}/images/hero-main.jpg`,
       areaServed: [
@@ -31,6 +36,15 @@ const structuredData = {
         postalCode: "663-8152",
         addressCountry: "JP",
       },
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          telephone: "+81-798-27-5653",
+          contactType: "customer service",
+          availableLanguage: ["ja"],
+          areaServed: "JP",
+        },
+      ],
     },
     {
       "@type": "WebSite",
@@ -70,15 +84,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ja" suppressHydrationWarning>
+    <html lang="ja" suppressHydrationWarning className={`${inter.variable} ${notoSansJp.variable}`}>
       <head>
         <JsonLd data={structuredData} />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Noto+Sans+JP:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
       </head>
       <body suppressHydrationWarning>
+        <Analytics />
         <Header />
         <ScrollRevealProvider>
           {children}

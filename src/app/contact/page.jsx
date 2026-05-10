@@ -99,8 +99,8 @@ export default function Page() {
 
         <form id="contact-form" onSubmit={handleSubmit}>
           <div className="form-group">
-            <label className="form-label">お問い合わせ種別 <span className="required">必須</span></label>
-            <select name="type" value={formData.type} onChange={handleChange} className={`form-select ${errors.type ? 'error' : ''}`}>
+            <label htmlFor="contact-type" className="form-label">お問い合わせ種別 <span className="required">必須</span></label>
+            <select id="contact-type" name="type" value={formData.type} onChange={handleChange} className={`form-select ${errors.type ? 'error' : ''}`}>
               <option value="">選択してください</option>
               <option value="diagnosis">無料建物診断のお申し込み</option>
               <option value="estimate">お見積もりのご依頼</option>
@@ -113,40 +113,40 @@ export default function Page() {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
             <div className="form-group">
-              <label className="form-label">お名前 <span className="required">必須</span></label>
-              <input type="text" name="name" value={formData.name} onChange={handleChange} className={`form-input ${errors.name ? 'error' : ''}`} placeholder="例：山田 太郎" />
+              <label htmlFor="contact-name" className="form-label">お名前 <span className="required">必須</span></label>
+              <input id="contact-name" type="text" name="name" value={formData.name} onChange={handleChange} className={`form-input ${errors.name ? 'error' : ''}`} placeholder="例：山田 太郎" />
             </div>
             <div className="form-group">
-              <label className="form-label">フリガナ</label>
-              <input type="text" name="kana" value={formData.kana} onChange={handleChange} className="form-input" placeholder="例：ヤマダ タロウ" />
+              <label htmlFor="contact-kana" className="form-label">フリガナ</label>
+              <input id="contact-kana" type="text" name="kana" value={formData.kana} onChange={handleChange} className="form-input" placeholder="例：ヤマダ タロウ" />
             </div>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
             <div className="form-group">
-              <label className="form-label">メールアドレス <span className="required">必須</span></label>
-              <input type="email" name="email" value={formData.email} onChange={handleChange} className={`form-input ${errors.email ? 'error' : ''}`} placeholder="例：info@example.com" />
+              <label htmlFor="contact-email" className="form-label">メールアドレス <span className="required">必須</span></label>
+              <input id="contact-email" type="email" name="email" value={formData.email} onChange={handleChange} className={`form-input ${errors.email ? 'error' : ''}`} placeholder="例：info@example.com" />
             </div>
             <div className="form-group">
-              <label className="form-label">電話番号 <span className="required">必須</span></label>
-              <input type="tel" name="tel" value={formData.tel} onChange={handleChange} className={`form-input ${errors.tel ? 'error' : ''}`} placeholder="例：0798-27-5653" />
+              <label htmlFor="contact-tel" className="form-label">電話番号 <span className="required">必須</span></label>
+              <input id="contact-tel" type="tel" name="tel" value={formData.tel} onChange={handleChange} className={`form-input ${errors.tel ? 'error' : ''}`} placeholder="例：0798-27-5653" />
             </div>
           </div>
 
           <div className="form-group">
-            <label className="form-label">会社名・管理組合名</label>
-            <input type="text" name="company" value={formData.company} onChange={handleChange} className="form-input" placeholder="例：○○マンション管理組合" />
+            <label htmlFor="contact-company" className="form-label">会社名・管理組合名</label>
+            <input id="contact-company" type="text" name="company" value={formData.company} onChange={handleChange} className="form-input" placeholder="例：○○マンション管理組合" />
           </div>
 
           <div className="form-group">
-            <label className="form-label">建物の所在地</label>
-            <input type="text" name="address" value={formData.address} onChange={handleChange} className="form-input" placeholder="例：兵庫県西宮市○○町1-2-3" />
+            <label htmlFor="contact-address" className="form-label">建物の所在地</label>
+            <input id="contact-address" type="text" name="address" value={formData.address} onChange={handleChange} className="form-input" placeholder="例：兵庫県西宮市○○町1-2-3" />
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
             <div className="form-group">
-              <label className="form-label">建物種別</label>
-              <select name="buildingType" value={formData.buildingType} onChange={handleChange} className="form-select">
+              <label htmlFor="contact-building-type" className="form-label">建物種別</label>
+              <select id="contact-building-type" name="buildingType" value={formData.buildingType} onChange={handleChange} className="form-select">
                 <option value="">選択してください</option>
                 <option value="mansion">マンション</option>
                 <option value="building">ビル</option>
@@ -158,8 +158,8 @@ export default function Page() {
               </select>
             </div>
             <div className="form-group">
-              <label className="form-label">ご検討中のサービス</label>
-              <select name="service" value={formData.service} onChange={handleChange} className="form-select">
+              <label htmlFor="contact-service" className="form-label">ご検討中のサービス</label>
+              <select id="contact-service" name="service" value={formData.service} onChange={handleChange} className="form-select">
                 <option value="">選択してください</option>
                 <option value="large-scale-repair">大規模修繕事業</option>
                 <option value="waterproofing">防水事業</option>
@@ -171,13 +171,13 @@ export default function Page() {
           </div>
 
           <div className="form-group">
-            <label className="form-label">お問い合わせ内容 <span className="required">必須</span></label>
-            <textarea name="content" value={formData.content} onChange={handleChange} className={`form-textarea ${errors.content ? 'error' : ''}`} placeholder="ご相談内容、建物の状況、ご要望など、できるだけ詳しくお書きください。"></textarea>
+            <label htmlFor="contact-content" className="form-label">お問い合わせ内容 <span className="required">必須</span></label>
+            <textarea id="contact-content" name="content" value={formData.content} onChange={handleChange} className={`form-textarea ${errors.content ? 'error' : ''}`} placeholder="ご相談内容、建物の状況、ご要望など、できるだけ詳しくお書きください。"></textarea>
           </div>
 
           <div style={{ margin: '24px 0', padding: '20px', background: 'var(--color-bg-light)', borderRadius: '8px' }}>
             <label style={{ display: 'flex', gap: '12px', alignItems: 'flex-start', cursor: 'pointer' }}>
-              <input type="checkbox" name="agreement" checked={formData.agreement} onChange={handleChange} className={errors.agreement ? 'error' : ''} style={{ marginTop: '4px' }} />
+              <input id="contact-agreement" type="checkbox" name="agreement" checked={formData.agreement} onChange={handleChange} className={errors.agreement ? 'error' : ''} style={{ marginTop: '4px' }} />
               <span style={{ fontSize: '13px', color: 'var(--color-text-light)', lineHeight: '1.8' }}><a href={routePath("/privacy")} style={{ color: 'var(--color-accent)', textDecoration: 'underline' }}>プライバシーポリシー</a>に同意の上、送信してください。</span>
             </label>
           </div>

@@ -40,17 +40,26 @@ const STATIC_ROUTES = [
   "/recruit/waterproofing-craftsman",
   "/contact",
   "/privacy",
+  "/editorial-policy",
+  "/citations-policy",
   "/partner",
   "/simulation",
   "/dive-survey",
 ];
 
 export default function sitemap() {
-  const lastModified = new Date();
+  const lastModifiedDefault = "2026-05-10";
+  const lastModifiedByRoute = {
+    "/": "2026-05-10",
+    "/company/history": "2026-05-10",
+    "/dive-survey": "2026-05-10",
+    "/editorial-policy": "2026-05-10",
+    "/citations-policy": "2026-05-10",
+  };
 
   return STATIC_ROUTES.map((route) => ({
     url: toAbsoluteUrl(route, { addTrailingSlash: true }),
-    lastModified,
+    lastModified: lastModifiedByRoute[route] ?? lastModifiedDefault,
     changeFrequency: route === "/" ? "weekly" : "monthly",
     priority: route === "/" ? 1 : 0.8,
   }));

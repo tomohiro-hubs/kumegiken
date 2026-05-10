@@ -37,7 +37,17 @@ export function buildMetadata({
   return {
     title: resolveTitle({ title, titleTemplate, titleDefault }),
     description,
-    ...(canonicalUrl ? { alternates: { canonical: canonicalUrl } } : {}),
+    ...(canonicalUrl
+      ? {
+          alternates: {
+            canonical: canonicalUrl,
+            languages: {
+              "ja-JP": canonicalUrl,
+              "x-default": canonicalUrl,
+            },
+          },
+        }
+      : {}),
     openGraph: {
       title: socialTitle,
       description,

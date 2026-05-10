@@ -108,7 +108,6 @@ export default function TopCopyHero() {
             <div className={styles.phoneNumberRow}>
               <a
                 href={`tel:${siteConfig.phone.tel}`}
-                aria-label={`${siteConfig.phone.display}へ電話する`}
                 className={styles.phoneLink}
               >
                 <img
@@ -132,7 +131,7 @@ export default function TopCopyHero() {
             {ctaItems.map((item) => {
               const Icon = item.icon;
               return (
-                <a key={item.href} href={item.href} className={item.panelClass} aria-label={item.label}>
+                <a key={item.href} href={item.href} className={item.panelClass}>
                   <span style={{ display: "inline-flex", alignItems: "center", gap: "12px" }}>
                     <Icon className={styles.phoneIcon} />
                       <span>

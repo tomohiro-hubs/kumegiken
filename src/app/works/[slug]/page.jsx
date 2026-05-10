@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import JsonLd from "@/components/JsonLd";
 
 const SITE_URL = "https://kumegiken.co.jp";
+const DEFAULT_PUBLISHED_DATE = "2026-05-10";
 
 const works = {
   "nishinomiya-building-sealing-01": {
@@ -176,11 +177,15 @@ export default async function Page({ params }) {
   }
 
   const workUrl = `${SITE_URL}${routePath(`/works/${slug}`)}`;
+  const publishedDate = work.datePublished || DEFAULT_PUBLISHED_DATE;
+  const modifiedDate = work.dateModified || publishedDate;
   const workSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: `${work.title}｜施工事例`,
     description: `${work.area}の${work.workType}事例。${work.buildingType}の施工で、工期${work.period}・費用目安${work.budget}。`,
+    datePublished: publishedDate,
+    dateModified: modifiedDate,
     author: {
       "@type": "Organization",
       name: "株式会社久米技建",
@@ -262,6 +267,8 @@ export default async function Page({ params }) {
               <img
                 src={assetPath(work.beforeImage)}
                 alt={`${work.title} 施工前`}
+                loading="lazy"
+                decoding="async"
                 style={{ aspectRatio: "4/3", width: "100%", objectFit: "cover", borderRadius: "8px" }}
               />
               <p style={{ textAlign: "center", fontWeight: "600", marginTop: "8px", color: "var(--color-text-light)" }}>
@@ -275,6 +282,8 @@ export default async function Page({ params }) {
               <img
                 src={assetPath(work.afterImage)}
                 alt={`${work.title} 施工後`}
+                loading="lazy"
+                decoding="async"
                 style={{ aspectRatio: "4/3", width: "100%", objectFit: "cover", borderRadius: "8px" }}
               />
               <p style={{ textAlign: "center", fontWeight: "600", marginTop: "8px", color: "var(--color-text-light)" }}>

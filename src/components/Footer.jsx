@@ -85,7 +85,8 @@ export default function Footer() {
             <div className="footer__copyright">&copy; 2026 KUME GIKEN Co., Ltd. All Rights Reserved.</div>
             <div className="footer__bottom-links">
               <Link href="/privacy" className="footer__bottom-link">プライバシーポリシー</Link>
-              <Link href="#" className="footer__bottom-link">サイトマップ</Link>
+              <Link href="/editorial-policy" className="footer__bottom-link">編集・監修ポリシー</Link>
+              <Link href="/citations-policy" className="footer__bottom-link">引用・出典ポリシー</Link>
             </div>
           </div>
         </div>

@@ -67,6 +67,7 @@ export default function Header() {
               <div className="header__dropdown">
                 <Link href="/service/large-scale-repair" className="header__dropdown-link">大規模修繕事業</Link>
                 <Link href="/service/waterproofing" className="header__dropdown-link">防水事業</Link>
+                <Link href="/service/sealing" className="header__dropdown-link">シーリング工事</Link>
                 <Link href="/service/painting" className="header__dropdown-link">外壁塗装</Link>
                 <Link href="/dive-survey" className="header__dropdown-link">水中点検</Link>
               </div>
@@ -88,6 +89,8 @@ export default function Header() {
           <button 
             className={`header__hamburger ${isMobileMenuOpen ? 'active' : ''}`} 
             aria-label="メニュー"
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-nav"
             onClick={toggleMobileMenu}
           >
             <span></span>
@@ -98,7 +101,7 @@ export default function Header() {
       </header>
 
       <div className={`mobile-overlay ${isMobileMenuOpen ? 'active' : ''}`} onClick={closeMobileMenu}></div>
-      <nav className={`mobile-nav ${isMobileMenuOpen ? 'active' : ''}`}>
+      <nav id="mobile-nav" className={`mobile-nav ${isMobileMenuOpen ? 'active' : ''}`}>
         <Link href="/" className="mobile-nav__link" onClick={closeMobileMenu}>トップページ</Link>
         <Link href="/company" className="mobile-nav__link" onClick={closeMobileMenu}>会社情報</Link>
         <Link href="/#reason" className="mobile-nav__link" onClick={closeMobileMenu}>選ばれる理由</Link>

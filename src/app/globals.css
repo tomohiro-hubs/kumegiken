@@ -24,8 +24,8 @@
   --color-border-light: #ECEEF2;
 
   /* Typography */
-  --font-ja: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
-  --font-en: 'Inter', 'Montserrat', sans-serif;
+  --font-ja: var(--font-ja-next), 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+  --font-en: var(--font-en-next), 'Inter', 'Montserrat', sans-serif;
   --fw-light: 300;
   --fw-regular: 400;
   --fw-medium: 500;
@@ -439,7 +439,8 @@ input, textarea, select {
   position: relative;
 }
 
-.header__nav-item:hover .header__dropdown {
+.header__nav-item:hover .header__dropdown,
+.header__nav-item:focus-within .header__dropdown {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
@@ -1492,14 +1493,32 @@ input, textarea, select {
 }
 
 .voice-carousel__dot {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 999px;
+  background: transparent;
+  position: relative;
+  transition: var(--transition);
+}
+
+.voice-carousel__dot::before {
+  content: "";
   width: 10px;
   height: 10px;
   border-radius: 50%;
   background: rgba(26, 39, 68, 0.18);
-  transition: var(--transition);
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
 }
 
 .voice-carousel__dot.is-active {
+  background: rgba(232, 116, 12, 0.12);
+}
+
+.voice-carousel__dot.is-active::before {
   width: 34px;
   border-radius: 999px;
   background: var(--color-accent);
@@ -2572,7 +2591,7 @@ input, textarea, select {
 
 .footer__copyright {
   font-size: 12px;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.72);
   font-family: var(--font-en);
 }
 
@@ -2583,11 +2602,11 @@ input, textarea, select {
 
 .footer__bottom-link {
   font-size: 12px;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.72);
 }
 
 .footer__bottom-link:hover {
-  color: rgba(255,255,255,0.8);
+  color: #ffffff;
 }
 
 /* --- Breadcrumb --- */

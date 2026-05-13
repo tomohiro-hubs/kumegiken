@@ -995,7 +995,7 @@ input, textarea, select {
   height: 400px;
   min-height: 0;
   object-fit: cover;
-  object-position: center 44%;
+  object-position: 60% 44%;
   display: block;
 }
 

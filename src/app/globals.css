@@ -2693,7 +2693,7 @@ input, textarea, select {
 
 /* --- Page Hero --- */
 .page-hero {
-  background: url('/images/service-hero-bg.png') center / cover no-repeat;
+  background: var(--service-hero-bg-image, url('/images/service-hero-bg.png')) center / cover no-repeat;
   padding: 140px 0 80px;
   text-align: center;
   position: relative;
@@ -4355,7 +4355,7 @@ input, textarea, select {
 
 /* --- Recruit specific --- */
 .recruit-hero {
-  background: url('/images/service-hero-bg.png') center / cover no-repeat;
+  background: var(--service-hero-bg-image, url('/images/service-hero-bg.png')) center / cover no-repeat;
 }
 
 .recruit-values {
@@ -4416,7 +4416,7 @@ input, textarea, select {
 
 /* --- Dive Survey LP specific --- */
 .dive-hero {
-  background: url('/images/service-hero-bg.png') center / cover no-repeat;
+  background: var(--service-hero-bg-image, url('/images/service-hero-bg.png')) center / cover no-repeat;
 }
 
 .dive-feature {

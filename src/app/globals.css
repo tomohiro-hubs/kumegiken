@@ -1786,7 +1786,7 @@ input, textarea, select {
 /* --- CTA Section --- */
 .cta-section {
   padding: 80px 0;
-  background: url('/images/company-cta-bg-2.png') center / cover no-repeat;
+  background: var(--company-cta-bg-image, url('/images/company-cta-bg-2.png')) center / cover no-repeat;
   text-align: center;
   color: var(--color-white);
   position: relative;

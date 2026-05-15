@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import ScrollRevealProvider from "@/components/ScrollRevealProvider";
 import JsonLd from "@/components/JsonLd";
 import Analytics from "@/components/Analytics";
+import { assetPath } from "@/lib/assetPath";
 import { Inter, Noto_Sans_JP } from "next/font/google";
 
 const SITE_URL = "https://kumegiken.co.jp";
@@ -89,7 +90,14 @@ export default function RootLayout({ children }) {
         <JsonLd data={structuredData} />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
       </head>
-      <body suppressHydrationWarning>
+      <body
+        suppressHydrationWarning
+        style={{
+          "--company-cta-bg-image": `url("${assetPath("/images/company-cta-bg-2.png")}")`,
+          "--cta-v2-bg-image": `url("${assetPath("/images/footer-cta-bg.png")}")`,
+          "--cta-achievement-bg-image": `url("${assetPath("/images/footer-achievement-bg.png")}")`,
+        }}
+      >
         <Analytics />
         <Header />
         <ScrollRevealProvider>

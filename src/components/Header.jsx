@@ -43,7 +43,7 @@ export default function Header() {
       <header className={`header ${isScrolled ? 'header--scrolled' : ''} ${isTopCopyPage ? 'header--top-copy' : ''}`} id="header">
         <div className="header__inner">
           <div className="header__logo">
-            <Link href="/" onClick={closeMobileMenu}>
+            <Link prefetch={false} href="/" onClick={closeMobileMenu}>
               <div>
                 <span className="header__logo-text">株式会社久米技建</span>
                 <span className="header__logo-sub">KUME GIKEN Co., Ltd.</span>
@@ -52,31 +52,31 @@ export default function Header() {
           </div>
           <nav className="header__nav">
             <div className="header__nav-item">
-              <Link href="/company" className="header__nav-link header__nav-link--has-sub">会社情報</Link>
+              <Link prefetch={false} href="/company" className="header__nav-link header__nav-link--has-sub">会社情報</Link>
               <div className="header__dropdown">
-                <Link href="/company" className="header__dropdown-link">会社概要</Link>
-                <Link href="/company/message" className="header__dropdown-link">代表メッセージ</Link>
-                <Link href="/company/staff" className="header__dropdown-link">スタッフ紹介</Link>
-                <Link href="/company/area" className="header__dropdown-link">対応エリア</Link>
-                <Link href="/company/history" className="header__dropdown-link">沿革</Link>
+                <Link prefetch={false} href="/company" className="header__dropdown-link">会社概要</Link>
+                <Link prefetch={false} href="/company/message" className="header__dropdown-link">代表メッセージ</Link>
+                <Link prefetch={false} href="/company/staff" className="header__dropdown-link">スタッフ紹介</Link>
+                <Link prefetch={false} href="/company/area" className="header__dropdown-link">対応エリア</Link>
+                <Link prefetch={false} href="/company/history" className="header__dropdown-link">沿革</Link>
               </div>
             </div>
-            <Link href="/#reason" className="header__nav-link">選ばれる理由</Link>
+            <Link prefetch={false} href="/#reason" className="header__nav-link">選ばれる理由</Link>
             <div className="header__nav-item">
-              <Link href="/service" className="header__nav-link header__nav-link--has-sub">サービス</Link>
+              <Link prefetch={false} href="/service" className="header__nav-link header__nav-link--has-sub">サービス</Link>
               <div className="header__dropdown">
-                <Link href="/service/large-scale-repair" className="header__dropdown-link">大規模修繕事業</Link>
-                <Link href="/service/waterproofing" className="header__dropdown-link">防水事業</Link>
-                <Link href="/service/sealing" className="header__dropdown-link">シーリング工事</Link>
-                <Link href="/service/painting" className="header__dropdown-link">外壁塗装</Link>
-                <Link href="/dive-survey" className="header__dropdown-link">水中点検</Link>
+                <Link prefetch={false} href="/service/large-scale-repair" className="header__dropdown-link">大規模修繕事業</Link>
+                <Link prefetch={false} href="/service/waterproofing" className="header__dropdown-link">防水事業</Link>
+                <Link prefetch={false} href="/service/sealing" className="header__dropdown-link">シーリング工事</Link>
+                <Link prefetch={false} href="/service/painting" className="header__dropdown-link">外壁塗装</Link>
+                <Link prefetch={false} href="/dive-survey" className="header__dropdown-link">水中点検</Link>
               </div>
             </div>
-            <Link href="/#flow" className="header__nav-link">施工の流れ</Link>
-            <Link href="/works" className="header__nav-link">施工事例</Link>
-            <Link href="/#voice" className="header__nav-link">お客様の声</Link>
-            <Link href="/column" className="header__nav-link">コラム</Link>
-            <Link href="/recruit" className="header__nav-link">採用情報</Link>
+            <Link prefetch={false} href="/#flow" className="header__nav-link">施工の流れ</Link>
+            <Link prefetch={false} href="/works" className="header__nav-link">施工事例</Link>
+            <Link prefetch={false} href="/#voice" className="header__nav-link">お客様の声</Link>
+            <Link prefetch={false} href="/column" className="header__nav-link">コラム</Link>
+            <Link prefetch={false} href="/recruit" className="header__nav-link">採用情報</Link>
           </nav>
           <div className="header__cta">
             <p className="header__cta-lead">お電話でのお問い合わせはこちら</p>
@@ -102,18 +102,18 @@ export default function Header() {
 
       <div className={`mobile-overlay ${isMobileMenuOpen ? 'active' : ''}`} onClick={closeMobileMenu}></div>
       <nav id="mobile-nav" className={`mobile-nav ${isMobileMenuOpen ? 'active' : ''}`}>
-        <Link href="/" className="mobile-nav__link" onClick={closeMobileMenu}>トップページ</Link>
-        <Link href="/company" className="mobile-nav__link" onClick={closeMobileMenu}>会社情報</Link>
-        <Link href="/#reason" className="mobile-nav__link" onClick={closeMobileMenu}>選ばれる理由</Link>
-        <Link href="/service" className="mobile-nav__link" onClick={closeMobileMenu}>サービス一覧</Link>
-        <Link href="/#flow" className="mobile-nav__link" onClick={closeMobileMenu}>施工の流れ</Link>
-        <Link href="/works" className="mobile-nav__link" onClick={closeMobileMenu}>施工事例</Link>
-        <Link href="/#voice" className="mobile-nav__link" onClick={closeMobileMenu}>お客様の声</Link>
-        <Link href="/column" className="mobile-nav__link" onClick={closeMobileMenu}>コラム</Link>
-        <Link href="/recruit" className="mobile-nav__link" onClick={closeMobileMenu}>採用情報</Link>
+        <Link prefetch={false} href="/" className="mobile-nav__link" onClick={closeMobileMenu}>トップページ</Link>
+        <Link prefetch={false} href="/company" className="mobile-nav__link" onClick={closeMobileMenu}>会社情報</Link>
+        <Link prefetch={false} href="/#reason" className="mobile-nav__link" onClick={closeMobileMenu}>選ばれる理由</Link>
+        <Link prefetch={false} href="/service" className="mobile-nav__link" onClick={closeMobileMenu}>サービス一覧</Link>
+        <Link prefetch={false} href="/#flow" className="mobile-nav__link" onClick={closeMobileMenu}>施工の流れ</Link>
+        <Link prefetch={false} href="/works" className="mobile-nav__link" onClick={closeMobileMenu}>施工事例</Link>
+        <Link prefetch={false} href="/#voice" className="mobile-nav__link" onClick={closeMobileMenu}>お客様の声</Link>
+        <Link prefetch={false} href="/column" className="mobile-nav__link" onClick={closeMobileMenu}>コラム</Link>
+        <Link prefetch={false} href="/recruit" className="mobile-nav__link" onClick={closeMobileMenu}>採用情報</Link>
         <div className="mobile-nav__cta">
           <a href={`tel:${siteConfig.phone.tel}`} className="btn btn--outline"><i className="fas fa-phone"></i> 電話で相談</a>
-          <Link href="/contact" className="btn btn--primary" onClick={closeMobileMenu}><i className="fas fa-envelope"></i> 無料見積もり</Link>
+          <Link prefetch={false} href="/contact" className="btn btn--primary" onClick={closeMobileMenu}><i className="fas fa-envelope"></i> 無料見積もり</Link>
         </div>
       </nav>
     </>

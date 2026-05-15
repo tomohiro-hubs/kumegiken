@@ -53,40 +53,40 @@ export default function Footer() {
 
             <div>
               <div className="footer__nav-title">サービス</div>
-              <Link href="/service/large-scale-repair" className="footer__nav-link">大規模修繕事業</Link>
-              <Link href="/service/waterproofing" className="footer__nav-link">防水事業</Link>
-              <Link href="/service/painting" className="footer__nav-link">外壁塗装</Link>
-              <Link href="/dive-survey" className="footer__nav-link">水中点検</Link>
+              <Link prefetch={false} href="/service/large-scale-repair" className="footer__nav-link">大規模修繕事業</Link>
+              <Link prefetch={false} href="/service/waterproofing" className="footer__nav-link">防水事業</Link>
+              <Link prefetch={false} href="/service/painting" className="footer__nav-link">外壁塗装</Link>
+              <Link prefetch={false} href="/dive-survey" className="footer__nav-link">水中点検</Link>
             </div>
 
             <div>
               <div className="footer__nav-title">コンテンツ</div>
-              <Link href="/#reason" className="footer__nav-link">選ばれる理由</Link>
-              <Link href="/works" className="footer__nav-link">施工事例</Link>
-              <Link href="/#flow" className="footer__nav-link">施工の流れ</Link>
-              <Link href="/#voice" className="footer__nav-link">お客様の声</Link>
-              <Link href="/column" className="footer__nav-link">コラム</Link>
-              <Link href="/simulation" className="footer__nav-link">見積もりシミュレーション</Link>
+              <Link prefetch={false} href="/#reason" className="footer__nav-link">選ばれる理由</Link>
+              <Link prefetch={false} href="/works" className="footer__nav-link">施工事例</Link>
+              <Link prefetch={false} href="/#flow" className="footer__nav-link">施工の流れ</Link>
+              <Link prefetch={false} href="/#voice" className="footer__nav-link">お客様の声</Link>
+              <Link prefetch={false} href="/column" className="footer__nav-link">コラム</Link>
+              <Link prefetch={false} href="/simulation" className="footer__nav-link">見積もりシミュレーション</Link>
             </div>
 
             <div>
               <div className="footer__nav-title">企業情報</div>
-              <Link href="/company" className="footer__nav-link">会社概要</Link>
-              <Link href="/company/message" className="footer__nav-link">代表メッセージ</Link>
-              <Link href="/company/staff" className="footer__nav-link">スタッフ紹介</Link>
-              <Link href="/company/area" className="footer__nav-link">対応エリア</Link>
-              <Link href="/recruit" className="footer__nav-link">採用情報</Link>
-              <Link href="/contact" className="footer__nav-link">お問い合わせ</Link>
-              <Link href="/partner" className="footer__nav-link">協力会社お問い合わせ</Link>
+              <Link prefetch={false} href="/company" className="footer__nav-link">会社概要</Link>
+              <Link prefetch={false} href="/company/message" className="footer__nav-link">代表メッセージ</Link>
+              <Link prefetch={false} href="/company/staff" className="footer__nav-link">スタッフ紹介</Link>
+              <Link prefetch={false} href="/company/area" className="footer__nav-link">対応エリア</Link>
+              <Link prefetch={false} href="/recruit" className="footer__nav-link">採用情報</Link>
+              <Link prefetch={false} href="/contact" className="footer__nav-link">お問い合わせ</Link>
+              <Link prefetch={false} href="/partner" className="footer__nav-link">協力会社お問い合わせ</Link>
             </div>
           </div>
 
           <div className="footer__bottom">
             <div className="footer__copyright">&copy; 2026 KUME GIKEN Co., Ltd. All Rights Reserved.</div>
             <div className="footer__bottom-links">
-              <Link href="/privacy" className="footer__bottom-link">プライバシーポリシー</Link>
-              <Link href="/editorial-policy" className="footer__bottom-link">編集・監修ポリシー</Link>
-              <Link href="/citations-policy" className="footer__bottom-link">引用・出典ポリシー</Link>
+              <Link prefetch={false} href="/privacy" className="footer__bottom-link">プライバシーポリシー</Link>
+              <Link prefetch={false} href="/editorial-policy" className="footer__bottom-link">編集・監修ポリシー</Link>
+              <Link prefetch={false} href="/citations-policy" className="footer__bottom-link">引用・出典ポリシー</Link>
             </div>
           </div>
         </div>
@@ -98,7 +98,7 @@ export default function Footer() {
           <a href={`tel:${siteConfig.phone.tel}`} className="fixed-cta__btn fixed-cta__btn--phone">
             <i className="fas fa-phone-alt"></i> 電話で相談
           </a>
-          <Link href="/contact" className="fixed-cta__btn fixed-cta__btn--contact">
+          <Link prefetch={false} href="/contact" className="fixed-cta__btn fixed-cta__btn--contact">
             <i className="fas fa-envelope"></i> 無料見積もり
           </Link>
         </div>
@@ -106,7 +106,7 @@ export default function Footer() {
 
       {/* ========== FIXED CTA (PC Float) ========== */}
       <div className={`fixed-cta__float ${showTokens.fixedCta ? 'visible' : ''}`}>
-        <Link href="/contact" className="fixed-cta__contact-card" aria-label="お問い合わせはこちら">
+        <Link prefetch={false} href="/contact" className="fixed-cta__contact-card" aria-label="お問い合わせはこちら">
           <span className="fixed-cta__contact-sub">＼ ご相談・お見積りは無料です ／</span>
           <span className="fixed-cta__contact-main">
             <span className="fixed-cta__contact-icon">

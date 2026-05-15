@@ -40,7 +40,6 @@ jobs:
       - name: Build static export
         env:
           GITHUB_PAGES: 'true'
-          GITHUB_PAGES_USE_BASE_PATH: 'false'
         run: npm run build
 
       - name: Upload Pages artifact

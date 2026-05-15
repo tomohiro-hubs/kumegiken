@@ -16,15 +16,13 @@ export default function Page() {
 <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/recruit")} className="breadcrumb__link">採用情報</a></li><li className="breadcrumb__separator">›</li><li>営業職（法人・個人営業）</li></ol></div></nav>
 <section className="content-section"><div className="container container--narrow">
   <table className="info-table reveal"><tbody>
-    <tr><th>職種</th><td>営業職（法人・個人営業）</td></tr>
-    <tr><th>雇用形態</th><td>正社員</td></tr>
-    <tr><th>給与</th><td>月給25万円〜45万円 ＋ 歩合給（経験・能力に応じて優遇）</td></tr>
-    <tr><th>勤務時間</th><td>9:00〜18:00</td></tr>
-    <tr><th>休日・休暇</th><td>週休2日制（シフト制）、GW、夏季休暇、年末年始、有給休暇</td></tr>
-    <tr><th>勤務地</th><td>本社（西宮市）および東京営業所</td></tr>
-    <tr><th>応募資格</th><td>普通自動車免許<br />※業界未経験者も歓迎</td></tr>
-    <tr><th>優遇資格</th><td>建設業・不動産業での営業経験者優遇</td></tr>
-    <tr><th>待遇</th><td>社会保険完備、交通費支給、<br />社用車貸与、昇給あり、賞与あり</td></tr>
+    <tr><th>募集職種</th><td>営業職（法人・個人営業）</td></tr>
+    <tr><th>仕事内容</th><td>・管理会社、不動産会社、一般オーナーへの提案営業<br />・現場調査、見積り作成、受注・契約までの一連の営業活動<br />・既存顧客のフォローアップ、新規顧客の開拓も一部あり</td></tr>
+    <tr><th>求める人物像</th><td>・人と話すのが好き、聞き上手な方<br />・建設業界の知識はゼロでもOK（学ぶ意欲がある方）<br />・稼ぎたい／成長したいという熱意のある方</td></tr>
+    <tr><th>給与</th><td>月給23万円〜＋インセンティブ（成果に応じて支給）<br />※年収例1：年収510万円（入社2年目・営業）<br />※年収例2：年収680万円（入社5年目・営業）</td></tr>
+    <tr><th>勤務時間</th><td>9:00〜18:00（内1時間休憩）</td></tr>
+    <tr><th>休日</th><td>週休2日制（土日）※要相談で平日休みも可<br />GW・夏季・年末年始</td></tr>
+    <tr><th>待遇・福利厚生</th><td>・昇給・賞与あり／営業手当／成果インセンティブ<br />・社会保険完備／交通費支給<br />・携帯・PC貸与／社用車あり<br />・未経験歓迎／業界経験者は優遇</td></tr>
   </tbody></table>
   <div style={{ textAlign: 'center', marginTop: '48px' }} className="reveal">
     <a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> 応募する / お問い合わせ</a>

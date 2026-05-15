@@ -294,14 +294,14 @@ export default function TopCopyPage() {
             各サービスページでは、施工内容・費用目安・対応エリアを詳しくご案内しています。
           </p>
           <div className="service__feature reveal reveal--delay-1">
-            <img src={assetPath("/images/service-team-crew.png")} alt="久米技建の自社職人チーム" className="service__featureImage" />
+            <img src={assetPath("/images/service-team-crew.png")} alt="久米技建の自社職人チーム" className="service__featureImage" style={{ objectPosition: "100% 14%", width: "125%", height: "125%", transform: "scale(0.8)", transformOrigin: "100% 14%" }} />
             <div className="service__featureCopy">
               <h3 className="service__featureTitle">
                 調べる人間が、直す。
                 <br />
                 だから、見落とさない。
               </h3>
-              <p className="service__featureLead">建物の劣化を見つけた技術者が、そのまま直す。</p>
+              <p className="service__featureLead">建物の劣化を見つけた技術者が、そのまま直します。</p>
             </div>
           </div>
           <div className="section-chip-links reveal">

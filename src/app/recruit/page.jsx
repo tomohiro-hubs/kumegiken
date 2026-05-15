@@ -17,12 +17,18 @@ export default function Page() {
 <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li>採用情報</li></ol></div></nav>
 
 <section className="content-section"><div className="container">
-  <div className="reveal" style={{ marginBottom: '48px' }}><img src={assetPath("/images/recruit-training.jpg")} alt="先輩職人による技術指導の様子" style={{ width: '100%', borderRadius: '16px', aspectRatio: '16/9', objectFit: 'cover' }} /></div>
+  <div className="reveal" style={{ marginBottom: '48px' }}>
+    <img
+      src={assetPath("/images/recruit-training.jpg")}
+      alt="先輩職人による技術指導の様子"
+      style={{ width: '100%', maxWidth: '1500px', margin: '0 auto', borderRadius: '16px', aspectRatio: '16/9', objectFit: 'cover' }}
+    />
+  </div>
   
   <div className="article-content reveal" style={{ marginBottom: '60px' }}>
-    <h2>久米技建が求める人材</h2>
-    <p>株式会社久米技建は、マンション・ビルの大規模修繕工事や防水工事において、自社職人による<strong>「高品質で適正価格の施工」</strong>を提供し続けています。私たちが大切にしているのは、建物の状態を正しく見極める<strong>「正直な診断」</strong>と、見えないところまで丁寧に仕上げる<strong>「確かな技術」</strong>です。</p>
-    <p>職人として技術を極めたい方、施工管理としてチームをまとめたい方。当社の理念に共感し、ともにお客様の建物を守り続ける志を持った新しい仲間を募集しています。</p>
+    <h2>こんな方と一緒に働きたいと考えています</h2>
+    <p>久米技建の採用は、経験の有無だけで判断しません。私たちが大切にしているのは、現場での誠実な姿勢と、チームで品質をつくり上げる意識です。建物の状態を正しく見極める<strong>「正直な診断」</strong>と、見えないところまで丁寧に仕上げる<strong>「確かな技術」</strong>を、日々の仕事で積み重ねています。</p>
+    <p>手に職をつけたい方、施工管理として現場をまとめたい方、営業としてお客様に長く信頼される提案をしたい方。久米技建では、それぞれの強みを活かしながら、安心して長く働ける環境づくりを進めています。</p>
   </div>
 
   <div className="section-heading reveal"><span className="section-heading__en">Our Values</span><h2 className="section-heading__ja">久米技建で働く魅力</h2><span className="section-heading__line"></span></div>

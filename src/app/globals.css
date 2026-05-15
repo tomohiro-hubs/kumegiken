@@ -984,18 +984,18 @@ input, textarea, select {
   max-width: none;
   border-radius: 0;
   overflow: hidden;
-  height: 400px;
-  min-height: 400px;
+  height: 520px;
+  min-height: 520px;
   border: 0;
   background: transparent;
 }
 
 .service__featureImage {
   width: 100%;
-  height: 400px;
+  height: 520px;
   min-height: 0;
   object-fit: cover;
-  object-position: 60% 44%;
+  object-position: 100% 44%;
   display: block;
 }
 
@@ -1009,7 +1009,7 @@ input, textarea, select {
   padding-right: 40px;
   padding-bottom: 32px;
   padding-left: max(24px, calc((100vw - var(--container-width)) / 2 + 24px));
-  background: linear-gradient(90deg, rgba(242, 246, 251, 0.98) 0%, rgba(242, 246, 251, 0.92) 72%, rgba(242, 246, 251, 0) 100%);
+  background: linear-gradient(90deg, rgba(242, 246, 251, 1) 0%, rgba(242, 246, 251, 1) 78%, rgba(242, 246, 251, 0.94) 86%, rgba(242, 246, 251, 0.68) 94%, rgba(242, 246, 251, 0.2) 100%);
   color: #172f57;
   display: flex;
   flex-direction: column;
@@ -1022,7 +1022,7 @@ input, textarea, select {
   line-height: 1.2;
   letter-spacing: 0.01em;
   font-weight: var(--fw-bold);
-  white-space: normal;
+  white-space: nowrap;
   text-decoration-line: underline;
   text-decoration-color: var(--color-accent);
   text-decoration-thickness: 4px;
@@ -1039,7 +1039,7 @@ input, textarea, select {
   font-size: 24px;
   font-weight: var(--fw-bold);
   line-height: 1.45;
-  white-space: normal;
+  white-space: nowrap;
 }
 
 .service__featureText {
@@ -3221,17 +3221,19 @@ input, textarea, select {
   }
 
   .service__featureCopy {
-    width: min(56%, 460px);
+    width: min(72%, 760px);
     padding: 34px 26px;
   }
 
   .service__featureTitle {
     font-size: clamp(30px, 3.6vw, 40px);
+    white-space: nowrap;
   }
 
   .service__featureLead {
     font-size: 22px;
     margin: 12px 0 10px;
+    white-space: nowrap;
   }
 
   .service__featureText {
@@ -3565,17 +3567,17 @@ input, textarea, select {
 
   .service__feature {
     margin-top: 24px;
-    min-height: 280px;
+    min-height: 320px;
   }
 
   .service__featureImage {
-    min-height: 280px;
+    min-height: 320px;
   }
 
   .service__featureCopy {
     width: 100%;
     padding: 24px 18px;
-    background: linear-gradient(180deg, rgba(242, 246, 251, 0.94) 0%, rgba(242, 246, 251, 0.78) 54%, rgba(242, 246, 251, 0.48) 100%);
+    background: linear-gradient(180deg, rgba(242, 246, 251, 0.98) 0%, rgba(242, 246, 251, 0.9) 56%, rgba(242, 246, 251, 0.62) 100%);
   }
 
   .service__featureTitle {

@@ -131,6 +131,25 @@ export default function Page() {
         <tr><th>主な取引先</th><td>マンション管理組合、不動産管理会社、ビルオーナー、<br />一般法人、個人住宅オーナー</td></tr>
       </tbody></table>
 
+      <div style={{ marginTop: "36px" }} className="reveal">
+        <h3 style={{ fontSize: "18px", fontWeight: "700", color: "var(--color-primary)", marginBottom: "14px" }}>本社外観</h3>
+        <figure style={{ margin: 0 }}>
+          <img
+            src="/images/company-hq.jpg"
+            alt="株式会社久米技建 本社外観"
+            style={{
+              width: "100%",
+              borderRadius: "16px",
+              boxShadow: "var(--shadow-md)",
+              objectFit: "cover",
+            }}
+          />
+          <figcaption style={{ marginTop: "10px", fontSize: "13px", color: "var(--color-text-light)" }}>
+            〒663-8152 兵庫県西宮市甲子園町5-7 河津ビル1F（本社）
+          </figcaption>
+        </figure>
+      </div>
+
       <div style={{ marginTop: '60px' }} className="reveal">
         <h2 style={{ fontSize: '24px', fontWeight: '700', color: 'var(--color-primary)', marginBottom: '24px' }}>経営理念</h2>
         <img src="/images/philosophy-handwritten.png" alt="誠実な診断、確かな施工。住まいの価値を、未来へ守る。" style={{ width: '70%', height: 'auto', display: 'block', margin: '0 auto' }} />

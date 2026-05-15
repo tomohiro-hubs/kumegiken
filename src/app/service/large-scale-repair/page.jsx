@@ -11,6 +11,18 @@ export const metadata = buildMetadata({
 });
 
 export default function Page() {
+  const largeScaleCases = [
+    { title: "オフィスビル大規模修繕工事", area: "大阪市", type: "ビル", image: "/images/scaffold-install.jpg", href: routePath("/works/osaka-building-large-scale-repair-01") },
+    { title: "分譲マンション外壁・防水改修", area: "西宮市", type: "マンション", image: "/images/large-scale-aerial.jpg", href: routePath("/works") },
+    { title: "賃貸マンション共用部改修", area: "神戸市", type: "マンション", image: "/images/building-completed.jpg", href: routePath("/works") },
+    { title: "RC造マンション第1回修繕", area: "尼崎市", type: "マンション", image: "/images/team-meeting.jpg", href: routePath("/works") },
+    { title: "テナントビル外装改修", area: "大阪府内", type: "ビル", image: "/images/painting-work.jpg", href: routePath("/works") },
+    { title: "屋上・バルコニー防水改修", area: "兵庫県内", type: "マンション", image: "/images/waterproofing-rooftop.jpg", href: routePath("/works") },
+    { title: "外壁タイル補修・再生工事", area: "芦屋市", type: "マンション", image: "/images/crack-inspection.jpg", href: routePath("/works") },
+    { title: "管理組合向け修繕プロジェクト", area: "宝塚市", type: "マンション", image: "/images/inspection-scene.jpg", href: routePath("/works") },
+    { title: "中規模ビル長寿命化改修", area: "伊丹市", type: "ビル", image: "/images/deteriorated-building.jpg", href: routePath("/works") },
+  ];
+
   return (
     <main>
       <section className="page-hero">
@@ -112,13 +124,26 @@ export default function Page() {
         <span className="section-heading__en">Related Works</span>
         <h2 className="section-heading__ja">大規模修繕の施工事例</h2>
       </div>
-      <div className="works__grid" style={{ gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))' }}>
-        <a href={routePath("/works/osaka-building-large-scale-repair-01")} className="work-card reveal">
-          <div className="work-card__image"><img src={assetPath("/images/scaffold-install.jpg")} alt="大規模修繕" style={{ width: '100%', minHeight: '180px', objectFit: 'cover' }} /><span className="work-card__category">大規模修繕</span></div>
-          <div className="work-card__body"><div className="work-card__meta"><span className="work-card__meta-item"><i className="fas fa-map-marker-alt"></i> 大阪市</span><span className="work-card__meta-item"><i className="fas fa-building"></i> ビル</span></div><h3 className="work-card__title">オフィスビル大規模修繕工事</h3></div>
-        </a>
+      <div className="works__grid" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))", gap: "24px" }}>
+        {largeScaleCases.map((item) => (
+          <a href={item.href} className="work-card reveal" key={item.title}>
+            <div className="work-card__image">
+              <img src={assetPath(item.image)} alt={item.title} style={{ width: "100%", minHeight: "180px", objectFit: "cover" }} />
+              <span className="work-card__category">大規模修繕</span>
+            </div>
+            <div className="work-card__body">
+              <div className="work-card__meta">
+                <span className="work-card__meta-item"><i className="fas fa-map-marker-alt"></i> {item.area}</span>
+                <span className="work-card__meta-item"><i className="fas fa-building"></i> {item.type}</span>
+              </div>
+              <h3 className="work-card__title">{item.title}</h3>
+            </div>
+          </a>
+        ))}
       </div>
-      <div style={{ textAlign: 'center', marginTop: '40px' }}><a href={routePath("/works")} className="btn btn--outline-dark">すべての施工事例を見る →</a></div>
+      <div style={{ display: "flex", justifyContent: "flex-end", marginTop: "28px" }}>
+        <a href={routePath("/works")} className="btn btn--outline-dark">もっと見る →</a>
+      </div>
     </div>
   </section>
 

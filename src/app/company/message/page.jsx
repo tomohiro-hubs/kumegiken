@@ -28,12 +28,16 @@ export default function Page() {
 	  </section>
 	
 	  <section className="content-section">
-	    <div className="container container--narrow">
-      <div className="message__inner" style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '48px', alignItems: 'center' }}>
+	    <div className="container" style={{ maxWidth: "1500px" }}>
+      <div className="message__inner" style={{ display: "flex", flexDirection: "column", gap: "36px" }}>
         <div className="reveal">
-          <img src={assetPath("/images/president_photo.jpg")} alt="代表取締役 久米涼平" style={{ aspectRatio: '3/4', width: '100%', objectFit: 'cover', borderRadius: '16px', minHeight: '350px' }} />
+          <img
+            src={assetPath("/images/president-message.jpg")}
+            alt="代表取締役 久米涼平"
+            style={{ width: "100%", maxWidth: "1500px", objectFit: "cover", borderRadius: "16px", margin: "0 auto" }}
+          />
         </div>
-        <div className="article-content reveal">
+        <div className="article-content reveal" style={{ maxWidth: "1500px", margin: "0 auto" }}>
           <h2>建物と向き合い、人と向き合う仕事を。</h2>
           <p>久米技建のホームページをご覧いただき、ありがとうございます。代表の久米涼平です。</p>
           <p>私は防水職人として現場に立つところからキャリアをスタートさせました。建物の屋上に上り、防水層の状態を自分の目で見て、手で触って、その建物が今どんな状態にあるのかを体で感じてきました。</p>

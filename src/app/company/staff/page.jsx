@@ -27,28 +27,28 @@ export default function Page() {
 <section className="content-section"><div className="container">
   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: '30px' }}>
     <div style={{ textAlign: 'center', background: 'var(--color-white)', borderRadius: '16px', padding: '30px', boxShadow: 'var(--shadow-sm)' }} className="reveal">
-      <img src={assetPath("/images/president-workwear.jpg")} alt="田中一郎" style={{ width: '150px', height: '150px', borderRadius: '50%', margin: '0 auto 16px', objectFit: 'cover' }} />
-      <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--color-primary)' }}>田中 一郎</h3>
-      <p style={{ fontSize: '13px', color: 'var(--color-accent)', fontWeight: '600', marginBottom: '12px' }}>防水工事チームリーダー / 1級防水施工技能士</p>
-      <p style={{ fontSize: '14px', color: 'var(--color-text-light)', lineHeight: '1.8' }}>防水工事歴15年。ウレタン防水・シート防水のスペシャリスト。「水を一滴も通さない」をモットーに、丁寧な施工を心がけています。</p>
+      <img src={assetPath("/images/staff-tanaka.jpg")} alt="田中一郎" style={{ width: '150px', height: '150px', borderRadius: '50%', margin: '0 auto 16px', objectFit: 'cover' }} />
+      <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--color-primary)' }}>坂本 純平</h3>
+      <p style={{ fontSize: '13px', color: 'var(--color-accent)', fontWeight: '600', marginBottom: '12px' }}>1級防水施工技能士</p>
+      <p style={{ fontSize: '14px', color: 'var(--color-text-light)', lineHeight: '1.8' }}>防水工事に20年以上携わってきました。劣化状況をしっかり見極めて最適な工法をご提案し、難易度の高い漏水修繕にも責任を持って対応します。</p>
     </div>
     <div style={{ textAlign: 'center', background: 'var(--color-white)', borderRadius: '16px', padding: '30px', boxShadow: 'var(--shadow-sm)' }} className="reveal">
-      <img src={assetPath("/images/team-meeting.jpg")} alt="山本健二" style={{ width: '150px', height: '150px', borderRadius: '50%', margin: '0 auto 16px', objectFit: 'cover' }} />
-      <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--color-primary)' }}>山本 健二</h3>
-      <p style={{ fontSize: '13px', color: 'var(--color-accent)', fontWeight: '600', marginBottom: '12px' }}>施工管理 / 1級建築施工管理技士</p>
-      <p style={{ fontSize: '14px', color: 'var(--color-text-light)', lineHeight: '1.8' }}>施工管理歴12年。大規模修繕工事を中心に、工程・品質・安全管理を担当。お客様との丁寧なコミュニケーションを大切にしています。</p>
+      <img src={assetPath("/images/staff-kishi.jpg")} alt="岸玲於奈" style={{ width: '150px', height: '150px', borderRadius: '50%', margin: '0 auto 16px', objectFit: 'cover' }} />
+      <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--color-primary)' }}>岸 玲於奈</h3>
+      <p style={{ fontSize: '13px', color: 'var(--color-accent)', fontWeight: '600', marginBottom: '12px' }}>1級建築施工管理技士</p>
+      <p style={{ fontSize: '14px', color: 'var(--color-text-light)', lineHeight: '1.8' }}>防水・塗装・シーリングまで、現場に合わせて幅広く対応しています。状況に応じた判断と段取りを大切に、チームと連携しながら丁寧に施工を進めます。</p>
     </div>
     <div style={{ textAlign: 'center', background: 'var(--color-white)', borderRadius: '16px', padding: '30px', boxShadow: 'var(--shadow-sm)' }} className="reveal">
-      <img src={assetPath("/images/consultation.jpg")} alt="佐藤美咲" style={{ width: '150px', height: '150px', borderRadius: '50%', margin: '0 auto 16px', objectFit: 'cover' }} />
-      <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--color-primary)' }}>佐藤 美咲</h3>
-      <p style={{ fontSize: '13px', color: 'var(--color-accent)', fontWeight: '600', marginBottom: '12px' }}>施工管理 / 建物診断担当</p>
-      <p style={{ fontSize: '14px', color: 'var(--color-text-light)', lineHeight: '1.8' }}>建物診断のスペシャリスト。女性ならではの細やかな視点で、お客様にわかりやすい診断レポートを作成しています。</p>
+      <img src={assetPath("/images/staff-goya.jpg")} alt="胡屋佑樹" style={{ width: '150px', height: '150px', borderRadius: '50%', margin: '0 auto 16px', objectFit: 'cover' }} />
+      <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--color-primary)' }}>胡屋 佑樹</h3>
+      <p style={{ fontSize: '13px', color: 'var(--color-accent)', fontWeight: '600', marginBottom: '12px' }}>防水技術者</p>
+      <p style={{ fontSize: '14px', color: 'var(--color-text-light)', lineHeight: '1.8' }}>丁寧で誠実な仕事を心がけています。わかりやすいご説明と、現場での挨拶・気配りを大切にしながら、安心していただける対応を徹底します。</p>
     </div>
   </div>
   <div style={{ textAlign: 'center', marginTop: '60px', padding: '40px', background: 'var(--color-bg-light)', borderRadius: '16px' }} className="reveal">
     <img src={assetPath("/images/team-group.jpg")} alt="久米技建チーム集合写真" style={{ aspectRatio: '16/7', width: '100%', objectFit: 'cover', borderRadius: '8px', minHeight: '250px' }} />
-    <p style={{ marginTop: '16px', fontSize: '16px', fontWeight: '700', color: 'var(--color-primary)' }}>久米技建チーム集合写真</p>
-    <p style={{ fontSize: '14px', color: 'var(--color-text-light)' }}>自社職人・施工管理・協力パートナー（BP）を含め、約40名体制でお客様の建物をお守りしています。</p>
+    <p style={{ marginTop: '16px', fontSize: '16px', fontWeight: '700', color: 'var(--color-primary)' }}>現場を支えるスタッフ体制</p>
+    <p style={{ fontSize: '14px', color: 'var(--color-text-light)' }}>経験豊富な自社職人と施工管理スタッフが連携し、診断から施工、完了後のフォローまで責任を持って対応します。大切な建物を、安心してお任せいただける体制です。</p>
   </div>
 </div></section>
   

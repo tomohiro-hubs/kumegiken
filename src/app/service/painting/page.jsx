@@ -3,6 +3,8 @@ import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 
 import { buildMetadata } from "@/lib/seo";
+import ServiceSeo, { FaqSection } from "@/components/ServiceSeo";
+import { serviceSeoData } from "@/lib/serviceSeoData";
 export const metadata = buildMetadata({
   title: "外壁塗装（マンション・ビル）｜久米技建｜兵庫・大阪",
   description: "兵庫・大阪のマンション・ビル外壁塗装に対応。劣化診断から下地補修、塗装仕上げまで一貫して施工します。",
@@ -11,8 +13,10 @@ export const metadata = buildMetadata({
 });
 
 export default function Page() {
+  const seoData = serviceSeoData.painting;
   return (
     <main>
+      <ServiceSeo {...seoData} />
       <section className="page-hero"><span className="page-hero__label">Painting</span><h1 className="page-hero__title">外壁塗装</h1><p className="page-hero__description">美観と保護を両立する、プロフェッショナルの外壁塗装</p></section>
   <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/service")} className="breadcrumb__link">サービス</a></li><li className="breadcrumb__separator">›</li><li>外壁塗装</li></ol></div></nav>
 
@@ -45,6 +49,7 @@ export default function Page() {
       <p>久米技建の外壁塗装は、下地処理に徹底的にこだわります。高圧洗浄、クラック補修、下地調整を丁寧に行った上で、下塗り・中塗り・上塗りの3工程をしっかりと施工。塗料の性能を最大限に引き出す施工で、長期間にわたる美観と保護効果を実現します。</p>
     </div>
   </div></div></section>
+  <FaqSection faqs={seoData.faqs} />
 
   <section className="cta-section"><div className="container"><h2 className="cta-section__title reveal">外壁塗装のご相談はお気軽に</h2><p className="cta-section__text reveal">建物の美観が気になったら、まずは無料診断から。</p><div className="cta-section__buttons reveal"><a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> 無料相談・お見積もり</a></div></div></section>
 

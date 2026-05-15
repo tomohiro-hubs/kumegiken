@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { routePath } from "@/lib/routePath";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd, jobPostingJsonLd } from "@/lib/schema";
 
 import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
@@ -10,8 +12,20 @@ export const metadata = buildMetadata({
 });
 
 export default function Page() {
+  const path = "/recruit/sales";
+  const title = "営業職（法人・個人営業）";
+
   return (
     <main>
+      <JsonLd data={breadcrumbJsonLd([{ name: "ホーム", path: "/" }, { name: "採用情報", path: "/recruit" }, { name: title, path }])} />
+      <JsonLd data={jobPostingJsonLd({
+        title,
+        path,
+        description: "管理会社、不動産会社、一般オーナーへの提案営業、現場調査、見積り作成、受注・契約までを担当します。",
+        responsibilities: "提案営業、現場調査、見積り作成、受注契約、既存顧客フォロー、新規顧客開拓。",
+        qualifications: "未経験歓迎。人と話すことが好きで、建設業界を学ぶ意欲がある方。",
+        salary: { minValue: 230000, unitText: "MONTH" },
+      })} />
       <section className="page-hero"><span className="page-hero__label">Recruit</span><h1 className="page-hero__title">営業職 募集要項</h1></section>
 <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/recruit")} className="breadcrumb__link">採用情報</a></li><li className="breadcrumb__separator">›</li><li>営業職（法人・個人営業）</li></ol></div></nav>
 <section className="content-section"><div className="container container--narrow">

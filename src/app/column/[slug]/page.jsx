@@ -2,6 +2,8 @@ import { routePath } from "@/lib/routePath";
 import { buildMetadata } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd } from "@/lib/schema";
+import { toAbsoluteUrl } from "@/lib/siteUrl";
 
 const SITE_URL = "https://kumegiken.co.jp";
 const ARTICLE_AUTHOR = "久米技建 技術監修チーム";
@@ -81,7 +83,7 @@ export async function generateMetadata({ params }) {
   return buildMetadata({
     title: article.title,
     description: article.description,
-    path: routePath(`/column/${slug}`),
+    path: `/column/${slug}`,
   });
 }
 
@@ -93,7 +95,7 @@ export default async function Page({ params }) {
     notFound();
   }
 
-  const articleUrl = `${SITE_URL}${routePath(`/column/${slug}`)}`;
+  const articleUrl = toAbsoluteUrl(`/column/${slug}`);
   const publishedDate = toIsoDate(article.date);
   const articleSchema = {
     "@context": "https://schema.org",
@@ -116,30 +118,11 @@ export default async function Page({ params }) {
       "@id": articleUrl,
     },
   };
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "ホーム",
-        item: SITE_URL,
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "コラム",
-        item: `${SITE_URL}${routePath("/column")}`,
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: article.title,
-        item: articleUrl,
-      },
-    ],
-  };
+  const breadcrumbSchema = breadcrumbJsonLd([
+    { name: "ホーム", path: "/" },
+    { name: "コラム", path: "/column" },
+    { name: article.title, path: `/column/${slug}` },
+  ]);
 
   return (
     <main>
@@ -185,6 +168,11 @@ export default async function Page({ params }) {
                 </li>
               ))}
             </ul>
+            <div style={{ background: "var(--color-bg-light)", borderRadius: "12px", padding: "20px", marginTop: "36px" }}>
+              <h2 style={{ marginTop: 0 }}>監修者情報</h2>
+              <p style={{ marginBottom: "8px" }}><strong>{ARTICLE_AUTHOR}</strong></p>
+              <p style={{ margin: 0 }}>久米技建の防水工事・大規模修繕・雨漏り調査に関する実務知見をもとに、内容の正確性と施工現場での再現性を確認しています。</p>
+            </div>
           </article>
           <div style={{ textAlign: "center", marginTop: "48px" }}>
             <a href={routePath("/column")} className="btn btn--outline-dark">← コラム一覧に戻る</a>

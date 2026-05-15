@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { routePath } from "@/lib/routePath";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd, jobPostingJsonLd } from "@/lib/schema";
 
 import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
@@ -10,8 +12,20 @@ export const metadata = buildMetadata({
 });
 
 export default function Page() {
+  const path = "/recruit/waterproofing-craftsman";
+  const title = "防水職人";
+
   return (
     <main>
+      <JsonLd data={breadcrumbJsonLd([{ name: "ホーム", path: "/" }, { name: "採用情報", path: "/recruit" }, { name: title, path }])} />
+      <JsonLd data={jobPostingJsonLd({
+        title,
+        path,
+        description: "マンション・ビル・戸建住宅の外壁塗装や防水工事の現場施工を担当します。未経験者は基礎から指導します。",
+        responsibilities: "外壁塗装、防水工事、現場施工、材料準備、現場清掃、安全確認。",
+        qualifications: "未経験歓迎。ものづくりや体を動かす仕事が好きで、チームで協力して働ける方。",
+        salary: { minValue: 220000, maxValue: 450000, unitText: "MONTH" },
+      })} />
       <section className="page-hero"><span className="page-hero__label">Recruit</span><h1 className="page-hero__title">防水職人 募集要項</h1></section>
 <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/recruit")} className="breadcrumb__link">採用情報</a></li><li className="breadcrumb__separator">›</li><li>防水職人</li></ol></div></nav>
 <section className="content-section"><div className="container container--narrow">

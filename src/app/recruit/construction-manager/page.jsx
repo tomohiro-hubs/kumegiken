@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { routePath } from "@/lib/routePath";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd, jobPostingJsonLd } from "@/lib/schema";
 
 import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
@@ -10,8 +12,20 @@ export const metadata = buildMetadata({
 });
 
 export default function Page() {
+  const path = "/recruit/construction-manager";
+  const title = "施工管理";
+
   return (
     <main>
+      <JsonLd data={breadcrumbJsonLd([{ name: "ホーム", path: "/" }, { name: "採用情報", path: "/recruit" }, { name: title, path }])} />
+      <JsonLd data={jobPostingJsonLd({
+        title,
+        path,
+        description: "マンション・ビル・戸建住宅の外壁塗装工事・防水工事における現場監督業務を担当します。",
+        responsibilities: "工程・品質・安全・原価管理、職人や協力業者への指示、施主様・管理会社対応、見積補助、書類作成。",
+        qualifications: "建築施工管理技士資格者または現場管理経験者を歓迎。資格がなくても現場管理経験10年以上の方は優遇。",
+        salary: { minValue: 350000, maxValue: 1000000, unitText: "MONTH" },
+      })} />
       <section className="page-hero"><span className="page-hero__label">Recruit</span><h1 className="page-hero__title">施工管理 募集要項</h1></section>
 <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/recruit")} className="breadcrumb__link">採用情報</a></li><li className="breadcrumb__separator">›</li><li>施工管理</li></ol></div></nav>
 <section className="content-section"><div className="container container--narrow">

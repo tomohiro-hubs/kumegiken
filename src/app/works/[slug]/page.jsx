@@ -3,6 +3,8 @@ import { assetPath } from "@/lib/assetPath";
 import { buildMetadata } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd } from "@/lib/schema";
+import { toAbsoluteUrl } from "@/lib/siteUrl";
 
 const SITE_URL = "https://kumegiken.co.jp";
 const DEFAULT_PUBLISHED_DATE = "2026-05-10";
@@ -30,6 +32,10 @@ const works = {
       "サッシ周辺の取り合い部は増し打ちではなく打替えを基本に実施",
       "雨天リスクを考慮した工程管理で品質のバラつきを抑制",
     ],
+    diagnosis: "外壁目地とサッシ周りを中心に、シーリングの硬化・破断・接着不良を確認しました。",
+    method: "既存シーリング撤去後、プライマー処理と高耐久変成シリコン系シーリング材による全面打替えを採用しました。",
+    comment: "雨水侵入リスクの高い取り合い部を重点管理し、塗装前工程として防水性を安定させました。",
+    warranty: "施工部位ごとの仕様に基づき、完了後の点検と不具合時の補修相談に対応します。",
   },
   "takarazuka-mansion-waterproofing-01": {
     title: "宝塚市 マンション 屋上シート防水工事",
@@ -53,6 +59,10 @@ const works = {
       "改修後の定期点検を前提にメンテナンス性を重視",
       "居住者動線を確保しながら安全計画を立案",
     ],
+    diagnosis: "既存防水層の継ぎ目劣化、局所的な膨れ、排水不良箇所を確認しました。",
+    method: "既存下地への負荷を抑える塩ビシート機械固定工法を採用し、端末部とドレン周辺を重点補強しました。",
+    comment: "居住者動線を確保しながら、防水連続性とメンテナンス性を両立する納まりにしました。",
+    warranty: "防水仕様に応じた保証書発行と、定期点検時期のご案内に対応します。",
   },
   "osaka-mansion-large-scale-repair-01": {
     title: "大阪市 マンション 大規模修繕工事（100戸）",
@@ -76,6 +86,10 @@ const works = {
       "仮設計画を最適化し、安全性と作業効率を両立",
       "完了後は写真付き報告書で改修内容を可視化",
     ],
+    diagnosis: "全面打診と目視調査により、外壁クラック、シーリング劣化、屋上防水の疲労を確認しました。",
+    method: "外壁補修、塗装、屋上防水、シーリング、鉄部塗装を一括で進める総合改修工法を採用しました。",
+    comment: "管理組合様への説明と居住者告知を重視し、工事中の不安を抑える運用を行いました。",
+    warranty: "工種別の保証範囲を明確化し、完了写真台帳とあわせてお引き渡しします。",
   },
   "itami-apartment-painting-01": {
     title: "伊丹市 アパート 外壁塗装工事",
@@ -99,6 +113,10 @@ const works = {
       "入居者様の生活時間帯を考慮し騒音工程を調整",
       "オーナー様向けに将来の再塗装時期目安を提示",
     ],
+    diagnosis: "外壁のチョーキング、退色、雨掛かり部の塗膜劣化、細部クラックを確認しました。",
+    method: "高圧洗浄と下地補修後、下塗り・中塗り・上塗りの3工程で高耐候塗料を施工しました。",
+    comment: "賃貸物件としての外観印象を改善しつつ、再塗装周期を見据えた仕様にしています。",
+    warranty: "塗料仕様と施工部位に応じた保証内容を明示し、経過点検をご案内します。",
   },
   "ashiya-house-waterproofing-01": {
     title: "芦屋市 戸建て バルコニーFRP防水工事",
@@ -122,6 +140,10 @@ const works = {
       "短工期で生活への影響を最小化",
       "定期的なトップコート更新時期を明示",
     ],
+    diagnosis: "床面トップコートの摩耗、微細クラック、立上り端部の劣化を確認しました。",
+    method: "ケレン・清掃・プライマー処理後、ガラスマット積層によるFRP防水層を再形成しました。",
+    comment: "短工期で生活影響を抑えながら、端部納まりまで見直して止水性を高めました。",
+    warranty: "FRP防水層とトップコートの維持管理時期をお伝えし、施工後の相談に対応します。",
   },
   "suita-factory-waterproofing-01": {
     title: "吹田市 工場 屋上アスファルト防水改修工事",
@@ -145,6 +167,10 @@ const works = {
       "高耐久仕様で更新周期を長期化しLCCを低減",
       "雨天時リスクを想定した仮設養生を徹底",
     ],
+    diagnosis: "広範囲の防水層劣化、滞留水、ドレン周辺の納まり不良を確認しました。",
+    method: "高耐久のアスファルト防水改修と排水勾配・ドレン周辺の改善を採用しました。",
+    comment: "工場稼働を止めない工程を組み、区画ごとの品質検査で施工精度を管理しました。",
+    warranty: "防水仕様に応じた保証と、排水部を含む定期確認のご案内に対応します。",
   },
 };
 
@@ -163,7 +189,7 @@ export async function generateMetadata({ params }) {
   return buildMetadata({
     title: `施工事例｜${work.title}`,
     description: `${work.area}の${work.workType}事例。${work.buildingType}の施工で、工期${work.period}・費用目安${work.budget}。施工前後の比較と施工ポイントを掲載。`,
-    path: routePath(`/works/${slug}`),
+    path: `/works/${slug}`,
     image: work.afterImage,
   });
 }
@@ -176,7 +202,7 @@ export default async function Page({ params }) {
     notFound();
   }
 
-  const workUrl = `${SITE_URL}${routePath(`/works/${slug}`)}`;
+  const workUrl = toAbsoluteUrl(`/works/${slug}`);
   const publishedDate = work.datePublished || DEFAULT_PUBLISHED_DATE;
   const modifiedDate = work.dateModified || publishedDate;
   const workSchema = {
@@ -196,36 +222,17 @@ export default async function Page({ params }) {
       name: "株式会社久米技建",
       url: SITE_URL,
     },
-    image: [new URL(assetPath(work.afterImage), SITE_URL).toString()],
+    image: [toAbsoluteUrl(work.afterImage, { addTrailingSlash: false })],
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": workUrl,
     },
   };
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "ホーム",
-        item: SITE_URL,
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "施工事例",
-        item: `${SITE_URL}${routePath("/works")}`,
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: work.title,
-        item: workUrl,
-      },
-    ],
-  };
+  const breadcrumbSchema = breadcrumbJsonLd([
+    { name: "ホーム", path: "/" },
+    { name: "施工事例", path: "/works" },
+    { name: work.title, path: `/works/${slug}` },
+  ]);
 
   return (
     <main>
@@ -296,8 +303,14 @@ export default async function Page({ params }) {
           </div>
 
           <article className="article-content reveal">
-            <h2>施工前のお悩み</h2>
+            <h2>施工前の課題</h2>
             <p>{work.issue}</p>
+
+            <h2>診断内容</h2>
+            <p>{work.diagnosis}</p>
+
+            <h2>採用工法</h2>
+            <p>{work.method}</p>
 
             <h2>施工内容</h2>
             <p>{work.summary}</p>
@@ -308,6 +321,12 @@ export default async function Page({ params }) {
                 <li key={point}>{point}</li>
               ))}
             </ul>
+
+            <h2>担当者コメント</h2>
+            <p>{work.comment}</p>
+
+            <h2>保証内容</h2>
+            <p>{work.warranty}</p>
           </article>
           <div style={{ textAlign: "center", marginTop: "48px" }}>
             <a href={routePath("/works")} className="btn btn--outline-dark">← 施工事例一覧に戻る</a>

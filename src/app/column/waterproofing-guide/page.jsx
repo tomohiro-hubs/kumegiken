@@ -2,12 +2,16 @@ import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 import { buildMetadata } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd } from "@/lib/schema";
+import { toAbsoluteUrl } from "@/lib/siteUrl";
 
 const SITE_URL = "https://kumegiken.co.jp";
 const ARTICLE_PATH = "/column/waterproofing-guide";
 const ARTICLE_TITLE = "西宮市の防水工事費用相場｜工法別の目安と選び方";
 const ARTICLE_DESCRIPTION =
   "西宮市で防水工事を検討する方向けに、ウレタン防水・シート防水・FRP防水の費用相場と工法選びのポイントを解説します。";
+const ARTICLE_AUTHOR = "久米技建 技術監修チーム";
 
 export const metadata = {
   ...buildMetadata({
@@ -28,7 +32,7 @@ export default function Page() {
     dateModified: "2026-03-15",
     author: {
       "@type": "Person",
-      name: "久米技建 技術監修チーム",
+      name: ARTICLE_AUTHOR,
     },
     publisher: {
       "@type": "Organization",
@@ -37,23 +41,19 @@ export default function Page() {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `${SITE_URL}${ARTICLE_PATH}`,
+      "@id": toAbsoluteUrl(ARTICLE_PATH),
     },
   };
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "ホーム", item: SITE_URL },
-      { "@type": "ListItem", position: 2, name: "コラム", item: `${SITE_URL}/column` },
-      { "@type": "ListItem", position: 3, name: "西宮市の防水工事費用相場", item: `${SITE_URL}${ARTICLE_PATH}` },
-    ],
-  };
+  const breadcrumbSchema = breadcrumbJsonLd([
+    { name: "ホーム", path: "/" },
+    { name: "コラム", path: "/column" },
+    { name: "西宮市の防水工事費用相場", path: ARTICLE_PATH },
+  ]);
 
   return (
     <main>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <JsonLd data={articleSchema} />
+      <JsonLd data={breadcrumbSchema} />
       <section className="page-hero"><span className="page-hero__label">Column</span><h1 className="page-hero__title">西宮市の防水工事費用相場<br />工法別の目安と選び方</h1></section>
 <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/column")} className="breadcrumb__link">コラム</a></li><li className="breadcrumb__separator">›</li><li>西宮市の防水工事費用相場</li></ol></div></nav>
 
@@ -117,6 +117,12 @@ export default function Page() {
 
   <h2>まとめ</h2>
   <p>防水工事は建物の寿命を守る重要な工事です。工法の選定は建物の用途、構造、立地条件によって異なりますので、専門家による診断をお勧めします。久米技建では無料の建物診断を実施していますので、お気軽にご相談ください。</p>
+
+  <div style={{ background: 'var(--color-bg-light)', borderRadius: '12px', padding: '20px', marginTop: '36px' }}>
+    <h2 style={{ marginTop: 0 }}>監修者情報</h2>
+    <p style={{ marginBottom: '8px' }}><strong>{ARTICLE_AUTHOR}</strong></p>
+    <p style={{ margin: 0 }}>防水工事・建物診断・雨漏り補修の現場知見をもとに、費用目安と工法選定の妥当性を確認しています。</p>
+  </div>
 
   <h2>関連サービス</h2>
   <ul>

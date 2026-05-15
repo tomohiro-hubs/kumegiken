@@ -3,6 +3,8 @@ import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 
 import { buildMetadata } from "@/lib/seo";
+import ServiceSeo, { FaqSection } from "@/components/ServiceSeo";
+import { serviceSeoData } from "@/lib/serviceSeoData";
 export const metadata = buildMetadata({
   title: "シーリング工事（打替え・打増し）｜久米技建",
   description: "外壁目地・サッシ周りのシーリング工事に対応。ひび割れや痩せなどの劣化症状を補修し、雨水侵入を防ぎます。",
@@ -11,8 +13,10 @@ export const metadata = buildMetadata({
 });
 
 export default function Page() {
+  const seoData = serviceSeoData.sealing;
   return (
     <main>
+      <ServiceSeo {...seoData} />
       <section className="page-hero"><span className="page-hero__label">Sealing</span><h1 className="page-hero__title">シーリング工事</h1><p className="page-hero__description">建物の目地を守り、雨水侵入を防ぐ重要な防水工事</p></section>
   <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/service")} className="breadcrumb__link">サービス</a></li><li className="breadcrumb__separator">›</li><li>シーリング工事</li></ol></div></nav>
 
@@ -42,6 +46,7 @@ export default function Page() {
       <p>シーリング工事の費用は、目地の長さと深さ、使用するシーリング材の種類によって異なります。一般的な目安として、打ち替えで800〜1,200円/m、打ち増しで500〜800円/m程度です。</p>
     </div>
   </div></div></section>
+  <FaqSection faqs={seoData.faqs} />
 
   <section className="cta-section"><div className="container"><h2 className="cta-section__title">シーリング工事のご相談はお気軽に</h2><div className="cta-section__buttons"><a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> 無料相談・お見積もり</a></div></div></section>
 

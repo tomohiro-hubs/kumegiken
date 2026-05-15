@@ -1,6 +1,7 @@
 const DEFAULT_SITE_NAME = "株式会社久米技建";
 const DEFAULT_OG_IMAGE = "/images/hero-main.jpg";
 import { toAbsoluteUrl } from "@/lib/siteUrl";
+import { isGithubPagesBuild } from "@/lib/siteUrl";
 
 function resolveTitle({ title, titleTemplate, titleDefault }) {
   if (!titleTemplate) return title;
@@ -33,6 +34,7 @@ export function buildMetadata({
   const canonicalUrl = toAbsoluteUrl(path, { addTrailingSlash: true });
   const imageUrl = toAbsoluteUrl(image, { addTrailingSlash: false });
   const socialTitle = typeof title === "string" ? title : title?.absolute || title?.default;
+  const shouldNoindex = isGithubPagesBuild();
 
   return {
     title: resolveTitle({ title, titleTemplate, titleDefault }),
@@ -63,7 +65,7 @@ export function buildMetadata({
       description,
       images: imageUrl ? [imageUrl] : [],
     },
-    ...(noindex
+    ...(shouldNoindex
       ? {
           robots: {
             index: false,

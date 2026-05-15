@@ -3,6 +3,8 @@ import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 
 import { buildMetadata } from "@/lib/seo";
+import ServiceSeo, { FaqSection } from "@/components/ServiceSeo";
+import { serviceSeoData } from "@/lib/serviceSeoData";
 export const metadata = buildMetadata({
   title: "大規模修繕工事（マンション・ビル）｜久米技建｜兵庫・大阪",
   description: "兵庫・大阪の大規模修繕工事なら久米技建。建物診断から施工まで一貫対応し、資産価値の維持と長寿命化を実現します。",
@@ -11,6 +13,7 @@ export const metadata = buildMetadata({
 });
 
 export default function Page() {
+  const seoData = serviceSeoData.largeScaleRepair;
   const largeScaleCases = [
     { title: "オフィスビル大規模修繕工事", area: "大阪市", type: "ビル", image: "/images/scaffold-install.jpg", href: routePath("/works/osaka-building-large-scale-repair-01") },
     { title: "分譲マンション外壁・防水改修", area: "西宮市", type: "マンション", image: "/images/large-scale-aerial.jpg", href: routePath("/works") },
@@ -25,6 +28,7 @@ export default function Page() {
 
   return (
     <main>
+      <ServiceSeo {...seoData} />
       <section className="page-hero">
     <span className="page-hero__label">Large-Scale Repair</span>
     <h1 className="page-hero__title">大規模修繕工事｜マンション・ビルの長寿命化</h1>
@@ -146,6 +150,7 @@ export default function Page() {
       </div>
     </div>
   </section>
+  <FaqSection faqs={seoData.faqs} />
 
   <section className="cta-section"><div className="container"><h2 className="cta-section__title reveal">大規模修繕のご相談はお気軽に</h2><p className="cta-section__text reveal">まずは無料の建物診断から。最適な修繕計画をご提案します。</p><div className="cta-section__phone reveal"><a href="tel:0798-27-5653" className="cta-section__phone-number" style={{ color: 'white', textDecoration: 'none' }}><i className="fas fa-phone-alt"></i> 0798-27-5653</a><div className="cta-section__phone-sub">受付時間：平日 9:00〜18:00</div></div><div className="cta-section__buttons reveal"><a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> 無料相談・お見積もり</a><a href={routePath("/simulation")} className="btn btn--outline btn--lg"><i className="fas fa-calculator"></i> 見積もりシミュレーション</a></div></div></section>
 

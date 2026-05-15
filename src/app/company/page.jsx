@@ -1,8 +1,9 @@
 import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
+import { breadcrumbJsonLd } from "@/lib/schema";
+import { toAbsoluteUrl } from "@/lib/siteUrl";
 
 import { buildMetadata } from "@/lib/seo";
-const SITE_URL = "https://kumegiken.co.jp";
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -26,17 +27,13 @@ const localBusinessSchema = {
     },
   ],
   areaServed: ["西宮市", "神戸市", "尼崎市", "大阪市", "兵庫県", "大阪府", "東京都", "練馬区"],
-  url: SITE_URL,
+  url: toAbsoluteUrl("/"),
 };
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "ホーム", item: SITE_URL },
-    { "@type": "ListItem", position: 2, name: "会社概要", item: `${SITE_URL}${routePath("/company")}` },
-  ],
-};
+const breadcrumbSchema = breadcrumbJsonLd([
+  { name: "ホーム", path: "/" },
+  { name: "会社概要", path: "/company" },
+]);
 
 const faqSchema = {
   "@context": "https://schema.org",

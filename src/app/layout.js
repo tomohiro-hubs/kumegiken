@@ -5,6 +5,7 @@ import ScrollRevealProvider from "@/components/ScrollRevealProvider";
 import JsonLd from "@/components/JsonLd";
 import Analytics from "@/components/Analytics";
 import { assetPath } from "@/lib/assetPath";
+import { isGithubPagesBuild, toAbsoluteUrl } from "@/lib/siteUrl";
 import { Inter, Noto_Sans_JP } from "next/font/google";
 
 const SITE_URL = "https://kumegiken.co.jp";
@@ -20,11 +21,11 @@ const structuredData = {
       "@type": "Organization",
       "@id": ORGANIZATION_ID,
       name: "株式会社久米技建",
-      url: SITE_URL,
+      url: toAbsoluteUrl("/"),
       telephone: "+81-798-27-5653",
       sameAs: [],
-      logo: `${SITE_URL}/images/hero-main.jpg`,
-      image: `${SITE_URL}/images/hero-main.jpg`,
+      logo: toAbsoluteUrl("/images/hero-main.jpg", { addTrailingSlash: false }),
+      image: toAbsoluteUrl("/images/hero-main.jpg", { addTrailingSlash: false }),
       areaServed: [
         { "@type": "AdministrativeArea", name: "兵庫県" },
         { "@type": "AdministrativeArea", name: "大阪府" },
@@ -50,7 +51,7 @@ const structuredData = {
     {
       "@type": "WebSite",
       "@id": WEBSITE_ID,
-      url: SITE_URL,
+      url: toAbsoluteUrl("/"),
       name: "株式会社久米技建",
       inLanguage: "ja-JP",
       publisher: {
@@ -81,6 +82,19 @@ export const metadata = {
       "西宮市の防水工事専門会社・久米技建。自社職人21名による直営施工で高品質な防水・外壁改修を実現。正直な建物診断に基づき、本当に必要な工事だけをご提案。兵庫・大阪エリア対応。無料建物診断・見積もり受付中。",
     images: ["/images/hero-main.jpg"],
   },
+  ...(isGithubPagesBuild()
+    ? {
+        robots: {
+          index: false,
+          follow: false,
+          googleBot: {
+            index: false,
+            follow: false,
+            noimageindex: true,
+          },
+        },
+      }
+    : {}),
 };
 
 export default function RootLayout({ children }) {

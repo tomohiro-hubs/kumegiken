@@ -3,16 +3,20 @@ import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 
 import { buildMetadata } from "@/lib/seo";
+import ServiceSeo, { FaqSection } from "@/components/ServiceSeo";
+import { serviceSeoData } from "@/lib/serviceSeoData";
 export const metadata = buildMetadata({
   title: "建物診断（無料診断対応）｜久米技建｜兵庫・大阪",
   description: "マンション・ビルの修繕計画に必要な建物診断を実施。現状調査から写真付き診断レポート作成まで、久米技建が正直な診断で対応します。",
   path: "/service/building-inspection",
-  image: "/images/building-inspection.jpg",
+  image: "/images/inspection-scene.jpg",
 });
 
 export default function Page() {
+  const seoData = serviceSeoData.buildingInspection;
   return (
     <main>
+      <ServiceSeo {...seoData} />
       <section className="page-hero"><span className="page-hero__label">Building Inspection</span><h1 className="page-hero__title">建物診断</h1><p className="page-hero__description">久米技建の強み「正直な診断」。建物の現状を正確に把握し、最適な修繕計画を立案</p></section>
   <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/service")} className="breadcrumb__link">サービス</a></li><li className="breadcrumb__separator">›</li><li>建物診断</li></ol></div></nav>
 
@@ -64,6 +68,7 @@ export default function Page() {
       </ul>
     </div>
   </div></div></section>
+  <FaqSection faqs={seoData.faqs} />
 
   <section className="cta-section"><div className="container"><h2 className="cta-section__title">無料建物診断のお申し込み</h2><p className="cta-section__text">まずは無料の建物診断から。お気軽にご相談ください。</p><div className="cta-section__phone"><a href="tel:0798-27-5653" className="cta-section__phone-number" style={{ color: 'white', textDecoration: 'none' }}><i className="fas fa-phone-alt"></i> 0798-27-5653</a><div className="cta-section__phone-sub">受付時間：平日 9:00〜18:00</div></div><div className="cta-section__buttons"><a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> 無料診断を申し込む</a></div></div></section>
 

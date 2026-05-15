@@ -2,6 +2,8 @@ import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 import { buildMetadata } from "@/lib/seo";
+import ServiceSeo, { FaqSection } from "@/components/ServiceSeo";
+import { serviceSeoData } from "@/lib/serviceSeoData";
 
 export const metadata = buildMetadata({
   title: "防水工事（ウレタン・シート・FRP・アスファルト）の費用相場と工法｜久米技建",
@@ -12,8 +14,10 @@ export const metadata = buildMetadata({
 });
 
 export default function Page() {
+  const seoData = serviceSeoData.waterproofing;
   return (
     <main>
+      <ServiceSeo {...seoData} />
       <section className="page-hero">
     <span className="page-hero__label">Waterproofing</span>
     <h1 className="page-hero__title">防水工事（ウレタン・シート・FRP）｜久米技建</h1>
@@ -71,6 +75,7 @@ export default function Page() {
       </div>
     </div>
   </section>
+  <FaqSection faqs={seoData.faqs} />
 
   <section className="cta-section"><div className="container"><h2 className="cta-section__title reveal">防水工事のご相談はお気軽に</h2><p className="cta-section__text reveal">建物の防水が気になったら、まずは無料診断から。</p><div className="cta-section__buttons reveal"><a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> 無料相談・お見積もり</a><a href={routePath("/simulation")} className="btn btn--outline btn--lg"><i className="fas fa-calculator"></i> 見積もりシミュレーション</a></div></div></section>
 

@@ -3,6 +3,8 @@ import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 
 import { buildMetadata } from "@/lib/seo";
+import ServiceSeo, { FaqSection } from "@/components/ServiceSeo";
+import { serviceSeoData } from "@/lib/serviceSeoData";
 export const metadata = buildMetadata({
   title: "雨漏り調査・補修｜原因特定から根本解決まで｜久米技建",
   description: "雨漏りの原因調査と補修工事に対応。散水調査や防水補修で再発防止を目指し、兵庫・大阪で迅速に対応します。",
@@ -11,8 +13,10 @@ export const metadata = buildMetadata({
 });
 
 export default function Page() {
+  const seoData = serviceSeoData.leakRepair;
   return (
     <main>
+      <ServiceSeo {...seoData} />
       <section className="page-hero" style={{ background: 'linear-gradient(135deg,#6f3030,#4f2020)' }}>
     <span className="page-hero__label">Leak Repair</span>
     <h1 className="page-hero__title">雨漏り調査・補修</h1>
@@ -53,6 +57,7 @@ export default function Page() {
       <p>急な雨漏りでお困りの場合は、まずお電話ください。状況を確認の上、できるだけ早急に現地調査にお伺いいたします。応急処置が必要な場合は、調査と合わせて対応いたします。</p>
     </div>
   </div></div></section>
+  <FaqSection faqs={seoData.faqs} />
 
   <section className="cta-section" style={{ background: 'linear-gradient(135deg,#6f3030,#4f2020)' }}><div className="container"><h2 className="cta-section__title">雨漏りでお困りの方は今すぐお電話を</h2><div className="cta-section__phone"><a href="tel:0798-27-5653" className="cta-section__phone-number" style={{ color: 'white', textDecoration: 'none' }}><i className="fas fa-phone-alt"></i> 0798-27-5653</a><div className="cta-section__phone-sub">受付時間：平日 9:00〜18:00</div></div><div className="cta-section__buttons"><a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> 緊急のお問い合わせ</a></div></div></section>
 

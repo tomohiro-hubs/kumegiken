@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { usePathname } from "next/navigation";
 import Script from "next/script";
 
 const CONSENT_KEY = "kg_cookie_consent";
@@ -11,9 +12,11 @@ function trackEvent(name, params = {}) {
 }
 
 export default function Analytics() {
+  const pathname = usePathname();
   const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
   const [consent, setConsent] = useState(null);
   const [hasScrolled75, setHasScrolled75] = useState(false);
+  const suppressConsentBanner = pathname === "/top-copy2" || pathname === "/top-copy2/";
   const enabled = useMemo(() => consent === "accepted" && Boolean(measurementId), [consent, measurementId]);
 
   useEffect(() => {
@@ -100,7 +103,7 @@ export default function Analytics() {
         </>
       )}
 
-      {consent === null && (
+      {consent === null && !suppressConsentBanner && (
         <div style={{ position: "fixed", left: 16, right: 16, bottom: 16, zIndex: 9999, background: "#1A2744", color: "#fff", borderRadius: 12, padding: "14px 16px", boxShadow: "0 8px 24px rgba(0,0,0,.2)" }}>
           <p style={{ margin: 0, fontSize: 13, lineHeight: 1.6 }}>
             サイト改善のため、アクセス解析（匿名化IP）を利用します。{" "}

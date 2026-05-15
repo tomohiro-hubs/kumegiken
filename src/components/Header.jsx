@@ -8,6 +8,7 @@ import { siteConfig } from '@/lib/siteConfig';
 export default function Header() {
   const pathname = usePathname();
   const isTopCopyPage = pathname === '/' || pathname === '/top-copy' || pathname === '/top-copy/';
+  const isUchidaCopyPage = pathname === '/top-copy2' || pathname === '/top-copy2/';
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   useEffect(() => {
@@ -37,6 +38,30 @@ export default function Header() {
       document.body.style.overflow = '';
     }
   };
+
+  if (isUchidaCopyPage) {
+    return (
+      <header className="uchida-reference-header" id="header">
+        <a href="/" className="uchida-reference-header__brand" onClick={closeMobileMenu}>
+          <span>株式会社久米技建</span>
+          <small>Kume Giken Co., Ltd.</small>
+        </a>
+        <a href="/contact" className="uchida-reference-header__cta">
+          建物相談の方へ <b>→</b>
+        </a>
+        <button
+          className={`uchida-reference-header__menu ${isMobileMenuOpen ? 'active' : ''}`}
+          aria-label="メニュー"
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-nav"
+          onClick={toggleMobileMenu}
+        >
+          <span></span>
+          <span></span>
+        </button>
+      </header>
+    );
+  }
 
   return (
     <>

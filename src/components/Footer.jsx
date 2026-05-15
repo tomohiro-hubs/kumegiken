@@ -2,9 +2,12 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { siteConfig } from '@/lib/siteConfig';
 
 export default function Footer() {
+  const pathname = usePathname();
+  const isUchidaCopyPage = pathname === '/top-copy2' || pathname === '/top-copy2/';
   const [showTokens, setShowTokens] = useState({
     backToTop: false,
     fixedCta: false,
@@ -28,6 +31,26 @@ export default function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  if (isUchidaCopyPage) {
+    return (
+      <footer className="uchida-reference-footer">
+        <div className="uchida-reference-footer__brand">
+          <span>株式会社久米技建</span>
+          <small>Kume Giken Co., Ltd.</small>
+        </div>
+        <nav aria-label="フッターナビゲーション">
+          <Link prefetch={false} href="/company">久米技建とは</Link>
+          <Link prefetch={false} href="/service">サービス</Link>
+          <Link prefetch={false} href="/works">施工事例</Link>
+          <Link prefetch={false} href="/column">お知らせ</Link>
+          <Link prefetch={false} href="/recruit">採用情報</Link>
+          <Link prefetch={false} href="/contact">お問い合わせ</Link>
+        </nav>
+        <p>Copyright © 株式会社久米技建. All rights reserved.</p>
+      </footer>
+    );
+  }
 
   return (
     <>

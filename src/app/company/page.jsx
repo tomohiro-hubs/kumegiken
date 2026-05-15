@@ -1,4 +1,5 @@
 import { routePath } from "@/lib/routePath";
+import { assetPath } from "@/lib/assetPath";
 
 import { buildMetadata } from "@/lib/seo";
 const SITE_URL = "https://kumegiken.co.jp";
@@ -135,7 +136,7 @@ export default function Page() {
         <h3 style={{ fontSize: "18px", fontWeight: "700", color: "var(--color-primary)", marginBottom: "14px" }}>本社外観</h3>
         <figure style={{ margin: 0 }}>
           <img
-            src="/images/company-hq.jpg"
+            src={assetPath("/images/company-hq.jpg")}
             alt="株式会社久米技建 本社外観"
             style={{
               width: "100%",
@@ -152,7 +153,7 @@ export default function Page() {
 
       <div style={{ marginTop: '60px' }} className="reveal">
         <h2 style={{ fontSize: '24px', fontWeight: '700', color: 'var(--color-primary)', marginBottom: '24px' }}>経営理念</h2>
-        <img src="/images/philosophy-handwritten.png" alt="誠実な診断、確かな施工。住まいの価値を、未来へ守る。" style={{ width: '70%', height: 'auto', display: 'block', margin: '0 auto' }} />
+        <img src={assetPath("/images/philosophy-handwritten.png")} alt="誠実な診断、確かな施工。住まいの価値を、未来へ守る。" style={{ width: '70%', height: 'auto', display: 'block', margin: '0 auto' }} />
       </div>
 
       <div style={{ marginTop: '60px' }} className="reveal">

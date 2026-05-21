@@ -5,6 +5,7 @@ import VoiceCarousel from "@/components/VoiceCarousel";
 import { buildMetadata } from "@/lib/seo";
 import TopCopyHero from "@/components/TopCopyHero";
 import JsonLd from "@/components/JsonLd";
+import Image from "next/image";
 
 export const metadata = buildMetadata({
   title: "防水工事・大規模修繕なら久米技建｜西宮市の防水専門会社【無料建物診断】",
@@ -222,12 +223,84 @@ function getRevealClass(index) {
   return "reveal";
 }
 
-export default function TopCopyPage() {
+const COPY3_IMAGE_OVERRIDES = {
+  "/images/service-team-crew.png": "/images/service-team-crew-copy3.jpg",
+  "/images/area-inspection-banner.png": "/images/area-inspection-banner-copy3.webp",
+  "/images/footer-cta-bg.png": "/images/footer-cta-bg-copy3.webp",
+  "/images/footer-achievement-bg.png": "/images/footer-achievement-bg-copy3.webp",
+};
+
+const IMAGE_DIMENSIONS = {
+  "/images/inspection-scene.jpg": { width: 640, height: 427 },
+  "/images/waterproofing-hands.jpg": { width: 640, height: 427 },
+  "/images/team-meeting.jpg": { width: 640, height: 427 },
+  "/images/service-team-crew.png": { width: 6506, height: 2961 },
+  "/images/service-team-crew-copy3.jpg": { width: 2286, height: 619 },
+  "/images/area-inspection-banner.png": { width: 1717, height: 916 },
+  "/images/area-inspection-banner-copy3.webp": { width: 1717, height: 916 },
+  "/images/waterproofing-rooftop.jpg": { width: 1365, height: 1024 },
+  "/images/scaffold-install.jpg": { width: 1365, height: 1024 },
+  "/images/building-completed.jpg": { width: 1365, height: 1024 },
+  "/images/consultation.jpg": { width: 640, height: 427 },
+  "/images/reason-01-generated.jpg": { width: 640, height: 427 },
+  "/images/painting-work.jpg": { width: 640, height: 427 },
+  "/images/crack-inspection.jpg": { width: 640, height: 427 },
+  "/images/after-support.jpg": { width: 640, height: 427 },
+  "/images/large-scale-aerial.jpg": { width: 1820, height: 1024 },
+  "/images/leak-repair.jpg": { width: 1365, height: 1024 },
+  "/images/icon_optimal-fastest.png": { width: 913, height: 920 },
+  "/images/icon_repair.png": { width: 1024, height: 1024 },
+  "/images/icon_worker.png": { width: 1024, height: 1024 },
+  "/images/laurel-wreath.png": { width: 451, height: 369 },
+};
+
+function resolveCopy3ImageSrc(src, optimizeForCopy3) {
+  if (!optimizeForCopy3) return src;
+  return COPY3_IMAGE_OVERRIDES[src] ?? src;
+}
+
+function TopScopedImage({
+  src,
+  alt,
+  optimizeForCopy3,
+  className,
+  style,
+  loading,
+  decoding = "async",
+  sizes = "100vw",
+}) {
+  const resolvedSrc = resolveCopy3ImageSrc(src, optimizeForCopy3);
+  const dims = IMAGE_DIMENSIONS[resolvedSrc] ?? IMAGE_DIMENSIONS[src] ?? { width: 1200, height: 800 };
+
+  if (!optimizeForCopy3) {
+    return <img src={assetPath(resolvedSrc)} alt={alt} className={className} style={style} />;
+  }
+
   return (
-    <main className="top-copy-page">
+    <Image
+      src={assetPath(resolvedSrc)}
+      alt={alt}
+      className={className}
+      style={style}
+      width={dims.width}
+      height={dims.height}
+      loading={loading ?? "lazy"}
+      decoding={decoding}
+      sizes={sizes}
+    />
+  );
+}
+
+export function TopCopyPageContent({ rootClassName = "top-copy-page" } = {}) {
+  const optimizeForCopy3 = rootClassName.includes("top-copy-page--copy3");
+  const ctaBgImage = resolveCopy3ImageSrc("/images/footer-cta-bg.png", optimizeForCopy3);
+  const achievementBgImage = resolveCopy3ImageSrc("/images/footer-achievement-bg.png", optimizeForCopy3);
+
+  return (
+    <main className={rootClassName}>
       <JsonLd data={reviewSchema} />
 
-      <TopCopyHero />
+      <TopCopyHero optimizeForCopy3={optimizeForCopy3} />
 
       {/* ========== REASON SECTION ========== */}
       <section className="reason" id="reason">
@@ -271,7 +344,7 @@ export default function TopCopyPage() {
                     </div>
                   </div>
                   <div className="reason__visual">
-                    <img src={assetPath(item.image)} alt={item.alt} />
+                    <TopScopedImage src={item.image} alt={item.alt} optimizeForCopy3={optimizeForCopy3} />
                   </div>
                 </article>
               );
@@ -293,7 +366,13 @@ export default function TopCopyPage() {
             各サービスページでは、施工内容・費用目安・対応エリアを詳しくご案内しています。
           </p>
           <div className="service__feature reveal reveal--delay-1">
-            <img src={assetPath("/images/service-team-crew.png")} alt="久米技建の自社職人チーム" className="service__featureImage" style={{ objectPosition: "100% 14%", width: "125%", height: "125%", transform: "scale(0.8)", transformOrigin: "100% 14%" }} />
+            <TopScopedImage
+              src="/images/service-team-crew.png"
+              alt="久米技建の自社職人チーム"
+              optimizeForCopy3={optimizeForCopy3}
+              className="service__featureImage"
+              style={optimizeForCopy3 ? undefined : { objectPosition: "100% 14%", width: "125%", height: "125%", transform: "scale(0.8)", transformOrigin: "100% 14%" }}
+            />
             <div className="service__featureCopy">
               <h3 className="service__featureTitle">
                 調べる人間が、直す。
@@ -315,7 +394,7 @@ export default function TopCopyPage() {
             {serviceCards.map((card, index) => (
               <a href={routePath(card.href)} className={`service-card ${getRevealClass(index)}`} key={card.key}>
                 <div className="service-card__image">
-                  <img src={assetPath(card.image)} alt={card.title} />
+                  <TopScopedImage src={card.image} alt={card.title} optimizeForCopy3={optimizeForCopy3} />
                 </div>
                 <div className="service-card__body">
                   <h3 className="service-card__title">{card.title}</h3>
@@ -334,7 +413,7 @@ export default function TopCopyPage() {
       <section className="works" id="works">
         <div className="container">
           <div className="reveal works__featureBanner" style={{ margin: "0 calc(50% - 50vw) 28px", width: "100dvw" }}>
-            <img src={assetPath("/images/area-inspection-banner.png")} alt="現地調査を行う技術者" className="service__featureImage" style={{ objectPosition: "center 34%", height: "500px" }} />
+            <TopScopedImage src="/images/area-inspection-banner.png" alt="現地調査を行う技術者" optimizeForCopy3={optimizeForCopy3} className="service__featureImage" style={{ objectPosition: "center 34%", height: "500px" }} />
             <div className="works__featureFade" aria-hidden="true"></div>
             <div className="works__featureOverlay">
               <div className="section-heading works__featureHeading">
@@ -356,7 +435,7 @@ export default function TopCopyPage() {
             {workItems.map((item, index) => (
               <a href={routePath(item.href)} className={`work-card ${getRevealClass(index)}`} key={item.href} data-category="case">
                 <div className="work-card__image">
-                  <img src={assetPath(item.image)} alt={item.alt} />
+                  <TopScopedImage src={item.image} alt={item.alt} optimizeForCopy3={optimizeForCopy3} />
                   <span className="work-card__category">{item.category}</span>
                 </div>
                 <div className="work-card__body">
@@ -402,7 +481,7 @@ export default function TopCopyPage() {
                     <p className="flow__step-text">{item.text}</p>
                   </div>
                   <div className="flow__step-image">
-                    <img src={assetPath(item.image)} alt={item.alt} />
+                    <TopScopedImage src={item.image} alt={item.alt} optimizeForCopy3={optimizeForCopy3} />
                   </div>
                 </div>
               </article>
@@ -441,7 +520,7 @@ export default function TopCopyPage() {
             {columnItems.map((item) => (
               <a href={routePath(item.href)} className="column-card reveal" key={item.href}>
                 <div className="column-card__image">
-                  <img src={assetPath(item.image)} alt={item.alt} />
+                  <TopScopedImage src={item.image} alt={item.alt} optimizeForCopy3={optimizeForCopy3} />
                 </div>
                 <div className="column-card__body">
                   <div className="column-card__date">{item.date}</div>
@@ -463,7 +542,7 @@ export default function TopCopyPage() {
       {/* ========== CTA SECTION ========== */}
       <section className="cta-v2">
         <div className="cta-v2__shell">
-          <div className="cta-v2__top reveal" style={{ "--cta-v2-bg-image": `url('${assetPath("/images/footer-cta-bg.png")}')` }}>
+          <div className="cta-v2__top reveal" style={{ "--cta-v2-bg-image": `url('${assetPath(ctaBgImage)}')` }}>
             <div className="container">
               <h2 className="cta-v2__title">
                 <span className="cta-v2__title-accent">＼</span>
@@ -515,7 +594,7 @@ export default function TopCopyPage() {
           <div className="cta-support__inner">
             <div className="cta-support__item">
               <div className="cta-support__icon">
-                <img src={assetPath("/images/icon_optimal-fastest.png")} alt="最適工事を最短工事" />
+                <TopScopedImage src="/images/icon_optimal-fastest.png" alt="最適工事を最短工事" optimizeForCopy3={optimizeForCopy3} />
               </div>
               <div className="cta-support__text-block">
                 <h3 className="cta-support__title">最適工事を最短工事</h3>
@@ -525,7 +604,7 @@ export default function TopCopyPage() {
 
             <div className="cta-support__item">
               <div className="cta-support__icon">
-                <img src={assetPath("/images/icon_repair.png")} alt="原因から根本修理" />
+                <TopScopedImage src="/images/icon_repair.png" alt="原因から根本修理" optimizeForCopy3={optimizeForCopy3} />
               </div>
               <div className="cta-support__text-block">
                 <h3 className="cta-support__title">原因から根本修理</h3>
@@ -535,7 +614,7 @@ export default function TopCopyPage() {
 
             <div className="cta-support__item">
               <div className="cta-support__icon">
-                <img src={assetPath("/images/icon_worker.png")} alt="自社職人が対応" />
+                <TopScopedImage src="/images/icon_worker.png" alt="自社職人が対応" optimizeForCopy3={optimizeForCopy3} />
               </div>
               <div className="cta-support__text-block">
                 <h3 className="cta-support__title">自社職人が対応</h3>
@@ -551,10 +630,10 @@ export default function TopCopyPage() {
       </section>
 
       {/* ========== CTA ACHIEVEMENT BANNER ========== */}
-      <div className="cta-achievement reveal" style={{ "--cta-achievement-bg-image": `url('${assetPath("/images/footer-achievement-bg.png")}')` }}>
+      <div className="cta-achievement reveal" style={{ "--cta-achievement-bg-image": `url('${assetPath(achievementBgImage)}')` }}>
         <div className="cta-achievement__inner">
           <div className="cta-achievement__left">
-            <img src={assetPath("/images/laurel-wreath.png")} alt="月桂樹" className="cta-achievement__laurel" />
+            <TopScopedImage src="/images/laurel-wreath.png" alt="月桂樹" optimizeForCopy3={optimizeForCopy3} className="cta-achievement__laurel" />
             <span className="cta-achievement__label">累計施工実績</span>
             <span className="cta-achievement__number">1,000</span>
             <span className="cta-achievement__unit">件以上</span>
@@ -565,4 +644,8 @@ export default function TopCopyPage() {
       </div>
     </main>
   );
+}
+
+export default function TopCopyPage() {
+  return <TopCopyPageContent />;
 }

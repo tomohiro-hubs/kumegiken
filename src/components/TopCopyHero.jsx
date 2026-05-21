@@ -1,6 +1,7 @@
 import { assetPath } from "@/lib/assetPath";
 import { routePath } from "@/lib/routePath";
 import { siteConfig } from "@/lib/siteConfig";
+import Image from "next/image";
 import styles from "./TopCopyHero.module.css";
 
 const featureItems = [
@@ -45,12 +46,42 @@ const ctaItems = [
   },
 ];
 
-export default function TopCopyHero() {
+const HERO_IMAGE_DIMENSIONS = {
+  "/images/top-copy-handshake-icon.png": { width: 1080, height: 1080 },
+  "/images/top-copy-icon-01.png": { width: 290, height: 311 },
+  "/images/top-copy-icon-02.png": { width: 259, height: 302 },
+  "/images/top-copy-icon-03.png": { width: 317, height: 260 },
+  "/images/top-copy-building-icon.png": { width: 1080, height: 1080 },
+  "/images/top-copy-house-icon.png": { width: 1080, height: 1080 },
+};
+
+function HeroDecorativeImage({ src, className, optimizeForCopy3 }) {
+  const dims = HERO_IMAGE_DIMENSIONS[src];
+  if (!optimizeForCopy3 || !dims) {
+    return <img src={assetPath(src)} alt="" aria-hidden="true" className={className} />;
+  }
+
+  return (
+    <Image
+      src={assetPath(src)}
+      alt=""
+      aria-hidden="true"
+      width={dims.width}
+      height={dims.height}
+      className={className}
+      loading="eager"
+      decoding="async"
+    />
+  );
+}
+
+export default function TopCopyHero({ optimizeForCopy3 = false }) {
+  const heroBgImage = optimizeForCopy3 ? "/images/top-copy-hero-bg-copy3.webp" : "/images/top-copy-hero-bg.png";
   return (
     <section
       className={styles.root}
       aria-labelledby="top-copy-hero-title"
-      style={{ "--top-copy-hero-bg-image": `url('${assetPath("/images/top-copy-hero-bg.png")}')` }}
+      style={{ "--top-copy-hero-bg-image": `url('${assetPath(heroBgImage)}')` }}
     >
       <div className={styles.heroInner}>
         <div className={styles.heroVisual}>
@@ -86,7 +117,7 @@ export default function TopCopyHero() {
                     <p className={styles.featureNumber}>{item.number}</p>
                     <h2 className={styles.featureTitle}>{item.title}</h2>
                   </div>
-                  <Icon className={iconClassName} />
+                  <Icon className={iconClassName} optimizeForCopy3={optimizeForCopy3} />
                   <p className={styles.featureText}>{item.text}</p>
                 </li>
               );
@@ -95,10 +126,9 @@ export default function TopCopyHero() {
 
           <aside className={styles.phoneCta} aria-label="無料相談窓口">
             <p className={styles.phoneHead}>
-              <img
-                src={assetPath("/images/top-copy-handshake-icon.svg")}
-                alt=""
-                aria-hidden="true"
+              <HeroDecorativeImage
+                src="/images/top-copy-handshake-icon.png"
+                optimizeForCopy3={optimizeForCopy3}
                 className={`${styles.phoneIcon} ${styles.phoneHeadIcon}`}
               />
               <span>無料診断・ご相談受付中</span>
@@ -111,7 +141,7 @@ export default function TopCopyHero() {
                 className={styles.phoneLink}
               >
                 <img
-                  src={assetPath("/images/top-copy-phone-icon.svg")}
+                  src={assetPath("/images/top-copy-phone-icon.png")}
                   alt=""
                   aria-hidden="true"
                   className={styles.phoneNumberIcon}
@@ -133,7 +163,7 @@ export default function TopCopyHero() {
               return (
                 <a key={item.href} href={item.href} className={item.panelClass}>
                   <span style={{ display: "inline-flex", alignItems: "center", gap: "12px" }}>
-                    <Icon className={styles.phoneIcon} />
+                    <Icon className={styles.phoneIcon} optimizeForCopy3={optimizeForCopy3} />
                       <span>
                       <span className={styles.bottomCtaMeta}>{item.meta}</span>
                       <span className={styles.bottomCtaTitle}>{item.title}</span>
@@ -157,31 +187,20 @@ function cx(...values) {
   return values.filter(Boolean).join(" ");
 }
 
-function ClipboardSearchIcon({ className }) {
-  return (
-    <img src={assetPath("/images/top-copy-icon-01.png")} alt="" aria-hidden="true" className={className} />
-  );
+function ClipboardSearchIcon({ className, optimizeForCopy3 = false }) {
+  return <HeroDecorativeImage src="/images/top-copy-icon-01.png" optimizeForCopy3={optimizeForCopy3} className={className} />;
 }
 
-function WorkerIcon({ className }) {
-  return (
-    <img src={assetPath("/images/top-copy-icon-02.png")} alt="" aria-hidden="true" className={className} />
-  );
+function WorkerIcon({ className, optimizeForCopy3 = false }) {
+  return <HeroDecorativeImage src="/images/top-copy-icon-02.png" optimizeForCopy3={optimizeForCopy3} className={className} />;
 }
 
-function BuildingIcon({ className }) {
-  return (
-    <img src={assetPath("/images/top-copy-icon-03.png")} alt="" aria-hidden="true" className={className} />
-  );
+function BuildingIcon({ className, optimizeForCopy3 = false }) {
+  return <HeroDecorativeImage src="/images/top-copy-icon-03.png" optimizeForCopy3={optimizeForCopy3} className={className} />;
 }
 
 function WaterDropIcon({ className }) {
-  return (
-    <svg viewBox="0 0 36 36" aria-hidden="true" focusable="false" className={className}>
-      <circle cx="18" cy="18" r="17" fill="none" stroke="currentColor" strokeWidth="2" />
-      <path d="M18 8c-4 6-6 8-6 11a6 6 0 0 0 12 0c0-3-2-5-6-11Z" fill="none" stroke="currentColor" strokeWidth="2" />
-    </svg>
-  );
+  return <img src={assetPath("/images/top-copy-waterdrop-icon.png")} alt="" aria-hidden="true" className={className} />;
 }
 
 function PhoneIcon({ className }) {
@@ -195,27 +214,10 @@ function PhoneIcon({ className }) {
   );
 }
 
-function CtaBuildingIcon({ className }) {
-  return (
-    <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false" className={className}>
-      <g fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="24" cy="24" r="21" />
-        <path d="M14 34V16h13v18M27 34V11h7v23" />
-        <path d="M18 20h2M18 24h2M18 28h2M30 16h2M30 20h2M30 24h2" />
-      </g>
-    </svg>
-  );
+function CtaBuildingIcon({ className, optimizeForCopy3 = false }) {
+  return <HeroDecorativeImage src="/images/top-copy-building-icon.png" optimizeForCopy3={optimizeForCopy3} className={className} />;
 }
 
-function CtaHouseIcon({ className }) {
-  return (
-    <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false" className={className}>
-      <g fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="24" cy="24" r="21" />
-        <path d="M14 24 24 14l10 10" />
-        <path d="M18 24v12h12V24" />
-        <path d="M23 30h2v6h-2z" />
-      </g>
-    </svg>
-  );
+function CtaHouseIcon({ className, optimizeForCopy3 = false }) {
+  return <HeroDecorativeImage src="/images/top-copy-house-icon.png" optimizeForCopy3={optimizeForCopy3} className={className} />;
 }

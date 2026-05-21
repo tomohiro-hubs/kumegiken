@@ -7,7 +7,12 @@ import { siteConfig } from '@/lib/siteConfig';
 
 export default function Header() {
   const pathname = usePathname();
-  const isTopCopyPage = pathname === '/' || pathname === '/top-copy' || pathname === '/top-copy/';
+  const isTopCopyPage =
+    pathname === '/' ||
+    pathname === '/top-copy' ||
+    pathname === '/top-copy/' ||
+    pathname === '/top-copy3' ||
+    pathname === '/top-copy3/';
   const isUchidaCopyPage = pathname === '/top-copy2' || pathname === '/top-copy2/';
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

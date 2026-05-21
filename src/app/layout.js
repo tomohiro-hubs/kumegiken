@@ -111,6 +111,7 @@ export default function RootLayout({ children }) {
           "--cta-v2-bg-image": `url("${assetPath("/images/footer-cta-bg.png")}")`,
           "--cta-achievement-bg-image": `url("${assetPath("/images/footer-achievement-bg.png")}")`,
           "--service-hero-bg-image": `url("${assetPath("/images/service-hero-bg.png")}")`,
+          "--top-fixed-bg-image": `url("${assetPath("/images/top-bg-fixed-cityscape.jpg")}")`,
         }}
       >
         <Analytics />

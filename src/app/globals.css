@@ -1564,7 +1564,8 @@ input, textarea, select {
 
 .top-copy-page {
   padding-top: var(--header-height);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)), var(--top-fixed-bg-image, url("/images/top-bg-fixed-cityscape.jpg"));
+  background-color: #eef3f8;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0.38)), var(--top-fixed-bg-image, url("/images/top-bg-fixed-cityscape.jpg"));
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;

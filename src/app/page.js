@@ -72,6 +72,11 @@ const reasonItems = [
     solutionText:
       "久米技建は、建物を診た技術者がそのまま施工計画を立て、\n必要に応じて自ら現場にも入ります。情報のロスが少ないから、\n最適な工事を、ムダのない工程で進められます。",
     icon: "fa-regular fa-clock",
+    copy4Title: "担当者が変わるたび、話が伝わっているか不安です。",
+    copy4Body:
+      "調査した人、判断する人、施工する人が分かれていると、伝達ミスや判断のズレが起こりやすくなります。久米技建では、建物を診た技術者がそのまま施工計画を立て、必要に応じて現場にも入ります。情報ロスを抑えながら、必要な工事を最短工程で進められる体制です。",
+    copy4Flow: ["現地調査", "施工計画", "現場対応"],
+    copy4Outcome: ["情報ロスを抑制", "判断のズレを防止"],
   },
   {
     number: "02",
@@ -85,6 +90,11 @@ const reasonItems = [
     solutionText:
       "見えない原因までしっかり特定し、根本から対処します。\nその場しのぎではなく、長期にわたり役立つ\n長く安心が続きます。",
     icon: "fa-solid fa-magnifying-glass",
+    copy4Title: "直しても、また漏れたらどうしようと不安です。",
+    copy4Body:
+      "見えている症状だけを追いかける補修では、再発の不安が残ります。久米技建は、目に見えない原因まで丁寧に特定し、必要な工事を根本から組み立てます。その場しのぎではなく、再発しにくい状態を目指すことで、長く安心が続く修繕につなげます。",
+    copy4Flow: ["症状の確認", "原因を特定", "根本から対処"],
+    copy4Outcome: ["再発しにくい修繕", "長く安心が続く"],
   },
   {
     number: "03",
@@ -98,6 +108,11 @@ const reasonItems = [
     solutionText:
       "防水工事は自社職人が責任を持って施工。塗装・足場は連携する協力会社と、いつも同じチームで対応するため、品質のばらつきなく安心してお任せいただけます。",
     icon: "fa-solid fa-helmet-safety",
+    copy4Title: "どんな人が来るのか分からず、品質面が心配です。",
+    copy4Body:
+      "スタッフの質は、そのまま仕上がりの質につながります。久米技建では、防水工事は自社職人が責任を持って施工し、塗装や足場も連携する協力会社と固定チームで対応します。現場ごとの品質のばらつきを抑え、説明から施工まで一貫した安心感を保ちます。",
+    copy4Flow: ["自社職人が施工", "固定チームで連携", "品質を一定化"],
+    copy4Outcome: ["説明と施工に一貫性", "ばらつきの少ない品質"],
   },
 ];
 
@@ -293,6 +308,7 @@ function TopScopedImage({
 
 export function TopCopyPageContent({ rootClassName = "top-copy-page" } = {}) {
   const optimizeForCopy3 = rootClassName.includes("top-copy-page--copy3");
+  const optimizeForCopy4 = rootClassName.includes("top-copy-page--copy4");
   const ctaBgImage = resolveCopy3ImageSrc("/images/footer-cta-bg.png", optimizeForCopy3);
   const achievementBgImage = resolveCopy3ImageSrc("/images/footer-achievement-bg.png", optimizeForCopy3);
 
@@ -318,6 +334,61 @@ export function TopCopyPageContent({ rootClassName = "top-copy-page" } = {}) {
               const concernLines = item.concernText.split("\n");
               const concernMain = concernLines[0] ?? "";
               const concernBodyLines = concernLines.slice(1);
+
+              if (optimizeForCopy4) {
+                const isImageLeading = Number(item.number) % 2 === 0;
+                const visual = (
+                  <div className="reason__copy4Visual">
+                    <TopScopedImage
+                      src={item.image}
+                      alt={item.alt}
+                      optimizeForCopy3={optimizeForCopy3}
+                    />
+                  </div>
+                );
+
+                const body = (
+                  <div className="reason__copy4Body">
+                    <div className="reason__copy4Badge">
+                      <span className="reason__copy4BadgeLabel">お悩み</span>
+                      <span className="reason__copy4BadgeNumber en">{item.number}</span>
+                    </div>
+                    <h3 className="reason__copy4Title">{item.copy4Title}</h3>
+                    <div className="reason__copy4Rule" aria-hidden="true">
+                      <span className="reason__copy4RuleKink"></span>
+                    </div>
+                    <p className="reason__copy4Text">{item.copy4Body}</p>
+                    <div className="reason__copy4Summary" aria-label="久米技建の対応ポイント">
+                      <div className="reason__copy4Flow">
+                        {item.copy4Flow.map((label, index) => (
+                          <div className="reason__copy4FlowItem" key={`${item.number}-flow-${index}`}>
+                            <span className="reason__copy4FlowStep">{index + 1}つ目</span>
+                            <span className="reason__copy4FlowLabel">{label}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <span className="reason__copy4Plus" aria-hidden="true">
+                        +
+                      </span>
+                      <div className="reason__copy4Outcome">
+                        {item.copy4Outcome.map((label, index) => (
+                          <span className="reason__copy4OutcomeItem" key={`${item.number}-outcome-${index}`}>
+                            {label}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                );
+
+                return (
+                  <article className={`reason__item reason__item--${item.number} reveal`} key={item.number}>
+                    {isImageLeading ? visual : body}
+                    {isImageLeading ? body : visual}
+                  </article>
+                );
+              }
+
               return (
                 <article className={`reason__item reason__item--${item.number} reveal`} key={item.number}>
                   <div className="reason__copy">

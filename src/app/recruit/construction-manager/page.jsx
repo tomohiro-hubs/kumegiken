@@ -26,8 +26,9 @@ export default function Page() {
         qualifications: "建築施工管理技士資格者または現場管理経験者を歓迎。資格がなくても現場管理経験10年以上の方は優遇。",
         salary: { minValue: 350000, maxValue: 1000000, unitText: "MONTH" },
       })} />
+      <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/recruit")} className="breadcrumb__link">採用情報</a></li><li className="breadcrumb__separator">›</li><li>施工管理</li></ol></div></nav>
       <section className="page-hero"><span className="page-hero__label">Recruit</span><h1 className="page-hero__title">施工管理 募集要項</h1></section>
-<nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/recruit")} className="breadcrumb__link">採用情報</a></li><li className="breadcrumb__separator">›</li><li>施工管理</li></ol></div></nav>
+
 <section className="content-section"><div className="container container--narrow">
   <table className="info-table reveal"><tbody>
     <tr><th>募集職種</th><td>現場監督業務（現場代理人）</td></tr>

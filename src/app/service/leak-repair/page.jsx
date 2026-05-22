@@ -17,13 +17,14 @@ export default function Page() {
   return (
     <main>
       <ServiceSeo {...seoData} />
+      <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/service")} className="breadcrumb__link">サービス</a></li><li className="breadcrumb__separator">›</li><li>雨漏り調査・補修</li></ol></div></nav>
       <section className="page-hero" style={{ background: 'linear-gradient(135deg,#6f3030,#4f2020)' }}>
     <span className="page-hero__label">Leak Repair</span>
     <h1 className="page-hero__title">雨漏り調査・補修</h1>
     <p className="page-hero__description">雨漏りの原因を突き止め、根本から解決。緊急対応もお任せください。</p>
     <div style={{ marginTop: '24px' }}><a href="tel:0798-27-5653" className="btn btn--primary btn--lg"><i className="fas fa-phone-alt"></i> 今すぐ電話相談 0798-27-5653</a></div>
   </section>
-  <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/service")} className="breadcrumb__link">サービス</a></li><li className="breadcrumb__separator">›</li><li>雨漏り調査・補修</li></ol></div></nav>
+  
 
   <section className="content-section"><div className="container container--narrow"><div className="article-content">
     <div className="reveal" style={{ marginBottom: '40px' }}><img src={assetPath("/images/leak-repair.jpg")} alt="雨漏り調査・補修の現場" style={{ aspectRatio: '16/9', width: '100%', objectFit: 'cover', borderRadius: '16px' }} /></div>

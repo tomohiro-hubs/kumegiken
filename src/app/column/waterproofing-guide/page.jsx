@@ -54,8 +54,9 @@ export default function Page() {
     <main>
       <JsonLd data={articleSchema} />
       <JsonLd data={breadcrumbSchema} />
+      <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/column")} className="breadcrumb__link">コラム</a></li><li className="breadcrumb__separator">›</li><li>西宮市の防水工事費用相場</li></ol></div></nav>
       <section className="page-hero"><span className="page-hero__label">Column</span><h1 className="page-hero__title">西宮市の防水工事費用相場<br />工法別の目安と選び方</h1></section>
-<nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/column")} className="breadcrumb__link">コラム</a></li><li className="breadcrumb__separator">›</li><li>西宮市の防水工事費用相場</li></ol></div></nav>
+
 
 <section className="content-section"><div className="container container--narrow"><div className="article-content">
   <p style={{ fontSize: '13px', color: 'var(--color-text-muted)', marginBottom: '24px' }}>最終更新日：2026年3月15日 / カテゴリ：防水工事</p>

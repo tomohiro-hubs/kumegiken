@@ -17,8 +17,9 @@ export default function Page() {
   return (
     <main>
       <ServiceSeo {...seoData} />
+      <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/service")} className="breadcrumb__link">サービス</a></li><li className="breadcrumb__separator">›</li><li>シーリング工事</li></ol></div></nav>
       <section className="page-hero"><span className="page-hero__label">Sealing</span><h1 className="page-hero__title">シーリング工事</h1><p className="page-hero__description">建物の目地を守り、雨水侵入を防ぐ重要な防水工事</p></section>
-  <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/service")} className="breadcrumb__link">サービス</a></li><li className="breadcrumb__separator">›</li><li>シーリング工事</li></ol></div></nav>
+  
 
   <section className="content-section"><div className="container container--narrow"><div className="article-content">
     <div className="reveal" style={{ marginBottom: '40px' }}><img src={assetPath("/images/sealing-work.jpg")} alt="シーリング工事の現場" style={{ aspectRatio: '16/9', width: '100%', objectFit: 'cover', borderRadius: '16px' }} /></div>

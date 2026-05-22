@@ -1,10 +1,10 @@
 import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
-import { serviceCards } from "@/lib/serviceCards";
 import VoiceCarousel from "@/components/VoiceCarousel";
 import { buildMetadata } from "@/lib/seo";
 import TopCopyHero from "@/components/TopCopyHero";
 import JsonLd from "@/components/JsonLd";
+import { faqJsonLd } from "@/lib/schema";
 
 export const metadata = buildMetadata({
   title: "防水工事・大規模修繕なら久米技建｜西宮市の防水専門会社【無料建物診断】",
@@ -52,10 +52,66 @@ const reviewSchema = {
 };
 
 const serviceQuickLinks = [
-  { href: "/service/waterproofing", label: "屋上防水" },
+  { href: "/service/waterproofing", label: "防水工事" },
+  { href: "/service/leak-repair", label: "雨漏り補修" },
   { href: "/service/sealing", label: "シーリング工事" },
   { href: "/service/painting", label: "外壁塗装" },
   { href: "/service/large-scale-repair", label: "大規模修繕" },
+  { href: "/service/building-inspection", label: "建物診断" },
+];
+
+const trustItems = [
+  {
+    value: "1,000",
+    unit: "件以上",
+    label: "累計施工実績",
+    text: "西宮市を中心に、兵庫・大阪の建物を地域密着で対応。",
+  },
+  {
+    value: "21",
+    unit: "名",
+    label: "自社職人",
+    text: "防水工事・改修工事を熟知した職人が品質を支えます。",
+  },
+  {
+    value: "無料",
+    unit: "",
+    label: "建物診断・見積もり",
+    text: "不要な工事を勧めず、現状と必要性を正直に説明します。",
+  },
+  {
+    value: "兵庫・大阪",
+    unit: "",
+    label: "対応エリア",
+    text: "西宮市・神戸市・尼崎市・大阪市周辺まで対応。",
+  },
+];
+
+const problemItems = [
+  {
+    title: "屋上やベランダの防水層が劣化している",
+    text: "ひび割れ、膨れ、排水不良などを確認し、建物に合う防水工事をご提案します。",
+    href: "/service/waterproofing",
+    label: "防水工事を見る",
+  },
+  {
+    title: "雨漏りの原因が分からず再発が不安",
+    text: "散水調査や劣化状況の確認を行い、表面的な雨漏り補修ではなく原因から対処します。",
+    href: "/service/leak-repair",
+    label: "雨漏り補修を見る",
+  },
+  {
+    title: "マンション・ビルの修繕時期を判断したい",
+    text: "管理組合・オーナー様向けに、大規模修繕の優先順位と概算費用を整理します。",
+    href: "/service/large-scale-repair",
+    label: "大規模修繕を見る",
+  },
+  {
+    title: "外壁やシーリングの劣化が気になる",
+    text: "外壁塗装、シーリング打ち替え、下地補修まで、劣化状況に合わせて計画します。",
+    href: "/service/sealing",
+    label: "シーリング工事を見る",
+  },
 ];
 
 const reasonItems = [
@@ -98,6 +154,57 @@ const reasonItems = [
     solutionText:
       "防水工事は自社職人が責任を持って施工。塗装・足場は連携する協力会社と、いつも同じチームで対応するため、品質のばらつきなく安心してお任せいただけます。",
     icon: "fa-solid fa-helmet-safety",
+  },
+];
+
+const serviceItems = [
+  {
+    href: "/service/waterproofing",
+    image: "/images/waterproofing-rooftop.jpg",
+    alt: "マンション屋上の防水工事",
+    label: "雨水から建物を守る",
+    title: "防水工事",
+    text: "屋上・ベランダ・共用廊下などのウレタン防水、シート防水、FRP防水に対応。建物の状態を見て、最適な工法を選定します。",
+  },
+  {
+    href: "/service/large-scale-repair",
+    image: "/images/scaffold-install.jpg",
+    alt: "足場を設置した大規模修繕工事",
+    label: "管理組合・法人向け",
+    title: "大規模修繕",
+    text: "マンション・ビルの外壁改修、防水、下地補修まで一括対応。居住者様やテナント様への配慮も含めて施工管理します。",
+  },
+  {
+    href: "/service/leak-repair",
+    image: "/images/leak-repair.jpg",
+    alt: "雨漏り補修のために建物を確認する様子",
+    label: "原因から止める",
+    title: "雨漏り補修",
+    text: "雨漏りの原因を調査し、再発しにくい補修計画を提案します。緊急性の高いご相談にも状況を伺いながら対応します。",
+  },
+  {
+    href: "/service/painting",
+    image: "/images/painting-work.jpg",
+    alt: "外壁塗装の施工現場",
+    label: "美観と保護を両立",
+    title: "外壁塗装",
+    text: "外壁材や周辺環境に合わせて塗料を選定。見た目の改善だけでなく、建物を長く守る塗装工事を行います。",
+  },
+  {
+    href: "/service/sealing",
+    image: "/images/sealing-work.jpg",
+    alt: "シーリング工事の施工風景",
+    label: "隙間からの浸水対策",
+    title: "シーリング",
+    text: "外壁目地・サッシまわりの打ち替え、増し打ちに対応。防水性能を維持するため、劣化状況を丁寧に確認します。",
+  },
+  {
+    href: "/service/building-inspection",
+    image: "/images/inspection-scene.jpg",
+    alt: "建物診断で外壁を確認する担当者",
+    label: "まずは状態把握から",
+    title: "建物診断",
+    text: "写真付きレポートで劣化箇所と修繕の優先順位を整理。西宮市・兵庫・大阪の建物管理に役立つ診断を行います。",
   },
 ];
 
@@ -217,6 +324,29 @@ const flowItems = [
   },
 ];
 
+const faqItems = [
+  {
+    question: "無料建物診断だけの相談でも依頼できますか？",
+    answer:
+      "はい、無料建物診断だけでもご相談いただけます。防水工事や大規模修繕がすぐに必要かどうかを正直に確認し、不要な工事はおすすめしません。",
+  },
+  {
+    question: "西宮市以外も対応していますか？",
+    answer:
+      "西宮市を中心に、兵庫県内、神戸市、尼崎市、宝塚市、大阪市周辺まで対応しています。建物の規模や内容により対応可否を確認します。",
+  },
+  {
+    question: "管理組合や法人の大規模修繕も相談できますか？",
+    answer:
+      "対応可能です。マンション管理組合、ビルオーナー、法人のお客様向けに、建物診断、修繕計画、見積もり、施工管理まで一貫して対応します。",
+  },
+  {
+    question: "雨漏り補修は原因調査からお願いできますか？",
+    answer:
+      "可能です。雨漏りは原因が複数ある場合もあるため、現地調査で状況を確認し、防水層、外壁、シーリングなどの劣化箇所を見極めて補修方針をお伝えします。",
+  },
+];
+
 function getRevealClass(index) {
   if (index === 1) return "reveal reveal--delay-1";
   if (index >= 2) return "reveal reveal--delay-2";
@@ -225,10 +355,52 @@ function getRevealClass(index) {
 
 export default function TopCopyPage() {
   return (
-    <main className="top-copy-page">
+    <main className="top-copy-page top-copy-page--refresh">
       <JsonLd data={reviewSchema} />
+      <JsonLd data={faqJsonLd(faqItems)} />
 
       <TopCopyHero />
+
+      {/* ========== TRUST BAR ========== */}
+      <section className="trust-bar" aria-label="久米技建の実績と強み">
+        <div className="container trust-bar__inner">
+          {trustItems.map((item) => (
+            <article className="trust-bar__item reveal" key={item.label}>
+              <p className="trust-bar__label">{item.label}</p>
+              <p className="trust-bar__value">
+                <span>{item.value}</span>
+                {item.unit ? <small>{item.unit}</small> : null}
+              </p>
+              <p className="trust-bar__text">{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* ========== PROBLEM SECTION ========== */}
+      <section className="problem-section" id="problem">
+        <div className="container">
+          <div className="section-heading reveal">
+            <span className="section-heading__en">Problems</span>
+            <h2 className="section-heading__ja">こんなお悩みに対応します</h2>
+            <span className="section-heading__line"></span>
+          </div>
+          <p className="section-intro reveal">
+            防水工事、大規模修繕、雨漏り補修、外壁塗装、シーリング、建物診断まで、
+            建物の状態とご予算に合わせて必要な工事を整理します。西宮市を中心に、兵庫・大阪の管理組合、法人、オーナー様からご相談をいただいています。
+          </p>
+          <div className="problem-grid">
+            {problemItems.map((item, index) => (
+              <a href={routePath(item.href)} className={`problem-card ${getRevealClass(index)}`} key={item.title}>
+                <span className="problem-card__index">0{index + 1}</span>
+                <h3 className="problem-card__title">{item.title}</h3>
+                <p className="problem-card__text">{item.text}</p>
+                <span className="problem-card__link">{item.label} <span aria-hidden="true">→</span></span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ========== REASON SECTION ========== */}
       <section className="reason" id="reason">
@@ -272,7 +444,7 @@ export default function TopCopyPage() {
                     </div>
                   </div>
                   <div className="reason__visual">
-                    <img src={assetPath(item.image)} alt={item.alt} />
+                    <img src={assetPath(item.image)} alt={item.alt} loading="lazy" decoding="async" />
                   </div>
                 </article>
               );
@@ -286,15 +458,16 @@ export default function TopCopyPage() {
         <div className="container">
           <div className="section-heading reveal">
             <span className="section-heading__en">Service</span>
-            <h2 className="section-heading__ja">サービス一覧</h2>
+            <h2 className="section-heading__ja">対応サービス</h2>
             <span className="section-heading__line"></span>
           </div>
           <p className="section-intro reveal">
-            屋上防水・シーリング工事・外壁塗装・大規模修繕まで、建物の状態に合わせて最適な工法をご提案します。
+            「どの工事が必要か分からない」という段階からご相談ください。建物診断で状態を確認し、
+            防水工事・雨漏り補修・外壁塗装・シーリング・大規模修繕の中から、必要な範囲だけを整理します。
             各サービスページでは、施工内容・費用目安・対応エリアを詳しくご案内しています。
           </p>
           <div className="service__feature reveal reveal--delay-1">
-            <img src={assetPath("/images/service-team-crew.png")} alt="久米技建の自社職人チーム" className="service__featureImage" style={{ objectPosition: "100% 14%", width: "125%", height: "125%", transform: "scale(0.8)", transformOrigin: "100% 14%" }} />
+            <img src={assetPath("/images/service-team-crew.png")} alt="久米技建の自社職人チーム" className="service__featureImage" loading="lazy" decoding="async" />
             <div className="service__featureCopy">
               <h3 className="service__featureTitle">
                 調べる人間が、直す。
@@ -313,14 +486,15 @@ export default function TopCopyPage() {
           </div>
 
           <div className="service__grid">
-            {serviceCards.map((card, index) => (
-              <a href={routePath(card.href)} className={`service-card ${getRevealClass(index)}`} key={card.key}>
+            {serviceItems.map((card, index) => (
+              <a href={routePath(card.href)} className={`service-card ${getRevealClass(index)}`} key={card.href}>
                 <div className="service-card__image">
-                  <img src={assetPath(card.image)} alt={card.title} />
+                  <img src={assetPath(card.image)} alt={card.alt} loading="lazy" decoding="async" />
                 </div>
                 <div className="service-card__body">
+                  <p className="service-card__eyebrow">{card.label}</p>
                   <h3 className="service-card__title">{card.title}</h3>
-                  <p className="service-card__text">{card.descriptionHome}</p>
+                  <p className="service-card__text">{card.text}</p>
                   <span className="service-card__link">
                     詳しく見る <i className="fas fa-arrow-right"></i>
                   </span>
@@ -334,8 +508,8 @@ export default function TopCopyPage() {
       {/* ========== WORKS SECTION ========== */}
       <section className="works" id="works">
         <div className="container">
-          <div className="reveal works__featureBanner" style={{ margin: "0 calc(50% - 50vw) 28px", width: "100dvw" }}>
-            <img src={assetPath("/images/area-inspection-banner.png")} alt="現地調査を行う技術者" className="service__featureImage" style={{ objectPosition: "center 34%", height: "500px" }} />
+          <div className="reveal works__featureBanner">
+            <img src={assetPath("/images/area-inspection-banner.png")} alt="現地調査を行う技術者" className="works__featureImage" loading="lazy" decoding="async" />
             <div className="works__featureFade" aria-hidden="true"></div>
             <div className="works__featureOverlay">
               <div className="section-heading works__featureHeading">
@@ -357,7 +531,7 @@ export default function TopCopyPage() {
             {workItems.map((item, index) => (
               <a href={routePath(item.href)} className={`work-card ${getRevealClass(index)}`} key={item.href} data-category="case">
                 <div className="work-card__image">
-                  <img src={assetPath(item.image)} alt={item.alt} />
+                  <img src={assetPath(item.image)} alt={item.alt} loading="lazy" decoding="async" />
                   <span className="work-card__category">{item.category}</span>
                 </div>
                 <div className="work-card__body">
@@ -403,7 +577,7 @@ export default function TopCopyPage() {
                     <p className="flow__step-text">{item.text}</p>
                   </div>
                   <div className="flow__step-image">
-                    <img src={assetPath(item.image)} alt={item.alt} />
+                    <img src={assetPath(item.image)} alt={item.alt} loading="lazy" decoding="async" />
                   </div>
                 </div>
               </article>
@@ -442,7 +616,7 @@ export default function TopCopyPage() {
             {columnItems.map((item) => (
               <a href={routePath(item.href)} className="column-card reveal" key={item.href}>
                 <div className="column-card__image">
-                  <img src={assetPath(item.image)} alt={item.alt} />
+                  <img src={assetPath(item.image)} alt={item.alt} loading="lazy" decoding="async" />
                 </div>
                 <div className="column-card__body">
                   <div className="column-card__date">{item.date}</div>
@@ -457,6 +631,31 @@ export default function TopCopyPage() {
             <a href={routePath("/column")} className="btn btn--outline-dark">
               コラム一覧を見る <span className="btn__arrow">→</span>
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ========== FAQ SECTION ========== */}
+      <section className="top-faq" id="faq">
+        <div className="container">
+          <div className="section-heading reveal">
+            <span className="section-heading__en">FAQ</span>
+            <h2 className="section-heading__ja">よくある質問</h2>
+            <span className="section-heading__line"></span>
+          </div>
+          <div className="top-faq__list">
+            {faqItems.map((item) => (
+              <details className="top-faq__item reveal" key={item.question}>
+                <summary className="top-faq__question">
+                  <span>Q.</span>
+                  <h3>{item.question}</h3>
+                </summary>
+                <div className="top-faq__answer">
+                  <span>A.</span>
+                  <p>{item.answer}</p>
+                </div>
+              </details>
+            ))}
           </div>
         </div>
       </section>
@@ -486,9 +685,9 @@ export default function TopCopyPage() {
 
                 <a href={routePath("/contact")} className="cta-v2__action cta-v2__action--primary">
                   <span className="cta-v2__primary-copy">
-                    <span className="cta-v2__primary-sub">＼ 30秒で完了・相談無料 ／</span>
+                    <span className="cta-v2__primary-sub">＼ 建物診断・相談無料 ／</span>
                     <span className="cta-v2__primary-main">
-                      <i className="far fa-envelope"></i> 無料で相談する
+                      <i className="far fa-envelope"></i> 無料診断を相談する
                     </span>
                   </span>
                   <span className="cta-v2__primary-arrow" aria-hidden="true">
@@ -503,67 +702,12 @@ export default function TopCopyPage() {
 
               <p className="cta-v2__reassurance">
                 まだ依頼するか決まっていなくても大丈夫です。
-                <span className="cta-v2__reassurance-accent">状況確認だけでもOKです。</span>
+                <span className="cta-v2__reassurance-accent">状況確認だけでもご相談ください。</span>
               </p>
             </div>
           </div>
         </div>
       </section>
-
-      {/* ========== CTA SUPPORT FEATURES ========== */}
-      <section className="cta-support reveal">
-        <div className="container">
-          <div className="cta-support__inner">
-            <div className="cta-support__item">
-              <div className="cta-support__icon">
-                <img src={assetPath("/images/icon_optimal-fastest.png")} alt="最適工事を最短工事" />
-              </div>
-              <div className="cta-support__text-block">
-                <h3 className="cta-support__title">最適工事を最短工事</h3>
-                <p className="cta-support__desc">急な雨漏りにも迅速対応。状況を確認のうえ、現地を丁寧に調査します。</p>
-              </div>
-            </div>
-
-            <div className="cta-support__item">
-              <div className="cta-support__icon">
-                <img src={assetPath("/images/icon_repair.png")} alt="原因から根本修理" />
-              </div>
-              <div className="cta-support__text-block">
-                <h3 className="cta-support__title">原因から根本修理</h3>
-                <p className="cta-support__desc">表面的な補修ではなく、原因を特定し再発しない根本的な修理を行います。</p>
-              </div>
-            </div>
-
-            <div className="cta-support__item">
-              <div className="cta-support__icon">
-                <img src={assetPath("/images/icon_worker.png")} alt="自社職人が対応" />
-              </div>
-              <div className="cta-support__text-block">
-                <h3 className="cta-support__title">自社職人が対応</h3>
-                <p className="cta-support__desc">
-                  経験豊富な自社職人が責任を持って
-                  <br />
-                  施工。中間マージンもかかりません。
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ========== CTA ACHIEVEMENT BANNER ========== */}
-      <div className="cta-achievement reveal" style={{ "--cta-achievement-bg-image": `url('${assetPath("/images/footer-achievement-bg.png")}')` }}>
-        <div className="cta-achievement__inner">
-          <div className="cta-achievement__left">
-            <img src={assetPath("/images/laurel-wreath.png")} alt="月桂樹" className="cta-achievement__laurel" />
-            <span className="cta-achievement__label">累計施工実績</span>
-            <span className="cta-achievement__number">1,000</span>
-            <span className="cta-achievement__unit">件以上</span>
-          </div>
-          <div className="cta-achievement__divider"></div>
-          <div className="cta-achievement__right">西宮市・神戸市・大阪市を中心に地域密着で対応しています。</div>
-        </div>
-      </div>
     </main>
   );
 }

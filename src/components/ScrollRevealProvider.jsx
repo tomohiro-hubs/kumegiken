@@ -31,6 +31,16 @@ export default function ScrollRevealProvider({ children }) {
 
     document.addEventListener('click', handleHashClick);
 
+    const revealVisibleElements = () => {
+      document.querySelectorAll('.reveal').forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+        if (rect.top < viewportHeight * 0.95 && rect.bottom > 0) {
+          el.classList.add('revealed');
+        }
+      });
+    };
+
     // スクロールリビール (IntersectionObserver)
     const revealElements = document.querySelectorAll('.reveal');
     let revealObserver = null;
@@ -49,12 +59,19 @@ export default function ScrollRevealProvider({ children }) {
       });
 
       revealElements.forEach(el => revealObserver.observe(el));
+      revealVisibleElements();
     } else {
       revealElements.forEach(el => el.classList.add('revealed'));
     }
 
+    const handlePageShow = () => {
+      revealVisibleElements();
+    };
+    window.addEventListener('pageshow', handlePageShow);
+
     return () => {
       document.removeEventListener('click', handleHashClick);
+      window.removeEventListener('pageshow', handlePageShow);
       if (revealObserver) {
         revealObserver.disconnect();
       }

@@ -14,13 +14,15 @@ export const metadata = buildMetadata({
 export default function Page() {
   return (
     <main>
-      <section className="page-hero page-hero--no-deco">
+      <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li>サービス一覧</li></ol></div></nav>
+
+<section className="page-hero page-hero--no-deco">
     <span className="page-hero__label">Service</span>
     <h1 className="page-hero__title">サービス一覧</h1>
     <p className="page-hero__description">防水・修繕のプロフェッショナルとして、建物に関わるあらゆるお悩みに対応します。</p>
   </section>
 
-  <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li>サービス一覧</li></ol></div></nav>
+  
 
   <section className="content-section">
     <div className="container">

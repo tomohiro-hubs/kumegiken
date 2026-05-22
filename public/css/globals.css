@@ -1519,7 +1519,6 @@ input, textarea, select {
 
 .header__cta-phone i {
   font-size: 0.62em;
-  transform: scaleX(-1);
 }
 
 .header__cta-hours {
@@ -1570,8 +1569,7 @@ input, textarea, select {
 
 .top-copy-page {
   padding-top: var(--header-height);
-  background-color: #eef3f8;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0.38)), var(--top-fixed-bg-image, url("/images/top-bg-fixed-cityscape.jpg"));
+  background-image: linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)), url("/images/top-bg-fixed-cityscape.jpg");
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
@@ -1683,11 +1681,6 @@ input, textarea, select {
   max-width: 1536px;
   margin: 0 auto;
   z-index: 2;
-}
-
-.top-copy-page--copy3 .hero__anchor {
-  transform: scale(0.7);
-  transform-origin: top left;
 }
 
 .hero__content {
@@ -2546,20 +2539,19 @@ input, textarea, select {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: rgba(26, 39, 68, 0.42);
+  background: rgba(26, 39, 68, 0.18);
   position: absolute;
   inset: 50% auto auto 50%;
   transform: translate(-50%, -50%);
 }
 
 .voice-carousel__dot.is-active {
-  background: transparent;
+  background: rgba(232, 116, 12, 0.12);
 }
 
 .voice-carousel__dot.is-active::before {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
+  width: 34px;
+  border-radius: 999px;
   background: var(--color-accent);
 }
 
@@ -2916,10 +2908,6 @@ input, textarea, select {
   flex-shrink: 0;
 }
 
-.cta-v2__phone-icon .fa-phone-alt {
-  transform: scaleX(-1);
-}
-
 .cta-v2__phone-copy {
   display: flex;
   flex-direction: column;
@@ -3253,37 +3241,6 @@ input, textarea, select {
 
 .top-copy-page .reason__item--01 .reason__copy {
   padding-bottom: 30px;
-}
-
-.top-copy-page--copy3 .reason__copy {
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
-.top-copy-page--copy3 .reason__item--01 .reason__copy {
-  padding-bottom: 50px;
-}
-
-.top-copy-page--copy3 .reason__copyTop {
-  justify-content: center;
-  align-items: center;
-}
-
-.top-copy-page--copy3 .reason__copyMain,
-.top-copy-page--copy3 .reason__concernText {
-  text-align: center;
-}
-
-.top-copy-page--copy3 .service {
-  padding-bottom: 100px;
-}
-
-.top-copy-page--copy3 .works {
-  padding-top: 0;
-}
-
-.top-copy-page--copy3 .service__featureCopy {
-  background: transparent;
 }
 
 .top-copy-page .reason__question {

@@ -128,10 +128,6 @@ export default async function Page({ params }) {
     <main>
       <JsonLd data={articleSchema} />
       <JsonLd data={breadcrumbSchema} />
-      <section className="page-hero">
-        <span className="page-hero__label">Column</span>
-        <h1 className="page-hero__title">{article.title}</h1>
-      </section>
       <nav className="breadcrumb">
         <div className="container">
           <ol className="breadcrumb__list">
@@ -143,6 +139,11 @@ export default async function Page({ params }) {
           </ol>
         </div>
       </nav>
+      <section className="page-hero">
+        <span className="page-hero__label">Column</span>
+        <h1 className="page-hero__title">{article.title}</h1>
+      </section>
+      
       <section className="content-section">
         <div className="container container--narrow">
           <article className="column-content reveal">

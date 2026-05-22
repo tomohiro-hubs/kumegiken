@@ -13,8 +13,9 @@ export const metadata = buildMetadata({
 export default function Page() {
   return (
     <main>
+      <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/works")} className="breadcrumb__link">施工事例</a></li><li className="breadcrumb__separator">›</li><li>西宮市 マンション 屋上防水工事</li></ol></div></nav>
       <section className="page-hero"><span className="page-hero__label">Works</span><h1 className="page-hero__title">西宮市 マンション 屋上防水工事</h1></section>
-  <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/works")} className="breadcrumb__link">施工事例</a></li><li className="breadcrumb__separator">›</li><li>西宮市 マンション 屋上防水工事</li></ol></div></nav>
+  
 
   <section className="content-section">
     <div className="container container--narrow">

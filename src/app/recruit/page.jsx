@@ -13,8 +13,10 @@ export const metadata = buildMetadata({
 export default function Page() {
   return (
     <main>
-      <section className="page-hero recruit-hero"><span className="page-hero__label">Recruit</span><h1 className="page-hero__title">採用情報</h1><p className="page-hero__description">私たちと一緒に、「建物を守るプロ集団」として働きませんか？<br />経験者も未経験者も、それぞれが活躍できる環境を用意しています。</p></section>
-<nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li>採用情報</li></ol></div></nav>
+      <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li>採用情報</li></ol></div></nav>
+
+<section className="page-hero recruit-hero"><span className="page-hero__label">Recruit</span><h1 className="page-hero__title">採用情報</h1><p className="page-hero__description">私たちと一緒に、「建物を守るプロ集団」として働きませんか？<br />経験者も未経験者も、それぞれが活躍できる環境を用意しています。</p></section>
+
 
 <section className="content-section"><div className="container">
   <div className="reveal" style={{ marginBottom: '48px' }}>
@@ -128,7 +130,7 @@ export default function Page() {
     </div>
   </div>
 </div></section>
-<section className="cta-section"><div className="container"><h2 className="cta-section__title">ご応募・ご質問はこちら</h2><p className="cta-section__text">まずはお気軽にお問い合わせください。見学も歓迎します。</p><div className="cta-section__phone"><a href="tel:0798-27-5653" className="cta-section__phone-number" style={{ color: 'white', textDecoration: 'none' }}><i className="fas fa-phone-alt"></i> 0798-27-5653</a><div className="cta-section__phone-sub">採用担当まで</div></div><div className="cta-section__buttons"><a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> 応募・お問い合わせ</a></div></div></section>
+<section className="cta-section"><div className="container"><span className="page-hero__label">Contact</span><h2 className="cta-section__title">ご応募・ご質問はこちら</h2><p className="cta-section__text">まずはお気軽にお問い合わせください。見学も歓迎します。</p><div className="cta-section__phone"><a href="tel:0798-27-5653" className="cta-section__phone-number" style={{ color: 'white', textDecoration: 'none' }}><i className="fas fa-phone-alt"></i> 0798-27-5653</a><div className="cta-section__phone-sub">採用担当まで</div></div><div className="cta-section__buttons"><a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> 応募・お問い合わせ</a></div></div></section>
   
     </main>
   );

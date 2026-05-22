@@ -17,8 +17,9 @@ export default function Page() {
   return (
     <main>
       <ServiceSeo {...seoData} />
+      <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/service")} className="breadcrumb__link">サービス</a></li><li className="breadcrumb__separator">›</li><li>建物診断</li></ol></div></nav>
       <section className="page-hero"><span className="page-hero__label">Building Inspection</span><h1 className="page-hero__title">建物診断</h1><p className="page-hero__description">久米技建の強み「正直な診断」。建物の現状を正確に把握し、最適な修繕計画を立案</p></section>
-  <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/service")} className="breadcrumb__link">サービス</a></li><li className="breadcrumb__separator">›</li><li>建物診断</li></ol></div></nav>
+  
 
   <section className="content-section"><div className="container container--narrow"><div className="article-content">
     <div className="reveal" style={{ marginBottom: '40px' }}><img src={assetPath("/images/inspection-scene.jpg")} alt="建物診断の現場" style={{ aspectRatio: '16/9', width: '100%', objectFit: 'cover', borderRadius: '16px' }} /></div>

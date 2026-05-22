@@ -29,13 +29,14 @@ export default function Page() {
   return (
     <main>
       <ServiceSeo {...seoData} />
+      <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/service")} className="breadcrumb__link">サービス</a></li><li className="breadcrumb__separator">›</li><li>大規模修繕工事</li></ol></div></nav>
       <section className="page-hero">
     <span className="page-hero__label">Large-Scale Repair</span>
     <h1 className="page-hero__title">大規模修繕工事｜マンション・ビルの長寿命化</h1>
     <p className="page-hero__description">建物の長寿命化と資産価値の維持を実現する、包括的な修繕工事</p>
   </section>
 
-  <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/service")} className="breadcrumb__link">サービス</a></li><li className="breadcrumb__separator">›</li><li>大規模修繕工事</li></ol></div></nav>
+  
 
   <section className="content-section">
     <div className="container container--narrow">

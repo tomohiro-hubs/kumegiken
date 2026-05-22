@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbJsonLd } from "@/lib/schema";
 import { toAbsoluteUrl } from "@/lib/siteUrl";
+import { WORKS_CATALOG, WORK_REGIONS } from "@/lib/worksCatalog";
 
 const SITE_URL = "https://kumegiken.co.jp";
 const DEFAULT_PUBLISHED_DATE = "2026-05-10";
@@ -174,6 +175,10 @@ const works = {
   },
 };
 
+const WORK_REGION_BY_SLUG = Object.fromEntries(
+  WORKS_CATALOG.map((item) => [item.slug, item.region])
+);
+
 export function generateStaticParams() {
   return Object.keys(works).map((slug) => ({ slug }));
 }
@@ -201,6 +206,9 @@ export default async function Page({ params }) {
   if (!work) {
     notFound();
   }
+
+  const regionKey = WORK_REGION_BY_SLUG[slug] || "kansai";
+  const region = WORK_REGIONS[regionKey];
 
   const workUrl = toAbsoluteUrl(`/works/${slug}`);
   const publishedDate = work.datePublished || DEFAULT_PUBLISHED_DATE;
@@ -231,6 +239,7 @@ export default async function Page({ params }) {
   const breadcrumbSchema = breadcrumbJsonLd([
     { name: "ホーム", path: "/" },
     { name: "施工事例", path: "/works" },
+    { name: `${region.label}の施工事例`, path: region.path },
     { name: work.title, path: `/works/${slug}` },
   ]);
 
@@ -238,10 +247,6 @@ export default async function Page({ params }) {
     <main>
       <JsonLd data={workSchema} />
       <JsonLd data={breadcrumbSchema} />
-      <section className="page-hero">
-        <span className="page-hero__label">Works</span>
-        <h1 className="page-hero__title">{work.title}</h1>
-      </section>
       <nav className="breadcrumb">
         <div className="container">
           <ol className="breadcrumb__list">
@@ -249,10 +254,17 @@ export default async function Page({ params }) {
             <li className="breadcrumb__separator">›</li>
             <li><a href={routePath("/works")} className="breadcrumb__link">施工事例</a></li>
             <li className="breadcrumb__separator">›</li>
+            <li><a href={routePath(region.path)} className="breadcrumb__link">{region.label}</a></li>
+            <li className="breadcrumb__separator">›</li>
             <li>{work.title}</li>
           </ol>
         </div>
       </nav>
+      <section className="page-hero">
+        <span className="page-hero__label">Works</span>
+        <h1 className="page-hero__title">{work.title}</h1>
+      </section>
+      
       <section className="content-section">
         <div className="container container--narrow">
           <table className="info-table" style={{ marginBottom: "40px" }}>

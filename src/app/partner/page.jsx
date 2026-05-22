@@ -12,8 +12,9 @@ export const metadata = buildMetadata({
 export default function Page() {
   return (
     <main>
+      <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li>協力会社お問い合わせ</li></ol></div></nav>
       <section className="page-hero"><span className="page-hero__label">Partner</span><h1 className="page-hero__title">協力会社お問い合わせ</h1><p className="page-hero__description">共に建物を守るビジネスパートナーを募集しています</p></section>
-<nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li>協力会社お問い合わせ</li></ol></div></nav>
+
 <section className="content-section"><div className="container container--narrow">
   <div className="article-content reveal">
     <p>株式会社久米技建では、事業拡大に伴い、協力会社・ビジネスパートナーを募集しております。以下の分野で協力していただける企業様からのお問い合わせをお待ちしています。</p>

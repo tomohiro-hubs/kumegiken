@@ -24,8 +24,9 @@ export default function Page() {
   return (
     <main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li>コラム</li></ol></div></nav>
       <section className="page-hero"><span className="page-hero__label">Column</span><h1 className="page-hero__title">コラム・お役立ち情報</h1><p className="page-hero__description">防水・修繕の専門家が、建物管理に役立つ情報をお届けします</p></section>
-<nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li>コラム</li></ol></div></nav>
+
 
 <section className="content-section"><div className="container column-layout">
   <aside className="column-sidebar reveal">

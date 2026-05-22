@@ -94,8 +94,9 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li>会社概要</li></ol></div></nav>
       <section className="page-hero"><span className="page-hero__label">Company</span><h1 className="page-hero__title">会社概要｜株式会社久米技建</h1></section>
-  <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li>会社概要</li></ol></div></nav>
+  
 
   {/* Sub Navigation */}
   <section style={{ background: 'var(--color-bg-light)', padding: '20px 0' }}>
@@ -187,7 +188,7 @@ export default function Page() {
     </div>
   </section>
 
-  <section className="cta-section"><div className="container"><h2 className="cta-section__title">お問い合わせ</h2><div className="cta-section__buttons"><a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> お問い合わせはこちら</a></div></div></section>
+  <section className="cta-section"><div className="container"><span className="page-hero__label">Contact</span><h2 className="cta-section__title">お問い合わせ</h2><div className="cta-section__buttons"><a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> お問い合わせはこちら</a></div></div></section>
 
   
     </main>

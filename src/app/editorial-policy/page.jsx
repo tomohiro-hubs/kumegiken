@@ -10,8 +10,9 @@ export const metadata = buildMetadata({
 export default function Page() {
   return (
     <main>
-      <section className="page-hero"><span className="page-hero__label">Policy</span><h1 className="page-hero__title">編集・監修ポリシー</h1></section>
       <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li>編集・監修ポリシー</li></ol></div></nav>
+      <section className="page-hero"><span className="page-hero__label">Policy</span><h1 className="page-hero__title">編集・監修ポリシー</h1></section>
+      
       <section className="content-section"><div className="container container--narrow article-content">
         <h2>1. 情報作成の体制</h2>
         <p>当サイトの施工・建物保全に関する情報は、現場経験のある担当者と技術監修チームが内容確認を行い、公開しています。</p>

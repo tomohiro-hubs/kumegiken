@@ -10,8 +10,9 @@ export const metadata = buildMetadata({
 export default function Page() {
   return (
     <main>
-      <section className="page-hero"><span className="page-hero__label">Policy</span><h1 className="page-hero__title">引用・出典ポリシー</h1></section>
       <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li>引用・出典ポリシー</li></ol></div></nav>
+      <section className="page-hero"><span className="page-hero__label">Policy</span><h1 className="page-hero__title">引用・出典ポリシー</h1></section>
+      
       <section className="content-section"><div className="container container--narrow article-content">
         <h2>1. 引用情報の取り扱い</h2>
         <p>第三者の統計・基準・公的情報を参照する場合は、出典元を明示し、内容の趣旨を損なわない範囲で引用します。</p>

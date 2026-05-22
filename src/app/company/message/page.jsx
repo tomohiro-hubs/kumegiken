@@ -13,8 +13,9 @@ export const metadata = buildMetadata({
 export default function Page() {
   return (
     <main>
+      <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/company")} className="breadcrumb__link">会社情報</a></li><li className="breadcrumb__separator">›</li><li>代表メッセージ</li></ol></div></nav>
       <section className="page-hero"><span className="page-hero__label">Message</span><h1 className="page-hero__title">代表メッセージ</h1></section>
-	  <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/company")} className="breadcrumb__link">会社情報</a></li><li className="breadcrumb__separator">›</li><li>代表メッセージ</li></ol></div></nav>
+	  
 
 	  {/* Sub Navigation */}
 	  <section style={{ background: 'var(--color-bg-light)', padding: '20px 0' }}>

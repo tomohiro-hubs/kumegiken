@@ -12,8 +12,9 @@ export const metadata = buildMetadata({
 export default function Page() {
   return (
     <main>
+      <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/works")} className="breadcrumb__link">施工事例</a></li><li className="breadcrumb__separator">›</li><li>尼崎市 店舗 雨漏り補修</li></ol></div></nav>
       <section className="page-hero"><span className="page-hero__label">Works</span><h1 className="page-hero__title">尼崎市 店舗 雨漏り補修工事</h1></section>
-<nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/works")} className="breadcrumb__link">施工事例</a></li><li className="breadcrumb__separator">›</li><li>尼崎市 店舗 雨漏り補修</li></ol></div></nav>
+
 <section className="content-section"><div className="container container--narrow">
   <table className="info-table" style={{ marginBottom: '40px' }}><tbody><tr><th>エリア</th><td>兵庫県尼崎市</td></tr><tr><th>建物種別</th><td>店舗（鉄骨造・2階建て）</td></tr><tr><th>工事内容</th><td>雨漏り原因調査・屋上防水補修</td></tr><tr><th>工期</th><td>約1週間</td></tr><tr><th>費用目安</th><td>50〜100万円</td></tr></tbody></table>
   <div className="article-content reveal">

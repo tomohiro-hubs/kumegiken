@@ -14,13 +14,7 @@ export default function Page() {
   return (
     <>
     <main>
-      <section className="page-hero">
-      <span className="page-hero__label">Simulation</span>
-      <h1 className="page-hero__title">見積もりシミュレーション</h1>
-      <p className="page-hero__description">入力するだけで、概算費用がすぐにわかります</p>
-    </section>
-
-    <nav className="breadcrumb">
+      <nav className="breadcrumb">
       <div className="container">
         <ol className="breadcrumb__list">
           <li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li>
@@ -29,6 +23,13 @@ export default function Page() {
         </ol>
       </div>
     </nav>
+      <section className="page-hero">
+      <span className="page-hero__label">Simulation</span>
+      <h1 className="page-hero__title">見積もりシミュレーション</h1>
+      <p className="page-hero__description">入力するだけで、概算費用がすぐにわかります</p>
+    </section>
+
+    
 
     <section className="content-section sim-content">
       <div className="container container--narrow">

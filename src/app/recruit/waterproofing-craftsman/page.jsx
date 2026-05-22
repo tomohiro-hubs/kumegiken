@@ -26,8 +26,9 @@ export default function Page() {
         qualifications: "未経験歓迎。ものづくりや体を動かす仕事が好きで、チームで協力して働ける方。",
         salary: { minValue: 220000, maxValue: 450000, unitText: "MONTH" },
       })} />
+      <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/recruit")} className="breadcrumb__link">採用情報</a></li><li className="breadcrumb__separator">›</li><li>防水職人</li></ol></div></nav>
       <section className="page-hero"><span className="page-hero__label">Recruit</span><h1 className="page-hero__title">防水職人 募集要項</h1></section>
-<nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/recruit")} className="breadcrumb__link">採用情報</a></li><li className="breadcrumb__separator">›</li><li>防水職人</li></ol></div></nav>
+
 <section className="content-section"><div className="container container--narrow">
   <table className="info-table reveal"><tbody>
     <tr><th>募集職種</th><td>施工スタッフ（外壁塗装・防水工事）</td></tr>

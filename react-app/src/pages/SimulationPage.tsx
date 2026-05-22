@@ -75,12 +75,12 @@ export function SimulationPage() {
 
   return (
     <>
+      <Breadcrumb items={[{ label: 'ホーム', href: '/' }, { label: '見積もりシミュレーション' }]} />
       <PageHero
         label="Simulation"
         title="見積もりシミュレーション"
         description="入力条件に応じて概算費用をすぐに確認できます。"
       />
-      <Breadcrumb items={[{ label: 'ホーム', href: '/' }, { label: '見積もりシミュレーション' }]} />
 
       <section className="r-sim-section">
         <div className="r-container r-sim-layout">

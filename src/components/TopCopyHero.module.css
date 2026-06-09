@@ -239,6 +239,10 @@
   justify-content: center !important;
 }
 
+:global(.top-copy-page--copy3) .bottomCtaCopy {
+  width: auto;
+}
+
 :global(.top-copy-page--copy3) .bottomCtaMeta,
 :global(.top-copy-page--copy3) .bottomCtaTitle,
 :global(.top-copy-page--copy3) .bottomCtaSub {
@@ -772,17 +776,22 @@
 .bottomLink {
   position: relative;
   overflow: hidden;
-  min-height: clamp(70px, 7.2vw, 102px);
-  padding: clamp(12px, 1.4vw, 16px) clamp(14px, 2vw, 24px);
+  min-height: clamp(118px, 11.7vw, 168px);
+  padding: clamp(24px, 2.3vw, 34px) clamp(70px, 7.2vw, 90px) clamp(20px, 2vw, 28px) clamp(150px, 15.2vw, 214px);
   border-radius: 12px;
   border: 2px solid rgb(255 255 255 / 56%);
   color: #fff;
   text-decoration: none;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: flex-start;
+  justify-content: center;
   gap: 12px;
-  box-shadow: 0 12px 28px rgb(9 32 79 / 28%);
+  background-color: #f6800a;
+  background-image: var(--top-copy-cta-button-bg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 8px 20px rgb(221 111 0 / 22%);
   transform: translateY(0);
   transition: transform 220ms ease, box-shadow 220ms ease;
 }
@@ -809,16 +818,13 @@
   pointer-events: none;
 }
 
-.bottomCtaGreen,
-.actionBtnGreen,
-.consultLarge {
-  background: linear-gradient(100deg, #0a8936 0%, #1da748 45%, #0e7e34 100%);
-}
-
-.bottomCtaBlue,
-.actionBtnBlue,
-.consultWaterproof {
-  background: linear-gradient(100deg, #0c4eb1 0%, #2b70d6 50%, #0f4ba7 100%);
+.bottomCtaCopy {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 0;
 }
 
 .bottomCtaTitle,
@@ -826,9 +832,11 @@
 .linkTitle {
   display: block;
   margin: 0;
-  font-size: clamp(20px, 2.55vw, 40px);
-  font-weight: 900;
+  margin-top: 6px;
+  font-size: clamp(28px, 2.5vw, 48px);
+  font-weight: 500;
   line-height: 1.2;
+  white-space: nowrap;
 }
 
 .bottomCtaText,
@@ -845,18 +853,19 @@
 .bottomCtaMeta {
   display: block;
   margin: 0;
-  font-size: clamp(14px, 1.45vw, 22px);
-  font-weight: 600;
-  line-height: 1.35;
+  font-size: clamp(14px, 1.15vw, 18px);
+  font-weight: 400;
+  line-height: 1.4;
   opacity: 0.97;
+  white-space: nowrap;
 }
 
 .bottomCtaSub {
   display: block;
-  margin: 0;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 1.35;
+  margin: 10px 0 0;
+  font-size: clamp(14px, 1.02vw, 18px);
+  font-weight: 400;
+  line-height: 1.45;
   opacity: 0.97;
   white-space: nowrap;
 }
@@ -864,10 +873,14 @@
 .bottomCtaArrow,
 .actionArrow,
 .linkArrow {
+  position: absolute;
+  right: 28px;
+  top: 50%;
   flex-shrink: 0;
-  font-size: clamp(26px, 2.6vw, 36px);
-  font-weight: 900;
+  font-size: clamp(48px, 3.8vw, 78px);
+  font-weight: 300;
   line-height: 1;
+  transform: translateY(-50%);
 }
 
 .bottomCta .phoneIcon {
@@ -1059,8 +1072,10 @@
   .bottomCta,
   .actionBtn,
   .bottomLink {
-    min-height: clamp(64px, 19vw, 92px);
-    padding: 11px 12px;
+    min-height: 122px;
+    padding: 22px 58px 18px 120px;
+    border-radius: 8px;
+    align-items: flex-start;
   }
 }
 
@@ -1095,5 +1110,24 @@
   .tel,
   .number {
     font-size: clamp(30px, 11vw, 40px);
+  }
+
+  .bottomCtaTitle {
+    margin-top: 4px;
+    font-size: clamp(22px, 7vw, 30px);
+  }
+
+  .bottomCtaMeta,
+  .bottomCtaSub {
+    font-size: 12px;
+  }
+
+  .bottomCtaSub {
+    margin-top: 6px;
+  }
+
+  .bottomCtaArrow {
+    right: 18px;
+    font-size: 36px;
   }
 }

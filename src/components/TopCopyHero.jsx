@@ -28,20 +28,20 @@ const featureItems = [
 const ctaItems = [
   {
     href: routePath("/service/large-scale-repair"),
-    panelClass: cx(styles.bottomCta, styles.bottomCtaGreen),
+    panelClass: styles.bottomCta,
     meta: "法人・管理組合の方へ",
     title: "大規模修繕の相談",
     text: "マンション・ビルの大規模修繕はこちら",
-    icon: CtaBuildingIcon,
+    buttonBg: "/images/top-copy6-cta-large-scale.png",
     label: "大規模修繕の相談へ進む",
   },
   {
     href: routePath("/service/waterproofing"),
-    panelClass: cx(styles.bottomCta, styles.bottomCtaBlue),
+    panelClass: styles.bottomCta,
     meta: "個人の方へ",
     title: "雨漏り・防水工事の相談",
     text: "戸建て・マンションの雨漏りや防水工事はこちら",
-    icon: CtaHouseIcon,
+    buttonBg: "/images/top-copy6-cta-waterproof.png",
     label: "雨漏り・防水工事の相談へ進む",
   },
 ];
@@ -195,16 +195,17 @@ export default function TopCopyHero({ optimizeForCopy3 = false, optimizeForCopy6
 
           <nav className={styles.bottomCtas} aria-label="相談種別">
             {ctaItems.map((item) => {
-              const Icon = item.icon;
               return (
-                <a key={item.href} href={item.href} className={item.panelClass}>
-                  <span style={{ display: "inline-flex", alignItems: "center", gap: "12px" }}>
-                    <Icon className={styles.phoneIcon} optimizeForCopy3={optimizeForCopy3} />
-                      <span>
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className={item.panelClass}
+                  style={{ "--top-copy-cta-button-bg": `url('${assetPath(item.buttonBg)}')` }}
+                >
+                  <span className={styles.bottomCtaCopy}>
                       <span className={styles.bottomCtaMeta}>{item.meta}</span>
                       <span className={styles.bottomCtaTitle}>{item.title}</span>
                       <span className={styles.bottomCtaSub}>{item.text}</span>
-                    </span>
                   </span>
                   <span className={styles.bottomCtaArrow} aria-hidden="true">
                     ›

@@ -75,7 +75,7 @@ const reasonItems = [
     icon: "fa-regular fa-clock",
     copy4Title: "担当者が変わるたび、話が伝わっているか不安です。",
     copy4Body:
-      "調査した人、判断する人、施工する人が分かれていると、伝達ミスや判断のズレが起こりやすくなります。久米技建では、建物を診た技術者がそのまま施工計画を立て、必要に応じて現場にも入ります。情報ロスを抑えながら、必要な工事を最短工程で進められる体制です。",
+      "調査した人、判断する人、施工する人が分かれていると、伝達ミスや判断 of ズレが起こりやすくなります。久米技建では、建物を診た技術者がそのまま施工計画を立て、必要に応じて現場にも入ります。情報ロスを抑えながら、必要な工事を最短工程で進められる体制です。",
     copy4Flow: ["現地調査", "施工計画", "現場対応"],
     copy4Outcome: ["情報ロスを抑制", "判断のズレを防止"],
   },
@@ -85,7 +85,6 @@ const reasonItems = [
     alt: "防水施工の様子",
     question: "02",
     concern: "こんな不安はありませんか？",
-    concernTitle: "直しても、また漏れたら\nどうしよう…",
     concernText: "直しても、また漏れたらどうしよう…\n原因が特定しにくく、不十分な工事でしばらくの間は不安になりますよね。",
     solutionLead: "久米技建の答え",
     solutionTitle: "原因から直すので、再発しにくい！",
@@ -104,7 +103,6 @@ const reasonItems = [
     alt: "担当者のご説明",
     question: "03",
     concern: "こんな不安はありませんか？",
-    concernTitle: "どんな人が来るのか\n不安…",
     concernText: "どんな人が来るのか不安…\nスタッフの質は仕上がりの印。やっぱり不安ですよね。",
     solutionLead: "久米技建の答え",
     solutionTitle: "自社職人を中心に、一貫した品質で対応します",
@@ -280,8 +278,6 @@ const IMAGE_DIMENSIONS = {
   "/images/service-team-crew-copy3.jpg": { width: 2286, height: 619 },
   "/images/area-inspection-banner.png": { width: 1717, height: 916 },
   "/images/area-inspection-banner-copy3.webp": { width: 1717, height: 916 },
-  "/images/service-list-bg.png": { width: 1000, height: 530 },
-  "/images/works-list-bg.png": { width: 1000, height: 350 },
   "/images/waterproofing-rooftop.jpg": { width: 1365, height: 1024 },
   "/images/scaffold-install.jpg": { width: 1365, height: 1024 },
   "/images/building-completed.jpg": { width: 1365, height: 1024 },
@@ -395,6 +391,7 @@ export function TopCopyPageContent({ rootClassName = "top-copy-page" } = {}) {
                 <span className="top-copy6-phone-cta__button-meta">法人・管理組合の方へ</span>
                 <span className="top-copy6-phone-cta__button-title">大規模修繕の相談</span>
                 <span className="top-copy6-phone-cta__button-sub">マンション・ビルの大規模修繕はこちら</span>
+                <span className="top-copy6-phone-cta__button-arrow" aria-hidden="true">›</span>
               </a>
               <a
                 href={routePath("/service/waterproofing")}
@@ -404,17 +401,9 @@ export function TopCopyPageContent({ rootClassName = "top-copy-page" } = {}) {
                 <span className="top-copy6-phone-cta__button-meta">個人の方へ</span>
                 <span className="top-copy6-phone-cta__button-title">雨漏り・防水工事の相談</span>
                 <span className="top-copy6-phone-cta__button-sub">戸建て・マンションの雨漏りや防水工事はこちら</span>
+                <span className="top-copy6-phone-cta__button-arrow" aria-hidden="true">›</span>
               </a>
             </div>
-          </section>
-
-          <section className="top-copy6-team-photo" aria-label="久米技建の集合写真" style={{ width: "1280px", maxWidth: "none" }}>
-            <img
-              src={assetPath("/images/top-copy6-team-photo-cropped.png")}
-              alt="久米技建の集合写真"
-              className="top-copy6-team-photo__image"
-              style={{ width: "1280px", maxWidth: "none", height: "auto" }}
-            />
           </section>
         </>
       )}
@@ -435,7 +424,6 @@ export function TopCopyPageContent({ rootClassName = "top-copy-page" } = {}) {
               const concernLines = item.concernText.split("\n");
               const concernMain = concernLines[0] ?? "";
               const concernBodyLines = concernLines.slice(1);
-              const concernTitleLines = (item.concernTitle ?? concernMain).split("\n");
 
               if (optimizeForCopy4) {
                 const isImageLeading = Number(item.number) % 2 === 0;
@@ -498,14 +486,7 @@ export function TopCopyPageContent({ rootClassName = "top-copy-page" } = {}) {
                       <span className="reason__number en">{item.number}</span>
                       <div className="reason__copyMain">
                         <p className="reason__question">{item.concern}</p>
-                        <h3 className="reason__concern">
-                          {concernTitleLines.map((line, index) => (
-                            <span key={`${item.number}-concern-title-${index}`}>
-                              {line}
-                              {index < concernTitleLines.length - 1 ? <br /> : null}
-                            </span>
-                          ))}
-                        </h3>
+                        <h3 className="reason__concern">{concernMain}</h3>
                       </div>
                     </div>
                     <p className="reason__concernText">
@@ -535,64 +516,33 @@ export function TopCopyPageContent({ rootClassName = "top-copy-page" } = {}) {
 
       {/* ========== SERVICE SECTION ========== */}
       <section className="service" id="service">
-        {optimizeForCopy6 ? (
-          <div className="service__hero reveal">
-            <TopScopedImage
-              src="/images/service-list-bg.png"
-              alt="サービス一覧背景"
-              optimizeForCopy3={optimizeForCopy3}
-              className="service__heroImage"
-            />
-            <div className="service__heroHeader">
-              <span className="service__heroEn">SERVICE</span>
-              <h2 className="service__heroJa">サービス一覧</h2>
-              <div className="service__heroIntro">
-                <p>屋上防水・シーリング工事・外壁塗装・大規模修繕まで、建物の状態に合わせて最適な工法をご提案します。</p>
-                <p>各サービスページでは、施工内容・費用目安・対応エリアを詳しくご案内しています。</p>
-              </div>
-            </div>
-            <div className="service__heroCopy">
-              <h3 className="service__heroTitle">
-                <span>調べる人間が、直す。</span>
-                <br />
-                <span>だから、見落とさない。</span>
-              </h3>
-              <p className="service__heroLead">建物の劣化を見つけた技術者が、そのまま直します。</p>
-            </div>
-          </div>
-        ) : (
-          <div className="container">
-            <div className="section-heading reveal">
-              <span className="section-heading__en">Service</span>
-              <h2 className="section-heading__ja">サービス一覧</h2>
-              <span className="section-heading__line"></span>
-            </div>
-            <p className="section-intro reveal">
-              屋上防水・シーリング工事・外壁塗装・大規模修繕まで、建物の状態に合わせて最適な工法をご提案します。
-              <br />
-              各サービスページでは、施工内容・費用目安・対応エリアを詳しくご案内しています。
-            </p>
-            <div className="service__feature reveal reveal--delay-1">
-              <TopScopedImage
-                src="/images/service-team-crew.png"
-                alt="久米技建の自社職人チーム"
-                optimizeForCopy3={optimizeForCopy3}
-                className="service__featureImage"
-                style={optimizeForCopy3 ? undefined : { objectPosition: "100% 14%", width: "125%", height: "125%", transform: "scale(0.8)", transformOrigin: "100% 14%" }}
-              />
-              <div className="service__featureCopy">
-                <h3 className="service__featureTitle">
-                  調べる人間が、直す。
-                  <br />
-                  だから、見落とさない。
-                </h3>
-                <p className="service__featureLead">建物の劣化を見つけた技術者が、そのまま直します。</p>
-              </div>
-            </div>
-          </div>
-        )}
-
         <div className="container">
+          <div className="section-heading reveal">
+            <span className="section-heading__en">Service</span>
+            <h2 className="section-heading__ja">サービス一覧</h2>
+            <span className="section-heading__line"></span>
+          </div>
+          <p className="section-intro reveal">
+            屋上防水・シーリング工事・外壁塗装・大規模修繕まで、建物の状態に合わせて最適な工法をご提案します。
+            各サービスページでは、施工内容・費用目安・対応エリアを詳しくご案内しています。
+          </p>
+          <div className="service__feature reveal reveal--delay-1">
+            <TopScopedImage
+              src="/images/service-team-crew.png"
+              alt="久米技建の自社職人チーム"
+              optimizeForCopy3={optimizeForCopy3}
+              className="service__featureImage"
+              style={optimizeForCopy3 ? undefined : { objectPosition: "100% 14%", width: "125%", height: "125%", transform: "scale(0.8)", transformOrigin: "100% 14%" }}
+            />
+            <div className="service__featureCopy">
+              <h3 className="service__featureTitle">
+                調べる人間が、直す。
+                <br />
+                だから、見落とさない。
+              </h3>
+              <p className="service__featureLead">建物の劣化を見つけた技術者が、そのまま直します。</p>
+            </div>
+          </div>
           <div className="section-chip-links reveal">
             {serviceQuickLinks.map((link) => (
               <a href={routePath(link.href)} className="btn btn--outline-dark btn--sm" key={link.href}>
@@ -623,43 +573,24 @@ export function TopCopyPageContent({ rootClassName = "top-copy-page" } = {}) {
       {/* ========== WORKS SECTION ========== */}
       <section className="works" id="works">
         <div className="container">
-          {optimizeForCopy6 ? (
-            <div className="works__hero">
-              <TopScopedImage
-                src="/images/works-list-bg.png"
-                alt="施工事例背景"
-                optimizeForCopy3={optimizeForCopy3}
-                className="works__heroImage"
-              />
-              <div className="works__heroHeader">
-                <span className="works__heroEn">WORKS</span>
-                <h2 className="works__heroJa">施工事例</h2>
-                <div className="works__heroIntro">
-                  <p>工事内容・工期・費用目安を掲載しています。西宮市・神戸市・大阪市を中心とした実績から、</p>
-                  <p>同種建物の改修イメージを具体的にご確認いただけます。</p>
-                </div>
+          <div className="reveal works__featureBanner" style={{ margin: "0 calc(50% - 50vw) 28px", width: "100dvw" }}>
+            <TopScopedImage src="/images/area-inspection-banner.png" alt="現地調査を行う技術者" optimizeForCopy3={optimizeForCopy3} className="service__featureImage" style={{ objectPosition: "center 34%", height: "500px" }} />
+            <div className="works__featureFade" aria-hidden="true"></div>
+            <div className="works__featureOverlay">
+              <div className="section-heading works__featureHeading">
+                <span className="section-heading__en">Works</span>
+                <h2 className="section-heading__ja">施工事例</h2>
+                <span className="section-heading__line"></span>
               </div>
+              <p className="works__featureCopy">
+                工事内容・工期・費用目安を掲載しています。
+                <br />
+                西宮市・神戸市・大阪市を中心とした実績から、
+                <br />
+                同種建物の改修イメージを具体的にご確認いただけます。
+              </p>
             </div>
-          ) : (
-            <div className="reveal works__featureBanner" style={{ margin: "0 calc(50% - 50vw) 28px", width: "100dvw" }}>
-              <TopScopedImage src="/images/area-inspection-banner.png" alt="現地調査を行う技術者" optimizeForCopy3={optimizeForCopy3} className="service__featureImage" style={{ objectPosition: "center 34%", height: "500px" }} />
-              <div className="works__featureFade" aria-hidden="true"></div>
-              <div className="works__featureOverlay">
-                <div className="section-heading works__featureHeading">
-                  <span className="section-heading__en">Works</span>
-                  <h2 className="section-heading__ja">施工事例</h2>
-                  <span className="section-heading__line"></span>
-                </div>
-                <p className="works__featureCopy">
-                  工事内容・工期・費用目安を掲載しています。
-                  <br />
-                  西宮市・神戸市・大阪市を中心とした実績から、
-                  <br />
-                  同種建物の改修イメージを具体的にご確認いただけます。
-                </p>
-              </div>
-            </div>
-          )}
+          </div>
 
           <div className="works__grid">
             {workItems.map((item, index) => (

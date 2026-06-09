@@ -1,6 +1,7 @@
 import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 import { serviceCards } from "@/lib/serviceCards";
+import { siteConfig } from "@/lib/siteConfig";
 import VoiceCarousel from "@/components/VoiceCarousel";
 import { buildMetadata } from "@/lib/seo";
 import TopCopyHero from "@/components/TopCopyHero";
@@ -232,6 +233,30 @@ const flowItems = [
   },
 ];
 
+const copy6FeatureItems = [
+  {
+    number: "1",
+    title: "正直な建物診断",
+    text: "本当に必要な工事だけを提案。不要な工事や費用を膨らませない。",
+    image: "/images/top-copy-icon-01.png",
+    alt: "建物診断を表すアイコン",
+  },
+  {
+    number: "2",
+    title: "自社職人の直営施工",
+    text: "診断から施工まで自社で完結。品質にブレのない施工を行う。",
+    image: "/images/top-copy-icon-02.png",
+    alt: "自社職人を表すアイコン",
+  },
+  {
+    number: "3",
+    title: "一貫した管理体制",
+    text: "調査・計画・施工の流れをつなぎ、無駄のない管理で進める。",
+    image: "/images/top-copy-icon-03.png",
+    alt: "管理体制を表すアイコン",
+  },
+];
+
 function getRevealClass(index) {
   if (index === 1) return "reveal reveal--delay-1";
   if (index >= 2) return "reveal reveal--delay-2";
@@ -309,6 +334,7 @@ function TopScopedImage({
 export function TopCopyPageContent({ rootClassName = "top-copy-page" } = {}) {
   const optimizeForCopy3 = rootClassName.includes("top-copy-page--copy3");
   const optimizeForCopy4 = rootClassName.includes("top-copy-page--copy4");
+  const optimizeForCopy6 = rootClassName.includes("top-copy-page--copy6");
   const ctaBgImage = resolveCopy3ImageSrc("/images/footer-cta-bg.png", optimizeForCopy3);
   const achievementBgImage = resolveCopy3ImageSrc("/images/footer-achievement-bg.png", optimizeForCopy3);
 
@@ -316,7 +342,71 @@ export function TopCopyPageContent({ rootClassName = "top-copy-page" } = {}) {
     <main className={rootClassName}>
       <JsonLd data={reviewSchema} />
 
-      <TopCopyHero optimizeForCopy3={optimizeForCopy3} />
+      <TopCopyHero optimizeForCopy3={optimizeForCopy3} optimizeForCopy6={optimizeForCopy6} />
+
+      {optimizeForCopy6 && (
+        <>
+          <section className="top-copy6-features" aria-label="久米技建の強み">
+            <div className="top-copy6-features__inner">
+              {copy6FeatureItems.map((item) => (
+                <article className="top-copy6-feature-card" key={item.number}>
+                  <span className="top-copy6-feature-card__bgnum" aria-hidden="true">
+                    {item.number}
+                  </span>
+                  <div className="top-copy6-feature-card__copy">
+                    <h2 className="top-copy6-feature-card__title">{item.title}</h2>
+                    <p className="top-copy6-feature-card__text">{item.text}</p>
+                  </div>
+                  <div className="top-copy6-feature-card__icon">
+                    <TopScopedImage src={item.image} alt={item.alt} optimizeForCopy3={false} />
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className="top-copy6-phone-cta" aria-label="電話で相談">
+            <div
+              className="top-copy6-phone-cta__inner"
+              style={{ "--top-copy6-phone-cta-bg-image": `url('${assetPath("/images/top-copy6-phone-cta-bg.png")}')` }}
+            >
+              <p className="top-copy6-phone-cta__lead">診断・相談受付中</p>
+              <p className="top-copy6-phone-cta__sub">管理組合・オーナー・個人のお客様まで幅広く対応</p>
+              <div className="top-copy6-phone-cta__row">
+                <a href={`tel:${siteConfig.phone.tel}`} className="top-copy6-phone-cta__link" aria-label={`${siteConfig.phone.display}へ電話する`}>
+                  <span className="top-copy6-phone-cta__icon" aria-hidden="true">
+                    <i className="fas fa-phone-alt"></i>
+                  </span>
+                  <span className="top-copy6-phone-cta__number">{siteConfig.phone.display}</span>
+                </a>
+              </div>
+              <p className="top-copy6-phone-cta__note">まずはお気軽にご相談ください</p>
+            </div>
+            <div className="top-copy6-phone-cta__buttons" aria-label="相談先を選ぶ">
+              <a
+                href={routePath("/service/large-scale-repair")}
+                className="top-copy6-phone-cta__button top-copy6-phone-cta__button--left"
+                style={{ "--top-copy6-phone-button-bg": `url('${assetPath("/images/top-copy6-cta-large-scale.png")}')` }}
+              >
+                <span className="top-copy6-phone-cta__button-meta">法人・管理組合の方へ</span>
+                <span className="top-copy6-phone-cta__button-title">大規模修繕の相談</span>
+                <span className="top-copy6-phone-cta__button-sub">マンション・ビルの大規模修繕はこちら</span>
+                <span className="top-copy6-phone-cta__button-arrow" aria-hidden="true">›</span>
+              </a>
+              <a
+                href={routePath("/service/waterproofing")}
+                className="top-copy6-phone-cta__button top-copy6-phone-cta__button--right"
+                style={{ "--top-copy6-phone-button-bg": `url('${assetPath("/images/top-copy6-cta-waterproof.png")}')` }}
+              >
+                <span className="top-copy6-phone-cta__button-meta">個人の方へ</span>
+                <span className="top-copy6-phone-cta__button-title">雨漏り・防水工事の相談</span>
+                <span className="top-copy6-phone-cta__button-sub">戸建て・マンションの雨漏りや防水工事はこちら</span>
+                <span className="top-copy6-phone-cta__button-arrow" aria-hidden="true">›</span>
+              </a>
+            </div>
+          </section>
+        </>
+      )}
 
       {/* ========== REASON SECTION ========== */}
       <section className="reason" id="reason">

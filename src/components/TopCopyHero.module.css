@@ -57,6 +57,166 @@
   transform-origin: bottom center;
 }
 
+:global(.top-copy-page--copy6) .root {
+  padding: 0;
+  padding-bottom: 0;
+  background-color: #dce4f2;
+  background-position: center center;
+  background-size: cover;
+}
+
+:global(.top-copy-page--copy6) .root::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgb(9 20 48 / 6%) 0%, rgb(9 20 48 / 18%) 100%);
+  pointer-events: none;
+}
+
+.copy6Root {
+  min-height: min(56.3vw, 1081px);
+}
+
+.copy6Inner {
+  position: relative;
+  z-index: 1;
+  min-height: min(56.3vw, 1081px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(32px, 4.8vw, 92px) clamp(18px, 2.8vw, 44px);
+}
+
+.copy6CopyBlock {
+  width: min(1260px, 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(16px, 1.8vw, 28px);
+  padding-top: clamp(44px, 6vw, 120px);
+}
+
+.copy6Headline {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(10px, 1.2vw, 18px);
+  color: #fffdf6;
+  font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+  font-size: clamp(44px, 8vw, 132px);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: 0.03em;
+  text-align: center;
+  text-shadow: 0 2px 8px rgb(0 0 0 / 22%);
+}
+
+.copy6HeadlineLine {
+  display: inline-block;
+  padding: 0.08em 0.24em 0.12em;
+  background: rgb(18 33 80 / 94%);
+  box-shadow: 0 8px 20px rgb(10 22 54 / 18%);
+  white-space: nowrap;
+}
+
+.copy6HeadlineLine:first-child {
+  display: inline-flex;
+  align-items: flex-end;
+}
+
+.copy6HeadlineText,
+.copy6Particle {
+  display: inline-block;
+  line-height: 1;
+}
+
+.copy6Particle {
+  font-size: 0.8em;
+  line-height: 0.9;
+  vertical-align: baseline;
+  transform: translateY(0.02em);
+}
+
+.copy6SubHeadline {
+  margin: 0;
+  padding: 0.18em 0.58em 0.22em;
+  color: #fff;
+  background: rgb(18 33 80 / 94%);
+  font-size: clamp(20px, 2.55vw, 58px);
+  font-weight: 500;
+  line-height: 1.22;
+  letter-spacing: 0.04em;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.copy6Description {
+  margin: clamp(18px, 2.2vw, 30px) 0 0;
+  color: #fff;
+  font-size: clamp(18px, 1.95vw, 45px);
+  font-weight: 500;
+  line-height: 1.8;
+  letter-spacing: 0.04em;
+  text-align: center;
+  text-shadow:
+    0 3px 10px rgb(0 0 0 / 45%),
+    0 0 1px rgb(0 0 0 / 35%);
+}
+
+@media (max-width: 1024px) {
+  .copy6Root,
+  .copy6Inner {
+    min-height: 62vw;
+  }
+
+  .copy6CopyBlock {
+    padding-top: clamp(24px, 6vw, 64px);
+  }
+}
+
+@media (max-width: 767px) {
+  .copy6Root,
+  .copy6Inner {
+    min-height: auto;
+  }
+
+  .copy6Inner {
+    padding: 20px 14px 28px;
+    aspect-ratio: 1921 / 1081;
+    align-items: flex-start;
+  }
+
+  .copy6CopyBlock {
+    gap: 10px;
+    padding-top: 18px;
+  }
+
+  .copy6Headline {
+    width: 100%;
+    font-size: clamp(28px, 11vw, 52px);
+    line-height: 1;
+    gap: 8px;
+  }
+
+  .copy6HeadlineLine {
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .copy6SubHeadline {
+    max-width: calc(100% - 8px);
+    font-size: clamp(12px, 4vw, 18px);
+    white-space: normal;
+  }
+
+  .copy6Description {
+    margin-top: 6px;
+    font-size: clamp(11px, 3.4vw, 16px);
+    line-height: 1.5;
+  }
+}
+
 :global(.top-copy-page--copy3) .copyBlock,
 :global(.top-copy-page--copy3) .featureGrid,
 :global(.top-copy-page--copy3) .phoneCta,

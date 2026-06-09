@@ -75,8 +75,44 @@ function HeroDecorativeImage({ src, className, optimizeForCopy3 }) {
   );
 }
 
-export default function TopCopyHero({ optimizeForCopy3 = false }) {
-  const heroBgImage = optimizeForCopy3 ? "/images/top-copy-hero-bg-copy3.webp" : "/images/top-copy-hero-bg.png";
+export default function TopCopyHero({ optimizeForCopy3 = false, optimizeForCopy6 = false }) {
+  const heroBgImage = optimizeForCopy6
+    ? "/images/top-copy6-hero-fv.png"
+    : optimizeForCopy3
+      ? "/images/top-copy-hero-bg-copy3.webp"
+      : "/images/top-copy-hero-bg.png";
+
+  if (optimizeForCopy6) {
+    return (
+      <section
+        className={cx(styles.root, styles.copy6Root)}
+        aria-labelledby="top-copy-hero-title"
+        style={{ "--top-copy-hero-bg-image": `url('${assetPath(heroBgImage)}')` }}
+      >
+        <div className={styles.copy6Inner}>
+          <div className={styles.copy6CopyBlock}>
+            <h1 id="top-copy-hero-title" className={styles.copy6Headline}>
+              <span className={styles.copy6HeadlineLine}>
+                <span className={styles.copy6HeadlineText}>建物</span>
+                <span className={styles.copy6Particle}>の</span>
+                <span className={styles.copy6HeadlineText}>価値</span>
+                <span className={styles.copy6Particle}>を</span>
+                <span className={styles.copy6HeadlineText}>守り、</span>
+              </span>
+              <span className={styles.copy6HeadlineLine}>未来へつなぐ</span>
+            </h1>
+            <p className={styles.copy6SubHeadline}>「大規模修繕」と「防水工事」のプロフェッショナル</p>
+            <p className={styles.copy6Description}>
+              マンション・ビルの大規模修繕から、雨漏り修理まで
+              <br />
+              確かな診断力と誠実な施工で未来の価値を守ります。
+            </p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section
       className={styles.root}

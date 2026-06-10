@@ -860,18 +860,28 @@ export function TopCopyPageContent({ rootClassName = "top-copy-page" } = {}) {
       </section>
 
       {/* ========== CTA ACHIEVEMENT BANNER ========== */}
-      <div className="cta-achievement reveal" style={{ "--cta-achievement-bg-image": `url('${assetPath(achievementBgImage)}')` }}>
-        <div className="cta-achievement__inner">
-          <div className="cta-achievement__left">
-            <TopScopedImage src="/images/laurel-wreath.png" alt="月桂樹" optimizeForCopy3={optimizeForCopy3} className="cta-achievement__laurel" />
-            <span className="cta-achievement__label">累計施工実績</span>
-            <span className="cta-achievement__number">1,000</span>
-            <span className="cta-achievement__unit">件以上</span>
-          </div>
-          <div className="cta-achievement__divider"></div>
-          <div className="cta-achievement__right">西宮市・神戸市・大阪市を中心に地域密着で対応しています。</div>
+      {optimizeForCopy6 ? (
+        <div className="cta-achievement-image reveal">
+          <img
+            src={assetPath("/images/artbord7.png")}
+            alt="累計施工実績"
+            className="cta-achievement-image__img"
+          />
         </div>
-      </div>
+      ) : (
+        <div className="cta-achievement reveal" style={{ "--cta-achievement-bg-image": `url('${assetPath(achievementBgImage)}')` }}>
+          <div className="cta-achievement__inner">
+            <div className="cta-achievement__left">
+              <TopScopedImage src="/images/laurel-wreath.png" alt="月桂樹" optimizeForCopy3={optimizeForCopy3} className="cta-achievement__laurel" />
+              <span className="cta-achievement__label">累計施工実績</span>
+              <span className="cta-achievement__number">1,000</span>
+              <span className="cta-achievement__unit">件以上</span>
+            </div>
+            <div className="cta-achievement__divider"></div>
+            <div className="cta-achievement__right">西宮市・神戸市・大阪市を中心に地域密着で対応しています。</div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }

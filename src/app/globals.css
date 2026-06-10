@@ -7865,3 +7865,27 @@ input, textarea, select {
     white-space: normal;
   }
 }
+
+/* --- CTA Achievement Image for Copy6 --- */
+.cta-achievement-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  margin: 0 auto;
+}
+
+.cta-achievement-image__img {
+  display: block;
+  width: 100%;
+  max-width: 1280px;
+  height: auto;
+  margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+  .cta-achievement-image__img {
+    width: min(100%, calc(100% - 20px));
+  }
+}

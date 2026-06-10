@@ -2160,7 +2160,7 @@ input, textarea, select {
 
 .service__heroTitle {
   margin: 0 0 14px 0;
-  line-height: 1.3;
+  line-height: 1.7;
 }
 
 .service__heroTitle span {
@@ -7881,4 +7881,13 @@ input, textarea, select {
   max-width: none;
   height: auto;
   margin: 0;
+}
+
+/* --- Service Section for Copy6 --- */
+.top-copy-page--copy6 .service {
+  padding-top: 0;
+}
+
+.top-copy-page--copy6 .service__hero {
+  margin-top: 0;
 }

@@ -7579,7 +7579,7 @@ input, textarea, select {
 .top-copy6-phone-cta__inner {
   width: min(1280px, calc(100% - 32px)) !important;
   margin: 0 auto;
-  padding: clamp(32px, 3vw, 48px) clamp(180px, 20%, 280px) clamp(24px, 2.5vw, 36px) clamp(30px, 4vw, 56px);
+  padding: clamp(32px, 3vw, 48px) calc(clamp(180px, 20%, 280px) - 50px) clamp(24px, 2.5vw, 36px) calc(clamp(30px, 4vw, 56px) + 50px);
   background-color: transparent;
   background-image: var(--top-copy6-phone-cta-bg-image);
   background-repeat: no-repeat;
@@ -7616,14 +7616,19 @@ input, textarea, select {
 }
 
 .top-copy6-phone-cta__link {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  gap: clamp(14px, 1.8vw, 22px);
   color: #ff8500;
   padding-right: 0;
+  padding-left: clamp(46px, 6.8vw, 102px);
 }
 
 .top-copy6-phone-cta__icon {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -7806,11 +7811,16 @@ input, textarea, select {
   }
 
   .top-copy6-phone-cta__link {
-    gap: 10px;
+    position: relative;
+    padding-left: clamp(44px, 11vw, 62px);
     padding-right: 0;
   }
 
   .top-copy6-phone-cta__icon {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
     font-size: clamp(34px, 9vw, 52px);
   }
 

@@ -379,7 +379,7 @@ export function TopCopyPageContent({ rootClassName = "top-copy-page" } = {}) {
               <div className="top-copy6-phone-cta__row">
                 <a href={`tel:${siteConfig.phone.tel}`} className="top-copy6-phone-cta__link" aria-label={`${siteConfig.phone.display}へ電話する`}>
                   <span className="top-copy6-phone-cta__icon" aria-hidden="true">
-                    <i className="fas fa-phone-alt"></i>
+                    <img src={assetPath("/images/tell2.png")} alt="電話アイコン" />
                   </span>
                   <span className="top-copy6-phone-cta__number">{siteConfig.phone.display}</span>
                 </a>

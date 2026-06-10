@@ -7631,6 +7631,13 @@ input, textarea, select {
   line-height: 1;
 }
 
+.top-copy6-phone-cta__icon img {
+  width: 1em;
+  height: 1em;
+  object-fit: contain;
+  display: block;
+}
+
 .top-copy6-phone-cta__number {
   font-family: var(--font-en);
   font-size: clamp(36px, 5.5vw, 88px);

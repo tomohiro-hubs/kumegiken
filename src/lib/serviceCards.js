@@ -11,7 +11,7 @@ export const serviceCards = [
   {
     key: "waterproofing",
     href: "/service/waterproofing",
-    image: "/images/waterproofing-rooftop.jpg",
+    image: "/images/waterproofing-service.jpeg",
     title: "防水事業",
     descriptionHome:
       "ウレタン防水・シート防水・FRP防水など、建物に最適な工法をご提案。確かな技術で雨水から建物を守ります。",
@@ -21,7 +21,7 @@ export const serviceCards = [
   {
     key: "painting",
     href: "/service/painting",
-    image: "/images/painting-work.jpg",
+    image: "/images/painting-service.jpg",
     title: "外壁塗装",
     descriptionHome: "美観と保護を両立する外壁塗装。建物の資産価値を維持しながら、美しい外観を取り戻します。",
     descriptionService:

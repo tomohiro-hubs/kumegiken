@@ -75,14 +75,14 @@ const reasonItems = [
     icon: "fa-regular fa-clock",
     copy4Title: "担当者が変わるたび、話が伝わっているか不安です。",
     copy4Body:
-      "調査した人、判断する人、施工する人が分かれていると、伝達ミスや判断 of ズレが起こりやすくなります。久米技建では、建物を診た技術者がそのまま施工計画を立て、必要に応じて現場にも入ります。情報ロスを抑えながら、必要な工事を最短工程で進められる体制です。",
+      "調査した人、判断する人、施工する人が分かれていると、伝達ミスや判断のズレが起こりやすくなります。久米技建では、建物を診た技術者がそのまま施工計画を立て、必要に応じて現場にも入ります。情報ロスを抑えながら、必要な工事を最短工程で進められる体制です。",
     copy4Flow: ["現地調査", "施工計画", "現場対応"],
     copy4Outcome: ["情報ロスを抑制", "判断のズレを防止"],
   },
   {
     number: "02",
     image: "/images/waterproofing-hands.jpg",
-    alt: "防水施工 of 様子",
+    alt: "防水施工の様子",
     question: "02",
     concern: "こんな不安はありませんか？",
     concernTitle: "直しても、また漏れたら\nどうしよう…",
@@ -121,33 +121,33 @@ const reasonItems = [
 
 const workItems = [
   {
-    href: "/works/nishinomiya-mansion-waterproofing-01",
-    image: "/images/waterproofing-rooftop.jpg",
-    alt: "屋上ウレタン防水改修工事",
+    href: "/works/nishinomiya-rooftop-waterproofing-fire-insurance-01",
+    image: "/images/works-nishinomiya-rooftop-complete.jpg",
+    alt: "西宮市 屋上防水工事",
     category: "防水工事",
     city: "西宮市",
-    buildingType: "マンション",
-    title: "屋上ウレタン防水改修工事",
+    buildingType: "屋上",
+    title: "西宮市 屋上防水工事（火災保険適用）",
     estimate: "工期：約2週間 / 費用目安：200〜300万円",
   },
   {
-    href: "/works/osaka-building-large-scale-repair-01",
-    image: "/images/scaffold-install.jpg",
-    alt: "オフィスビル大規模修繕工事",
+    href: "/works/osaka-rental-mansion-repair-01",
+    image: "/images/works-osaka-rental-mansion-fv.jpg",
+    alt: "大阪市内 賃貸マンション大規模修繕",
     category: "大規模修繕",
     city: "大阪市",
-    buildingType: "ビル",
-    title: "オフィスビル大規模修繕工事",
+    buildingType: "賃貸マンション",
+    title: "大阪市内 賃貸マンション大規模修繕",
     estimate: "工期：約3ヶ月 / 費用目安：2,000〜3,000万円",
   },
   {
-    href: "/works/kobe-mansion-painting-01",
-    image: "/images/building-completed.jpg",
-    alt: "分譲マンション外壁塗装工事",
-    category: "外壁塗装",
-    city: "神戸市",
-    buildingType: "マンション",
-    title: "分譲マンション外壁塗装工事",
+    href: "/works/hyogo-rental-mansion-repair-01",
+    image: "/images/works-hyogo-rental-mansion-01-fv.jpg",
+    alt: "兵庫県 賃貸マンション大規模修繕",
+    category: "大規模修繕",
+    city: "兵庫県",
+    buildingType: "賃貸マンション",
+    title: "兵庫県 賃貸マンション大規模修繕",
     estimate: "工期：約1.5ヶ月 / 費用目安：800〜1,200万円",
   },
 ];
@@ -163,22 +163,22 @@ const columnItems = [
       "防水工事の種類や工法の違い、費用の目安を解説します。ウレタン防水、シート防水、FRP防水それぞれのメリット・デメリットとは。",
   },
   {
-    href: "/column/large-scale-repair-guide",
-    image: "/images/large-scale-aerial.jpg",
-    alt: "大規模修繕ガイド",
-    date: "2026.03.01",
-    title: "大規模修繕の進め方と費用の目安",
+    href: "/column/nishinomiya-waterproofing-optimal-selection",
+    image: "/images/waterproofing-hands.jpg",
+    alt: "西宮の防水工法選定ガイド",
+    date: "2026.03.31",
+    title: "西宮の防水工事｜雨漏りを防ぐ「最適な工法選び」と長持ちさせるポイント",
     excerpt:
-      "マンション・ビルの大規模修繕工事の進め方、一般的な費用感、成功のポイントを専門家が解説します。",
+      "西宮エリアで防水工事を検討中の方へ、雨漏りを防ぐための最適な工法選びの基準や、耐用年数を長持ちさせるための施工のポイントを解説します。",
   },
   {
-    href: "/column/leak-cause-and-fix",
+    href: "/column/nishinomiya-leak-speed",
     image: "/images/leak-repair.jpg",
-    alt: "雨漏り対処法",
-    date: "2026.02.20",
-    title: "雨漏りの原因と応急処置｜プロが教える対処法",
+    alt: "雨漏り修理のスピード対応",
+    date: "2026.03.31",
+    title: "西宮の雨漏り対応はスピードが命｜最短対応で被害を最小限にする方法",
     excerpt:
-      "突然の雨漏りに困ったら。雨漏りの主な原因と、すぐにできる応急処置、およびプロに依頼すべきタイミングをお教えします。",
+      "西宮で雨漏りが発生した際になぜスピード対応が必要なのか、放置するリスク、迅速に対応できる業者の選び方を解説します。",
   },
 ];
 
@@ -769,7 +769,7 @@ export function TopCopyPageContent({ rootClassName = "top-copy-page" } = {}) {
         </div>
       </section>
 
-      {/* ========== FAQ SECTION ========== */}
+      {/* ========== CTA SECTION ========== */}
       <section className="cta-v2">
         <div className="cta-v2__shell">
           <div className="cta-v2__top reveal" style={{ "--cta-v2-bg-image": `url('${assetPath(ctaBgImage)}')` }}>
@@ -887,5 +887,5 @@ export function TopCopyPageContent({ rootClassName = "top-copy-page" } = {}) {
 }
 
 export default function TopCopyPage() {
-  return <TopCopyPageContent />;
+  return <TopCopyPageContent rootClassName="top-copy-page top-copy-page--copy3 top-copy-page--copy6" />;
 }

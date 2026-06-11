@@ -9,7 +9,7 @@ export const metadata = buildMetadata({
   title: "外壁塗装（マンション・ビル）｜久米技建｜兵庫・大阪",
   description: "兵庫・大阪のマンション・ビル外壁塗装に対応。劣化診断から下地補修、塗装仕上げまで一貫して施工します。",
   path: "/service/painting",
-  image: "/images/painting-work.jpg",
+  image: "/images/painting-service.jpg",
 });
 
 export default function Page() {
@@ -22,7 +22,7 @@ export default function Page() {
   
 
   <section className="content-section"><div className="container container--narrow"><div className="article-content">
-    <div className="reveal" style={{ marginBottom: '40px' }}><img src={assetPath("/images/painting-work.jpg")} alt="外壁塗装の現場" style={{ aspectRatio: '16/9', width: '100%', objectFit: 'cover', borderRadius: '16px' }} /></div>
+    <div className="reveal" style={{ marginBottom: '40px' }}><img src={assetPath("/images/painting-service.jpg")} alt="外壁塗装の現場" style={{ aspectRatio: '16/9', width: '100%', objectFit: 'cover', borderRadius: '16px' }} /></div>
     <div className="reveal">
       <p>外壁塗装は、建物の美観を回復するだけでなく、外壁材を紫外線や風雨から保護する重要な工事です。適切なタイミングでの塗り替えが、建物の寿命を大きく延ばします。</p>
       <h2>兵庫・大阪の外壁塗装工事なら久米技建</h2>

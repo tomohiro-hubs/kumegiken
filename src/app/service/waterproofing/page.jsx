@@ -10,7 +10,7 @@ export const metadata = buildMetadata({
   description:
     "マンション・ビルの防水工事なら久米技建。ウレタン防水4,000〜7,000円/㎡。創業以来の専門技術で屋上・バルコニーの雨漏りを根本解決。無料診断に対応。",
   path: "/service/waterproofing",
-  image: "/images/waterproofing-rooftop.jpg",
+  image: "/images/waterproofing-service.jpeg",
 });
 
 export default function Page() {
@@ -29,7 +29,7 @@ export default function Page() {
   <section className="content-section">
     <div className="container container--narrow">
       <div className="article-content">
-        <div className="reveal" style={{ marginBottom: '40px' }}><img src={assetPath("/images/waterproofing-rooftop.jpg")} alt="防水工事の現場" style={{ aspectRatio: '16/9', width: '100%', objectFit: 'cover', borderRadius: '16px' }} /></div>
+        <div className="reveal" style={{ marginBottom: '40px' }}><img src={assetPath("/images/waterproofing-service.jpeg")} alt="防水工事の現場" style={{ aspectRatio: '16/9', width: '100%', objectFit: 'cover', borderRadius: '16px' }} /></div>
         <div className="reveal">
           <p>防水工事は、建物の寿命を左右する最も重要な工事の一つです。久米技建は防水工事の専門会社として創業し、豊富な経験と確かな技術でお客様の建物を雨水から守り続けています。</p>
 

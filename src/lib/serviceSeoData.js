@@ -2,7 +2,7 @@ export const serviceSeoData = {
   waterproofing: {
     name: "防水工事",
     path: "/service/waterproofing",
-    image: "/images/waterproofing-rooftop.jpg",
+    image: "/images/waterproofing-service.jpeg",
     description: "屋上・バルコニー・共用廊下のウレタン防水、シート防水、FRP防水、アスファルト防水に対応します。",
     faqs: [
       { question: "防水工事の改修時期はいつですか？", answer: "一般的には10年前後が点検の目安です。ひび割れ、膨れ、水たまり、室内のシミがある場合は早めの診断をおすすめします。" },
@@ -46,7 +46,7 @@ export const serviceSeoData = {
   painting: {
     name: "外壁塗装",
     path: "/service/painting",
-    image: "/images/painting-work.jpg",
+    image: "/images/painting-service.jpg",
     description: "マンション・ビルの外壁劣化診断から下地補修、塗装仕上げまで対応します。",
     faqs: [
       { question: "外壁塗装の塗り替えサインは何ですか？", answer: "チョーキング、ひび割れ、塗膜の剥がれ、カビや藻の発生、色褪せが代表的なサインです。" },

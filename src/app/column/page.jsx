@@ -42,6 +42,12 @@ export default function Page() {
   </aside>
   <div className="column-list">
     {isVisible('waterproofing') && (
+    <a href={routePath("/column/nishinomiya-waterproofing-optimal-selection")} className="column-card reveal" style={{ animation: 'fadeInUp 0.35s ease forwards' }}><div className="column-card__image"><img src={assetPath("/images/waterproofing-hands.jpg")} alt="西宮の防水工法選定ガイド" style={{ width: '100%', minHeight: '120px', objectFit: 'cover' }} /></div><div className="column-card__body"><div className="column-card__meta"><div className="column-card__date">2026.03.31</div><span className="column-card__category">防水</span></div><h3 className="column-card__title">西宮の防水工事｜雨漏りを防ぐ“最適な工法選び”と長持ちさせるポイント</h3><p className="column-card__excerpt">西宮エリアで防水工事を検討中の方へ、雨漏りを防ぐための最適な工法選びの基準や、耐用年数を長持ちさせるための施工のポイントを解説します。</p></div></a>
+    )}
+    {isVisible('leak-repair') && (
+    <a href={routePath("/column/nishinomiya-leak-speed")} className="column-card reveal" style={{ animation: 'fadeInUp 0.35s ease forwards' }}><div className="column-card__image"><img src={assetPath("/images/leak-repair.jpg")} alt="雨漏り修理のスピード対応" style={{ width: '100%', minHeight: '120px', objectFit: 'cover' }} /></div><div className="column-card__body"><div className="column-card__meta"><div className="column-card__date">2026.03.31</div><span className="column-card__category">雨漏り補修</span></div><h3 className="column-card__title">西宮の雨漏り対応はスピードが命｜最短対応で被害を最小限にする方法</h3><p className="column-card__excerpt">西宮で雨漏りが発生した際になぜスピード対応が必要なのか、放置するリスク、迅速に対応できる業者の選び方を解説します。</p></div></a>
+    )}
+    {isVisible('waterproofing') && (
     <a href={routePath("/column/waterproofing-guide")} className="column-card reveal" style={{ animation: 'fadeInUp 0.35s ease forwards' }}><div className="column-card__image"><img src={assetPath("/images/waterproofing-hands.jpg")} alt="西宮市の防水工事費用ガイド" style={{ width: '100%', minHeight: '120px', objectFit: 'cover' }} /></div><div className="column-card__body"><div className="column-card__meta"><div className="column-card__date">2026.03.15</div><span className="column-card__category">防水</span></div><h3 className="column-card__title">西宮市の防水工事費用相場｜工法別の目安と選び方</h3><p className="column-card__excerpt">西宮市での防水工事費用の目安を解説。ウレタン防水、シート防水、FRP防水の工法別に比較します。</p></div></a>
     )}
     {isVisible('large-scale-repair') && (
@@ -58,6 +64,9 @@ export default function Page() {
     )}
     {isVisible('leak-repair') && (
     <a href={routePath("/column/fire-insurance-leak-repair")} className="column-card reveal" style={{ animation: 'fadeInUp 0.35s ease forwards' }}><div className="column-card__image"><img src={assetPath("/images/consultation.jpg")} alt="火災保険で雨漏り修理" style={{ width: '100%', minHeight: '120px', objectFit: 'cover' }} /></div><div className="column-card__body"><div className="column-card__meta"><div className="column-card__date">2026.01.10</div><span className="column-card__category">雨漏り補修</span></div><h3 className="column-card__title">火災保険で雨漏り修理はできる？</h3><p className="column-card__excerpt">火災保険で雨漏り修理費用が補償される場合があります。適用条件と申請の流れを解説。</p></div></a>
+    )}
+    {isVisible('leak-repair') && (
+    <a href={routePath("/column/nishinomiya-fire-insurance-leak-repair")} className="column-card reveal" style={{ animation: 'fadeInUp 0.35s ease forwards' }}><div className="column-card__image"><img src={assetPath("/images/consultation.jpg")} alt="西宮での雨漏り修理と火災保険" style={{ width: '100%', minHeight: '120px', objectFit: 'cover' }} /></div><div className="column-card__body"><div className="column-card__meta"><div className="column-card__date">2025.08.13</div><span className="column-card__category">雨漏り補修</span></div><h3 className="column-card__title">西宮での雨漏り修理に火災保険は使える？適用条件と申請の流れ</h3><p className="column-card__excerpt">西宮で雨漏りや防水補修が必要になった際、火災保険を適用して修理費用を抑えられる条件や、具体的な申請手順についてわかりやすく解説します。</p></div></a>
     )}
   </div>
 </div>

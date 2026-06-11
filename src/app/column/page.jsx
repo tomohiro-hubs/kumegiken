@@ -62,6 +62,10 @@ export default function Page() {
     {isVisible('leak-repair') && (
     <a href={routePath("/column/nishinomiya-shitaji")} className="column-card reveal" style={{ animation: 'fadeInUp 0.35s ease forwards' }}><div className="column-card__image"><img src={assetPath("/images/crack-inspection.jpg")} alt="西宮での防水・雨漏りを防ぐ下地補修" style={{ width: '100%', minHeight: '120px', objectFit: 'cover' }} /></div><div className="column-card__body"><div className="column-card__meta"><div className="column-card__date">2025.08.11</div><span className="column-card__category">雨漏り補修</span></div><h3 className="column-card__title">西宮の防水・雨漏り修理｜長持ちさせる下地補修工事の重要性</h3><p className="column-card__excerpt">西宮で防水・雨漏り修理を行うなら下地補修工事が重要です。ひび割れや欠損を補修し、防水材の密着と耐久性を向上。火災保険適用も可能。無料調査受付中。</p></div></a>
     )}
+
+    {isVisible('leak-repair') && (
+    <a href={routePath("/column/nishinomiya-seal")} className="column-card reveal" style={{ animation: 'fadeInUp 0.35s ease forwards' }}><div className="column-card__image"><img src={assetPath("/images/sealing-work.jpg")} alt="西宮での防水・雨漏りシール工事" style={{ width: '100%', minHeight: '120px', objectFit: 'cover' }} /></div><div className="column-card__body"><div className="column-card__meta"><div className="column-card__date">2025.08.11</div><span className="column-card__category">雨漏り補修</span></div><h3 className="column-card__title">西宮の防水・雨漏り対策｜シール工事（コーキング）の重要性と施工タイミング</h3><p className="column-card__excerpt">西宮で防水や雨漏りにお困りならシール工事が重要です。外壁やサッシ周りの隙間を防ぎ、雨水の侵入や劣化を防止。築10年前後の点検・施工がおすすめ。無料調査・お見積もり受付中。</p></div></a>
+    )}
   </div>
 </div>
 </section>

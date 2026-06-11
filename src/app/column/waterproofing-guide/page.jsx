@@ -18,7 +18,7 @@ export const metadata = {
     title: ARTICLE_TITLE,
     description: ARTICLE_DESCRIPTION,
     path: ARTICLE_PATH,
-    image: "/images/waterproofing-rooftop.jpg",
+    image: "/images/waterproofing-guide-1.jpeg",
   }),
 };
 
@@ -65,7 +65,7 @@ export default function Page() {
   <p>建物の屋上やバルコニー、外壁などから雨水が侵入するのを防ぐ「防水工事」。建物の寿命を左右する重要な工事であるにもかかわらず、工法の違いや費用の目安がわかりにくいと感じている方も多いのではないでしょうか。</p>
   <p>この記事では、防水工事の基礎知識から、主な工法の種類、費用相場、選び方のポイントまでを徹底的に解説します。</p>
 
-  <div style={{ margin: '30px 0' }}><img src={assetPath("/images/waterproofing-rooftop.jpg")} alt="防水工事の施工風景" style={{ width: '100%', borderRadius: '12px', aspectRatio: '16/9', objectFit: 'cover' }} /></div>
+  <div style={{ margin: '30px 0' }}><img src={assetPath("/images/waterproofing-guide-1.jpeg")} alt="防水工事の施工風景" style={{ width: '100%', borderRadius: '12px', aspectRatio: '16/9', objectFit: 'cover' }} /></div>
 
   <h2>防水工事とは？</h2>
   <p>防水工事とは、建物の屋上、バルコニー、外壁、地下などに防水層を設けて、雨水や地下水が建物内部に侵入するのを防ぐ工事です。RC造やSRC造の建物では、コンクリート自体に微細な隙間があるため、防水工事なしでは水が浸透してしまいます。</p>
@@ -79,6 +79,7 @@ export default function Page() {
     <li>耐用年数：10〜12年</li>
     <li>費用目安：4,000〜7,000円/㎡</li>
   </ul>
+  <div style={{ margin: '24px 0' }}><img src={assetPath("/images/waterproofing-guide-2.jpeg")} alt="ウレタン防水の施工風景" style={{ width: '100%', borderRadius: '12px', aspectRatio: '16/9', objectFit: 'cover' }} /></div>
 
   <h3>シート防水</h3>
   <p>塩化ビニル樹脂シートやゴムシートを貼り付けて防水層を形成する工法です。広い面積の施工に適しています。</p>
@@ -88,6 +89,7 @@ export default function Page() {
     <li>耐用年数：12〜15年</li>
     <li>費用目安：4,500〜8,000円/㎡</li>
   </ul>
+  <div style={{ margin: '24px 0' }}><img src={assetPath("/images/waterproofing-guide-3.jpg")} alt="シート防水の施工風景" style={{ width: '100%', borderRadius: '12px', aspectRatio: '16/9', objectFit: 'cover' }} /></div>
 
   <h3>FRP防水</h3>
   <p>繊維強化プラスチック（FRP）を用いた防水工法です。強度が高く、バルコニーや屋上駐車場に適しています。</p>
@@ -97,6 +99,7 @@ export default function Page() {
     <li>耐用年数：10〜12年</li>
     <li>費用目安：5,000〜8,000円/㎡</li>
   </ul>
+  <div style={{ margin: '24px 0' }}><img src={assetPath("/images/waterproofing-guide-4.jpg")} alt="FRP防水の施工風景" style={{ width: '100%', borderRadius: '12px', aspectRatio: '16/9', objectFit: 'cover' }} /></div>
 
   <h3>アスファルト防水</h3>
   <p>最も歴史のある防水工法で、信頼性が高い工法です。大規模な屋上に適しています。</p>

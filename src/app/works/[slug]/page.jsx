@@ -18,7 +18,7 @@ const works = {
     workType: "ウレタン塗膜防水工事（通気緩衝工法）",
     scale: "屋上防水改修",
     period: "約7日間",
-    budget: "150〜250万円",
+    budget: "非公開",
     beforeImage: "/images/works-nishinomiya-commercial-waterproofing-before.jpg",
     afterImage: "/images/works-nishinomiya-commercial-waterproofing-after.jpg",
     beforeCaption: "経年劣化でシートの浮きやシワが目立ち、空調架台まわりから雨漏りが発生",

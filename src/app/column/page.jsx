@@ -54,6 +54,10 @@ export default function Page() {
     {isVisible('leak-repair') && (
     <a href={routePath("/column/nishinomiya-fire-insurance-leak-repair")} className="column-card reveal" style={{ animation: 'fadeInUp 0.35s ease forwards' }}><div className="column-card__image"><img src={assetPath("/images/consultation.jpg")} alt="西宮での雨漏り修理と火災保険" style={{ width: '100%', minHeight: '120px', objectFit: 'cover' }} /></div><div className="column-card__body"><div className="column-card__meta"><div className="column-card__date">2025.08.13</div><span className="column-card__category">雨漏り補修</span></div><h3 className="column-card__title">西宮での雨漏り修理に火災保険は使える？適用条件と申請の流れ</h3><p className="column-card__excerpt">西宮で雨漏りや防水補修が必要になった際、火災保険を適用して修理費用を抑えられる条件や、具体的な申請手順についてわかりやすく解説します。</p></div></a>
     )}
+
+    {isVisible('leak-repair') && (
+    <a href={routePath("/column/nishinomiya-ashiba")} className="column-card reveal" style={{ animation: 'fadeInUp 0.35s ease forwards' }}><div className="column-card__image"><img src={assetPath("/images/scaffold-install.jpg")} alt="西宮での防水・雨漏り修理における足場工事" style={{ width: '100%', minHeight: '120px', objectFit: 'cover' }} /></div><div className="column-card__body"><div className="column-card__meta"><div className="column-card__date">2025.08.11</div><span className="column-card__category">雨漏り補修</span></div><h3 className="column-card__title">西宮の防水・雨漏り修理｜足場工事の役割と重要性</h3><p className="column-card__excerpt">西宮で防水や雨漏り修理を行うなら足場工事が欠かせません。安全性と施工精度を高め、火災保険適用で費用負担を軽減可能。調査・見積もり無料。</p></div></a>
+    )}
   </div>
 </div>
 </section>

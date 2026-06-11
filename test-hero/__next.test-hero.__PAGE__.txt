@@ -1,0 +1,8 @@
+1:"$Sreact.fragment"
+2:I[97367,["/_next/static/chunks/0k5yumt-33883.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
+3:"$Sreact.suspense"
+:HL["/images/hero-copy-overlay.png","image"]
+:HL["/images/hero-badges-overlay.png","image"]
+:HL["/_next/static/chunks/0wdxwf~beggbr.css","style"]
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"page-module__yDMdWa__page","children":["$","section",null,{"className":"page-module__yDMdWa__hero","children":["$","div",null,{"className":"page-module__yDMdWa__heroImage","style":{"backgroundImage":"url('/images/hero-test-header.png')"},"children":[["$","div",null,{"className":"page-module__yDMdWa__copyBlock","children":["$","img",null,{"src":"/images/hero-copy-overlay.png","alt":"ヒーローテキスト","className":"page-module__yDMdWa__copyImage"}]}],["$","div",null,{"className":"page-module__yDMdWa__badgesBlock","children":["$","img",null,{"src":"/images/hero-badges-overlay.png","alt":"特長バッジ","className":"page-module__yDMdWa__badgesImage"}]}]]}]}]}],[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0wdxwf~beggbr.css","precedence":"next"}]],["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"LhmePzmzuEJCDIrw3CYE1"}
+4:null

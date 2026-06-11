@@ -1,0 +1,73 @@
+export const WORK_REGIONS = {
+  kansai: { key: 'kansai', label: '関西', path: '/works/kansai', description: '兵庫・大阪を中心とした施工事例' },
+  kanto: { key: 'kanto', label: '関東', path: '/works/kanto', description: '東京・神奈川・埼玉・千葉の施工事例（順次公開）' },
+};
+
+export const WORK_CATEGORIES = {
+  waterproofing: '防水工事',
+  'large-scale-repair': '大規模修繕',
+  painting: '外壁塗装',
+  sealing: 'シーリング',
+  'leak-repair': '雨漏り補修',
+};
+
+export const WORKS_CATALOG = [
+  {
+    slug: 'nishinomiya-veranda-waterproofing-01',
+    title: '戸建てベランダウレタン防水工事',
+    fullTitle: '西宮市 戸建て ベランダ防水工事',
+    location: '西宮市',
+    region: 'kansai',
+    buildingType: '戸建て',
+    category: 'waterproofing',
+    image: '/images/works-nishinomiya-veranda-waterproofing-fv.jpg',
+  },
+  {
+    slug: 'nishinomiya-commercial-waterproofing-01',
+    title: '商業施設屋上ウレタン防水工事',
+    fullTitle: '西宮市 商業施設 屋上防水工事',
+    location: '西宮市',
+    region: 'kansai',
+    buildingType: '商業施設',
+    category: 'waterproofing',
+    image: '/images/works-nishinomiya-commercial-waterproofing-fv.jpg',
+  },
+  {
+    slug: 'nishinomiya-mansion-waterproofing-01',
+    title: '屋上ウレタン防水改修工事',
+    fullTitle: '西宮市 マンション 屋上防水工事',
+    location: '西宮市',
+    region: 'kansai',
+    buildingType: 'マンション',
+    category: 'waterproofing',
+    image: '/images/waterproofing-rooftop.jpg',
+  },
+];
+
+export const KANTO_DRAFT_CARDS = [
+  {
+    title: '東京都 マンション 屋上防水改修（準備中）',
+    category: 'waterproofing',
+    location: '東京都',
+    buildingType: 'マンション',
+    image: '/images/waterproofing-rooftop.jpg',
+  },
+  {
+    title: '神奈川県 ビル 大規模修繕（準備中）',
+    category: 'large-scale-repair',
+    location: '神奈川県',
+    buildingType: 'ビル',
+    image: '/images/scaffold-install.jpg',
+  },
+  {
+    title: '埼玉県 アパート 外壁塗装（準備中）',
+    category: 'painting',
+    location: '埼玉県',
+    buildingType: 'アパート',
+    image: '/images/painting-work.jpg',
+  },
+];
+
+export function getWorksByRegion(regionKey) {
+  return WORKS_CATALOG.filter((item) => item.region === regionKey);
+}

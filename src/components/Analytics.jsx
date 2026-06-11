@@ -104,16 +104,16 @@ export default function Analytics() {
       )}
 
       {consent === null && !suppressConsentBanner && (
-        <div style={{ position: "fixed", left: 16, right: 16, bottom: 16, zIndex: 9999, background: "#1A2744", color: "#fff", borderRadius: 12, padding: "14px 16px", boxShadow: "0 8px 24px rgba(0,0,0,.2)" }}>
-          <p style={{ margin: 0, fontSize: 13, lineHeight: 1.6 }}>
+        <div className="cookie-consent-banner">
+          <p>
             サイト改善のため、アクセス解析（匿名化IP）を利用します。{" "}
             <a href="/privacy/" style={{ color: "#ffb46f", textDecoration: "underline" }}>プライバシーポリシー</a>
           </p>
-          <div style={{ marginTop: 10, display: "flex", gap: 10, justifyContent: "flex-end" }}>
-            <button type="button" onClick={() => saveConsent("declined")} style={{ background: "transparent", border: "1px solid rgba(255,255,255,.45)", color: "#fff", borderRadius: 8, padding: "8px 12px" }}>
+          <div className="cookie-consent-banner__buttons">
+            <button type="button" onClick={() => saveConsent("declined")}>
               同意しない
             </button>
-            <button type="button" onClick={() => saveConsent("accepted")} style={{ background: "#E8740C", border: "none", color: "#fff", borderRadius: 8, padding: "8px 12px", fontWeight: 700 }}>
+            <button type="button" onClick={() => saveConsent("accepted")} className="primary">
               同意する
             </button>
           </div>

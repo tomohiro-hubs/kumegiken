@@ -1,4 +1,4 @@
-@import url("../src/app/globals.css");
+@import url("./globals.css");
 
 /* Fallback for legacy static pages on GitHub Pages branch deploy */
 .reveal {

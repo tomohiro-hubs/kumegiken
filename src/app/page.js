@@ -887,5 +887,5 @@ export function TopCopyPageContent({ rootClassName = "top-copy-page" } = {}) {
 }
 
 export default function TopCopyPage() {
-  return <TopCopyPageContent />;
+  return <TopCopyPageContent rootClassName="top-copy-page top-copy-page--copy3 top-copy-page--copy6" />;
 }

@@ -13,6 +13,16 @@ export const WORK_CATEGORIES = {
 
 export const WORKS_CATALOG = [
   {
+    slug: 'nishinomiya-rooftop-waterproofing-fire-insurance-01',
+    title: '西宮市 屋上防水工事',
+    fullTitle: '西宮市 屋上防水工事｜雨漏り修理に火災保険が使えます！',
+    location: '西宮市',
+    region: 'kansai',
+    buildingType: '屋上',
+    category: 'waterproofing',
+    image: '/images/works-nishinomiya-rooftop-complete.jpg',
+  },
+  {
     slug: 'nishinomiya-veranda-waterproofing-01',
     title: '戸建てベランダウレタン防水工事',
     fullTitle: '西宮市 戸建て ベランダ防水工事',
@@ -41,6 +51,46 @@ export const WORKS_CATALOG = [
     buildingType: '戸建て',
     category: 'waterproofing',
     image: '/images/works-nishinomiya-rooftop-waterproofing-02-fv.jpg',
+  },
+  {
+    slug: 'osaka-rental-mansion-repair-01',
+    title: '大阪市内 賃貸マンション大規模修繕',
+    fullTitle: '大阪市内 賃貸マンション｜防水工事を含む大規模修繕工事',
+    location: '大阪市',
+    region: 'kansai',
+    buildingType: '賃貸マンション',
+    category: 'large-scale-repair',
+    image: '/images/works-osaka-rental-mansion-fv.jpg',
+  },
+  {
+    slug: 'osaka-rental-mansion-repair-02',
+    title: '大阪市内 賃貸マンション大規模修繕（第2弾）',
+    fullTitle: '【大規模修繕工事】賃貸マンション｜防水工事を含む大規模修繕工事',
+    location: '大阪市',
+    region: 'kansai',
+    buildingType: '賃貸マンション',
+    category: 'large-scale-repair',
+    image: '/images/works-osaka-rental-mansion-02-fv.jpg',
+  },
+  {
+    slug: 'hyogo-rental-mansion-repair-01',
+    title: '兵庫県 賃貸マンション大規模修繕',
+    fullTitle: '【大規模修繕工事】兵庫| 賃貸マンション|個人オーナー様ご依頼',
+    location: '兵庫県',
+    region: 'kansai',
+    buildingType: '賃貸マンション',
+    category: 'large-scale-repair',
+    image: '/images/works-hyogo-rental-mansion-01-fv.jpg',
+  },
+  {
+    slug: 'rooftop-waterproofing-education-01',
+    title: '教育施設 屋上防水工事（ウレタン防水）',
+    fullTitle: '屋上防水工事（ウレタン防水）で雨漏り対策を実施',
+    location: '西宮市',
+    region: 'kansai',
+    buildingType: '教育施設',
+    category: 'waterproofing',
+    image: '/images/works-rooftop-waterproofing-education-fv.jpg',
   },
 ];
 

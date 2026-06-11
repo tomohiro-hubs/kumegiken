@@ -2170,7 +2170,8 @@ input, textarea, select {
   color: #102448;
   border-bottom: 5px solid #f6800a;
   padding-bottom: 0px;
-  margin-bottom: 2px;
+  margin-bottom: 10px;
+  line-height: 1.1;
 }
 
 .service__heroLead {
@@ -2238,6 +2239,7 @@ input, textarea, select {
   .service__heroTitle span {
     font-size: 20px;
     border-bottom-width: 3px;
+    margin-bottom: 6px;
   }
 
   .service__heroLead {

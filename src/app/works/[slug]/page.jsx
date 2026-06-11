@@ -11,6 +11,93 @@ const SITE_URL = "https://kumegiken.co.jp";
 const DEFAULT_PUBLISHED_DATE = "2026-05-10";
 
 const works = {
+  "nishinomiya-rooftop-waterproofing-fire-insurance-01": {
+    title: "西宮市 屋上防水工事",
+    area: "兵庫県西宮市",
+    buildingType: "屋上",
+    workType: "ウレタン塗膜防水（通気緩衝工法）",
+    scale: "非公開",
+    period: "非公開",
+    budget: "非公開",
+    metaDescription:
+      "西宮市の屋上防水工事。既存防水層の劣化、クラック、黒ずみ、湿気跡を確認し、通気緩衝工法で雨漏りリスクを抑えました。火災保険の相談にも対応しています。",
+    beforeImage: "/images/works-nishinomiya-rooftop-before-1.jpg",
+    afterImage: "/images/works-nishinomiya-rooftop-complete.jpg",
+    beforeCaption: "既存防水層の劣化が進み、クラックや黒ずみ、湿気跡が見られる状態",
+    afterCaption: "通気緩衝工法で下地から整え、雨漏りリスクを抑えた仕上がり",
+    heroDescription: "老朽化した屋上の防水工事を実施し、雨漏りの発生箇所を調査したうえでウレタン塗膜防水で改修しました。火災保険が使えるケースについてもご案内しています。",
+    issue:
+      "屋上の既存防水層が劣化し、クラックや黒ずみ、湿気跡が目立っていました。雨水が建物内部へ侵入するリスクが高く、早急な対応が必要な状態でした。",
+    summary:
+      "高圧洗浄と下地処理ののち、プライマー塗布と通気緩衝シートの敷設を行い、ウレタン防水材を2層で施工。最後にトップコートで保護して、防水性能と耐久性を確保しました。",
+    points: [
+      "高圧洗浄で既存防水層を丁寧に整え、下地を安定化",
+      "通気緩衝シートで下地の湿気を逃がし、防水層の膨れを抑制",
+      "ウレタン樹脂を2層に分けて塗布し、厚みを均一化",
+      "トップコートで紫外線や摩耗から防水層を保護",
+    ],
+    diagnosis: "既存防水層の劣化に加え、クラック、黒ずみ、湿気跡を確認しました。",
+    method: "プライマー塗布後に通気緩衝シートを敷設し、ウレタン塗膜防水とトップコートで仕上げる工法を採用しました。",
+    comment: "雨漏り修理では、被害状況の写真や見積もりを整えることで火災保険の申請につながる場合があります。",
+    warranty: "施工後のご相談や、火災保険の申請に関するご相談にも対応します。",
+    insuranceNote:
+      "今回のような経年劣化と自然災害が重なった雨漏りは、条件を満たせば火災保険が適用される場合があります。被災からの申請期限や写真・見積もりの準備が重要です。",
+    photoStory: [
+      {
+        title: "施工前の状況",
+        description: "現地調査では、既存防水層の劣化と雨水侵入リスクが確認できました。",
+        columns: 2,
+        images: [
+          { src: "/images/works-nishinomiya-rooftop-before-1.jpg", alt: "施工前の屋上防水の劣化状況1" },
+          { src: "/images/works-nishinomiya-rooftop-before-2.jpg", alt: "施工前の屋上防水の劣化状況2" },
+        ],
+      },
+      {
+        title: "① 高圧洗浄・下地処理",
+        description: "経年劣化した防水層を洗浄し、次工程に向けて下地を整えます。",
+        columns: 1,
+        images: [
+          { src: "/images/works-nishinomiya-rooftop-step-1.jpg", alt: "高圧洗浄と下地処理の様子" },
+        ],
+      },
+      {
+        title: "② プライマー塗布＋通気緩衝シート貼り",
+        description: "下地との密着性を高め、湿気を逃がして膨れを防止します。",
+        columns: 1,
+        images: [
+          { src: "/images/works-nishinomiya-rooftop-step-2.jpg", alt: "プライマー塗布と通気緩衝シート貼りの様子" },
+        ],
+      },
+      {
+        title: "③ ウレタン中塗り（1層目・2層目）",
+        description: "ウレタン樹脂を複数回に分けて塗布し、厚みを均一に確保します。",
+        columns: 3,
+        images: [
+          { src: "/images/works-nishinomiya-rooftop-step-3a.jpg", alt: "ウレタン中塗り1層目の様子" },
+          { src: "/images/works-nishinomiya-rooftop-step-3b.jpg", alt: "ウレタン中塗り2層目の様子" },
+          { src: "/images/works-nishinomiya-rooftop-step-3c.jpg", alt: "ウレタン中塗りの仕上がり" },
+        ],
+      },
+      {
+        title: "④ トップコート塗布",
+        description: "紫外線や摩耗から防水層を守るため、仕上げのトップコートを施工します。",
+        columns: 3,
+        images: [
+          { src: "/images/works-nishinomiya-rooftop-step-4a.jpg", alt: "トップコート塗布の様子1" },
+          { src: "/images/works-nishinomiya-rooftop-step-4b.jpg", alt: "トップコート塗布の様子2" },
+          { src: "/images/works-nishinomiya-rooftop-step-4c.jpg", alt: "トップコート塗布の様子3" },
+        ],
+      },
+      {
+        title: "施工完了",
+        description: "防水性能を回復し、屋上全体をきれいに仕上げました。",
+        columns: 1,
+        images: [
+          { src: "/images/works-nishinomiya-rooftop-complete.jpg", alt: "施工完了後の屋上防水" },
+        ],
+      },
+    ],
+  },
   "nishinomiya-veranda-waterproofing-01": {
     title: "西宮市 戸建て ベランダ防水工事",
     area: "兵庫県西宮市",
@@ -228,6 +315,152 @@ const works = {
     comment: "工場稼働を止めない工程を組み、区画ごとの品質検査で施工精度を管理しました。",
     warranty: "防水仕様に応じた保証と、排水部を含む定期確認のご案内に対応します。",
   },
+  "osaka-rental-mansion-repair-01": {
+    title: "大阪市内 賃貸マンション｜防水工事を含む大規模修繕工事",
+    area: "大阪府大阪市",
+    buildingType: "賃貸マンション",
+    workType: "大規模修繕工事（防水工事含む）",
+    scale: "非公開",
+    period: "非公開",
+    budget: "非公開",
+    metaDescription:
+      "大阪市内の賃貸マンションにおける防水工事を含む大規模修繕工事。経年劣化による外観の傷みと、屋上・バルコニーからの雨水侵入リスクを改善し、資産価値を維持します。",
+    heroDescription: "管理会社様からのご依頼で、経年劣化による外観の傷みと雨漏りリスクを改善するため、防水工事を含む大規模修繕工事を実施しました。",
+    issue:
+      "経年劣化によって外観の傷みが進行し、屋上やバルコニーからの雨水侵入（雨漏り）リスクが高まっていました。賃貸マンションにおいては、雨漏りが生じると入居者トラブルや修繕コスト増大に直結するため、早期の包括的な改修が求められていました。",
+    summary:
+      "屋上およびバルコニーの防水層を全面的に点検し、劣化箇所を部分補修ではなく耐久性を重視した防水工法で施工。さらに、外壁や共用部の劣化箇所の補修を行い、建物全体の印象が良くなるように美観にも配慮して仕上げました。",
+    points: [
+      "屋上・バルコニーの防水層を徹底点検し、耐久性を重視した防水工法を採用",
+      "外壁や共用部の劣化箇所を丁寧に補修し、雨漏りリスクを根本から解消",
+      "入居者満足度と資産価値の向上を意識し、建物全体の美観にも配慮した仕上がり",
+      "現地調査から施工管理まで、管理会社様の負担を軽減する一貫対応",
+    ],
+    diagnosis: "経年劣化による外観の傷み、屋上・バルコニーの防水層劣化、および雨漏りリスクを確認しました。",
+    method: "耐久性を最優先した防水層の全面改修、および外壁・共用部の劣化部補修と美観回復仕上げを採用しました。",
+    comment: "賃貸マンションの寿命や入居者満足度に直結する防水対策を徹底しました。まとめてお任せいただけたことで、効率的かつ高品質な修繕が実現できました。",
+    warranty: "施工部位に応じた防水保証書を発行し、施工後の定期点検サービスをご案内いたします。",
+  },
+  "osaka-rental-mansion-repair-02": {
+    title: "【大規模修繕工事】賃貸マンション｜防水工事を含む大規模修繕工事",
+    area: "大阪府大阪市",
+    buildingType: "賃貸マンション",
+    workType: "大規模修繕工事（防水工事含む）",
+    scale: "非公開",
+    period: "非公開",
+    budget: "非公開",
+    metaDescription:
+      "大阪市内の賃貸マンションにおける防水工事を含む大規模修繕工事（第2弾）。建物全体の経年劣化と防水性能の低下を改善し、雨漏りリスクの軽減と清潔感のある外観へ仕上げました。",
+    heroDescription: "管理会社様からのご依頼で、経年劣化と防水性能低下を改善するため、建物調査のもと防水工事を含む大規模修繕工事を実施しました。",
+    issue:
+      "建物全体の経年劣化の進行、および防水性能の低下が見受けられていました。賃貸マンションでは雨漏りが入居者様からのクレーム、資産価値低下、修繕コストの増大に直結するため、計画的な大規模修繕工事が求められていました。",
+    summary:
+      "事前に建物の状態を詳しく調査した上で、屋上・バルコニーを中心に防水層の点検を行い、劣化箇所には適切な下地処理を施して防水工事を施工。外壁や共用部の劣化箇所の補修も行い、耐久性と美観の向上を図りました。",
+    points: [
+      "屋上・バルコニーの防水層を点検し、劣化箇所には適切な下地処理と防水施工を実施",
+      "外壁や共用部の劣化箇所を丁寧に補修し、雨漏りリスクを軽減",
+      "入居者様や来訪者様へ配慮し、建物全体の印象が明るく清潔感のある外観になるよう美観にも配慮",
+      "問題が起きてからではなく「起きる前」に対応することで将来的なコストを削減",
+    ],
+    diagnosis: "建物全体の経年劣化、および屋上・バルコニーの防水性能低下を確認しました。",
+    method: "事前建物調査に基づく劣化部の部分補修、および耐久性・メンテナンス性を考慮した防水層の再構築と美観回復仕上げを採用しました。",
+    comment: "大規模修繕工事は、見た目の改善だけでなく、建物を長く安全に使い続けるための重要な工事です。特に防水工事は事前対応が結果的にコスト削減につながります。",
+    warranty: "施工部位に応じた防水保証書を発行し、施工後の定期点検サービスをご案内いたします。",
+    photoStory: [
+      {
+        title: "施工後の様子",
+        description: "建物全体の印象が明るくなり、清潔感のある美しい外観と共用部へ生まれ変わりました。防水性能も大幅に回復しています。",
+        columns: 3,
+        images: [
+          { src: "/images/works-osaka-rental-mansion-02-1.jpg", alt: "施工後の様子1" },
+          { src: "/images/works-osaka-rental-mansion-02-2.jpg", alt: "施工後の様子2" },
+          { src: "/images/works-osaka-rental-mansion-02-3.jpg", alt: "施工後の様子3" },
+          { src: "/images/works-osaka-rental-mansion-02-4.jpg", alt: "施工後の様子4" },
+          { src: "/images/works-osaka-rental-mansion-02-5.jpg", alt: "施工後の様子5" },
+          { src: "/images/works-osaka-rental-mansion-02-6.jpg", alt: "施工後の様子6" },
+        ],
+      },
+    ],
+  },
+  "hyogo-rental-mansion-repair-01": {
+    title: "【大規模修繕工事】兵庫| 賃貸マンション|個人オーナー様ご依頼",
+    area: "兵庫県",
+    buildingType: "賃貸マンション",
+    workType: "大規模修繕工事",
+    scale: "非公開",
+    period: "非公開",
+    budget: "非公開",
+    metaDescription:
+      "兵庫県の賃貸マンションにおける大規模修繕工事。築年数の経過による外観の劣化を改善し、資産価値の維持・向上に貢献。居住中の入居者様へも配慮した安心の施工です。",
+    heroDescription: "個人オーナー様からのご依頼で、経年劣化の改善と将来的なトラブル防止のため、計画的に大規模修繕工事を実施しました。",
+    issue:
+      "築年数の経過により外観の劣化が目立ってきていました。賃貸マンションでは外観の第一印象が入居率に影響し、劣化の放置は将来的な修繕費の増加につながるため、適切なタイミングでの修繕が求められていました。",
+    summary:
+      "事前の現地調査を行い、建物の状態に合わせた修繕計画を立案。外壁や共用部を中心に劣化箇所の補修と仕上げのやり直しを行い、建物全体のバランスを考慮した仕上がりを実現しました。",
+    points: [
+      "現地調査に基づき、外壁・共用部を中心に建物の状態に合わせた修繕計画を立案",
+      "劣化箇所の丁寧な補修と仕上げのやり直しにより、建物全体の印象が明るく清潔に",
+      "居住中の入居者様の生活と安全に配慮しながら、円滑に工事を進行",
+      "工事内容を分かりやすくご説明し、個人オーナー様が安心できるサポートを実施",
+    ],
+    diagnosis: "経年劣化による外観および共用部の塗装・下地劣化を確認しました。",
+    method: "外壁および共用部の劣化補修、および建物全体の意匠バランスを考慮した仕上げ塗膜の再構築を採用しました。",
+    comment: "個人オーナー様にとって大規模修繕は不安の多いものですが、現地調査から工事内容の説明まで、安心してお任せいただける丁寧な対応を心がけました。",
+    warranty: "施工内容に応じた保証書を発行し、施工後の定期点検サービスをご案内いたします。",
+  },
+  "rooftop-waterproofing-education-01": {
+    title: "屋上防水工事（ウレタン防水）で雨漏り対策を実施",
+    area: "兵庫県西宮市",
+    buildingType: "教育施設",
+    workType: "屋上防水工事（ウレタン防水）",
+    scale: "非公開",
+    period: "非公開",
+    budget: "非公開",
+    metaDescription:
+      "教育施設における屋上防水工事（ウレタン防水）の施工事例。経年劣化した防水層やドレン周りを補修し、雨漏りリスクを未然に防ぎました。複雑な形状にも対応するウレタン防水工法です。",
+    beforeImage: "/images/works-rooftop-waterproofing-education-before.jpg",
+    afterImage: "/images/works-rooftop-waterproofing-education-after.jpg",
+    beforeCaption: "経年劣化により防水層の浮き・膨れ、細かいひび割れが見られる施工前の状態",
+    afterCaption: "ウレタン防水を複数層にわたり均一な厚みで塗布し、トップコートで仕上げた施工後",
+    heroDescription: "教育施設の屋上防水の劣化による雨漏りリスクを改善するため、耐久性の高いウレタン防水工事を実施しました。",
+    issue:
+      "屋上全体の防水層に劣化や細かいクラック（ひび割れ）、および防水の浮きや膨れが発生していました。また、雨漏りの原因になりやすいドレン（排水口）周りも劣化が進行しており、このまま放置すると雨漏りが発生する可能性が非常に高い危険な状態でした。",
+    summary:
+      "高圧洗浄にて汚れや旧塗膜を確実に除去後、ひび割れ補修や不陸調整を行う丁寧な下地処理を実施。その後プライマーを塗布して密着性を高め、ウレタン防水材を規定の厚みを確保しながら複数層にわたり塗布し、最後に紫外線保護用のトップコートで仕上げました。",
+    points: [
+      "汚れや旧塗膜を高圧洗浄でしっかり除去し、防水層の密着性を最大化",
+      "仕上がりと耐久性を左右するひび割れ補修や不陸調整などの下地処理を徹底",
+      "雨漏り原因になりやすいドレン（排水口）周りなど複雑な形状にもシームレスに対応できるウレタン防水を採用",
+      "ウレタン防水材を複数層塗布し、雨漏りを防ぐのに十分な規定厚をしっかりと確保",
+    ],
+    diagnosis: "既存防水層の浮き・膨れ、ドレン周りの劣化、および細かいひび割れを確認しました。",
+    method: "下地との密着性を高める下地処理後、複雑な形状や改修に適したウレタン防水工法を採用しました。",
+    comment: "屋上防水は雨漏りが発生する前に対策を行うことで、建物寿命を延ばし、将来的な修繕コストを大幅に削減できます。丁寧な下塗り・中塗りで十分な厚みを確保しました。",
+    warranty: "施工部位に応じた防水保証書を発行し、施工後の定期点検サービスをご案内いたします。",
+    photoStory: [
+      {
+        title: "施工前の劣化状況（現地調査）",
+        description: "ドレン（排水口）周りや、防水層の表面の劣化・ひび割れ、浮きなどが各所に確認されました。",
+        columns: 3,
+        images: [
+          { src: "/images/works-rooftop-waterproofing-education-before-detail1.jpg", alt: "施工前の劣化状況1" },
+          { src: "/images/works-rooftop-waterproofing-education-before-detail2.jpg", alt: "施工前の劣化状況2" },
+          { src: "/images/works-rooftop-waterproofing-education-before-detail3.jpg", alt: "施工前の劣化状況3" },
+          { src: "/images/works-rooftop-waterproofing-education-before-detail4.jpg", alt: "施工前の劣化状況4" },
+          { src: "/images/works-rooftop-waterproofing-education-before-detail5.jpg", alt: "施工前の劣化状況5" },
+        ],
+      },
+      {
+        title: "施工後の様子",
+        description: "均一で美しい防水層が完成し、トップコート仕上げによって紫外線保護性能も確保しました。雨漏りリスクは完全に解消されています。",
+        columns: 2,
+        images: [
+          { src: "/images/works-rooftop-waterproofing-education-after.jpg", alt: "施工後の様子1" },
+          { src: "/images/works-rooftop-waterproofing-education-after-detail1.jpg", alt: "施工後の様子2" },
+        ],
+      },
+    ],
+  },
 };
 
 const WORK_REGION_BY_SLUG = Object.fromEntries(
@@ -248,9 +481,11 @@ export async function generateMetadata({ params }) {
 
   return buildMetadata({
     title: `施工事例｜${work.title}`,
-    description: `${work.area}の${work.workType}事例。${work.buildingType}の施工で、工期${work.period}・費用目安${work.budget}。施工前後の比較と施工ポイントを掲載。`,
+    description:
+      work.metaDescription ||
+      `${work.area}の${work.workType}事例。${work.buildingType}の施工で、工期${work.period}・費用目安${work.budget}。施工前後の比較と施工ポイントを掲載。`,
     path: `/works/${slug}`,
-    image: work.afterImage,
+    image: work.afterImage || "/images/building-completed.jpg",
   });
 }
 
@@ -285,7 +520,11 @@ export default async function Page({ params }) {
       name: "株式会社久米技建",
       url: SITE_URL,
     },
-    image: [toAbsoluteUrl(work.afterImage, { addTrailingSlash: false })],
+    image: [
+      work.beforeImage,
+      work.afterImage,
+      ...(work.photoStory ?? []).flatMap((section) => section.images.map((image) => image.src)),
+    ].filter(Boolean).map((image) => toAbsoluteUrl(image, { addTrailingSlash: false })),
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": workUrl,
@@ -318,6 +557,7 @@ export default async function Page({ params }) {
       <section className="page-hero">
         <span className="page-hero__label">Works</span>
         <h1 className="page-hero__title">{work.title}</h1>
+        {work.heroDescription ? <p className="page-hero__description">{work.heroDescription}</p> : null}
       </section>
       
       <section className="content-section">
@@ -333,41 +573,43 @@ export default async function Page({ params }) {
             </tbody>
           </table>
 
-          <div
-            style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px", marginBottom: "40px" }}
-            className="reveal"
-          >
-            <div>
-              <img
-                src={assetPath(work.beforeImage)}
-                alt={`${work.title} 施工前`}
-                loading="lazy"
-                decoding="async"
-                style={{ aspectRatio: "4/3", width: "100%", objectFit: "cover", borderRadius: "8px" }}
-              />
-              <p style={{ textAlign: "center", fontWeight: "600", marginTop: "8px", color: "var(--color-text-light)" }}>
-                施工前
-              </p>
-              <p style={{ textAlign: "center", fontSize: "13px", color: "var(--color-text-muted)", marginTop: "8px" }}>
-                {work.beforeCaption}
-              </p>
+          {work.beforeImage && work.afterImage ? (
+            <div
+              style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px", marginBottom: "40px" }}
+              className="reveal"
+            >
+              <div>
+                <img
+                  src={assetPath(work.beforeImage)}
+                  alt={`${work.title} 施工前`}
+                  loading="lazy"
+                  decoding="async"
+                  style={{ aspectRatio: "4/3", width: "100%", objectFit: "cover", borderRadius: "8px" }}
+                />
+                <p style={{ textAlign: "center", fontWeight: "600", marginTop: "8px", color: "var(--color-text-light)" }}>
+                  施工前
+                </p>
+                <p style={{ textAlign: "center", fontSize: "13px", color: "var(--color-text-muted)", marginTop: "8px" }}>
+                  {work.beforeCaption}
+                </p>
+              </div>
+              <div>
+                <img
+                  src={assetPath(work.afterImage)}
+                  alt={`${work.title} 施工後`}
+                  loading="lazy"
+                  decoding="async"
+                  style={{ aspectRatio: "4/3", width: "100%", objectFit: "cover", borderRadius: "8px" }}
+                />
+                <p style={{ textAlign: "center", fontWeight: "600", marginTop: "8px", color: "var(--color-text-light)" }}>
+                  施工後
+                </p>
+                <p style={{ textAlign: "center", fontSize: "13px", color: "var(--color-text-muted)", marginTop: "8px" }}>
+                  {work.afterCaption}
+                </p>
+              </div>
             </div>
-            <div>
-              <img
-                src={assetPath(work.afterImage)}
-                alt={`${work.title} 施工後`}
-                loading="lazy"
-                decoding="async"
-                style={{ aspectRatio: "4/3", width: "100%", objectFit: "cover", borderRadius: "8px" }}
-              />
-              <p style={{ textAlign: "center", fontWeight: "600", marginTop: "8px", color: "var(--color-text-light)" }}>
-                施工後
-              </p>
-              <p style={{ textAlign: "center", fontSize: "13px", color: "var(--color-text-muted)", marginTop: "8px" }}>
-                {work.afterCaption}
-              </p>
-            </div>
-          </div>
+          ) : null}
 
           <article className="article-content reveal">
             <h2>施工前の課題</h2>
@@ -394,7 +636,67 @@ export default async function Page({ params }) {
 
             <h2>保証内容</h2>
             <p>{work.warranty}</p>
+
+            {work.insuranceNote ? (
+              <>
+                <h2>火災保険について</h2>
+                <p>{work.insuranceNote}</p>
+              </>
+            ) : null}
           </article>
+
+          {work.photoStory ? (
+            <section className="reveal" style={{ marginTop: "56px" }}>
+              <div className="section-heading" style={{ marginBottom: "24px" }}>
+                <span className="section-heading__en">Photo Story</span>
+                <h2 className="section-heading__ja">施工写真</h2>
+                <span className="section-heading__line"></span>
+              </div>
+
+              <div style={{ display: "grid", gap: "24px" }}>
+                {work.photoStory.map((section) => (
+                  <section
+                    key={section.title}
+                    style={{
+                      background: "var(--color-bg-light)",
+                      border: "1px solid var(--color-border)",
+                      borderRadius: "16px",
+                      padding: "24px",
+                    }}
+                  >
+                    <h3 style={{ marginBottom: "12px", fontSize: "20px", color: "var(--color-primary)" }}>{section.title}</h3>
+                    <p style={{ marginBottom: "18px", color: "var(--color-text-light)" }}>{section.description}</p>
+                    <div
+                      style={{
+                        display: "grid",
+                        gap: "12px",
+                        gridTemplateColumns:
+                          section.images.length === 1 ? "1fr" : "repeat(auto-fit, minmax(220px, 1fr))",
+                      }}
+                    >
+                      {section.images.map((image) => (
+                        <figure key={image.src}>
+                          <img
+                            src={assetPath(image.src)}
+                            alt={image.alt}
+                            loading="lazy"
+                            decoding="async"
+                            style={{
+                              aspectRatio: "4 / 3",
+                              width: "100%",
+                              objectFit: "cover",
+                              borderRadius: "12px",
+                            }}
+                          />
+                        </figure>
+                      ))}
+                    </div>
+                  </section>
+                ))}
+              </div>
+            </section>
+          ) : null}
+
           <div style={{ textAlign: "center", marginTop: "48px" }}>
             <a href={routePath("/works")} className="btn btn--outline-dark">← 施工事例一覧に戻る</a>
           </div>

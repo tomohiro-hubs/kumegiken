@@ -19,6 +19,7 @@ const STATIC_ROUTES = [
   "/works",
   "/works/kansai",
   "/works/kanto",
+  "/works/nishinomiya-rooftop-waterproofing-fire-insurance-01",
   "/works/nishinomiya-mansion-waterproofing-01",
   "/works/osaka-building-large-scale-repair-01",
   "/works/kobe-mansion-painting-01",

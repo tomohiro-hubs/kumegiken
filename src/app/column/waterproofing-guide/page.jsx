@@ -60,12 +60,7 @@ export default function Page() {
 
 <section className="content-section"><div className="container container--narrow"><div className="article-content">
   <p style={{ fontSize: '13px', color: 'var(--color-text-muted)', marginBottom: '24px' }}>最終更新日：2026年3月15日 / カテゴリ：防水工事</p>
-  <div style={{ background: 'var(--color-bg-light)', borderRadius: '12px', padding: '18px 20px', marginBottom: '24px' }}>
-    <p style={{ margin: 0, fontSize: '14px', lineHeight: '1.8' }}>
-      <strong>監修者：</strong>久米技建 技術監修チーム<br />
-      <strong>専門領域：</strong>防水工事・建物診断・雨漏り補修
-    </p>
-  </div>
+
 
   <p>建物の屋上やバルコニー、外壁などから雨水が侵入するのを防ぐ「防水工事」。建物の寿命を左右する重要な工事であるにもかかわらず、工法の違いや費用の目安がわかりにくいと感じている方も多いのではないでしょうか。</p>
   <p>この記事では、防水工事の基礎知識から、主な工法の種類、費用相場、選び方のポイントまでを徹底的に解説します。</p>
@@ -119,11 +114,7 @@ export default function Page() {
   <h2>まとめ</h2>
   <p>防水工事は建物の寿命を守る重要な工事です。工法の選定は建物の用途、構造、立地条件によって異なりますので、専門家による診断をお勧めします。久米技建では無料の建物診断を実施していますので、お気軽にご相談ください。</p>
 
-  <div style={{ background: 'var(--color-bg-light)', borderRadius: '12px', padding: '20px', marginTop: '36px' }}>
-    <h2 style={{ marginTop: 0 }}>監修者情報</h2>
-    <p style={{ marginBottom: '8px' }}><strong>{ARTICLE_AUTHOR}</strong></p>
-    <p style={{ margin: 0 }}>防水工事・建物診断・雨漏り補修の現場知見をもとに、費用目安と工法選定の妥当性を確認しています。</p>
-  </div>
+
 
   <h2>関連サービス</h2>
   <ul>

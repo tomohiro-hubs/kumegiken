@@ -18,7 +18,7 @@ export const metadata = {
     title: ARTICLE_TITLE,
     description: ARTICLE_DESCRIPTION,
     path: ARTICLE_PATH,
-    image: "/images/sealing-work.jpg",
+    image: "/images/kumegiken-29（中）.jpeg",
   }),
 };
 
@@ -87,12 +87,21 @@ export default function Page() {
               この記事では、シール工事の役割と必要性、施工の流れ、そして適切な施工タイミングについて詳しく解説します。
             </p>
 
-            <div style={{ margin: '30px 0' }}>
-              <img
-                src={assetPath("/images/sealing-work.jpg")}
-                alt="シール工事（コーキング）の施工風景"
-                style={{ width: '100%', borderRadius: '12px', aspectRatio: '16/9', objectFit: 'cover' }}
-              />
+            <div style={{ display: 'flex', gap: '16px', margin: '30px 0', flexWrap: 'wrap' }}>
+              <div style={{ flex: '1 1 300px' }}>
+                <img
+                  src={assetPath("/images/kumegiken-29（中）.jpeg")}
+                  alt="シール工事（コーキング）の施工風景 1"
+                  style={{ width: '100%', borderRadius: '12px', aspectRatio: '16/9', objectFit: 'cover' }}
+                />
+              </div>
+              <div style={{ flex: '1 1 300px' }}>
+                <img
+                  src={assetPath("/images/kumegiken-30（中）.jpeg")}
+                  alt="シール工事（コーキング）の施工風景 2"
+                  style={{ width: '100%', borderRadius: '12px', aspectRatio: '16/9', objectFit: 'cover' }}
+                />
+              </div>
             </div>
 
             <h2>シール工事（シーリング工事）とは？</h2>

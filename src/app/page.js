@@ -163,22 +163,22 @@ const columnItems = [
       "防水工事の種類や工法の違い、費用の目安を解説します。ウレタン防水、シート防水、FRP防水それぞれのメリット・デメリットとは。",
   },
   {
-    href: "/column/large-scale-repair-guide",
-    image: "/images/large-scale-aerial.jpg",
-    alt: "大規模修繕ガイド",
-    date: "2026.03.01",
-    title: "大規模修繕の進め方と費用の目安",
+    href: "/column/nishinomiya-waterproofing-optimal-selection",
+    image: "/images/waterproofing-hands.jpg",
+    alt: "西宮の防水工法選定ガイド",
+    date: "2026.03.31",
+    title: "西宮の防水工事｜雨漏りを防ぐ「最適な工法選び」と長持ちさせるポイント",
     excerpt:
-      "マンション・ビルの大規模修繕工事の進め方、一般的な費用感、成功のポイントを専門家が解説します。",
+      "西宮エリアで防水工事を検討中の方へ、雨漏りを防ぐための最適な工法選びの基準や、耐用年数を長持ちさせるための施工のポイントを解説します。",
   },
   {
-    href: "/column/leak-cause-and-fix",
+    href: "/column/nishinomiya-leak-speed",
     image: "/images/leak-repair.jpg",
-    alt: "雨漏り対処法",
-    date: "2026.02.20",
-    title: "雨漏りの原因と応急処置｜プロが教える対処法",
+    alt: "雨漏り修理のスピード対応",
+    date: "2026.03.31",
+    title: "西宮の雨漏り対応はスピードが命｜最短対応で被害を最小限にする方法",
     excerpt:
-      "突然の雨漏りに困ったら。雨漏りの主な原因と、すぐにできる応急処置、そしてプロに依頼すべきタイミングをお教えします。",
+      "西宮で雨漏りが発生した際になぜスピード対応が必要なのか、放置するリスク、迅速に対応できる業者の選び方を解説します。",
   },
 ];
 

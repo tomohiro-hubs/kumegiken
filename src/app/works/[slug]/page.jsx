@@ -11,6 +11,33 @@ const SITE_URL = "https://kumegiken.co.jp";
 const DEFAULT_PUBLISHED_DATE = "2026-05-10";
 
 const works = {
+  "nishinomiya-veranda-waterproofing-01": {
+    title: "西宮市 戸建て ベランダ防水工事",
+    area: "兵庫県西宮市",
+    buildingType: "戸建て住宅（ベランダ）",
+    workType: "ベランダ防水工事・下地補修（ウレタン塗膜防水）",
+    scale: "ベランダ防水 約15㎡",
+    period: "約3日間",
+    budget: "非公開",
+    beforeImage: "/images/works-nishinomiya-veranda-waterproofing-before.jpg",
+    afterImage: "/images/works-nishinomiya-veranda-waterproofing-after.jpg",
+    beforeCaption: "下地に複数のひび割れ（クラック）が発生し、雨水侵入のリスクが高い状態",
+    afterCaption: "下地補修後にウレタン塗膜防水を施工し、継ぎ目のない美しい防水層を形成",
+    issue:
+      "ベランダ床面の下地に複数のクラック（ひび割れ）が発生しており、経年劣化による雨水侵入や建物内部の木構造部分の腐食・雨漏りリスクが高まっている状態でした。",
+    summary:
+      "既存防水層のケレン・清掃後、ひび割れ箇所に補修材を充填して下地を平滑に調整。その後プライマーを塗布し、ウレタン塗膜防水材を多層塗布してトップコートで保護仕上げを行いました。",
+    points: [
+      "微細なひび割れ（クラック）も見逃さない丁寧な下地補修",
+      "水はけを考慮した立ち上がり部分・排水口まわりの確実な防水処理",
+      "継ぎ目のないウレタン塗膜防水による完全な止水性確保",
+      "耐候性に優れたトップコート仕上げによる長期美観維持",
+    ],
+    diagnosis: "経年劣化によるベランダ床面クラック、および防水層の摩耗・劣化を確認しました。",
+    method: "下地補修ののち、狭小部や立ち上がりの多いベランダに適したウレタン塗膜防水密着工法を採用しました。",
+    comment: "西宮市の戸建て住宅でのベランダ防水改修でした。下地のひび割れを念入りに補修したうえでウレタン防水を施し、雨漏りの心配のない美しいベランダへ仕上げました。",
+    warranty: "施工部位に応じた防水保証書を発行し、施工後の定期点検についてご案内いたします。",
+  },
   "nishinomiya-commercial-waterproofing-01": {
     title: "西宮市 商業施設 屋上防水工事",
     area: "兵庫県西宮市",

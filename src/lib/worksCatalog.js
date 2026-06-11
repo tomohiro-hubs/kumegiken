@@ -13,6 +13,16 @@ export const WORK_CATEGORIES = {
 
 export const WORKS_CATALOG = [
   {
+    slug: 'nishinomiya-commercial-waterproofing-01',
+    title: '商業施設屋上ウレタン防水工事',
+    fullTitle: '西宮市 商業施設 屋上防水工事',
+    location: '西宮市',
+    region: 'kansai',
+    buildingType: '商業施設',
+    category: 'waterproofing',
+    image: '/images/works-nishinomiya-commercial-waterproofing-fv.jpg',
+  },
+  {
     slug: 'nishinomiya-mansion-waterproofing-01',
     title: '屋上ウレタン防水改修工事',
     fullTitle: '西宮市 マンション 屋上防水工事',

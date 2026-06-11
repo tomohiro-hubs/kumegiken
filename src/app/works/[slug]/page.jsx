@@ -11,6 +11,33 @@ const SITE_URL = "https://kumegiken.co.jp";
 const DEFAULT_PUBLISHED_DATE = "2026-05-10";
 
 const works = {
+  "nishinomiya-commercial-waterproofing-01": {
+    title: "西宮市 商業施設 屋上防水工事",
+    area: "兵庫県西宮市",
+    buildingType: "商業施設（屋上）",
+    workType: "ウレタン塗膜防水工事（通気緩衝工法）",
+    scale: "屋上防水改修",
+    period: "約7日間",
+    budget: "150〜250万円",
+    beforeImage: "/images/works-nishinomiya-commercial-waterproofing-before.jpg",
+    afterImage: "/images/works-nishinomiya-commercial-waterproofing-after.jpg",
+    beforeCaption: "経年劣化でシートの浮きやシワが目立ち、空調架台まわりから雨漏りが発生",
+    afterCaption: "全面ウレタン塗膜防水を施工し、雨水の侵入経路を完全に遮断",
+    issue:
+      "老朽化による防水シートの劣化と、空調設備周辺からの雨漏りが確認されたため、建物内部への浸水を防ぐ緊急の改修が必要でした。",
+    summary:
+      "既存の劣化した防水層の浮き部分を処理し、下地処理後に通気緩衝シートを敷設。ウレタン防水材を多層塗布し、架台や排水ドレン周りも重点的に補強して雨漏りを完全に解決しました。",
+    points: [
+      "空調設備の架台まわりの立ち上がり部・排水周りの重点補強",
+      "通気緩衝工法の採用による下地の水分同伴膨れの防止",
+      "丁寧な下地改修による防水シートの浮き・シワの根本解消",
+      "短工期（7日間）での施工で施設の運営への影響を最小化",
+    ],
+    diagnosis: "経年劣化による既存防水シートの浮き・シワ、および空調機架台周辺の隙間からの雨漏りを確認しました。",
+    method: "下地の水分による膨れを防ぐため、通気緩衝シートを用いたウレタン塗膜防水工法を採用しました。",
+    comment: "西宮市内の大型商業施設における屋上防水改修でした。雨漏りが多発していた空調機まわりを重点的に補修し、施主様にも大変喜んでいただけました。",
+    warranty: "施工部位に応じた防水保証書を発行し、施工後の定期点検サービスをご案内いたします。",
+  },
   "nishinomiya-building-sealing-01": {
     title: "西宮市 ビル 外壁シーリング打替え工事",
     area: "兵庫県西宮市",

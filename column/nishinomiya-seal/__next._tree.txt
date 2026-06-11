@@ -6,4 +6,4 @@
 :HL["https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css","style"]
 :HL["/images/kumegiken-29（中）.jpeg","image"]
 :HL["/images/kumegiken-30（中）.jpeg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"column","param":null,"prefetchHints":0,"slots":{"children":{"name":"nishinomiya-seal","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"oj0jM96BuGeUU1XUKsIYM"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"column","param":null,"prefetchHints":0,"slots":{"children":{"name":"nishinomiya-seal","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"D69UCgAEEQ_gima51VkEU"}

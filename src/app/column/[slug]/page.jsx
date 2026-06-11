@@ -9,30 +9,6 @@ const SITE_URL = "https://kumegiken.co.jp";
 const ARTICLE_AUTHOR = "久米技建 技術監修チーム";
 
 const articles = {
-  "nishinomiya-waterproofing-optimal-selection": {
-    date: "2026.03.31",
-    title: "西宮の防水工事｜雨漏りを防ぐ“最適な工法選び”と長持ちさせるポイント",
-    category: "防水",
-    description:
-      "西宮エリアで防水工事を検討中の方へ、雨漏りを防ぐための最適な工法選びの基準や、耐用年数を長持ちさせるための施工のポイントを解説します。",
-    relatedServices: [
-      { label: "防水工事", href: "/service/waterproofing" },
-      { label: "建物診断", href: "/service/building-inspection" },
-      { label: "雨漏り調査・補修", href: "/service/leak-repair" },
-    ],
-  },
-  "nishinomiya-leak-speed": {
-    date: "2026.03.31",
-    title: "西宮の雨漏り対応はスピードが命｜最短対応で被害を最小限にする方法",
-    category: "雨漏り補修",
-    description:
-      "西宮で雨漏りが発生した際になぜスピード対応が必要なのか、放置するリスク、迅速に対応できる業者の選び方を解説します。",
-    relatedServices: [
-      { label: "雨漏り調査・補修", href: "/service/leak-repair" },
-      { label: "防水工事", href: "/service/waterproofing" },
-      { label: "建物診断", href: "/service/building-inspection" },
-    ],
-  },
   "large-scale-repair-guide": {
     date: "2026.03.01",
     title: "大阪・兵庫のマンション大規模修繕｜進め方と費用目安",
@@ -85,18 +61,6 @@ const articles = {
       "火災保険が適用される雨漏り修理の条件、申請時の注意点、調査から補修までの流れを解説します。",
     relatedServices: [
       { label: "雨漏り調査・補修", href: "/service/leak-repair" },
-      { label: "建物診断", href: "/service/building-inspection" },
-    ],
-  },
-  "nishinomiya-fire-insurance-leak-repair": {
-    date: "2025.08.13",
-    title: "西宮での雨漏り修理に火災保険は使える？適用条件と申請の流れ",
-    category: "雨漏り補修",
-    description:
-      "西宮で雨漏りや防水補修が必要になった際、火災保険を適用して修理費用を抑えられる条件や、具体的な申請手順についてわかりやすく解説します。",
-    relatedServices: [
-      { label: "雨漏り調査・補修", href: "/service/leak-repair" },
-      { label: "防水工事", href: "/service/waterproofing" },
       { label: "建物診断", href: "/service/building-inspection" },
     ],
   },

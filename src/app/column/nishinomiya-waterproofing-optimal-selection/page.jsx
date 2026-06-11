@@ -18,7 +18,7 @@ export const metadata = {
     title: ARTICLE_TITLE,
     description: ARTICLE_DESCRIPTION,
     path: ARTICLE_PATH,
-    image: "/images/waterproofing-hands.jpg",
+    image: "/images/optimal-selection-1.jpeg",
   }),
 };
 
@@ -90,7 +90,7 @@ export default function Page() {
 
             <div style={{ margin: '30px 0' }}>
               <img
-                src={assetPath("/images/waterproofing-hands.jpg")}
+                src={assetPath("/images/optimal-selection-1.jpeg")}
                 alt="防水工事の施工風景"
                 style={{ width: '100%', borderRadius: '12px', aspectRatio: '16/9', objectFit: 'cover' }}
               />
@@ -120,6 +120,13 @@ export default function Page() {
                 <li><strong>複数原因のケースが非常に多い：</strong>雨水の侵入ルートは1箇所とは限らず、屋上防水の劣化と外壁のひび割れの双方が原因になっていることが多々あります。</li>
                 <li><strong>防水・外壁・シーリングは連動している：</strong>建物の防水性は、防水層だけでなく、外壁塗装やサッシまわりのシーリング（目地材）が一体となって保たれています。</li>
               </ul>
+            </div>
+            <div style={{ margin: '24px 0' }}>
+              <img
+                src={assetPath("/images/optimal-selection-3.jpg")}
+                alt="防水・外壁を一体で捉えた補修工事"
+                style={{ width: '100%', borderRadius: '12px', aspectRatio: '16/9', objectFit: 'cover' }}
+              />
             </div>
             <p>
               つまり、ベランダの床の防水だけを塗り直しても、立ち上がり部分やサッシの隙間、外壁のクラック（ひび割れ）を放置していれば、数年と経たずに雨漏りが再発してしまいます。
@@ -160,7 +167,7 @@ export default function Page() {
 
             <div style={{ margin: '30px 0' }}>
               <img
-                src={assetPath("/images/waterproofing-rooftop.jpg")}
+                src={assetPath("/images/optimal-selection-2.jpeg")}
                 alt="屋上防水工事の完了イメージ"
                 style={{ width: '100%', borderRadius: '12px', aspectRatio: '16/9', objectFit: 'cover' }}
               />

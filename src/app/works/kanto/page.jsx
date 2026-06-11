@@ -22,7 +22,7 @@ export default function Page() {
           <p className="section-intro">関東エリアの実績公開準備中です。お問い合わせいただければ、近い条件の事例を個別にご案内します。</p>
           <div className="works__grid">
             {KANTO_DRAFT_CARDS.map((item) => (
-              <article className="work-card reveal" key={item.title}>
+              <article className="work-card" key={item.title}>
                 <div className="work-card__image">
                   <img src={assetPath(item.image)} alt={item.title} style={{ width: "100%", minHeight: "180px", objectFit: "cover", filter: "grayscale(20%)" }} />
                   <span className="work-card__category">{WORK_CATEGORIES[item.category]}</span>

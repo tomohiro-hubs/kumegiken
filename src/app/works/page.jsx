@@ -18,7 +18,7 @@ export const metadata = buildMetadata({
 
 function WorkCard({ item }) {
   return (
-    <a href={routePath(`/works/${item.slug}`)} className="work-card reveal">
+    <a href={routePath(`/works/${item.slug}`)} className="work-card">
       <div className="work-card__image">
         <img src={assetPath(item.image)} alt={item.fullTitle} style={{ width: "100%", minHeight: "180px", objectFit: "cover" }} />
         <span className="work-card__category">{WORK_CATEGORIES[item.category]}</span>
@@ -47,11 +47,11 @@ export default function Page() {
         <div className="container">
           <div className="section-heading"><span className="section-heading__en">Region</span><h2 className="section-heading__ja">エリアから探す</h2><span className="section-heading__line"></span></div>
           <div className="service__grid" style={{ gridTemplateColumns: "repeat(2, minmax(0, 1fr))" }}>
-            <a href={routePath(WORK_REGIONS.kansai.path)} className="service-card reveal">
+            <a href={routePath(WORK_REGIONS.kansai.path)} className="service-card">
               <div className="service-card__image"><img src={assetPath("/images/works-region-kansai.png")} alt="関西の施工事例" style={{ width: "100%", height: "100%", objectFit: "cover" }} /></div>
               <div className="service-card__body"><h3 className="service-card__title">関西の施工事例</h3><p className="service-card__text">兵庫・大阪を中心に公開中。現在 {kansaiCount} 件。</p><span className="service-card__link">詳しく見る <i className="fas fa-arrow-right"></i></span></div>
             </a>
-            <a href={routePath(WORK_REGIONS.kanto.path)} className="service-card reveal reveal--delay-1">
+            <a href={routePath(WORK_REGIONS.kanto.path)} className="service-card">
               <div className="service-card__image"><img src={assetPath("/images/works-region-kanto.png")} alt="関東の施工事例" style={{ width: "100%", height: "100%", objectFit: "cover" }} /></div>
               <div className="service-card__body"><h3 className="service-card__title">関東の施工事例</h3><p className="service-card__text">東京・神奈川・埼玉・千葉の施工事例を順次公開。現在 {kantoCount} 件。</p><span className="service-card__link">詳しく見る <i className="fas fa-arrow-right"></i></span></div>
             </a>

@@ -29,7 +29,7 @@ export default function Page() {
 
           <div className="works__grid">
             {works.map((item) => (
-              <a href={routePath(`/works/${item.slug}`)} className="work-card reveal" key={item.slug}>
+              <a href={routePath(`/works/${item.slug}`)} className="work-card" key={item.slug}>
                 <div className="work-card__image">
                   <img src={assetPath(item.image)} alt={item.fullTitle} style={{ width: "100%", minHeight: "180px", objectFit: "cover" }} />
                   <span className="work-card__category">{WORK_CATEGORIES[item.category]}</span>

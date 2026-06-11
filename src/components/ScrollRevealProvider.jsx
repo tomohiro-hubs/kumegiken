@@ -41,6 +41,13 @@ export default function ScrollRevealProvider({ children }) {
       });
     };
 
+    const scheduleReveal = () => {
+      window.requestAnimationFrame(() => {
+        revealVisibleElements();
+        window.setTimeout(revealVisibleElements, 50);
+      });
+    };
+
     // スクロールリビール (IntersectionObserver)
     const revealElements = document.querySelectorAll('.reveal');
     let revealObserver = null;
@@ -59,19 +66,27 @@ export default function ScrollRevealProvider({ children }) {
       });
 
       revealElements.forEach(el => revealObserver.observe(el));
-      revealVisibleElements();
+      scheduleReveal();
     } else {
       revealElements.forEach(el => el.classList.add('revealed'));
     }
 
     const handlePageShow = () => {
-      revealVisibleElements();
+      scheduleReveal();
+    };
+
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        scheduleReveal();
+      }
     };
     window.addEventListener('pageshow', handlePageShow);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
 
     return () => {
       document.removeEventListener('click', handleHashClick);
       window.removeEventListener('pageshow', handlePageShow);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
       if (revealObserver) {
         revealObserver.disconnect();
       }

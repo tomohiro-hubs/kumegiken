@@ -18,7 +18,7 @@ export const metadata = {
     title: ARTICLE_TITLE,
     description: ARTICLE_DESCRIPTION,
     path: ARTICLE_PATH,
-    image: "/images/leak-repair.jpg",
+    image: "/images/leak-speed-1.jpg",
   }),
 };
 
@@ -89,7 +89,7 @@ export default function Page() {
 
             <div style={{ margin: '30px 0' }}>
               <img
-                src={assetPath("/images/leak-repair.jpg")}
+                src={assetPath("/images/leak-speed-1.jpg")}
                 alt="雨漏り調査・補修の施工風景"
                 style={{ width: '100%', borderRadius: '12px', aspectRatio: '16/9', objectFit: 'cover' }}
               />
@@ -123,6 +123,13 @@ export default function Page() {
                 雨漏り履歴のある建物は、修繕履歴が適切でない場合、売却時の査定額が大幅に下がったり、賃貸物件としての魅力が半減してしまいます。
               </li>
             </ol>
+            <div style={{ margin: '24px 0' }}>
+              <img
+                src={assetPath("/images/leak-speed-2.jpg")}
+                alt="雨漏り放置による被害"
+                style={{ width: '100%', borderRadius: '12px', aspectRatio: '16/9', objectFit: 'cover' }}
+              />
+            </div>
             <div style={{ background: 'var(--color-bg-light)', borderLeft: '4px solid #cf2e2e', padding: '15px 20px', margin: '20px 0', borderRadius: '0 8px 8px 0' }}>
               <p style={{ margin: 0, fontWeight: 'bold', color: '#cf2e2e' }}>⚠️ 数日放置するだけで、被害額が倍以上に膨らむこともあります！</p>
             </div>

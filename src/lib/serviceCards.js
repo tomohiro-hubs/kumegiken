@@ -28,14 +28,14 @@ export const serviceCards = [
       "外壁の美観回復と保護を両立する塗装工事。建物の立地環境や外壁材に合わせた最適な塗料を選定し、長期間にわたる耐久性を実現します。",
   },
   {
-    key: "dive-survey",
-    href: "/dive-survey",
-    image: "/images/dive-survey.jpg",
-    title: "水中点検",
+    key: "sealing",
+    href: "/service/sealing",
+    image: "/images/sealing-work.jpeg",
+    title: "シーリング工事",
     descriptionHome:
-      "ダム・港湾施設・橋梁などの水中部を、専門ダイバーが安全かつ正確に点検・調査します。",
+      "外壁の目地やサッシ周りのシーリングを補修し、雨水の侵入や建物の劣化を防ぎます。",
     descriptionService:
-      "ダム・港湾施設・橋梁などの水中部分を、専門ダイバーが安全かつ正確に点検・調査。映像記録付きで報告します。",
+      "外壁パネルの目地やサッシ周りのシーリング材を打ち替え・打ち増し。雨漏りを根本から防ぎ、建物の耐久性を維持します。",
   },
 ];
 

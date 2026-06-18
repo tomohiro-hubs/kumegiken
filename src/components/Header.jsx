@@ -99,7 +99,6 @@ export default function Header() {
                 <Link prefetch={false} href="/service/waterproofing" className="header__dropdown-link">防水事業</Link>
                 <Link prefetch={false} href="/service/sealing" className="header__dropdown-link">シーリング工事</Link>
                 <Link prefetch={false} href="/service/painting" className="header__dropdown-link">外壁塗装</Link>
-                <Link prefetch={false} href="/dive-survey" className="header__dropdown-link">水中点検</Link>
               </div>
             </div>
             <Link prefetch={false} href="/#flow" className="header__nav-link">施工の流れ</Link>
@@ -107,6 +106,7 @@ export default function Header() {
             <Link prefetch={false} href="/#voice" className="header__nav-link">お客様の声</Link>
             <Link prefetch={false} href="/column" className="header__nav-link">コラム</Link>
             <Link prefetch={false} href="/recruit" className="header__nav-link">採用情報</Link>
+            <Link prefetch={false} href="/contact" className="header__nav-link">お問い合わせ</Link>
           </nav>
           <div className="header__cta">
             <p className="header__cta-lead">お電話でのお問い合わせはこちら</p>

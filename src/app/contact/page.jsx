@@ -165,7 +165,6 @@ export default function Page() {
                 <option value="large-scale-repair">大規模修繕事業</option>
                 <option value="waterproofing">防水事業</option>
                 <option value="painting">外壁塗装</option>
-                <option value="dive-survey">水中点検</option>
                 <option value="undecided">まだ決まっていない</option>
               </select>
             </div>

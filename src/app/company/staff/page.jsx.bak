@@ -26,28 +26,22 @@ export default function Page() {
   </div>
 </section>
 <section className="content-section"><div className="container">
-  <div className="staff-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))', gap: '30px' }}>
+  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: '30px' }}>
     <div style={{ textAlign: 'center', background: 'var(--color-white)', borderRadius: '16px', padding: '30px', boxShadow: 'var(--shadow-sm)' }} className="reveal">
-      <img src={assetPath("/images/staff-yoshi.jpeg")} alt="スタッフY" style={{ width: '150px', height: '150px', borderRadius: '50%', margin: '0 auto 16px', objectFit: 'cover' }} />
-      <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--color-primary)' }}>スタッフY</h3>
-      <p style={{ fontSize: '13px', color: 'var(--color-accent)', fontWeight: '600', marginBottom: '12px' }}>1級建築施工管理技士</p>
-      <p style={{ fontSize: '14px', color: 'var(--color-text-light)', lineHeight: '1.8' }}>防水や外壁修繕に携わって20年以上。劣化見極めや工法判断に定評があり、難易度の高い漏水修繕も担当。丁寧な施工と責任ある対応でお客様から指名される存在です。</p>
-    </div>
-    <div style={{ textAlign: 'center', background: 'var(--color-white)', borderRadius: '16px', padding: '30px', boxShadow: 'var(--shadow-sm)' }} className="reveal">
-      <img src={assetPath("/images/staff-tanaka.jpg")} alt="スタッフS" style={{ width: '150px', height: '150px', borderRadius: '50%', margin: '0 auto 16px', objectFit: 'cover' }} />
-      <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--color-primary)' }}>スタッフS</h3>
+      <img src={assetPath("/images/staff-tanaka.jpg")} alt="田中一郎" style={{ width: '150px', height: '150px', borderRadius: '50%', margin: '0 auto 16px', objectFit: 'cover' }} />
+      <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--color-primary)' }}>坂本 純平</h3>
       <p style={{ fontSize: '13px', color: 'var(--color-accent)', fontWeight: '600', marginBottom: '12px' }}>1級防水施工技能士</p>
       <p style={{ fontSize: '14px', color: 'var(--color-text-light)', lineHeight: '1.8' }}>防水工事に20年以上携わってきました。劣化状況をしっかり見極めて最適な工法をご提案し、難易度の高い漏水修繕にも責任を持って対応します。</p>
     </div>
     <div style={{ textAlign: 'center', background: 'var(--color-white)', borderRadius: '16px', padding: '30px', boxShadow: 'var(--shadow-sm)' }} className="reveal">
-      <img src={assetPath("/images/staff-kishi.jpg")} alt="スタッフK" style={{ width: '150px', height: '150px', borderRadius: '50%', margin: '0 auto 16px', objectFit: 'cover' }} />
-      <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--color-primary)' }}>スタッフK</h3>
+      <img src={assetPath("/images/staff-kishi.jpg")} alt="岸玲於奈" style={{ width: '150px', height: '150px', borderRadius: '50%', margin: '0 auto 16px', objectFit: 'cover' }} />
+      <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--color-primary)' }}>岸 玲於奈</h3>
       <p style={{ fontSize: '13px', color: 'var(--color-accent)', fontWeight: '600', marginBottom: '12px' }}>1級建築施工管理技士</p>
       <p style={{ fontSize: '14px', color: 'var(--color-text-light)', lineHeight: '1.8' }}>防水・塗装・シーリングまで、現場に合わせて幅広く対応しています。状況に応じた判断と段取りを大切に、チームと連携しながら丁寧に施工を進めます。</p>
     </div>
     <div style={{ textAlign: 'center', background: 'var(--color-white)', borderRadius: '16px', padding: '30px', boxShadow: 'var(--shadow-sm)' }} className="reveal">
-      <img src={assetPath("/images/staff-goya.jpg")} alt="スタッフG" style={{ width: '150px', height: '150px', borderRadius: '50%', margin: '0 auto 16px', objectFit: 'cover' }} />
-      <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--color-primary)' }}>スタッフG</h3>
+      <img src={assetPath("/images/staff-goya.jpg")} alt="胡屋佑樹" style={{ width: '150px', height: '150px', borderRadius: '50%', margin: '0 auto 16px', objectFit: 'cover' }} />
+      <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--color-primary)' }}>胡屋 佑樹</h3>
       <p style={{ fontSize: '13px', color: 'var(--color-accent)', fontWeight: '600', marginBottom: '12px' }}>防水技術者</p>
       <p style={{ fontSize: '14px', color: 'var(--color-text-light)', lineHeight: '1.8' }}>丁寧で誠実な仕事を心がけています。わかりやすいご説明と、現場での挨拶・気配りを大切にしながら、安心していただける対応を徹底します。</p>
     </div>
@@ -58,14 +52,6 @@ export default function Page() {
     <p style={{ fontSize: '14px', color: 'var(--color-text-light)' }}>経験豊富な自社職人と施工管理スタッフが連携し、診断から施工、完了後のフォローまで責任を持って対応します。大切な建物を、安心してお任せいただける体制です。</p>
   </div>
 </div></section>
-
-  <style dangerouslySetInnerHTML={{__html: `
-    @media (min-width: 992px) {
-      .staff-grid {
-        grid-template-columns: repeat(4, 1fr) !important;
-      }
-    }
-  `}} />
   
     </main>
   );

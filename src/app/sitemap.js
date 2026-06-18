@@ -47,7 +47,6 @@ const STATIC_ROUTES = [
   "/citations-policy",
   "/partner",
   "/simulation",
-  "/dive-survey",
 ];
 
 export default function sitemap() {
@@ -55,7 +54,6 @@ export default function sitemap() {
   const lastModifiedByRoute = {
     "/": "2026-05-10",
     "/company/history": "2026-05-10",
-    "/dive-survey": "2026-05-10",
     "/editorial-policy": "2026-05-10",
     "/citations-policy": "2026-05-10",
   };

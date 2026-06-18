@@ -30,14 +30,7 @@ export default function Page() {
         <a href={routePath("/company/area")}> 対応エリアページ</a>
         もあわせてご確認ください。
       </p>
-      <h2>外壁塗装の塗料の種類</h2>
-      <table className="info-table" style={{ margin: '20px 0' }}><tbody>
-        <tr><th>塗料</th><th>耐用年数</th><th>費用目安（㎡）</th><th>特徴</th></tr>
-        <tr><td>シリコン塗料</td><td>10〜15年</td><td>2,500〜3,500円</td><td>コストパフォーマンス最優</td></tr>
-        <tr><td>フッ素塗料</td><td>15〜20年</td><td>3,500〜5,000円</td><td>高耐久・ビルに最適</td></tr>
-        <tr><td>無機塗料</td><td>20〜25年</td><td>4,500〜6,000円</td><td>最高クラスの耐久性</td></tr>
-        <tr><td>ラジカル制御型</td><td>12〜16年</td><td>2,800〜4,000円</td><td>次世代のスタンダード</td></tr>
-      </tbody></table>
+
       <h2>塗り替えのサイン</h2>
       <ul>
         <li>外壁を触ると白い粉がつく（チョーキング現象）</li>

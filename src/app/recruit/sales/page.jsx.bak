@@ -40,7 +40,7 @@ export default function Page() {
     <tr><th>待遇・福利厚生</th><td>・昇給・賞与あり／営業手当／成果インセンティブ<br />・社会保険完備／交通費支給<br />・携帯・PC貸与／社用車あり<br />・未経験歓迎／業界経験者は優遇</td></tr>
   </tbody></table>
   <div style={{ textAlign: 'center', marginTop: '48px' }} className="reveal">
-    <a href={routePath("/recruit/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> 応募する / お問い合わせ</a>
+    <a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> 応募する / お問い合わせ</a>
   </div>
 </div></section>
   

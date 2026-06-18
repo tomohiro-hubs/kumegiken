@@ -40,7 +40,7 @@ export default function Page() {
     <tr><th>待遇・福利厚生</th><td>・昇給年1回／賞与年2回<br />・社会保険完備／交通費全額支給<br />・作業服・道具貸与／資格取得支援制度あり<br />・社用車貸与</td></tr>
   </tbody></table>
   <div style={{ textAlign: 'center', marginTop: '48px' }} className="reveal">
-    <a href={routePath("/recruit/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> 応募する / お問い合わせ</a>
+    <a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> 応募する / お問い合わせ</a>
   </div>
 </div></section>
   

@@ -54,15 +54,7 @@ export default function Page() {
           <h3>アスファルト防水</h3>
           <p>古くから実績のある信頼性の高い工法。加熱したアスファルトでルーフィングを貼り重ねる工法で、大規模な屋上に適しています。</p>
 
-          <h2>防水工事の費用相場</h2>
-          <table className="info-table" style={{ margin: '20px 0' }}><tbody>
-            <tr><th>工法</th><th>費用目安（㎡あたり）</th><th>耐用年数</th></tr>
-            <tr><td>ウレタン防水</td><td>4,000〜7,000円</td><td>10〜12年</td></tr>
-            <tr><td>シート防水</td><td>4,500〜8,000円</td><td>12〜15年</td></tr>
-            <tr><td>FRP防水</td><td>5,000〜8,000円</td><td>10〜12年</td></tr>
-            <tr><td>アスファルト防水</td><td>5,500〜9,000円</td><td>15〜20年</td></tr>
-          </tbody></table>
-          <p style={{ fontSize: '13px', color: 'var(--color-text-muted)' }}>※上記は一般的な目安です。建物の状態や施工条件により異なります。</p>
+
 
           <h2>こんな症状があれば防水工事のサインです</h2>
           <ul>

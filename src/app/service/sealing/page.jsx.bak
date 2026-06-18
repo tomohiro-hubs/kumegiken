@@ -9,7 +9,7 @@ export const metadata = buildMetadata({
   title: "シーリング工事（打替え・打増し）｜久米技建",
   description: "外壁目地・サッシ周りのシーリング工事に対応。ひび割れや痩せなどの劣化症状を補修し、雨水侵入を防ぎます。",
   path: "/service/sealing",
-  image: "/images/sealing-work.jpeg",
+  image: "/images/sealing-work.jpg",
 });
 
 export default function Page() {
@@ -22,7 +22,7 @@ export default function Page() {
   
 
   <section className="content-section"><div className="container container--narrow"><div className="article-content">
-    <div className="reveal" style={{ marginBottom: '40px' }}><img src={assetPath("/images/sealing-work.jpeg")} alt="シーリング工事の現場" style={{ aspectRatio: '16/9', width: '100%', objectFit: 'cover', borderRadius: '16px' }} /></div>
+    <div className="reveal" style={{ marginBottom: '40px' }}><img src={assetPath("/images/sealing-work.jpg")} alt="シーリング工事の現場" style={{ aspectRatio: '16/9', width: '100%', objectFit: 'cover', borderRadius: '16px' }} /></div>
     <div className="reveal">
       <p>シーリング（コーキング）は、建物の外壁パネル間の目地やサッシ周り、ALC板の継ぎ目などに充填されるゴム状の防水材です。経年劣化により硬化・ひび割れが発生し、そこから雨水が侵入して建物内部を傷めてしまいます。</p>
       <h2>兵庫・大阪のシーリング工事なら久米技建</h2>
@@ -40,10 +40,11 @@ export default function Page() {
       </ul>
       <h2>シーリング工事の種類</h2>
       <h3>打ち替え工事</h3>
-      <p>既存のシーリング材をすべて撤去し、新しいシーリング材を充填する工法。劣化が進んでいる場合に推奨されます。最も確実な補修方法です。</p>
+      <p>既存 of シーリング材をすべて撤去し、新しいシーリング材を充填する工法。劣化が進んでいる場合に推奨されます。最も確実な補修方法です。</p>
       <h3>打ち増し工事</h3>
-      <p>既存のシーリング材の上に新しいシーリング材を重ねて充填する工法。既存材が比較的健全な場合に適用されます。コストを抑えられますが、適用条件があります。</p>
-
+      <p>既存 of シーリング材の上に新しいシーリング材を重ねて充填する工法。既存材が比較的健全な場合に適用されます。コストを抑えられますが、適用条件があります。</p>
+      <h2>費用の目安</h2>
+      <p>シーリング工事の費用は、目地の長さと深さ、使用するシーリング材の種類によって異なります。一般的な目安として、打ち替えで800〜1,200円/m、打ち増しで500〜800円/m程度です。</p>
     </div>
   </div></div></section>
   <FaqSection faqs={seoData.faqs} />

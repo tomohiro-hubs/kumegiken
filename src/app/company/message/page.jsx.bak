@@ -13,9 +13,10 @@ export const metadata = buildMetadata({
 export default function Page() {
   return (
     <main>
-      <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/company")} className="breadcrumb__link">会社情報</a></li><li className="breadcrumb__separator">›</li><li>代表メッセージ</li></ol></div></nav>
+      <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/company")} className="breadcrumb="/company/message/page.jsx.bak">会社情報</a></li><li className="breadcrumb__separator">›</li><li>代表メッセージ</li></ol></div></nav>
       <section className="page-hero"><span className="page-hero__label">Message</span><h1 className="page-hero__title">代表メッセージ</h1></section>
 	  
+
 
 	  {/* Sub Navigation */}
 	  <section style={{ background: 'var(--color-bg-light)', padding: '20px 0' }}>
@@ -30,15 +31,15 @@ export default function Page() {
 	
 	  <section className="content-section">
 	    <div className="container" style={{ maxWidth: "1500px" }}>
-      <div className="message__inner">
-        <div className="reveal message__image-wrapper">
+      <div className="message__inner" style={{ display: "flex", flexDirection: "column", gap: "36px" }}>
+        <div className="reveal">
           <img
             src={assetPath("/images/president-message.jpg")}
             alt="代表取締役 久米涼平"
-            className="message__image"
+            style={{ width: "100%", maxWidth: "1500px", objectFit: "cover", borderRadius: "16px", margin: "0 auto" }}
           />
         </div>
-        <div className="article-content reveal message__text-wrapper">
+        <div className="article-content reveal" style={{ maxWidth: "1500px", margin: "0 auto" }}>
           <h2>建物と向き合い、人と向き合う仕事を。</h2>
           <p>久米技建のホームページをご覧いただき、ありがとうございます。代表の久米涼平です。</p>
           <p>私は防水職人として現場に立つところからキャリアをスタートさせました。建物の屋上に上り、防水層の状態を自分の目で見て、手で触って、その建物が今どんな状態にあるのかを体で感じてきました。</p>
@@ -54,49 +55,6 @@ export default function Page() {
       </div>
     </div>
   </section>
-
-  <style dangerouslySetInnerHTML={{__html: `
-    .message__inner {
-      display: flex;
-      flex-direction: column;
-      gap: 36px;
-    }
-    .message__image-wrapper {
-      width: 100%;
-    }
-    .message__image {
-      width: 100%;
-      aspect-ratio: 3 / 4;
-      object-fit: cover;
-      border-radius: 16px;
-      object-position: calc(50% + 30px) center;
-    }
-    .message__text-wrapper {
-      width: 100%;
-      margin: 0 auto;
-    }
-    @media (min-width: 992px) {
-      .message__inner {
-        flex-direction: row-reverse;
-        align-items: stretch;
-        gap: 100px;
-      }
-      .message__image-wrapper {
-        flex: 0 0 400px;
-        max-width: 500px;
-        display: flex;
-      }
-      .message__image {
-        height: 100%;
-        aspect-ratio: auto;
-      }
-      .message__text-wrapper {
-        flex: 1;
-        max-width: 100%;
-        margin: 0;
-      }
-    }
-  `}} />
 
   
     </main>

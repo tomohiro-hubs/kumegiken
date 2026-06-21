@@ -176,32 +176,33 @@
 }
 
 @media (max-width: 767px) {
-  .copy6Root,
-  .copy6Inner {
+  .copy6Root {
     min-height: auto;
   }
 
   .copy6Inner {
-    padding: 20px 14px 28px;
-    aspect-ratio: 1921 / 1081;
-    align-items: flex-start;
+    min-height: auto;
+    padding: clamp(32px, 8vw, 64px) 14px;
+    aspect-ratio: auto;
+    align-items: center;
   }
 
   .copy6CopyBlock {
-    gap: 10px;
-    padding-top: 18px;
+    gap: 12px;
+    padding-top: 0;
   }
 
   .copy6Headline {
     width: 100%;
-    font-size: clamp(28px, 11vw, 52px);
-    line-height: 1;
+    font-size: clamp(24px, 8.5vw, 42px);
+    line-height: 1.15;
     gap: 8px;
   }
 
   .copy6HeadlineLine {
     max-width: 100%;
     white-space: normal;
+    padding: 0.1em 0.3em;
   }
 
   .copy6SubHeadline {
@@ -211,7 +212,7 @@
   }
 
   .copy6Description {
-    margin-top: 6px;
+    margin-top: 10px;
     font-size: clamp(11px, 3.4vw, 16px);
     line-height: 1.5;
   }
@@ -1042,25 +1043,49 @@
   .phoneNumberRow,
   .ctaBody,
   .telMain {
-    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     border-radius: 12px;
     text-align: center;
+    padding: clamp(16px, 4vw, 24px) 12px;
+  }
+
+  .phoneLink {
+    padding-right: 0;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(8px, 2vw, 12px);
+  }
+
+  .phoneNumberIcon {
+    height: clamp(24px, 7.5vw, 36px);
+    transform: none;
+    margin: 0;
   }
 
   .phoneNumber,
   .tel,
   .number {
-    font-size: clamp(34px, 12.2vw, 52px);
+    font-size: clamp(28px, 9vw, 44px);
     letter-spacing: 0.02em;
+    line-height: 1;
   }
 
   .freeBadge,
   .ctaBadge,
   .consultBadge {
-    width: clamp(72px, 24vw, 92px);
-    min-width: clamp(72px, 24vw, 92px);
-    font-size: clamp(14px, 4.7vw, 18px);
+    position: static;
+    transform: none;
+    margin: 0 auto clamp(8px, 2.5vw, 14px);
+    width: clamp(64px, 18vw, 80px);
+    height: clamp(64px, 18vw, 80px);
+    min-width: clamp(64px, 18vw, 80px);
+    font-size: clamp(12px, 3.5vw, 16px);
+    line-height: 1.25;
   }
 
   .bottomCtas,
@@ -1073,7 +1098,7 @@
   .actionBtn,
   .bottomLink {
     min-height: 122px;
-    padding: 22px 58px 18px 120px;
+    padding: 20px 24px 16px clamp(90px, 25vw, 110px);
     border-radius: 8px;
     align-items: flex-start;
   }

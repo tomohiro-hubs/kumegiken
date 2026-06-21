@@ -13,7 +13,7 @@ export const serviceSeoData = {
   largeScaleRepair: {
     name: "大規模修繕工事",
     path: "/service/large-scale-repair",
-    image: "/images/large-scale-aerial.jpg",
+    image: "/images/works-osaka-rental-mansion-complete.jpg",
     description: "マンション・ビルの外壁補修、塗装、防水、シーリング、鉄部塗装を一貫管理します。",
     faqs: [
       { question: "大規模修繕は何年周期で検討すべきですか？", answer: "一般的には12〜15年周期が目安ですが、立地条件や劣化状況により前後します。まず建物診断で優先度を確認します。" },

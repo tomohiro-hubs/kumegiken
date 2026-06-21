@@ -29,7 +29,7 @@ export default function Page() {
       <div className="service__grid">
         {serviceCards.map((card, index) => {
           const revealClass =
-            index === 1 ? "reveal reveal--delay-1" : index === 2 ? "reveal reveal--delay-2" : "reveal";
+            index % 3 === 1 ? "reveal reveal--delay-1" : index % 3 === 2 ? "reveal reveal--delay-2" : "reveal";
           return (
             <a href={routePath(card.href)} className={`service-card ${revealClass}`} key={card.key}>
               <div className="service-card__image">

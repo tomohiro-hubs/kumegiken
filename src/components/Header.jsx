@@ -95,6 +95,7 @@ export default function Header() {
             <div className="header__nav-item">
               <Link prefetch={false} href="/service" className="header__nav-link header__nav-link--has-sub">サービス</Link>
               <div className="header__dropdown">
+                <Link prefetch={false} href="/service/building-inspection" className="header__dropdown-link">建物無料診断</Link>
                 <Link prefetch={false} href="/service/large-scale-repair" className="header__dropdown-link">大規模修繕事業</Link>
                 <Link prefetch={false} href="/service/waterproofing" className="header__dropdown-link">防水事業</Link>
                 <Link prefetch={false} href="/service/sealing" className="header__dropdown-link">シーリング工事</Link>

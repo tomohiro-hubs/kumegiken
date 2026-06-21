@@ -593,16 +593,8 @@ export function TopCopyPageContent({ rootClassName = "top-copy-page" } = {}) {
         )}
 
         <div className="container">
-          <div className="section-chip-links reveal">
-            {serviceQuickLinks.map((link) => (
-              <a href={routePath(link.href)} className="btn btn--outline-dark btn--sm" key={link.href}>
-                {link.label}
-              </a>
-            ))}
-          </div>
-
           <div className="service__grid">
-            {serviceCards.map((card, index) => (
+            {serviceCards.filter(card => card.key !== "building-inspection").map((card, index) => (
               <a href={routePath(card.href)} className={`service-card ${getRevealClass(index)}`} key={card.key}>
                 <div className="service-card__image">
                   <TopScopedImage src={card.image} alt={card.title} optimizeForCopy3={optimizeForCopy3} />

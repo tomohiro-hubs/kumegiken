@@ -15,7 +15,7 @@ export default function Page() {
   return (
     <main>
       <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/works")} className="breadcrumb__link">施工事例</a></li><li className="breadcrumb__separator">›</li><li>関東</li></ol></div></nav>
-      <section className="page-hero"><span className="page-hero__label">Kanto Works</span><h1 className="page-hero__title">関東の施工事例</h1><p className="page-hero__description">東京・神奈川・埼玉・千葉の事例を順次公開します。まずは仮カードを掲載しています。</p></section>
+      <section className="page-hero"><span className="page-hero__label">Kanto Works</span><h1 className="page-hero__title">関東の施工事例</h1><p className="page-hero__description">東京・神奈川・埼玉・千葉の事例を順次公開します。</p></section>
 
       <section className="content-section">
         <div className="container">

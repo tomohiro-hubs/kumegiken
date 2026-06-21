@@ -94,29 +94,7 @@ export const WORKS_CATALOG = [
   },
 ];
 
-export const KANTO_DRAFT_CARDS = [
-  {
-    title: '東京都 マンション 屋上防水改修（準備中）',
-    category: 'waterproofing',
-    location: '東京都',
-    buildingType: 'マンション',
-    image: '/images/waterproofing-rooftop.jpg',
-  },
-  {
-    title: '神奈川県 ビル 大規模修繕（準備中）',
-    category: 'large-scale-repair',
-    location: '神奈川県',
-    buildingType: 'ビル',
-    image: '/images/scaffold-install.jpg',
-  },
-  {
-    title: '埼玉県 アパート 外壁塗装（準備中）',
-    category: 'painting',
-    location: '埼玉県',
-    buildingType: 'アパート',
-    image: '/images/painting-work.jpg',
-  },
-];
+export const KANTO_DRAFT_CARDS = [];
 
 export function getWorksByRegion(regionKey) {
   return WORKS_CATALOG.filter((item) => item.region === regionKey);

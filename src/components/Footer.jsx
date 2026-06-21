@@ -76,8 +76,10 @@ export default function Footer() {
 
             <div>
               <div className="footer__nav-title">サービス</div>
+              <Link prefetch={false} href="/service/building-inspection" className="footer__nav-link">建物無料診断</Link>
               <Link prefetch={false} href="/service/large-scale-repair" className="footer__nav-link">大規模修繕事業</Link>
               <Link prefetch={false} href="/service/waterproofing" className="footer__nav-link">防水事業</Link>
+              <Link prefetch={false} href="/service/sealing" className="footer__nav-link">シーリング工事</Link>
               <Link prefetch={false} href="/service/painting" className="footer__nav-link">外壁塗装</Link>
             </div>
 
@@ -97,6 +99,7 @@ export default function Footer() {
               <Link prefetch={false} href="/company/message" className="footer__nav-link">代表メッセージ</Link>
               <Link prefetch={false} href="/company/staff" className="footer__nav-link">スタッフ紹介</Link>
               <Link prefetch={false} href="/company/area" className="footer__nav-link">対応エリア</Link>
+              <Link prefetch={false} href="/company/history" className="footer__nav-link">沿革</Link>
               <Link prefetch={false} href="/recruit" className="footer__nav-link">採用情報</Link>
               <Link prefetch={false} href="/contact" className="footer__nav-link">お問い合わせ</Link>
               <Link prefetch={false} href="/partner" className="footer__nav-link">協力会社お問い合わせ</Link>

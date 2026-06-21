@@ -72,7 +72,16 @@ export default function Page() {
 
   <section className="cta-section"><div className="container"><h2 className="cta-section__title reveal">防水工事のご相談はお気軽に</h2><p className="cta-section__text reveal">建物の防水が気になったら、まずは無料診断から。</p><div className="cta-section__buttons reveal"><a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> 無料相談・お見積もり</a><a href={routePath("/simulation")} className="btn btn--outline btn--lg"><i className="fas fa-calculator"></i> 見積もりシミュレーション</a></div></div></section>
 
-  
+  <style dangerouslySetInnerHTML={{__html: `
+    /* このページ限定でコンテンツ最大幅を1080pxに拡張 */
+    .container--narrow {
+      max-width: 1080px;
+    }
+    .container--narrow .article-content {
+      max-width: none;
+    }
+  `}} />
+
     </main>
   );
 }

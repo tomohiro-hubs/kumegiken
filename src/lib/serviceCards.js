@@ -1,8 +1,17 @@
 export const serviceCards = [
   {
+    key: "building-inspection",
+    href: "/service/building-inspection",
+    image: "/images/inspection-scene.jpg",
+    title: "建物無料診断",
+    descriptionHome: "建物の劣化状況をサーモグラフィや目視で細かく診断。最適な補修時期をご提案します。",
+    descriptionService:
+      "サーモグラフィや打診調査など、建物の状態に合わせた的確な建物診断。雨漏りやタイルの浮きなどの予兆を早期に発見し、無駄な工事を防ぐための正直な診断レポートをご提供します。",
+  },
+  {
     key: "large-scale-repair",
     href: "/service/large-scale-repair",
-    image: "/images/large-scale-aerial.jpg",
+    image: "/images/large-scale-repair-hero.png",
     title: "大規模修繕事業",
     descriptionHome: "マンション・ビルの大規模修繕を、診断から施工まで一貫対応。建物の長寿命化を実現します。",
     descriptionService:

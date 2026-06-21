@@ -81,6 +81,7 @@ export default function Footer() {
               <Link prefetch={false} href="/service/waterproofing" className="footer__nav-link">防水事業</Link>
               <Link prefetch={false} href="/service/sealing" className="footer__nav-link">シーリング工事</Link>
               <Link prefetch={false} href="/service/painting" className="footer__nav-link">外壁塗装</Link>
+              <Link prefetch={false} href="/service/leak-repair" className="footer__nav-link">雨漏り調査・補修</Link>
             </div>
 
             <div>

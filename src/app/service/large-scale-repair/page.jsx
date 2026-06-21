@@ -8,8 +8,8 @@ import { serviceSeoData } from "@/lib/serviceSeoData";
 import { WORKS_CATALOG } from "@/lib/worksCatalog";
 
 export const metadata = buildMetadata({
-  title: "大規模修繕工事（マンション・ビル）｜久米技建｜兵庫・大阪",
-  description: "兵庫・大阪の大規模修繕工事なら久米技建。建物診断から施工まで一貫対応し, 資産価値の維持と長寿命化を実現します。",
+  title: "西宮の大規模修繕工事（マンション・ビル）｜久米技建｜兵庫・大阪",
+  description: "西宮市を拠点に、兵庫・大阪の大規模修繕工事に対応。建物診断から施工まで一貫対応し、資産価値の維持と長寿命化を実現します。",
   path: "/service/large-scale-repair",
   image: "/images/large-scale-repair-hero.png",
 });
@@ -37,8 +37,8 @@ export default function Page() {
       
       <section className="page-hero">
         <span className="page-hero__label">Large-Scale Repair</span>
-        <h1 className="page-hero__title">大規模修繕工事｜マンション・ビルの長寿命化</h1>
-        <p className="page-hero__description">建物の長寿命化と資産価値の維持を実現する、包括的な修繕工事</p>
+        <h1 className="page-hero__title">西宮の大規模修繕工事｜マンション・ビルの長寿命化</h1>
+        <p className="page-hero__description">建物の長寿命化と資産価値の維持を実現する、西宮市発の包括的な修繕工事</p>
       </section>
 
       <section className="content-section">

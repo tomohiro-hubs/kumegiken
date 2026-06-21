@@ -6,8 +6,8 @@ import { buildMetadata } from "@/lib/seo";
 import ServiceSeo, { FaqSection } from "@/components/ServiceSeo";
 import { serviceSeoData } from "@/lib/serviceSeoData";
 export const metadata = buildMetadata({
-  title: "外壁塗装（マンション・ビル）｜久米技建｜兵庫・大阪",
-  description: "兵庫・大阪のマンション・ビル外壁塗装に対応。劣化診断から下地補修、塗装仕上げまで一貫して施工します。",
+  title: "西宮の外壁塗装（マンション・ビル）｜久米技建",
+  description: "西宮市のマンション・ビル外壁塗装に対応。劣化診断から下地補修、シーリング、防水との連携施工まで一貫して対応します。",
   path: "/service/painting",
   image: "/images/painting-service.jpg",
 });
@@ -18,7 +18,7 @@ export default function Page() {
     <main>
       <ServiceSeo {...seoData} />
       <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/service")} className="breadcrumb__link">サービス</a></li><li className="breadcrumb__separator">›</li><li>外壁塗装</li></ol></div></nav>
-      <section className="page-hero"><span className="page-hero__label">Painting</span><h1 className="page-hero__title">外壁塗装</h1><p className="page-hero__description">美観と保護を両立する、プロフェッショナルの外壁塗装</p></section>
+      <section className="page-hero"><span className="page-hero__label">Painting</span><h1 className="page-hero__title">西宮の外壁塗装</h1><p className="page-hero__description">美観と保護を両立する、西宮市対応のプロフェッショナル外壁塗装</p></section>
   
 
   <section className="content-section"><div className="container container--narrow"><div className="article-content">

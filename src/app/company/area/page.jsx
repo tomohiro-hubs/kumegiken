@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { routePath } from "@/lib/routePath";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd } from "@/lib/schema";
 
 import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
-  title: "対応エリア（関西・東京）｜久米技建",
-  description: "西宮市を拠点に兵庫・大阪を中心とした関西圏、および東京都・埼玉・神奈川周辺で、防水工事・大規模修繕に対応。対応可否や近隣エリアのご相談も受け付けています。",
+  title: "西宮の対応エリア（兵庫・大阪・東京）｜久米技建",
+  description: "西宮市を拠点に、兵庫・大阪を中心とした関西圏、および東京都・埼玉・神奈川周辺で、雨漏り補修、防水工事、大規模修繕工事に対応しています。",
   path: "/company/area",
   image: "/images/team-group.jpg",
 });
@@ -12,6 +14,7 @@ export const metadata = buildMetadata({
 export default function Page() {
   return (
     <main>
+      <JsonLd data={breadcrumbJsonLd([{ name: "ホーム", path: "/" }, { name: "会社情報", path: "/company" }, { name: "対応エリア", path: "/company/area" }])} />
       <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/company")} className="breadcrumb__link">会社情報</a></li><li className="breadcrumb__separator">›</li><li>対応エリア</li></ol></div></nav>
       <section className="page-hero"><span className="page-hero__label">Area</span><h1 className="page-hero__title">対応エリア</h1><p className="page-hero__description">関西圏、東京都・埼玉・神奈川周辺に対応しています</p></section>
 

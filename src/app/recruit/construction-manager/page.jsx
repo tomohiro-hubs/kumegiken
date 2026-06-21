@@ -5,8 +5,8 @@ import { breadcrumbJsonLd, jobPostingJsonLd } from "@/lib/schema";
 
 import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
-  title: "施工管理 募集要項｜採用情報｜久米技建",
-  description: "久米技建の施工管理職（正社員）募集要項。業務内容、給与、応募条件、待遇などを掲載しています。",
+  title: "施工管理 募集要項｜西宮の防水・大規模修繕会社 久米技建",
+  description: "西宮市の雨漏り補修、防水工事、大規模修繕工事を扱う久米技建の施工管理職募集要項。業務内容、給与、応募条件、待遇を掲載しています。",
   path: "/recruit/construction-manager",
   image: "/images/recruit-training.jpg",
 });

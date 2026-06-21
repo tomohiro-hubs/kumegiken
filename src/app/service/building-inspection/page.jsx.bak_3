@@ -1,0 +1,569 @@
+import Link from "next/link";
+import { routePath } from "@/lib/routePath";
+import { assetPath } from "@/lib/assetPath";
+
+import { buildMetadata } from "@/lib/seo";
+import ServiceSeo, { FaqSection } from "@/components/ServiceSeo";
+import { serviceSeoData } from "@/lib/serviceSeoData";
+
+export const metadata = buildMetadata({
+  title: "建物無料診断（インスペクション）｜久米技建｜兵庫・大阪",
+  description: "マンション・ビルの修繕計画に必要な建物診断を実施。先端機器による非破壊検査とプロの打診調査で現状を正確に把握。完全無料で押し売りは一切ありません。",
+  path: "/service/building-inspection",
+  image: "/images/inspection-scene.jpg",
+});
+
+export default function Page() {
+  const seoData = serviceSeoData.buildingInspection;
+  
+  return (
+    <main>
+      <ServiceSeo {...seoData} />
+      <nav className="breadcrumb">
+        <div className="container">
+          <ol className="breadcrumb__list">
+            <li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li>
+            <li className="breadcrumb__separator">›</li>
+            <li><a href={routePath("/service")} className="breadcrumb__link">サービス</a></li>
+            <li className="breadcrumb__separator">›</li>
+            <li>建物無料診断</li>
+          </ol>
+        </div>
+      </nav>
+      
+      <section className="page-hero">
+        <span className="page-hero__label">Building Inspection</span>
+        <h1 className="page-hero__title">建物無料診断（インスペクション）</h1>
+        <p className="page-hero__description">メンテナンス of プロが建物を細部までチェック。正直な建物診断で安心をご提案します。</p>
+      </section>
+
+      <section className="content-section">
+        <div className="container container--narrow">
+          <div className="article-content">
+            <div className="reveal">
+              {/* 1. コンセプト */}
+              <div className="bi-promise-box">
+                <div className="bi-promise-box__badge">久米技建の約束</div>
+                <h3 className="bi-promise-box__title">不要な工事は一切勧めない「正直な診断」</h3>
+                <p className="bi-promise-box__text">
+                  当社の建物診断は、工事を受注するために劣化を大袈裟に報告するものではありません。<br />
+                  建物の現状を客観的なデータに基づいて評価し、<strong>「今すぐ直すべき箇所」「数年後に修繕が必要な箇所」「当面は様子を見て大丈夫な箇所」</strong>を明確に分類してご報告いたします。
+                </p>
+              </div>
+
+              {/* 2. プロが無料で調査 */}
+              <div className="lsr-section-title">
+                <span className="lsr-section-title__en">PROFESSIONAL DIAGNOSIS</span>
+                <h3>専門知識を持つプロが無料で調査・診断します</h3>
+              </div>
+              <div className="bi-intro-row">
+                <div className="bi-intro-image">
+                  <img src={assetPath("/images/inspection-scene.jpg")} alt="建物診断の様子" />
+                </div>
+                <div className="bi-intro-text">
+                  <p>
+                    一般的な分譲マンションやビルの大規模修繕周期は、12〜15年とされています。しかし、これはあくまで目安にすぎません。建物の立地環境（日当たり、風雨の強さなど）によって劣化の進行具合は大きく変わります。<br />
+                    修繕積立金を無駄にしないためには、まず定期的にプロによる建物診断を実施し、現状の劣化状況に基づいた適切な修繕計画を立てることが何よりも重要です。
+                  </p>
+                </div>
+              </div>
+
+              {/* 3. 先端機器と技術（ドローンなし） */}
+              <div className="lsr-section-title">
+                <span className="lsr-section-title__en">INSPECTION TECHNOLOGY</span>
+                <h3>先端機器と確かな診断技術で徹底チェック</h3>
+              </div>
+              <div className="bi-intro-row">
+                <div className="bi-intro-image">
+                  <img src={assetPath("/images/thermal_inspection_chart.png")} alt="赤外線サーモグラフィによる外壁診断イメージ" style={{ border: '1px solid var(--color-border)' }} />
+                  <p style={{ fontSize: '12px', color: 'var(--color-text-light)', marginTop: '8px', textAlign: 'center', marginBottom: '0' }}>赤外線サーモグラフィ診断の可視化イメージ（温度変化によって内部の浮き箇所を赤く検出）</p>
+                </div>
+                <div className="bi-intro-text">
+                  <p>
+                    見た目だけでは判断しづらいタイルの浮きや、外壁のクラック（ひび割れ）、雨漏りの経路を、科学的な検査ツールとプロの経験を駆使して漏れなく特定します。
+                  </p>
+                </div>
+              </div>
+
+              <div className="bi-tech-grid">
+                <div className="bi-tech-card">
+                  <div className="bi-tech-card__icon"><i className="fas fa-video"></i></div>
+                  <div className="bi-tech-card__body">
+                    <h4>高解析赤外線サーモグラフィ診断</h4>
+                    <p>外壁面の温度差を赤外線カメラで測定します。タイルやモルタルの内部に「浮き（剥離）」があると、空気層が熱を持ち周囲と温度差が生じます。この温度変化を可視化することで、見えない外壁内部の浮きや雨漏り経路を非破壊で正確に特定します。</p>
+                  </div>
+                </div>
+                <div className="bi-tech-card">
+                  <div className="bi-tech-card__icon"><i className="fas fa-hammer"></i></div>
+                  <div className="bi-tech-card__body">
+                    <h4>テストハンマーによる打診調査</h4>
+                    <p>診断技術者が外壁を直接「打診棒（テストハンマー）」でなぞり、反響音を確認します。モルタルやタイルが下地から浮いていると、音が低くこもった「空洞音」に変わります。熟練した職人の耳と手の感覚により、微細な浮きを聴診します。</p>
+                  </div>
+                </div>
+                <div className="bi-tech-card">
+                  <div className="bi-tech-card__icon"><i className="fas fa-ruler-combined"></i></div>
+                  <div className="bi-tech-card__body">
+                    <h4>クラック測定・幅判定</h4>
+                    <p>外壁コンクリートに発生したひび割れ（クラック）の幅をデジタル測定器やクラックスケールで測定します。特に幅0.3mm以上のものは雨水が侵入しやすく、内部の鉄筋を錆びさせる「構造クラック」となるため、早急な対策が必要と判定します。</p>
+                  </div>
+                </div>
+                <div className="bi-tech-card">
+                  <div className="bi-tech-card__icon"><i className="fas fa-droplet"></i></div>
+                  <div className="bi-tech-card__body">
+                    <h4>高感度水分計調査</h4>
+                    <p>雨漏りの疑いがある箇所に高感度の電磁式水分計を当て、内部の含水率をデジタル数値化して診断します。壁の裏側に入り込んだわずかな水分をも感知し、漏水の深度や影響範囲を特定するのに極めて有効です。</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* 4. 購入検討中・売却検討中 */}
+              <div className="bi-bg-section">
+                <h3>購入検討中やご売却前の建物診断もお任せください</h3>
+                <p className="bi-bg-section__lead">建物のプロが専門家の視点でアドバイスいたします</p>
+                <div className="underlineWh" style={{ margin: '15px auto 25px' }}></div>
+                
+                <div className="bi-bg-grid">
+                  <div className="bi-bg-card">
+                    <div className="bi-bg-card__header">
+                      <i className="fas fa-shopping-cart"></i>
+                      <h4>購入をご検討中の建物に</h4>
+                    </div>
+                    <ul>
+                      <li>中古物件の購入前に、修繕リスクがないかプロに事前に見てほしい！</li>
+                      <li>購入後にあとどれくらいもつか、修繕費（将来のメンテナンス費）がいくら必要かを知りたい！</li>
+                    </ul>
+                  </div>
+                  <div className="bi-bg-card">
+                    <div className="bi-bg-card__header">
+                      <i className="fas fa-handshake"></i>
+                      <h4>所有建物を手放される時に</h4>
+                    </div>
+                    <ul>
+                      <li>建物の状態（健康診断結果）を明確にした上で、安心して買主様に提供したい！</li>
+                      <li>売却後に雨漏りなどのクレーム・契約後のトラブル（瑕疵責任）が発生するのを防ぎたい！</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* 5. 報告書の中身 */}
+              <div className="lsr-section-title">
+                <span className="lsr-section-title__en">INSPECTION REPORT</span>
+                <h3>無料診断後にお渡しする「建物診断報告書」</h3>
+              </div>
+              <p style={{ marginBottom: '20px' }}>
+                調査完了後、建物の健康状態をまとめた写真付きの分かりやすい報告書を作成し、無料でお渡しします。
+              </p>
+              <div className="bi-report-box">
+                <div className="bi-report-box__item">
+                  <i className="fas fa-check-circle"></i>
+                  <span><strong>写真付き劣化箇所解説</strong> — 実際の不具合の箇所をカメラで撮影し図示します。</span>
+                </div>
+                <div className="bi-report-box__item">
+                  <i className="fas fa-check-circle"></i>
+                  <span><strong>総合劣化度評価（A〜D判定）</strong> — 建物全体の健康度を一目で判定。</span>
+                </div>
+                <div className="bi-report-box__item">
+                  <i className="fas fa-check-circle"></i>
+                  <span><strong>修繕優先度リスト</strong> — 「今すぐ直す必要あり」「2年以内で可」などを分類。</span>
+                </div>
+                <div className="bi-report-box__item">
+                  <i className="fas fa-check-circle"></i>
+                  <span><strong>概算修繕費用の算出</strong> — 将来必要な工事の金額目安を算出。</span>
+                </div>
+              </div>
+
+              {/* 6. 診断の流れ */}
+              <div className="lsr-section-title">
+                <span className="lsr-section-title__en">FLOW</span>
+                <h3>無料建物診断のご依頼ステップ</h3>
+              </div>
+              <div className="bi-flow-grid">
+                <div className="bi-flow-card">
+                  <div className="bi-flow-card__step">Step 01</div>
+                  <h4>お申し込み・日程確認</h4>
+                  <p>Webまたはお電話にて無料診断をお申し込みください。ご都合の良い日時をヒアリングのうえ調整します。</p>
+                </div>
+                <div className="bi-flow-card">
+                  <div className="bi-flow-card__step">Step 02</div>
+                  <h4>現地での詳細調査</h4>
+                  <p>診断技術者が現地へお伺いし、打診や赤外線カメラ等の機器を用いて建物の調査を実施します。（約2〜3時間）</p>
+                </div>
+                <div className="bi-flow-card">
+                  <div className="bi-flow-card__step">Step 03</div>
+                  <h4>診断報告書の提出</h4>
+                  <p>写真付きの建物診断報告書をお持ちし、解説と併せて修繕が必要な時期や概算費用について丁寧にご提案します。</p>
+                </div>
+              </div>
+
+              {/* 7. セカンドオピニオン・無料の理由 */}
+              <div className="lsr-section-title">
+                <span className="lsr-section-title__en">FAQ & ANXIETY</span>
+                <h3>よくあるご不安にお答えします</h3>
+              </div>
+              <div className="bi-faq-block">
+                <div className="bi-faq-item">
+                  <h5>本当に無料ですか？後から請求されませんか？</h5>
+                  <p>はい、現地調査から報告書作成、ご提案まですべて完全無料です。その後、当社で工事を契約されなくても、診断費用などを請求することは一切ありません。</p>
+                </div>
+                <div className="bi-faq-item">
+                  <h5>診断を頼んだら、必ずリフォーム工事を契約しなければいけませんか？</h5>
+                  <p>一切その必要はありません。久米技建はしつこい売り込みを最も嫌う会社です。診断結果を参考にしていただき、工事を行うか他社と比較されるかは完全にお客様の自由です。</p>
+                </div>
+                <div className="bi-faq-item">
+                  <h5>他社から大規模修繕の見積もりが出ているのですが、セカンドオピニオンも可能ですか？</h5>
+                  <p>大歓迎です！「この補修工事は本当に今必要なのか？」「見積もり金額は高すぎないか？」など、客観的な診断結果を元に専門家のアドバイスを差し上げます。</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="cta-section">
+        <div className="container">
+          <h2 className="cta-section__title">無料建物診断のお申し込み</h2>
+          <p className="cta-section__text">「まずは現状を知りたい」「他社見積もりの診断を依頼したい」など、お気軽にお申し込みください。</p>
+          <div className="cta-section__phone">
+            <a href="tel:0798-27-5653" className="cta-section__phone-number" style={{ color: 'white', textDecoration: 'none' }}>
+              <i className="fas fa-phone-alt"></i> 0798-27-5653
+            </a>
+            <div className="cta-section__phone-sub">受付時間：平日 9:00〜18:00</div>
+          </div>
+          <div className="cta-section__buttons">
+            <a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> 無料建物診断を申し込む</a>
+          </div>
+        </div>
+      </section>
+
+      <style dangerouslySetInnerHTML={{__html: `
+        /* --- Building Inspection Page Custom Styling --- */
+        
+        .bi-promise-box {
+          background: var(--color-accent-light);
+          border-left: 4px solid var(--color-accent);
+          border-radius: 0 12px 12px 0;
+          padding: 28px 24px;
+          margin-bottom: 40px;
+          box-shadow: 0 4px 15px rgba(232, 116, 12, 0.03);
+        }
+        .bi-promise-box__badge {
+          display: inline-block;
+          background: var(--color-accent);
+          color: #fff;
+          font-size: 11px;
+          font-weight: 700;
+          padding: 4px 10px;
+          border-radius: 4px;
+          margin-bottom: 12px;
+          letter-spacing: 0.05em;
+        }
+        .bi-promise-box__title {
+          font-size: 18px;
+          font-weight: 800;
+          color: var(--color-primary);
+          margin-top: 0;
+          margin-bottom: 10px;
+        }
+        .bi-promise-box__text {
+          font-size: 14px;
+          color: var(--color-text);
+          line-height: 1.8;
+          margin: 0;
+        }
+
+        /* 導入セクション横並びレイアウト */
+        .bi-intro-row {
+          display: grid;
+          grid-template-columns: 1fr 1.2fr;
+          gap: 32px;
+          align-items: center;
+          margin-bottom: 40px;
+        }
+        .bi-intro-image img {
+          width: 100%;
+          aspect-ratio: 16/9;
+          object-fit: cover;
+          border-radius: 12px;
+          display: block;
+        }
+        .bi-intro-text p {
+          line-height: 1.85;
+          margin: 0;
+        }
+
+        .lsr-section-title {
+          margin-top: 55px;
+          margin-bottom: 24px;
+          border-bottom: 2px solid var(--color-border-light);
+          padding-bottom: 12px;
+        }
+        .lsr-section-title__en {
+          display: block;
+          font-size: 11px;
+          color: var(--color-accent);
+          font-weight: 700;
+          letter-spacing: 0.15em;
+          text-transform: uppercase;
+        }
+        .lsr-section-title h3 {
+          margin: 4px 0 0 0;
+          font-size: 22px;
+          color: var(--color-primary);
+          font-weight: 800;
+          letter-spacing: 0.02em;
+        }
+
+        /* Tech Grid */
+        .bi-tech-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+          margin-bottom: 48px;
+        }
+        .bi-tech-card {
+          background: #fff;
+          border: 1px solid var(--color-border);
+          border-radius: 12px;
+          padding: 24px;
+          display: flex;
+          gap: 16px;
+          transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .bi-tech-card:hover {
+          border-color: var(--color-accent);
+          box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+        }
+        .bi-tech-card__icon {
+          font-size: 28px;
+          color: var(--color-accent);
+          flex-shrink: 0;
+          margin-top: 4px;
+        }
+        .bi-tech-card__body h4 {
+          margin: 0 0 8px 0;
+          font-size: 16px;
+          font-weight: 700;
+          color: var(--color-primary);
+        }
+        .bi-tech-card__body p {
+          margin: 0;
+          font-size: 13px;
+          color: var(--color-text-light);
+          line-height: 1.65;
+        }
+
+        /* Background Section */
+        .bi-bg-section {
+          background: var(--color-primary);
+          color: #fff;
+          border-radius: 16px;
+          padding: 40px 30px;
+          margin-bottom: 48px;
+          text-align: center;
+        }
+        .bi-bg-section h3 {
+          font-size: 22px;
+          font-weight: 800;
+          margin: 0 0 8px 0;
+        }
+        .bi-bg-section__lead {
+          font-size: 14px;
+          color: rgba(255,255,255,0.8);
+          margin: 0;
+        }
+        .underlineWh {
+          width: 60px;
+          height: 3px;
+          background: var(--color-accent);
+        }
+        .bi-bg-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 24px;
+          text-align: left;
+        }
+        .bi-bg-card {
+          background: rgba(255,255,255,0.06);
+          border: 1px solid rgba(255,255,255,0.15);
+          border-radius: 12px;
+          padding: 24px;
+        }
+        .bi-bg-card__header {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          margin-bottom: 16px;
+        }
+        .bi-bg-card__header i {
+          font-size: 20px;
+          color: var(--color-accent);
+        }
+        .bi-bg-card__header h4 {
+          margin: 0;
+          font-size: 16px;
+          font-weight: 700;
+          color: #fff;
+        }
+        .bi-bg-card ul {
+          margin: 0;
+          padding-left: 20px;
+        }
+        .bi-bg-card li {
+          font-size: 13px;
+          color: rgba(255,255,255,0.9);
+          line-height: 1.7;
+          margin-bottom: 8px;
+        }
+        .bi-bg-card li:last-child {
+          margin-bottom: 0;
+        }
+
+        /* Report Box */
+        .bi-report-box {
+          background: var(--color-bg-light);
+          border-radius: 12px;
+          padding: 24px 30px;
+          margin-bottom: 48px;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 16px 30px;
+          border: 1px solid var(--color-border-light);
+        }
+        .bi-report-box__item {
+          display: flex;
+          align-items: flex-start;
+          gap: 12px;
+        }
+        .bi-report-box__item i {
+          font-size: 18px;
+          color: var(--color-accent);
+          margin-top: 2px;
+        }
+        .bi-report-box__item span {
+          font-size: 14px;
+          color: var(--color-text);
+          line-height: 1.6;
+        }
+
+        /* Flow Grid */
+        .bi-flow-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+          margin-bottom: 48px;
+        }
+        .bi-flow-card {
+          background: #fff;
+          border: 1px solid var(--color-border);
+          border-radius: 12px;
+          padding: 28px 20px;
+          text-align: center;
+          position: relative;
+          transition: transform 0.3s;
+        }
+        .bi-flow-card:hover {
+          transform: translateY(-4px);
+        }
+        .bi-flow-card__step {
+          display: inline-block;
+          background: var(--color-primary);
+          color: #fff;
+          font-size: 11px;
+          font-weight: 700;
+          padding: 4px 10px;
+          border-radius: 4px;
+          margin-bottom: 16px;
+        }
+        .bi-flow-card h4 {
+          margin: 0 0 10px 0;
+          font-size: 16px;
+          font-weight: 700;
+          color: var(--color-primary);
+        }
+        .bi-flow-card p {
+          margin: 0;
+          font-size: 13px;
+          color: var(--color-text-light);
+          line-height: 1.6;
+        }
+
+        /* FAQ Block */
+        .bi-faq-block {
+          background: #fff;
+          border: 1px solid var(--color-border);
+          border-radius: 12px;
+          padding: 30px;
+          margin-bottom: 48px;
+        }
+        .bi-faq-item {
+          margin-bottom: 24px;
+          border-bottom: 1px dashed var(--color-border);
+          padding-bottom: 20px;
+        }
+        .bi-faq-item:last-child {
+          margin-bottom: 0;
+          border-bottom: none;
+          padding-bottom: 0;
+        }
+        .bi-faq-item h5 {
+          margin: 0 0 8px 0;
+          font-size: 15px;
+          font-weight: 700;
+          color: var(--color-primary);
+          display: flex;
+          gap: 8px;
+        }
+        .bi-faq-item h5::before {
+          content: 'Q';
+          color: var(--color-accent);
+          font-weight: 900;
+        }
+        .bi-faq-item p {
+          margin: 0;
+          font-size: 13px;
+          color: var(--color-text-light);
+          line-height: 1.7;
+          display: flex;
+          gap: 8px;
+        }
+        .bi-faq-item p::before {
+          content: 'A';
+          color: var(--color-primary);
+          font-weight: 900;
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+          .bi-building-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        @media (max-width: 768px) {
+          .bi-intro-row {
+            grid-template-columns: 1fr;
+            gap: 20px;
+          }
+          .bi-tech-grid {
+            grid-template-columns: 1fr;
+          }
+          .bi-bg-grid {
+            grid-template-columns: 1fr;
+            gap: 16px;
+          }
+          .bi-report-box {
+            grid-template-columns: 1fr;
+            gap: 12px;
+          }
+          .bi-flow-grid {
+            grid-template-columns: 1fr;
+          }
+          .bi-bg-section {
+            padding: 30px 20px;
+          }
+        }
+      `}} />
+    </main>
+  );
+}

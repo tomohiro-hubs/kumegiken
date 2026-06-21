@@ -5,8 +5,8 @@ import { breadcrumbJsonLd, jobPostingJsonLd } from "@/lib/schema";
 
 import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
-  title: "営業職 募集要項｜採用情報｜久米技建",
-  description: "久米技建の営業職（正社員）募集要項。仕事内容、勤務条件、応募資格、待遇などを掲載しています。",
+  title: "営業職 募集要項｜西宮の防水・大規模修繕会社 久米技建",
+  description: "西宮市の雨漏り補修、防水工事、大規模修繕工事を扱う久米技建の営業職募集要項。仕事内容、勤務条件、応募資格、待遇を掲載しています。",
   path: "/recruit/sales",
   image: "/images/recruit-training.jpg",
 });

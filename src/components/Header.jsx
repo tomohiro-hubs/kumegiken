@@ -100,6 +100,7 @@ export default function Header() {
                 <Link prefetch={false} href="/service/waterproofing" className="header__dropdown-link">防水事業</Link>
                 <Link prefetch={false} href="/service/sealing" className="header__dropdown-link">シーリング工事</Link>
                 <Link prefetch={false} href="/service/painting" className="header__dropdown-link">外壁塗装</Link>
+                <Link prefetch={false} href="/service/leak-repair" className="header__dropdown-link">雨漏り調査・補修</Link>
               </div>
             </div>
             <Link prefetch={false} href="/#flow" className="header__nav-link">施工の流れ</Link>

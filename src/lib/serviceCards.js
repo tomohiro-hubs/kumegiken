@@ -28,6 +28,16 @@ export const serviceCards = [
       "ウレタン防水・シート防水・FRP防水・アスファルト防水。建物の用途と状態に合わせた最適な工法を選定し、雨水の侵入から建物を守ります。",
   },
   {
+    key: "leak-repair",
+    href: "/service/leak-repair",
+    image: "/images/leak-repair.png",
+    title: "雨漏り調査・補修",
+    descriptionHome:
+      "西宮の雨漏り調査・補修に迅速対応。原因特定から応急処置、本修繕まで一貫して対応します。",
+    descriptionService:
+      "西宮市を中心に、雨漏りの原因調査、応急処置、防水補修、本修繕まで対応。散水調査や赤外線調査も含め、再発しにくい補修を目指します。",
+  },
+  {
     key: "painting",
     href: "/service/painting",
     image: "/images/painting-service.jpg",
@@ -47,4 +57,3 @@ export const serviceCards = [
       "外壁パネルの目地やサッシ周りのシーリング材を打ち替え・打ち増し。雨漏りを根本から防ぎ、建物の耐久性を維持します。",
   },
 ];
-

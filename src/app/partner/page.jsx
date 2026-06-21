@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { routePath } from "@/lib/routePath";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd } from "@/lib/schema";
 
 import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
-  title: "協力会社募集・お問い合わせ｜久米技建",
-  description: "防水・塗装・足場・シーリングなどの協力会社を募集しています。久米技建との協業をご検討の企業様はこちらからお問い合わせください。",
+  title: "協力会社募集・お問い合わせ｜西宮の防水・大規模修繕会社 久米技建",
+  description: "西宮市を拠点に雨漏り補修、防水工事、大規模修繕工事を手がける久米技建の協力会社募集ページです。防水、塗装、足場、シーリングなどの協業先を募集しています。",
   path: "/partner",
   image: "/images/hero-main.jpg",
 });
@@ -12,6 +14,7 @@ export const metadata = buildMetadata({
 export default function Page() {
   return (
     <main>
+      <JsonLd data={breadcrumbJsonLd([{ name: "ホーム", path: "/" }, { name: "協力会社お問い合わせ", path: "/partner" }])} />
       <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li>協力会社お問い合わせ</li></ol></div></nav>
       <section className="page-hero"><span className="page-hero__label">Partner</span><h1 className="page-hero__title">協力会社お問い合わせ</h1><p className="page-hero__description">共に建物を守るビジネスパートナーを募集しています</p></section>
 

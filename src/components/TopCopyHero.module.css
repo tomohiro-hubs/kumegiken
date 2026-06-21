@@ -103,7 +103,7 @@
   align-items: center;
   gap: clamp(10px, 1.2vw, 18px);
   color: #fffdf6;
-  font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+  font-family: var(--font-ja);
   font-size: clamp(44px, 8vw, 132px);
   font-weight: 700;
   line-height: 0.95;
@@ -1047,6 +1047,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 8px;
+    min-height: auto;
     border-radius: 12px;
     text-align: center;
     padding: clamp(16px, 4vw, 24px) 12px;
@@ -1055,13 +1057,18 @@
   .phoneLink {
     padding-right: 0;
     width: 100%;
-    display: inline-flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "icon number"
+      "label label";
     justify-content: center;
-    gap: clamp(8px, 2vw, 12px);
+    align-items: center;
+    gap: 6px 10px;
   }
 
   .phoneNumberIcon {
+    grid-area: icon;
     height: clamp(24px, 7.5vw, 36px);
     transform: none;
     margin: 0;
@@ -1070,15 +1077,25 @@
   .phoneNumber,
   .tel,
   .number {
-    font-size: clamp(28px, 9vw, 44px);
+    grid-area: number;
+    justify-self: start;
+    font-size: clamp(26px, 7.8vw, 38px);
     letter-spacing: 0.02em;
     line-height: 1;
+  }
+
+  .telLabel,
+  .phoneLead {
+    grid-area: label;
+    font-size: clamp(12px, 3.4vw, 14px);
+    line-height: 1.45;
   }
 
   .freeBadge,
   .ctaBadge,
   .consultBadge {
     position: static;
+    order: -1;
     transform: none;
     margin: 0 auto clamp(8px, 2.5vw, 14px);
     width: clamp(64px, 18vw, 80px);
@@ -1091,16 +1108,40 @@
   .bottomCtas,
   .bottomActions,
   .linkRow {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
   }
 
   .bottomCta,
   .actionBtn,
   .bottomLink {
     min-height: 122px;
-    padding: 20px 24px 16px clamp(90px, 25vw, 110px);
+    padding: 16px 14px 14px 18px;
     border-radius: 8px;
     align-items: flex-start;
+  }
+
+  .bottomCtaTitle {
+    margin-top: 4px;
+    font-size: clamp(18px, 4.9vw, 24px);
+    line-height: 1.2;
+    white-space: normal;
+  }
+
+  .bottomCtaMeta,
+  .bottomCtaSub {
+    font-size: 11px;
+    line-height: 1.45;
+    white-space: normal;
+  }
+
+  .bottomCtaSub {
+    margin-top: 6px;
+  }
+
+  .bottomCtaArrow {
+    right: 12px;
+    font-size: 30px;
   }
 }
 
@@ -1134,17 +1175,16 @@
   .phoneNumber,
   .tel,
   .number {
-    font-size: clamp(30px, 11vw, 40px);
+    font-size: clamp(24px, 7.4vw, 34px);
   }
 
   .bottomCtaTitle {
-    margin-top: 4px;
-    font-size: clamp(22px, 7vw, 30px);
+    font-size: clamp(16px, 5.4vw, 21px);
   }
 
   .bottomCtaMeta,
   .bottomCtaSub {
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .bottomCtaSub {
@@ -1152,7 +1192,7 @@
   }
 
   .bottomCtaArrow {
-    right: 18px;
-    font-size: 36px;
+    right: 10px;
+    font-size: 24px;
   }
 }

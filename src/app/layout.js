@@ -5,71 +5,23 @@ import ScrollRevealProvider from "@/components/ScrollRevealProvider";
 import JsonLd from "@/components/JsonLd";
 import Analytics from "@/components/Analytics";
 import { assetPath } from "@/lib/assetPath";
+import { localBusinessJsonLd, organizationJsonLd, websiteJsonLd } from "@/lib/schema";
 import { isGithubPagesBuild, toAbsoluteUrl } from "@/lib/siteUrl";
 import { Inter, Noto_Sans_JP } from "next/font/google";
 
 const SITE_URL = "https://kumegiken.co.jp";
-const ORGANIZATION_ID = `${SITE_URL}/#organization`;
-const WEBSITE_ID = `${SITE_URL}/#website`;
 const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600", "700", "900"], display: "swap", variable: "--font-en-next" });
 const notoSansJp = Noto_Sans_JP({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700", "900"], display: "swap", variable: "--font-ja-next" });
 
-const structuredData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": ORGANIZATION_ID,
-      name: "株式会社久米技建",
-      url: toAbsoluteUrl("/"),
-      telephone: "+81-798-27-5653",
-      sameAs: [],
-      logo: toAbsoluteUrl("/images/hero-main.jpg", { addTrailingSlash: false }),
-      image: toAbsoluteUrl("/images/hero-main.jpg", { addTrailingSlash: false }),
-      areaServed: [
-        { "@type": "AdministrativeArea", name: "兵庫県" },
-        { "@type": "AdministrativeArea", name: "大阪府" },
-      ],
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "甲子園町5-7 河津ビル1F",
-        addressLocality: "西宮市",
-        addressRegion: "兵庫県",
-        postalCode: "663-8152",
-        addressCountry: "JP",
-      },
-      contactPoint: [
-        {
-          "@type": "ContactPoint",
-          telephone: "+81-798-27-5653",
-          contactType: "customer service",
-          availableLanguage: ["ja"],
-          areaServed: "JP",
-        },
-      ],
-    },
-    {
-      "@type": "WebSite",
-      "@id": WEBSITE_ID,
-      url: toAbsoluteUrl("/"),
-      name: "株式会社久米技建",
-      inLanguage: "ja-JP",
-      publisher: {
-        "@id": ORGANIZATION_ID,
-      },
-    },
-  ],
-};
-
 export const metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "防水工事・大規模修繕なら久米技建｜西宮市の防水専門会社【無料建物診断】",
+  title: "西宮の雨漏り・防水工事・大規模修繕工事なら久米技建",
   description:
-    "西宮市の防水工事専門会社・久米技建。自社職人21名による直営施工で高品質な防水・外壁改修を実現。正直な建物診断に基づき、本当に必要な工事だけをご提案。兵庫・大阪エリア対応。無料建物診断・見積もり受付中。",
+    "西宮市を拠点に雨漏り補修、防水工事、大規模修繕工事、外壁塗装に対応。自社職人による直営施工と正直な建物診断で、兵庫・大阪の建物修繕を一貫対応します。",
   openGraph: {
-    title: "防水工事・大規模修繕なら久米技建｜西宮市の防水専門会社【無料建物診断】",
+    title: "西宮の雨漏り・防水工事・大規模修繕工事なら久米技建",
     description:
-      "西宮市の防水工事専門会社・久米技建。自社職人21名による直営施工で高品質な防水・外壁改修を実現。正直な建物診断に基づき、本当に必要な工事だけをご提案。兵庫・大阪エリア対応。無料建物診断・見積もり受付中。",
+      "西宮市を拠点に雨漏り補修、防水工事、大規模修繕工事、外壁塗装に対応。自社職人による直営施工と正直な建物診断で、兵庫・大阪の建物修繕を一貫対応します。",
     type: "website",
     locale: "ja_JP",
     siteName: "株式会社久米技建",
@@ -77,9 +29,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "防水工事・大規模修繕なら久米技建｜西宮市の防水専門会社【無料建物診断】",
+    title: "西宮の雨漏り・防水工事・大規模修繕工事なら久米技建",
     description:
-      "西宮市の防水工事専門会社・久米技建。自社職人21名による直営施工で高品質な防水・外壁改修を実現。正直な建物診断に基づき、本当に必要な工事だけをご提案。兵庫・大阪エリア対応。無料建物診断・見積もり受付中。",
+      "西宮市を拠点に雨漏り補修、防水工事、大規模修繕工事、外壁塗装に対応。自社職人による直営施工と正直な建物診断で、兵庫・大阪の建物修繕を一貫対応します。",
     images: ["/images/hero-main.jpg"],
   },
   ...(isGithubPagesBuild()
@@ -101,7 +53,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ja" suppressHydrationWarning className={`${inter.variable} ${notoSansJp.variable}`}>
       <head>
-        <JsonLd data={structuredData} />
+        <JsonLd data={organizationJsonLd()} />
+        <JsonLd data={websiteJsonLd()} />
+        <JsonLd data={localBusinessJsonLd()} />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
       </head>
       <body

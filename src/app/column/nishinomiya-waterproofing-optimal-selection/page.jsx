@@ -225,6 +225,7 @@ export default function Page() {
               <li><a href={routePath("/service/waterproofing")}>防水工事（ウレタン・シート・FRP・アスファルト）</a></li>
               <li><a href={routePath("/service/building-inspection")}>建物診断</a></li>
               <li><a href={routePath("/service/leak-repair")}>雨漏り調査・補修</a></li>
+              <li><a href={routePath("/service/large-scale-repair")}>大規模修繕工事</a></li>
             </ul>
 
             <div style={{ background: 'var(--color-primary)', color: 'white', padding: '30px', borderRadius: '12px', margin: '40px 0', textAlign: 'center' }}>

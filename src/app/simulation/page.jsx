@@ -1,19 +1,36 @@
 import Link from "next/link";
 import Script from "next/script";
 import { routePath } from "@/lib/routePath";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd, faqJsonLd } from "@/lib/schema";
 
 import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
-  title: "見積もりシミュレーション｜久米技建",
-  description: "大規模修繕・防水工事の概算費用を入力形式で確認できる見積もりシミュレーションです。",
+  title: "西宮の大規模修繕工事・防水工事 見積もりシミュレーション｜久米技建",
+  description: "西宮市の大規模修繕工事、防水工事、外壁塗装の概算費用を入力形式で確認できる見積もりシミュレーションです。",
   path: "/simulation",
   image: "/images/hero-main.jpg",
 });
 
 export default function Page() {
+  const faqItems = [
+    {
+      question: "見積もりシミュレーションだけで正式な金額はわかりますか？",
+      answer:
+        "このページでは西宮周辺での概算目安を確認できます。正式な金額は現地調査後の建物状態、劣化範囲、足場や下地補修の有無を確認してご案内します。",
+    },
+    {
+      question: "雨漏りしている場合でもシミュレーションを使えますか？",
+      answer:
+        "概算確認には使えますが、雨漏りがある場合は補修範囲の特定が先です。症状が出ている場合は雨漏り調査・補修ページやお問い合わせからご相談ください。",
+    },
+  ];
+
   return (
     <>
     <main>
+      <JsonLd data={breadcrumbJsonLd([{ name: "ホーム", path: "/" }, { name: "見積もりシミュレーション", path: "/simulation" }])} />
+      <JsonLd data={faqJsonLd(faqItems)} />
       <nav className="breadcrumb">
       <div className="container">
         <ol className="breadcrumb__list">
@@ -25,8 +42,8 @@ export default function Page() {
     </nav>
       <section className="page-hero">
       <span className="page-hero__label">Simulation</span>
-      <h1 className="page-hero__title">見積もりシミュレーション</h1>
-      <p className="page-hero__description">入力するだけで、概算費用がすぐにわかります</p>
+      <h1 className="page-hero__title">西宮の大規模修繕工事・防水工事 見積もりシミュレーション</h1>
+      <p className="page-hero__description">入力するだけで、西宮市周辺の概算費用目安がすぐにわかります</p>
     </section>
 
     
@@ -38,9 +55,15 @@ export default function Page() {
             <p className="sim-intro__eyebrow">3分で完了 / すぐに概算</p>
             <h2 className="sim-intro__title">条件を選ぶだけで、費用レンジをその場で確認できます</h2>
             <p className="sim-intro__text">
-              現地調査前の目安として、まずは概算を確認してください。入力内容は最後にお問い合わせへ引き継げます。
+              西宮で大規模修繕工事や防水工事を検討中の方が、現地調査前の目安として確認できる概算シミュレーションです。入力内容は最後にお問い合わせへ引き継げます。
             </p>
           </div>
+        </div>
+
+        <div style={{ marginBottom: '24px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px' }} className="reveal">
+          <Link href={routePath("/service/large-scale-repair")} className="btn btn--outline-dark">西宮の大規模修繕工事</Link>
+          <Link href={routePath("/service/waterproofing")} className="btn btn--outline-dark">西宮の防水工事</Link>
+          <Link href={routePath("/service/leak-repair")} className="btn btn--outline-dark">西宮の雨漏り調査・補修</Link>
         </div>
 
         <div className="sim-attention reveal" style={{ textAlign: 'left' }}>

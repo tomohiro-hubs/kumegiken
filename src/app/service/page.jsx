@@ -2,18 +2,39 @@ import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 import { serviceCards } from "@/lib/serviceCards";
-
+import JsonLd from "@/components/JsonLd";
 import { buildMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, collectionPageJsonLd } from "@/lib/schema";
 export const metadata = buildMetadata({
-  title: "サービス一覧（大規模修繕・防水・外壁塗装ほか）｜久米技建",
-  description: "久米技建のサービス一覧。大規模修繕、防水工事、外壁塗装、シーリング、建物診断、雨漏り補修、水中点検に対応しています。",
+  title: "西宮の雨漏り・大規模修繕工事・防水工事サービス一覧｜久米技建",
+  description: "西宮市を拠点に、雨漏り補修、大規模修繕工事、防水工事、外壁塗装、シーリング、建物診断に対応。サービス別の施工内容と相談先を一覧で確認できます。",
   path: "/service",
   image: "/images/hero-main.jpg",
 });
 
 export default function Page() {
+  const listItems = serviceCards.map((card) => ({
+    name: card.title,
+    path: card.href,
+  }));
+
   return (
     <main>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "ホーム", path: "/" },
+          { name: "サービス一覧", path: "/service" },
+        ])}
+      />
+      <JsonLd
+        data={collectionPageJsonLd({
+          name: "久米技建のサービス一覧",
+          description:
+            "雨漏り補修、防水工事、大規模修繕工事、外壁塗装、シーリング、建物診断の各サービス一覧ページです。",
+          path: "/service",
+          items: listItems,
+        })}
+      />
       <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li>サービス一覧</li></ol></div></nav>
 
 <section className="page-hero page-hero--no-deco">
@@ -56,7 +77,7 @@ export default function Page() {
   <section className="cta-section">
     <div className="container">
       <h2 className="cta-section__title reveal">どのサービスが最適かわからない方へ</h2>
-      <p className="cta-section__text reveal">まずは状況をお聞かせください。4つのサービスから最適な進め方をご提案します。</p>
+      <p className="cta-section__text reveal">まずは状況をお聞かせください。雨漏り補修から大規模修繕工事まで、最適な進め方をご提案します。</p>
       <div className="cta-section__buttons reveal">
         <a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> 無料相談・お見積もり</a>
         <a href={routePath("/simulation")} className="btn btn--outline btn--lg"><i className="fas fa-calculator"></i> 見積もりシミュレーション</a>

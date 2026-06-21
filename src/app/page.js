@@ -5,58 +5,21 @@ import { siteConfig } from "@/lib/siteConfig";
 import VoiceCarousel from "@/components/VoiceCarousel";
 import { buildMetadata } from "@/lib/seo";
 import TopCopyHero from "@/components/TopCopyHero";
-import JsonLd from "@/components/JsonLd";
 import Image from "next/image";
 
 export const metadata = buildMetadata({
-  title: "防水工事・大規模修繕なら久米技建｜西宮市の防水専門会社【無料建物診断】",
+  title: "西宮の雨漏り・防水工事・大規模修繕工事なら久米技建｜無料建物診断",
   description:
-    "西宮市の防水工事専門会社・久米技建。自社職人21名による直営施工で高品質な防水・外壁改修を実現。正直な建物診断に基づき、本当に必要な工事だけをご提案。兵庫・大阪エリア対応。無料建物診断・見積もり受付中。",
+    "西宮市の雨漏り補修、防水工事、大規模修繕工事なら久米技建。自社職人による直営施工と正直な建物診断で、兵庫・大阪のマンション・ビル・戸建て修繕に対応します。",
   path: "/",
 });
 
-const reviewSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  name: "株式会社久米技建",
-  url: "https://kumegiken.co.jp",
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "5.0",
-    reviewCount: "8",
-    bestRating: "5",
-    worstRating: "1",
-  },
-  review: [
-    {
-      "@type": "Review",
-      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-      author: { "@type": "Person", name: "M.T 様" },
-      reviewBody:
-        "正直に『ここはまだ大丈夫です』と言ってくれたのが信頼できました。他社では全面やり替えと言われていたので、大きな節約になりました。",
-    },
-    {
-      "@type": "Review",
-      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-      author: { "@type": "Person", name: "S.K 様" },
-      reviewBody:
-        "自社の職人さんが施工してくれるので品質にバラツキがなく安心でした。施工管理の方の対応も丁寧で、管理会社としても信頼しています。",
-    },
-    {
-      "@type": "Review",
-      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-      author: { "@type": "Person", name: "K.H 様" },
-      reviewBody:
-        "建物診断レポートが非常にわかりやすく、理事会での説明にそのまま使えました。長期修繕計画の見直しにも役立っています。",
-    },
-  ],
-};
-
 const serviceQuickLinks = [
   { href: "/service/waterproofing", label: "屋上防水" },
+  { href: "/service/leak-repair", label: "西宮の雨漏り補修" },
+  { href: "/service/large-scale-repair", label: "西宮の大規模修繕工事" },
   { href: "/service/sealing", label: "シーリング工事" },
   { href: "/service/painting", label: "外壁塗装" },
-  { href: "/service/large-scale-repair", label: "大規模修繕" },
 ];
 
 const reasonItems = [
@@ -292,6 +255,7 @@ const IMAGE_DIMENSIONS = {
   "/images/after-support.jpg": { width: 640, height: 427 },
   "/images/large-scale-aerial.jpg": { width: 1820, height: 1024 },
   "/images/leak-repair.jpg": { width: 1365, height: 1024 },
+  "/images/leak-repair.png": { width: 1448, height: 1086 },
   "/images/icon_optimal-fastest.png": { width: 913, height: 920 },
   "/images/icon_repair.png": { width: 1024, height: 1024 },
   "/images/icon_worker.png": { width: 1024, height: 1024 },
@@ -344,8 +308,6 @@ export function TopCopyPageContent({ rootClassName = "top-copy-page" } = {}) {
 
   return (
     <main className={rootClassName}>
-      <JsonLd data={reviewSchema} />
-
       <TopCopyHero optimizeForCopy3={optimizeForCopy3} optimizeForCopy6={optimizeForCopy6} />
 
       {optimizeForCopy6 && (
@@ -408,12 +370,11 @@ export function TopCopyPageContent({ rootClassName = "top-copy-page" } = {}) {
             </div>
           </section>
 
-          <section className="top-copy6-team-photo" aria-label="久米技建の集合写真" style={{ width: "1280px", maxWidth: "none" }}>
+          <section className="top-copy6-team-photo" aria-label="久米技建の集合写真">
             <img
               src={assetPath("/images/top-copy6-team-photo-cropped.png")}
               alt="久米技建の集合写真"
               className="top-copy6-team-photo__image"
-              style={{ width: "1280px", maxWidth: "none", height: "auto" }}
             />
           </section>
         </>
@@ -572,6 +533,18 @@ export function TopCopyPageContent({ rootClassName = "top-copy-page" } = {}) {
               <br />
               各サービスページでは、施工内容・費用目安・対応エリアを詳しくご案内しています。
             </p>
+            <div className="reveal" style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginBottom: "28px" }}>
+              {serviceQuickLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={routePath(link.href)}
+                  className="btn btn--outline-dark"
+                  style={{ padding: "10px 16px", minWidth: "auto" }}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
             <div className="service__feature reveal reveal--delay-1">
               <TopScopedImage
                 src="/images/service-team-crew.png"
@@ -594,7 +567,7 @@ export function TopCopyPageContent({ rootClassName = "top-copy-page" } = {}) {
 
         <div className="container">
           <div className="service__grid">
-            {serviceCards.filter(card => card.key !== "building-inspection").map((card, index) => (
+            {serviceCards.map((card, index) => (
               <a href={routePath(card.href)} className={`service-card ${getRevealClass(index)}`} key={card.key}>
                 <div className="service-card__image">
                   <TopScopedImage src={card.image} alt={card.title} optimizeForCopy3={optimizeForCopy3} />

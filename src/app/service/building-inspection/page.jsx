@@ -7,8 +7,8 @@ import ServiceSeo, { FaqSection } from "@/components/ServiceSeo";
 import { serviceSeoData } from "@/lib/serviceSeoData";
 
 export const metadata = buildMetadata({
-  title: "建物無料診断（インスペクション）｜久米技建｜兵庫・大阪",
-  description: "マンション・ビルの修繕計画に必要な建物診断を実施。先端機器による非破壊検査とプロの打診調査で現状を正確に把握。完全無料で押し売りは一切ありません。",
+  title: "西宮の建物無料診断｜久米技建",
+  description: "西宮市のマンション・ビル・戸建て向け建物無料診断。雨漏り、防水層、外壁、シーリングの劣化を確認し、修繕の優先順位をわかりやすく整理します。",
   path: "/service/building-inspection",
   image: "/images/inspection-scene.jpg",
 });
@@ -33,9 +33,9 @@ export default function Page() {
       
       <section className="page-hero">
         <span className="page-hero__label">Building Inspection</span>
-        <h1 className="page-hero__title">建物無料診断（インスペクション）</h1>
+        <h1 className="page-hero__title">西宮の建物無料診断</h1>
         <p className="page-hero__description">
-          建物の寿命を延ばし、将来の修繕費を大幅に抑える「建物の人間ドック」。完全無料で正直な健康状態をご報告します。
+          雨漏りや大規模修繕工事の判断に役立つ「建物の人間ドック」。完全無料で正直な健康状態をご報告します。
         </p>
       </section>
 
@@ -229,6 +229,12 @@ export default function Page() {
                   <h4>診断報告書の提出</h4>
                   <p>写真付きの建物診断報告書をお持ちし、解説と併せて修繕が必要な時期や概算費用について丁寧にご提案します。</p>
                 </div>
+              </div>
+
+              <div style={{ marginTop: '40px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px' }}>
+                <Link href={routePath("/service/leak-repair")} className="btn btn--outline-dark">雨漏り調査・補修</Link>
+                <Link href={routePath("/service/large-scale-repair")} className="btn btn--outline-dark">大規模修繕工事</Link>
+                <Link href={routePath("/service/waterproofing")} className="btn btn--outline-dark">防水工事</Link>
               </div>
 
               {/* 8. FAQ */}

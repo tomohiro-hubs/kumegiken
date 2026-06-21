@@ -1,70 +1,14 @@
 import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
-import { breadcrumbJsonLd } from "@/lib/schema";
-import { toAbsoluteUrl } from "@/lib/siteUrl";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd, faqJsonLd, localBusinessJsonLd } from "@/lib/schema";
 
 import { buildMetadata } from "@/lib/seo";
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  name: "株式会社久米技建",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "甲子園町5-7 河津ビル1F",
-    addressLocality: "西宮市",
-    addressRegion: "兵庫県",
-    postalCode: "663-8152",
-    addressCountry: "JP",
-  },
-  telephone: "0798-27-5653",
-  foundingDate: "2016",
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "09:00",
-      closes: "18:00",
-    },
-  ],
-  areaServed: ["西宮市", "神戸市", "尼崎市", "大阪市", "兵庫県", "大阪府", "東京都", "練馬区"],
-  url: toAbsoluteUrl("/"),
-};
 
 const breadcrumbSchema = breadcrumbJsonLd([
   { name: "ホーム", path: "/" },
   { name: "会社概要", path: "/company" },
 ]);
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "対応エリアはどこですか？",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "兵庫県・大阪府を中心とした関西圏、および東京都内、埼玉、神奈川で対応しています。エリア外についても案件内容に応じてご相談可能です。",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "営業時間と連絡先を教えてください。",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "営業時間は平日9:00〜18:00です。お電話は0798-27-5653で受け付けています。",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "建設業許可番号はありますか？",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "兵庫県知事 許可（般-3）第220086号を取得しています。",
-      },
-    },
-  ],
-};
 
 const companyFaqItems = [
   {
@@ -82,8 +26,8 @@ const companyFaqItems = [
 ];
 
 export const metadata = buildMetadata({
-  title: "会社概要｜株式会社久米技建（西宮市）",
-  description: "株式会社久米技建の会社概要ページ。所在地・事業内容・連絡先など、企業情報を掲載しています。",
+  title: "会社概要｜西宮の雨漏り・大規模修繕工事会社 久米技建",
+  description: "西宮市の雨漏り補修、防水工事、大規模修繕工事を手がける株式会社久米技建の会社概要。所在地、事業内容、連絡先などの企業情報を掲載しています。",
   path: "/company",
   image: "/images/hero-main.jpg",
 });
@@ -91,9 +35,16 @@ export const metadata = buildMetadata({
 export default function Page() {
   return (
     <main>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <JsonLd
+        data={localBusinessJsonLd({
+          path: "/company",
+          description:
+            "西宮市を拠点に雨漏り補修、防水工事、大規模修繕工事を手がける株式会社久米技建の会社概要ページです。",
+          image: "/images/company-hq.jpg",
+        })}
+      />
+      <JsonLd data={breadcrumbSchema} />
+      <JsonLd data={faqJsonLd(companyFaqItems)} />
       <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li>会社概要</li></ol></div></nav>
       <section className="page-hero"><span className="page-hero__label">Company</span><h1 className="page-hero__title">会社概要｜株式会社久米技建</h1></section>
   
@@ -111,6 +62,10 @@ export default function Page() {
 
   <section className="content-section">
     <div className="container container--narrow">
+      <p className="reveal" style={{ marginBottom: '32px', lineHeight: '1.9', color: 'var(--color-text-light)' }}>
+        株式会社久米技建は、西宮市を拠点に雨漏り調査・補修、防水工事、大規模修繕工事を手がける施工会社です。
+        建物の状態を整理しやすい診断と、運用しやすい工事提案を重視しています。
+      </p>
       <h2 className="reveal" style={{ fontSize: '24px', fontWeight: '700', color: 'var(--color-primary)', marginBottom: '24px' }}>会社概要</h2>
       <table className="info-table reveal"><tbody>
         <tr><th>会社名</th><td>株式会社久米技建（KUME GIKEN Co., Ltd.）</td></tr>
@@ -183,6 +138,16 @@ export default function Page() {
               <p className="company-faq__answer">{item.answer}</p>
             </details>
           ))}
+        </div>
+      </div>
+
+      <div style={{ marginTop: '60px' }} className="reveal">
+        <h2 style={{ fontSize: '24px', fontWeight: '700', color: 'var(--color-primary)', marginBottom: '20px' }}>主なご相談内容</h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px' }}>
+          <a href={routePath("/service/leak-repair")} className="btn btn--outline-dark">西宮の雨漏り調査・補修</a>
+          <a href={routePath("/service/large-scale-repair")} className="btn btn--outline-dark">西宮の大規模修繕工事</a>
+          <a href={routePath("/service/waterproofing")} className="btn btn--outline-dark">西宮の防水工事</a>
+          <a href={routePath("/contact")} className="btn btn--outline-dark">お問い合わせ・無料相談</a>
         </div>
       </div>
     </div>

@@ -1,21 +1,43 @@
 import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 import { buildMetadata } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd, collectionPageJsonLd } from "@/lib/schema";
 import { WORK_CATEGORIES, getWorksByRegion } from "@/lib/worksCatalog";
 
 export const metadata = buildMetadata({
-  title: "関西の施工事例｜久米技建",
+  title: "西宮・関西の雨漏り・大規模修繕工事の施工事例｜久米技建",
   description:
-    "兵庫・大阪を中心とした関西エリアの施工事例一覧。大規模修繕、防水工事、外壁塗装、シーリング、雨漏り補修の実績を掲載。",
+    "西宮市を含む兵庫・大阪中心の関西施工事例一覧。雨漏り補修、大規模修繕工事、防水工事、外壁塗装、シーリングの実績を掲載しています。",
   path: "/works/kansai",
   image: "/images/large-scale-aerial.jpg",
 });
 
 export default function Page() {
   const works = getWorksByRegion("kansai");
+  const workItems = works.map((item) => ({
+    name: item.fullTitle || item.title,
+    path: `/works/${item.slug}`,
+  }));
 
   return (
     <main>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "ホーム", path: "/" },
+          { name: "施工事例", path: "/works" },
+          { name: "関西の施工事例", path: "/works/kansai" },
+        ])}
+      />
+      <JsonLd
+        data={collectionPageJsonLd({
+          name: "関西の施工事例一覧",
+          description:
+            "西宮市を含む兵庫・大阪中心の雨漏り補修、大規模修繕工事、防水工事の施工事例一覧です。",
+          path: "/works/kansai",
+          items: workItems,
+        })}
+      />
       <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/works")} className="breadcrumb__link">施工事例</a></li><li className="breadcrumb__separator">›</li><li>関西</li></ol></div></nav>
       <section className="page-hero"><span className="page-hero__label">Kansai Works</span><h1 className="page-hero__title">関西の施工事例</h1><p className="page-hero__description">兵庫・大阪を中心とした実績を工事種別で掲載しています。</p></section>
 

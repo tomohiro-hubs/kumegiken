@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { routePath } from "@/lib/routePath";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd } from "@/lib/schema";
 
 import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
-  title: "沿革｜久米技建の歩み",
-  description: "2016年創業から現在までの久米技建の沿革をご紹介。防水工事から大規模修繕・水中点検へと広げてきた事業の歩みを掲載しています。",
+  title: "沿革｜西宮の雨漏り・大規模修繕工事会社 久米技建",
+  description: "西宮市で創業した久米技建の沿革をご紹介。防水工事から雨漏り補修、大規模修繕工事へと広げてきた事業の歩みを掲載しています。",
   path: "/company/history",
   image: "/images/hero-main.jpg",
 });
@@ -12,6 +14,7 @@ export const metadata = buildMetadata({
 export default function Page() {
   return (
     <main>
+      <JsonLd data={breadcrumbJsonLd([{ name: "ホーム", path: "/" }, { name: "会社情報", path: "/company" }, { name: "沿革", path: "/company/history" }])} />
       <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/company")} className="breadcrumb__link">会社情報</a></li><li className="breadcrumb__separator">›</li><li>沿革</li></ol></div></nav>
       <section className="page-hero"><span className="page-hero__label">History</span><h1 className="page-hero__title">沿革</h1><p className="page-hero__description">2016年の創業からの歩み</p></section>
 

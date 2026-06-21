@@ -6,9 +6,9 @@ import ServiceSeo, { FaqSection } from "@/components/ServiceSeo";
 import { serviceSeoData } from "@/lib/serviceSeoData";
 
 export const metadata = buildMetadata({
-  title: "防水工事（ウレタン・シート・FRP・アスファルト）の費用相場と工法｜久米技建",
+  title: "西宮の防水工事（ウレタン・シート・FRP・アスファルト）｜久米技建",
   description:
-    "マンション・ビルの防水工事なら久米技建。ウレタン防水4,000〜7,000円/㎡。創業以来の専門技術で屋上・バルコニーの雨漏りを根本解決。無料診断に対応。",
+    "西宮市の防水工事なら久米技建。マンション・ビル・戸建ての屋上、バルコニー、共用廊下に対応し、雨漏りの原因調査から最適工法の提案、施工まで一貫対応します。",
   path: "/service/waterproofing",
   image: "/images/waterproofing-service.jpeg",
 });
@@ -19,10 +19,10 @@ export default function Page() {
     <main>
       <ServiceSeo {...seoData} />
       <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/service")} className="breadcrumb__link">サービス</a></li><li className="breadcrumb__separator">›</li><li>防水工事</li></ol></div></nav>
-      <section className="page-hero">
+  <section className="page-hero">
     <span className="page-hero__label">Waterproofing</span>
-    <h1 className="page-hero__title">防水工事（ウレタン・シート・FRP）｜久米技建</h1>
-    <p className="page-hero__description">久米技建の技術的ルーツ。建物を雨水から守る専門技術</p>
+    <h1 className="page-hero__title">西宮の防水工事（ウレタン・シート・FRP・アスファルト）</h1>
+    <p className="page-hero__description">雨漏り対策から改修計画まで、西宮市を拠点に建物を雨水から守る専門技術をご提供します。</p>
   </section>
   
 
@@ -64,6 +64,14 @@ export default function Page() {
             <li>前回の防水工事から10年以上が経過している</li>
             <li>天井や壁にシミ・カビがある</li>
           </ul>
+
+          <h2>関連するご相談先</h2>
+          <p>症状や建物条件によっては、防水工事だけでなく雨漏り調査や建物診断、大規模修繕工事として整理した方が判断しやすいケースもあります。</p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px', marginTop: '20px' }}>
+            <Link href={routePath("/service/leak-repair")} className="btn btn--outline-dark">西宮の雨漏り調査・補修</Link>
+            <Link href={routePath("/service/building-inspection")} className="btn btn--outline-dark">西宮の建物無料診断</Link>
+            <Link href={routePath("/service/large-scale-repair")} className="btn btn--outline-dark">西宮の大規模修繕工事</Link>
+          </div>
         </div>
       </div>
     </div>

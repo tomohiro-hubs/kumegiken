@@ -34,7 +34,7 @@ export function buildMetadata({
   const canonicalUrl = toAbsoluteUrl(path, { addTrailingSlash: true });
   const imageUrl = toAbsoluteUrl(image, { addTrailingSlash: false });
   const socialTitle = typeof title === "string" ? title : title?.absolute || title?.default;
-  const shouldNoindex = isGithubPagesBuild();
+  const shouldNoindex = noindex || isGithubPagesBuild();
 
   return {
     title: resolveTitle({ title, titleTemplate, titleDefault }),

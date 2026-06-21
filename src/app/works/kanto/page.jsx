@@ -9,6 +9,7 @@ export const metadata = buildMetadata({
     "東京・神奈川・埼玉・千葉エリアの施工事例ページ。公開準備中の工事事例を先行掲載しています。",
   path: "/works/kanto",
   image: "/images/building-completed.jpg",
+  noindex: true,
 });
 
 export default function Page() {

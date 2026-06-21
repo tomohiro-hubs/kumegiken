@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd } from "@/lib/schema";
 
 import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
-  title: "代表メッセージ｜株式会社久米技建",
-  description: "株式会社久米技建 代表からのメッセージ。建物診断への姿勢や、品質にこだわる施工方針についてお伝えします。",
+  title: "代表メッセージ｜西宮の雨漏り・大規模修繕工事会社 久米技建",
+  description: "西宮市で雨漏り補修、防水工事、大規模修繕工事に向き合う久米技建 代表からのメッセージ。正直な建物診断と施工品質への考え方をお伝えします。",
   path: "/company/message",
   image: "/images/president-workwear.jpg",
 });
@@ -13,6 +15,7 @@ export const metadata = buildMetadata({
 export default function Page() {
   return (
     <main>
+      <JsonLd data={breadcrumbJsonLd([{ name: "ホーム", path: "/" }, { name: "会社情報", path: "/company" }, { name: "代表メッセージ", path: "/company/message" }])} />
       <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/company")} className="breadcrumb__link">会社情報</a></li><li className="breadcrumb__separator">›</li><li>代表メッセージ</li></ol></div></nav>
       <section className="page-hero"><span className="page-hero__label">Message</span><h1 className="page-hero__title">代表メッセージ</h1></section>
 	  

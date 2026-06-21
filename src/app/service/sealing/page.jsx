@@ -6,8 +6,8 @@ import { buildMetadata } from "@/lib/seo";
 import ServiceSeo, { FaqSection } from "@/components/ServiceSeo";
 import { serviceSeoData } from "@/lib/serviceSeoData";
 export const metadata = buildMetadata({
-  title: "シーリング工事（打替え・打増し）｜久米技建",
-  description: "外壁目地・サッシ周りのシーリング工事に対応。ひび割れや痩せなどの劣化症状を補修し、雨水侵入を防ぎます。",
+  title: "西宮のシーリング工事（打替え・打増し）｜久米技建",
+  description: "西宮市の外壁目地・サッシ周りのシーリング工事に対応。ひび割れや痩せなどの劣化症状を補修し、雨漏りの原因となる雨水侵入を防ぎます。",
   path: "/service/sealing",
   image: "/images/sealing-work.jpeg",
 });
@@ -18,7 +18,7 @@ export default function Page() {
     <main>
       <ServiceSeo {...seoData} />
       <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/service")} className="breadcrumb__link">サービス</a></li><li className="breadcrumb__separator">›</li><li>シーリング工事</li></ol></div></nav>
-      <section className="page-hero"><span className="page-hero__label">Sealing</span><h1 className="page-hero__title">シーリング工事</h1><p className="page-hero__description">建物の目地を守り、雨水侵入を防ぐ重要な防水工事</p></section>
+      <section className="page-hero"><span className="page-hero__label">Sealing</span><h1 className="page-hero__title">西宮のシーリング工事</h1><p className="page-hero__description">建物の目地を守り、雨水侵入を防ぐ西宮市対応の重要な防水工事</p></section>
   
 
   <section className="content-section"><div className="container container--narrow"><div className="article-content">

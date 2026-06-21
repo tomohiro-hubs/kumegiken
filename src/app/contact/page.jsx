@@ -70,12 +70,16 @@ export default function Page() {
   return (
     <main>
       <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li>お問い合わせ</li></ol></div></nav>
-      <section className="page-hero"><span className="page-hero__label">Contact</span><h1 className="page-hero__title">お問い合わせ</h1><p className="page-hero__description">無料建物診断・お見積もり・ご相談など、お気軽にお問い合わせください</p></section>
+      <section className="page-hero"><span className="page-hero__label">Contact</span><h1 className="page-hero__title">西宮の雨漏り・大規模修繕工事 お問い合わせ</h1><p className="page-hero__description">無料建物診断、雨漏りのご相談、大規模修繕工事のお見積もりなど、お気軽にお問い合わせください</p></section>
   
 
   {/* Phone CTA */}
   <section className="content-section" style={{ padding: '60px 0 30px' }}>
     <div className="container container--narrow">
+      <div style={{ marginBottom: '24px', lineHeight: '1.9', color: 'var(--color-text-light)' }} className="reveal">
+        西宮市で雨漏りの調査依頼や、大規模修繕工事のご相談先を探している方へ。
+        建物の状況がまだ整理できていない段階でも、症状やご希望をお送りいただければ、必要な進め方をご案内します。
+      </div>
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }} className="reveal">
         <div style={{ background: 'var(--color-primary)', color: 'white', padding: '32px', borderRadius: '16px', textAlign: 'center' }}>
           <p style={{ fontSize: '14px', marginBottom: '8px', opacity: '0.7' }}>お急ぎの方はお電話ください</p>
@@ -87,6 +91,12 @@ export default function Page() {
           <a href={routePath("/simulation")} className="btn btn--primary"><i className="fas fa-calculator"></i> 見積もりシミュレーション</a>
           <p style={{ fontSize: '12px', marginTop: '8px', color: 'var(--color-text-muted)' }}>24時間いつでもご利用いただけます</p>
         </div>
+      </div>
+
+      <div style={{ marginTop: '24px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px' }} className="reveal">
+        <Link href={routePath("/service/leak-repair")} className="btn btn--outline-dark">西宮の雨漏り調査・補修</Link>
+        <Link href={routePath("/service/large-scale-repair")} className="btn btn--outline-dark">西宮の大規模修繕工事</Link>
+        <Link href={routePath("/service/waterproofing")} className="btn btn--outline-dark">西宮の防水工事</Link>
       </div>
     </div>
   </section>
@@ -194,6 +204,22 @@ export default function Page() {
             <p><i className="fas fa-check-circle"></i> お問い合わせを受け付けました。<br />担当者より2営業日以内にご連絡いたします。</p>
           </div>
         )}
+      </div>
+    </div>
+  </section>
+
+  <section className="content-section" style={{ paddingTop: '0' }}>
+    <div className="container container--narrow">
+      <div style={{ background: 'var(--color-bg-light)', borderRadius: '16px', padding: '32px' }} className="reveal">
+        <h2 style={{ fontSize: '22px', fontWeight: '700', color: 'var(--color-primary)', marginBottom: '16px' }}>ご相談前によくある内容</h2>
+        <ul style={{ marginBottom: '20px' }}>
+          <li>雨漏りが起きており、まず何を確認すべきか知りたい</li>
+          <li>マンションやビルの大規模修繕工事の進め方を相談したい</li>
+          <li>防水工事か部分補修か、どちらが適切か判断したい</li>
+        </ul>
+        <p style={{ marginBottom: 0, color: 'var(--color-text-light)', lineHeight: '1.8' }}>
+          症状の写真、建物種別、発生時期がわかると初回案内がスムーズです。まだ不明な項目があっても、そのまま送信いただいて問題ありません。
+        </p>
       </div>
     </div>
   </section>

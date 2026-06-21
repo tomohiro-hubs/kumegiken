@@ -1,15 +1,18 @@
 import { buildMetadata } from "@/lib/seo";
 import { routePath } from "@/lib/routePath";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd } from "@/lib/schema";
 
 export const metadata = buildMetadata({
-  title: "引用・出典ポリシー｜久米技建",
-  description: "久米技建の引用・出典ポリシー。第三者情報の扱い、参照基準、更新時のルールを定めています。",
+  title: "引用・出典ポリシー｜西宮の雨漏り・大規模修繕工事会社 久米技建",
+  description: "西宮市の久米技建における雨漏り、防水工事、大規模修繕工事関連情報の引用・出典ポリシーです。第三者情報の扱いと参照基準を定めています。",
   path: "/citations-policy",
 });
 
 export default function Page() {
   return (
     <main>
+      <JsonLd data={breadcrumbJsonLd([{ name: "ホーム", path: "/" }, { name: "引用・出典ポリシー", path: "/citations-policy" }])} />
       <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li>引用・出典ポリシー</li></ol></div></nav>
       <section className="page-hero"><span className="page-hero__label">Policy</span><h1 className="page-hero__title">引用・出典ポリシー</h1></section>
       

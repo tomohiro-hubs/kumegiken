@@ -1,6 +1,8 @@
 "use client";
 import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
+import JsonLd from "@/components/JsonLd";
+import { collectionPageJsonLd } from "@/lib/schema";
 
 import Link from "next/link";
 import { useState } from "react";
@@ -9,6 +11,15 @@ const SITE_URL = "https://kumegiken.co.jp";
 
 export default function Page() {
   const [filter, setFilter] = useState('all');
+  const articleItems = [
+    { name: "西宮の防水工事｜最適な工法選びと長持ちのコツ", path: "/column/nishinomiya-waterproofing-optimal-selection" },
+    { name: "西宮の雨漏り対応はスピードが命", path: "/column/nishinomiya-leak-speed" },
+    { name: "西宮市の防水工事費用相場", path: "/column/waterproofing-guide" },
+    { name: "西宮での雨漏り修理に火災保険は使える？", path: "/column/nishinomiya-fire-insurance-leak-repair" },
+    { name: "西宮の防水・雨漏り修理における足場工事の役割", path: "/column/nishinomiya-ashiba" },
+    { name: "西宮の防水・雨漏り修理で重要な下地補修", path: "/column/nishinomiya-shitaji" },
+    { name: "西宮の防水・雨漏り対策に必須のシール工事とは？", path: "/column/nishinomiya-seal" },
+  ];
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -24,6 +35,14 @@ export default function Page() {
   return (
     <main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <JsonLd
+        data={collectionPageJsonLd({
+          name: "西宮の雨漏り・防水・大規模修繕コラム一覧",
+          description: "西宮の雨漏り、防水工事、大規模修繕工事に関するコラム一覧ページです。",
+          path: "/column",
+          items: articleItems,
+        })}
+      />
       <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li>コラム</li></ol></div></nav>
       <section className="page-hero"><span className="page-hero__label">Column</span><h1 className="page-hero__title">コラム・お役立ち情報</h1><p className="page-hero__description">防水・修繕の専門家が、建物管理に役立つ情報をお届けします</p></section>
 

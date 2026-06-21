@@ -3,7 +3,7 @@ export const serviceSeoData = {
     name: "防水工事",
     path: "/service/waterproofing",
     image: "/images/waterproofing-service.jpeg",
-    description: "屋上・バルコニー・共用廊下のウレタン防水、シート防水、FRP防水、アスファルト防水に対応します。",
+    description: "西宮市を拠点に、屋上・バルコニー・共用廊下のウレタン防水、シート防水、FRP防水、アスファルト防水に対応します。",
     faqs: [
       { question: "防水工事の改修時期はいつですか？", answer: "一般的には10年前後が点検の目安です。ひび割れ、膨れ、水たまり、室内のシミがある場合は早めの診断をおすすめします。" },
       { question: "工法はどのように選びますか？", answer: "下地の状態、面積、歩行頻度、既存防水層、予算を確認し、ウレタン防水・シート防水・FRP防水などから適切な工法を提案します。" },
@@ -14,7 +14,7 @@ export const serviceSeoData = {
     name: "大規模修繕工事",
     path: "/service/large-scale-repair",
     image: "/images/works-osaka-rental-mansion-complete.jpg",
-    description: "マンション・ビルの外壁補修、塗装、防水、シーリング、鉄部塗装を一貫管理します。",
+    description: "西宮市を拠点に、マンション・ビルの外壁補修、塗装、防水、シーリング、鉄部塗装を一貫管理します。",
     faqs: [
       { question: "大規模修繕は何年周期で検討すべきですか？", answer: "一般的には12〜15年周期が目安ですが、立地条件や劣化状況により前後します。まず建物診断で優先度を確認します。" },
       { question: "管理組合向けの説明資料は作成できますか？", answer: "診断写真、劣化状況、工法、概算費用を整理した資料作成に対応しています。" },
@@ -25,7 +25,7 @@ export const serviceSeoData = {
     name: "雨漏り調査・補修",
     path: "/service/leak-repair",
     image: "/images/leak-repair.jpg",
-    description: "雨漏りの原因を調査し、散水調査や防水補修で再発防止を目指します。",
+    description: "西宮市を中心に、雨漏りの原因を調査し、散水調査や防水補修で再発防止を目指します。",
     faqs: [
       { question: "雨漏りの原因調査だけでも依頼できますか？", answer: "可能です。目視、散水、赤外線など状況に応じた方法で原因箇所を絞り込みます。" },
       { question: "応急処置と本修理の違いは何ですか？", answer: "応急処置は被害拡大を防ぐ一時対応です。本修理では原因箇所を補修し、再発リスクを下げます。" },

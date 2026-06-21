@@ -1,15 +1,18 @@
 import { buildMetadata } from "@/lib/seo";
 import { routePath } from "@/lib/routePath";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd } from "@/lib/schema";
 
 export const metadata = buildMetadata({
-  title: "編集・監修ポリシー｜久米技建",
-  description: "久米技建の編集・監修ポリシー。情報の作成体制、更新基準、訂正方針を掲載しています。",
+  title: "編集・監修ポリシー｜西宮の雨漏り・大規模修繕工事会社 久米技建",
+  description: "西宮市の久米技建における雨漏り、防水工事、大規模修繕工事関連情報の編集・監修体制、更新基準、訂正方針を掲載しています。",
   path: "/editorial-policy",
 });
 
 export default function Page() {
   return (
     <main>
+      <JsonLd data={breadcrumbJsonLd([{ name: "ホーム", path: "/" }, { name: "編集・監修ポリシー", path: "/editorial-policy" }])} />
       <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li>編集・監修ポリシー</li></ol></div></nav>
       <section className="page-hero"><span className="page-hero__label">Policy</span><h1 className="page-hero__title">編集・監修ポリシー</h1></section>
       

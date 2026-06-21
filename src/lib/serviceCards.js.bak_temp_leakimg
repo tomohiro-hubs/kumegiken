@@ -1,0 +1,59 @@
+export const serviceCards = [
+  {
+    key: "building-inspection",
+    href: "/service/building-inspection",
+    image: "/images/inspection-scene.jpg",
+    title: "建物無料診断",
+    descriptionHome: "建物の劣化状況をサーモグラフィや目視で細かく診断。最適な補修時期をご提案します。",
+    descriptionService:
+      "サーモグラフィや打診調査など、建物の状態に合わせた的確な建物診断。雨漏りやタイルの浮きなどの予兆を早期に発見し、無駄な工事を防ぐための正直な診断レポートをご提供します。",
+  },
+  {
+    key: "large-scale-repair",
+    href: "/service/large-scale-repair",
+    image: "/images/large-scale-repair-hero.png",
+    title: "大規模修繕事業",
+    descriptionHome: "マンション・ビルの大規模修繕を、診断から施工まで一貫対応。建物の長寿命化を実現します。",
+    descriptionService:
+      "マンション・ビルの長寿命化を実現する包括的な修繕工事。建物診断から施工計画、施工、アフターフォローまで一貫対応。居住者様への配慮も含めた丁寧な施工管理で、資産価値を維持します。",
+  },
+  {
+    key: "waterproofing",
+    href: "/service/waterproofing",
+    image: "/images/waterproofing-service.jpeg",
+    title: "防水事業",
+    descriptionHome:
+      "ウレタン防水・シート防水・FRP防水など、建物に最適な工法をご提案。確かな技術で雨水から建物を守ります。",
+    descriptionService:
+      "ウレタン防水・シート防水・FRP防水・アスファルト防水。建物の用途と状態に合わせた最適な工法を選定し、雨水の侵入から建物を守ります。",
+  },
+  {
+    key: "leak-repair",
+    href: "/service/leak-repair",
+    image: "/images/leak-repair.jpg",
+    title: "雨漏り調査・補修",
+    descriptionHome:
+      "西宮の雨漏り調査・補修に迅速対応。原因特定から応急処置、本修繕まで一貫して対応します。",
+    descriptionService:
+      "西宮市を中心に、雨漏りの原因調査、応急処置、防水補修、本修繕まで対応。散水調査や赤外線調査も含め、再発しにくい補修を目指します。",
+  },
+  {
+    key: "painting",
+    href: "/service/painting",
+    image: "/images/painting-service.jpg",
+    title: "外壁塗装",
+    descriptionHome: "美観と保護を両立する外壁塗装。建物の資産価値を維持しながら、美しい外観を取り戻します。",
+    descriptionService:
+      "外壁の美観回復と保護を両立する塗装工事。建物の立地環境や外壁材に合わせた最適な塗料を選定し、長期間にわたる耐久性を実現します。",
+  },
+  {
+    key: "sealing",
+    href: "/service/sealing",
+    image: "/images/sealing-work.jpeg",
+    title: "シーリング工事",
+    descriptionHome:
+      "外壁の目地やサッシ周りのシーリングを補修し、雨水の侵入や建物の劣化を防ぎます。",
+    descriptionService:
+      "外壁パネルの目地やサッシ周りのシーリング材を打ち替え・打ち増し。雨漏りを根本から防ぎ、建物の耐久性を維持します。",
+  },
+];

@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { routePath } from "@/lib/routePath";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd } from "@/lib/schema";
 
 import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
-  title: "プライバシーポリシー｜久米技建",
-  description: "株式会社久米技建のプライバシーポリシーです。個人情報の取得・利用・管理方針について記載しています。",
+  title: "プライバシーポリシー｜西宮の雨漏り・大規模修繕工事会社 久米技建",
+  description: "西宮市の久米技建における個人情報の取得・利用・管理方針を記載したプライバシーポリシーです。",
   path: "/privacy",
   image: "/images/hero-main.jpg",
 });
@@ -12,6 +14,7 @@ export const metadata = buildMetadata({
 export default function Page() {
   return (
     <main>
+      <JsonLd data={breadcrumbJsonLd([{ name: "ホーム", path: "/" }, { name: "プライバシーポリシー", path: "/privacy" }])} />
       <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li>プライバシーポリシー</li></ol></div></nav>
       <section className="page-hero"><span className="page-hero__label">Privacy Policy</span><h1 className="page-hero__title">プライバシーポリシー</h1></section>
 
@@ -43,7 +46,7 @@ export default function Page() {
   <p>お客様ご本人から個人情報の開示・訂正・削除のご要望があった場合は、ご本人であることを確認の上、速やかに対応いたします。</p>
   <h2>7. お問い合わせ</h2>
   <p>個人情報の取り扱いに関するお問い合わせは、以下の窓口までご連絡ください。</p>
-  <p>株式会社久米技建<br />〒663-8113 兵庫県西宮市甲子園口2丁目<br />TEL: 0798-27-5653<br />受付時間: 平日 9:00〜18:00</p>
+  <p>株式会社久米技建<br />〒663-8152 兵庫県西宮市甲子園町5-7 河津ビル1F<br />TEL: 0798-27-5653<br />受付時間: 平日 9:00〜18:00</p>
   <p style={{ textAlign: 'right', marginTop: '40px', fontSize: '14px', color: 'var(--color-text-muted)' }}>制定日：2016年4月1日<br />最終改定日：2026年1月1日<br />株式会社久米技建 代表取締役 久米涼平</p>
 </div></div></section>
   

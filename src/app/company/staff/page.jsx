@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd } from "@/lib/schema";
 
 import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
-  title: "スタッフ紹介｜久米技建",
-  description: "防水工事・大規模修繕を支える久米技建のスタッフをご紹介。資格や専門分野を持つ自社職人・施工管理メンバーが対応します。",
+  title: "スタッフ紹介｜西宮の雨漏り・大規模修繕工事会社 久米技建",
+  description: "西宮市の雨漏り補修、防水工事、大規模修繕工事を支える久米技建のスタッフ紹介。資格や専門分野を持つ自社職人・施工管理メンバーが対応します。",
   path: "/company/staff",
   image: "/images/team-group.jpg",
 });
@@ -13,6 +15,7 @@ export const metadata = buildMetadata({
 export default function Page() {
   return (
     <main>
+      <JsonLd data={breadcrumbJsonLd([{ name: "ホーム", path: "/" }, { name: "会社情報", path: "/company" }, { name: "スタッフ紹介", path: "/company/staff" }])} />
       <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li><a href={routePath("/company")} className="breadcrumb__link">会社情報</a></li><li className="breadcrumb__separator">›</li><li>スタッフ紹介</li></ol></div></nav>
       <section className="page-hero"><span className="page-hero__label">Staff</span><h1 className="page-hero__title">スタッフ紹介</h1><p className="page-hero__description">技術と誠実さで、建物を守るプロフェッショナルたち</p></section>
 

@@ -480,10 +480,10 @@ export async function generateMetadata({ params }) {
   }
 
   return buildMetadata({
-    title: `施工事例｜${work.title}`,
+    title: `施工事例｜${work.area}の${work.workType}｜久米技建`,
     description:
       work.metaDescription ||
-      `${work.area}の${work.workType}事例。${work.buildingType}の施工で、工期${work.period}・費用目安${work.budget}。施工前後の比較と施工ポイントを掲載。`,
+      `${work.area}の${work.workType}施工事例です。${work.buildingType}の工事内容、工期${work.period}、費用目安${work.budget}、施工前後の比較と施工ポイントを掲載しています。`,
     path: `/works/${slug}`,
     image: work.afterImage || "/images/building-completed.jpg",
   });
@@ -696,6 +696,29 @@ export default async function Page({ params }) {
               </div>
             </section>
           ) : null}
+
+          <section className="reveal" style={{ marginTop: "56px" }}>
+            <div
+              style={{
+                background: "var(--color-bg-light)",
+                border: "1px solid var(--color-border)",
+                borderRadius: "16px",
+                padding: "28px",
+              }}
+            >
+              <h2 style={{ marginBottom: "16px", color: "var(--color-primary)" }}>同様のご相談はこちら</h2>
+              <p style={{ marginBottom: "20px", color: "var(--color-text-light)", lineHeight: "1.8" }}>
+                {work.area}周辺で雨漏り補修、防水工事、大規模修繕工事をご検討中の方は、関連サービスページもご確認ください。
+                症状が近い場合はお問い合わせから建物状況をお送りいただけます。
+              </p>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "16px" }}>
+                <a href={routePath("/service/leak-repair")} className="btn btn--outline-dark">雨漏り調査・補修</a>
+                <a href={routePath("/service/waterproofing")} className="btn btn--outline-dark">防水工事</a>
+                <a href={routePath("/service/large-scale-repair")} className="btn btn--outline-dark">大規模修繕工事</a>
+                <a href={routePath("/contact")} className="btn btn--primary">お問い合わせ</a>
+              </div>
+            </div>
+          </section>
 
           <div style={{ textAlign: "center", marginTop: "48px" }}>
             <a href={routePath("/works")} className="btn btn--outline-dark">← 施工事例一覧に戻る</a>

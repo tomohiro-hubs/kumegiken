@@ -8,6 +8,7 @@ export const metadata = buildMetadata({
   description: "ダム・港湾施設・橋梁の水中点検なら久米技建。専門ダイバーが水中調査から映像記録、診断レポート提出まで対応します。",
   path: "/dive-survey",
   image: "/images/dive-survey.jpg",
+  noindex: true,
 });
 
 export default function Page() {

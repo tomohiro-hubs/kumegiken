@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd } from "@/lib/schema";
 
 import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
-  title: "採用情報（職人・施工管理・営業）｜久米技建",
-  description: "久米技建の採用情報ページ。防水職人・施工管理・営業職の募集要項や、働く魅力、教育体制についてご紹介します。",
+  title: "西宮の防水・大規模修繕会社の採用情報｜久米技建",
+  description: "西宮市で雨漏り補修、防水工事、大規模修繕工事を手がける久米技建の採用情報。防水職人・施工管理・営業職の募集要項や教育体制をご紹介します。",
   path: "/recruit",
   image: "/images/recruit-training.jpg",
 });
@@ -13,6 +15,7 @@ export const metadata = buildMetadata({
 export default function Page() {
   return (
     <main>
+      <JsonLd data={breadcrumbJsonLd([{ name: "ホーム", path: "/" }, { name: "採用情報", path: "/recruit" }])} />
       <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li>採用情報</li></ol></div></nav>
 
 <section className="page-hero recruit-hero"><span className="page-hero__label">Recruit</span><h1 className="page-hero__title">採用情報</h1><p className="page-hero__description">私たちと一緒に、「建物を守るプロ集団」として働きませんか？<br />経験者も未経験者も、それぞれが活躍できる環境を用意しています。</p></section>

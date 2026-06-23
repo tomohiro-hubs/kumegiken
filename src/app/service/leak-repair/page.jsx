@@ -949,13 +949,7 @@ export default function Page() {
           text-shadow: 0 2px 10px rgba(7, 32, 57, 0.7);
         }
 
-        .leak-repair-lp-page .section-risk::before {
-          content: "";
-          position: absolute;
-          inset: 0;
-          background: rgba(7, 32, 57, 0.15);
-          z-index: -1;
-        }
+
 
 
 

@@ -7,7 +7,7 @@ import { breadcrumbJsonLd } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: "西宮の防水・大規模修繕会社の採用情報｜久米技建",
-  description: "西宮市で雨漏り補修、防水工事、大規模修繕工事を手がける久米技建の採用情報。防水職人・施工管理・営業職の募集要項や教育体制をご紹介します。",
+  description: "西宮市で雨漏り補修、防水工事、大規模修繕工事を手がける久米技建の採用情報。防水職人・施工管理・営業職・事務職の募集要項や教育体制をご紹介します。",
   path: "/recruit",
   image: "/images/recruit-training.jpg",
 });
@@ -101,6 +101,12 @@ export default function Page() {
     <a href={routePath("/recruit/sales")} style={{ display: 'block', background: 'white', borderRadius: '16px', padding: '32px', boxShadow: 'var(--shadow-sm)', transition: 'var(--transition)' }} className="reveal">
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
         <div><h3 style={{ fontSize: '20px', fontWeight: '700', color: 'var(--color-primary)' }}>営業職（法人・個人営業）</h3><p style={{ fontSize: '14px', color: 'var(--color-text-light)', marginTop: '4px' }}>正社員 / 業界経験者優遇・未経験者歓迎</p></div>
+        <span style={{ color: 'var(--color-accent)', fontWeight: '700', fontSize: '14px' }}>募集要項を見る →</span>
+      </div>
+    </a>
+    <a href={routePath("/recruit/office-work")} style={{ display: 'block', background: 'white', borderRadius: '16px', padding: '32px', boxShadow: 'var(--shadow-sm)', transition: 'var(--transition)' }} className="reveal">
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
+        <div><h3 style={{ fontSize: '20px', fontWeight: '700', color: 'var(--color-primary)' }}>事務職（一般事務・総務事務）</h3><p style={{ fontSize: '14px', color: 'var(--color-text-light)', marginTop: '4px' }}>アルバイト・パート / 時給1,400円〜1,800円 / 建設事務経験者歓迎</p></div>
         <span style={{ color: 'var(--color-accent)', fontWeight: '700', fontSize: '14px' }}>募集要項を見る →</span>
       </div>
     </a>

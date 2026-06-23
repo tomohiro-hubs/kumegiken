@@ -34,7 +34,7 @@ const reasonItems = [
     solutionLead: "久米技建の答え",
     solutionTitle: "情報ロスなく、最適工事を\n最短工程で。",
     solutionText:
-      "久米技建は、建物を診た技術者がそのまま施工計画を立て、\n必要に応じて自ら現場にも入ります。情報のロスが少ないから、\n最適な工事を、ムダのない工程で進められます。",
+      "久米技建は、建物を診た技術者がそのまま施工計画を立て、必要に応じて自ら現場にも入ります。情報のロスが少ないから、最適な工事を、ムダのない工程で進められます。",
     icon: "fa-regular fa-clock",
     copy4Title: "担当者が変わるたび、話が伝わっているか不安です。",
     copy4Body:
@@ -386,7 +386,8 @@ export function TopCopyPageContent({ rootClassName = "top-copy-page" } = {}) {
           <div className="section-heading reveal">
             <span className="section-heading__en">Why Choose Us</span>
             <h2 className="section-heading__ja">
-              久米技建が選ばれる<span className="text-accent">3つの理由</span>
+              久米技建が選ばれる<br />
+              <span className="text-accent">3つの理由</span>
             </h2>
             <span className="section-heading__line"></span>
           </div>

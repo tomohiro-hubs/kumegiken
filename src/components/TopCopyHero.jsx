@@ -101,7 +101,11 @@ export default function TopCopyHero({ optimizeForCopy3 = false, optimizeForCopy6
               </span>
               <span className={styles.copy6HeadlineLine}>未来へつなぐ</span>
             </h1>
-            <p className={styles.copy6SubHeadline}>「大規模修繕」と「防水工事」のプロフェッショナル</p>
+            <p className={styles.copy6SubHeadline}>
+              「大規模修繕」と「防水工事」の
+              <br className={styles.spOnly} />
+              プロフェッショナル
+            </p>
             <p className={styles.copy6Description}>
               マンション・ビルの大規模修繕から、雨漏り修理まで
               <br />

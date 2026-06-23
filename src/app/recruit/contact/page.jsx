@@ -102,7 +102,7 @@ export default function Page() {
       {!isSubmitted && (
         <section className="content-section" style={{ padding: '60px 0' }}>
           <div className="container container--narrow">
-            <div style={{ background: 'var(--color-white)', border: '1px solid var(--color-border-light)', borderRadius: '16px', padding: '48px' }} className="reveal">
+            <div style={{ background: 'var(--color-white)', border: '1px solid var(--color-border-light)', borderRadius: '16px', padding: 'clamp(24px, 5vw, 48px)' }} className="reveal">
               <h2 style={{ fontSize: '24px', fontWeight: '700', color: 'var(--color-primary)', textAlign: 'center', marginBottom: '8px' }}>エントリー・応募情報入力</h2>
               <p style={{ textAlign: 'center', fontSize: '14px', color: 'var(--color-text-light)', marginBottom: '40px' }}>
                 以下のフォームに必要事項をご入力の上、送信してください。<br />
@@ -169,7 +169,7 @@ export default function Page() {
                 </div>
 
                 <div style={{ textAlign: 'center' }}>
-                  <button type="submit" className="btn btn--primary btn--lg" style={{ minWidth: '300px' }}>
+                  <button type="submit" className="btn btn--primary btn--lg" style={{ width: '100%', maxWidth: '300px' }}>
                     <i className="fas fa-paper-plane"></i> 応募する
                   </button>
                 </div>

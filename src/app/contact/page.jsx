@@ -80,13 +80,13 @@ export default function Page() {
         西宮市で雨漏りの調査依頼や、大規模修繕工事のご相談先を探している方へ。
         建物の状況がまだ整理できていない段階でも、症状やご希望をお送りいただければ、必要な進め方をご案内します。
       </div>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }} className="reveal">
-        <div style={{ background: 'var(--color-primary)', color: 'white', padding: '32px', borderRadius: '16px', textAlign: 'center' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '24px' }} className="reveal">
+        <div style={{ background: 'var(--color-primary)', color: 'white', padding: '32px', borderRadius: '16px', textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
           <p style={{ fontSize: '14px', marginBottom: '8px', opacity: '0.7' }}>お急ぎの方はお電話ください</p>
           <a href="tel:0798-27-5653" style={{ fontFamily: 'var(--font-en)', fontSize: '28px', fontWeight: '900', color: 'white', textDecoration: 'none' }}><i className="fas fa-phone-alt"></i> 0798-27-5653</a>
           <p style={{ fontSize: '12px', marginTop: '8px', opacity: '0.6' }}>受付時間：平日 9:00〜18:00</p>
         </div>
-        <div style={{ background: 'var(--color-bg-light)', padding: '32px', borderRadius: '16px', textAlign: 'center' }}>
+        <div style={{ background: 'var(--color-bg-light)', padding: '32px', borderRadius: '16px', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
           <p style={{ fontSize: '14px', marginBottom: '8px', color: 'var(--color-text-light)' }}>概算費用を知りたい方</p>
           <a href={routePath("/simulation")} className="btn btn--primary"><i className="fas fa-calculator"></i> 見積もりシミュレーション</a>
           <p style={{ fontSize: '12px', marginTop: '8px', color: 'var(--color-text-muted)' }}>24時間いつでもご利用いただけます</p>
@@ -94,9 +94,9 @@ export default function Page() {
       </div>
 
       <div style={{ marginTop: '24px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px' }} className="reveal">
-        <Link href={routePath("/service/leak-repair")} className="btn btn--outline-dark">西宮の雨漏り調査・補修</Link>
-        <Link href={routePath("/service/large-scale-repair")} className="btn btn--outline-dark">西宮の大規模修繕工事</Link>
-        <Link href={routePath("/service/waterproofing")} className="btn btn--outline-dark">西宮の防水工事</Link>
+        <Link href={routePath("/service/leak-repair")} className="btn btn--outline-dark">雨漏り調査・補修</Link>
+        <Link href={routePath("/service/large-scale-repair")} className="btn btn--outline-dark">大規模修繕工事</Link>
+        <Link href={routePath("/service/waterproofing")} className="btn btn--outline-dark">防水工事</Link>
       </div>
     </div>
   </section>
@@ -104,7 +104,7 @@ export default function Page() {
   {/* Contact Form */}
   <section className="content-section" style={{ paddingTop: '30px' }}>
     <div className="container container--narrow">
-      <div style={{ background: 'var(--color-white)', border: '1px solid var(--color-border-light)', borderRadius: '16px', padding: '48px' }} className="reveal">
+      <div style={{ background: 'var(--color-white)', border: '1px solid var(--color-border-light)', borderRadius: '16px', padding: 'clamp(24px, 5vw, 48px)' }} className="reveal">
         <h2 style={{ fontSize: '24px', fontWeight: '700', color: 'var(--color-primary)', textAlign: 'center', marginBottom: '8px' }}>メールでのお問い合わせ</h2>
         <p style={{ textAlign: 'center', fontSize: '14px', color: 'var(--color-text-light)', marginBottom: '40px' }}>以下のフォームに必要事項をご入力の上、送信してください。<br />2営業日以内に担当者よりご連絡いたします。</p>
 
@@ -193,7 +193,7 @@ export default function Page() {
           </div>
 
           <div style={{ textAlign: 'center' }}>
-            <button type="submit" className="btn btn--primary btn--lg" style={{ minWidth: '300px' }}>
+            <button type="submit" className="btn btn--primary btn--lg" style={{ width: '100%', maxWidth: '300px' }}>
               <i className="fas fa-paper-plane"></i> 送信する
             </button>
           </div>

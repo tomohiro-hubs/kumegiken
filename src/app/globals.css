@@ -1857,7 +1857,7 @@ input, textarea, select {
 .reason__concern {
   margin: 0;
   color: #102448;
-  font-size: 32px;
+  font-size: 24px;
   line-height: 1.22;
   letter-spacing: 0.01em;
   white-space: normal;
@@ -1923,7 +1923,7 @@ input, textarea, select {
   }
 
   .reason__concern {
-    font-size: clamp(28px, 2.8vw, 32px);
+    font-size: clamp(20px, 2.8vw, 24px);
     line-height: 1.24;
   }
 
@@ -2206,7 +2206,7 @@ input, textarea, select {
     top: 0;
     height: auto;
     background: rgba(242, 246, 251, 0.95);
-    padding: 24px 16px;
+    padding: 24px 20px;
     z-index: 2;
   }
 
@@ -2329,12 +2329,18 @@ input, textarea, select {
   }
 
   .works__heroHeader {
-    position: relative;
-    top: 0;
+    position: absolute;
+    bottom: 0;
+    top: auto;
+    width: 100%;
     height: auto;
-    background: rgba(242, 246, 251, 0.95);
-    padding: 24px 16px;
+    background: linear-gradient(to bottom, rgba(242, 246, 251, 0) 0%, rgba(242, 246, 251, 0.3) 35%, rgba(242, 246, 251, 0.5) 100%);
+    padding: 114px 20px 32px;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .works__heroEn {
@@ -3579,7 +3585,7 @@ input, textarea, select {
 }
 
 .top-copy-page .reason__concern {
-  font-size: clamp(34px, 2.5vw, 40px);
+  font-size: clamp(24px, 2.5vw, 28px);
 }
 
 .top-copy-page .reason__concernText,
@@ -3650,7 +3656,7 @@ input, textarea, select {
   }
 
   .top-copy-page .reason__concern {
-    font-size: clamp(28px, 8vw, 34px);
+    font-size: clamp(22px, 8vw, 26px);
   }
 
   .top-copy-page .reason__concernText,
@@ -4675,7 +4681,7 @@ input, textarea, select {
   }
 
   .reason__concern {
-    font-size: clamp(30px, 4.4vw, 38px);
+    font-size: clamp(24px, 4.4vw, 28px);
     line-height: 1.25;
   }
 
@@ -4833,10 +4839,24 @@ input, textarea, select {
 
   .voice-carousel {
     --voice-gap: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .voice-carousel__viewport {
+    order: 1;
   }
 
   .voice-carousel__header {
+    order: 2;
     justify-content: center;
+    margin-top: 16px;
+    margin-bottom: 0;
+  }
+
+  .voice-carousel__dots {
+    order: 3;
+    margin-top: 8px;
   }
 
   .voice-carousel__button {
@@ -4901,6 +4921,11 @@ input, textarea, select {
   .column-sidebar {
     position: static;
     padding: 16px;
+    min-width: 0;
+  }
+
+  .column-list {
+    min-width: 0;
   }
 
   .column-filter {
@@ -5174,7 +5199,7 @@ input, textarea, select {
   }
 
   .reason__concern {
-    font-size: 32px;
+    font-size: 24px;
     white-space: normal;
   }
 
@@ -6274,7 +6299,7 @@ input, textarea, select {
 
 .top-copy-page--refresh .reason__concern {
   color: var(--tc-navy-deep);
-  font-size: clamp(27px, 2.5vw, 38px);
+  font-size: clamp(20px, 2.5vw, 28px);
   line-height: 1.32;
   letter-spacing: 0;
 }
@@ -6950,7 +6975,7 @@ input, textarea, select {
   }
 
   .top-copy-page--refresh .reason__concern {
-    font-size: clamp(25px, 7.2vw, 32px);
+    font-size: clamp(20px, 7.2vw, 24px);
   }
 
   .top-copy-page--refresh .reason__solution {
@@ -7033,12 +7058,24 @@ input, textarea, select {
   }
 
   .top-copy-page--refresh .column-card {
-    grid-template-columns: 1fr;
+    grid-template-columns: 110px 1fr;
+    gap: 16px;
     padding: 16px;
+    align-items: center;
   }
 
   .top-copy-page--refresh .column-card__body {
-    padding: 4px 2px 6px;
+    padding: 0;
+  }
+
+  .top-copy-page--refresh .column-card__title {
+    font-size: 15px;
+    line-height: 1.4;
+    margin-bottom: 6px;
+  }
+
+  .top-copy-page--refresh .column-card__excerpt {
+    display: none;
   }
 
   .top-faq__question {
@@ -7786,24 +7823,25 @@ input, textarea, select {
   }
 
   .top-copy6-features__inner {
-    width: min(100%, calc(100% - 20px));
+    width: min(100%, calc(100% - 40px));
     gap: 14px;
   }
 
   .top-copy6-feature-card {
-    min-height: 190px;
-    padding: 20px 18px 18px;
-    border-radius: 18px;
+    min-height: auto;
+    padding: 16px 16px 20px;
+    border-radius: 16px;
   }
 
   .top-copy6-feature-card__bgnum {
-    left: 20px;
+    left: 16px;
     top: 14px;
+    font-size: 56px;
   }
 
   .top-copy6-feature-card__copy {
-    padding-top: 18px;
-    padding-left: 62px;
+    padding-top: 6px;
+    padding-left: 54px;
   }
 
   .top-copy6-feature-card__title {
@@ -7832,11 +7870,16 @@ input, textarea, select {
 
   .top-copy6-phone-cta__inner {
     width: min(100%, calc(100% - 20px));
-    padding: 14px 72px 12px 14px;
+    padding: 20px 16px !important;
     border-radius: 18px;
-    aspect-ratio: 1681 / 480;
-    background-size: 100% 100%;
-    background-position: center center;
+    aspect-ratio: unset !important;
+    height: auto !important;
+    min-height: auto !important;
+    background-color: #0c1b3a !important;
+    background-size: 145% 100% !important;
+    background-position: left center !important;
+    background-repeat: no-repeat !important;
+    text-align: center !important;
   }
 
   .top-copy6-phone-cta__lead {
@@ -7844,6 +7887,7 @@ input, textarea, select {
     font-size: clamp(14px, 4.2vw, 22px);
     line-height: 1.15;
     letter-spacing: 0.05em;
+    text-align: center !important;
   }
 
   .top-copy6-phone-cta__sub {
@@ -7851,12 +7895,14 @@ input, textarea, select {
     margin-top: 4px;
     font-size: clamp(8px, 2.3vw, 12px);
     line-height: 1.35;
+    text-align: center !important;
   }
 
   .top-copy6-phone-cta__row {
     margin-top: 8px;
     gap: 0;
-    justify-content: center;
+    display: flex !important;
+    justify-content: center !important;
   }
 
   .top-copy6-phone-cta__link {
@@ -7884,6 +7930,7 @@ input, textarea, select {
     margin-top: 8px;
     font-size: clamp(9px, 2.6vw, 13px);
     line-height: 1.25;
+    text-align: center !important;
   }
 
   .top-copy6-phone-cta__buttons {
@@ -7976,6 +8023,14 @@ input, textarea, select {
   max-width: 1280px;
   padding-left: 0;
   padding-right: 0;
+}
+
+@media (max-width: 767px) {
+  .top-copy-page--copy6 .service .container,
+  .top-copy-page--copy6 .works .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 /* --- Cookie Consent Banner --- */

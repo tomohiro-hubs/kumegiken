@@ -1390,8 +1390,8 @@ export default function Page() {
         .leak-repair-lp-page .cta-box {
           display: flex;
           align-items: center;
-          gap: 14px;
-          padding: 18px 26px;
+          gap: 10px;
+          padding: 18px 18px;
           border-radius: 6px;
           transition: .25s;
           min-width: 280px;
@@ -1405,8 +1405,9 @@ export default function Page() {
 
         .leak-repair-lp-page .cta-box strong {
           display: block;
-          font-size: 1.12rem;
+          font-size: 1.08rem;
           line-height: 1.3;
+          white-space: nowrap;
         }
 
         .leak-repair-lp-page .cta-box small {

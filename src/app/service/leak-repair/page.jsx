@@ -927,10 +927,7 @@ export default function Page() {
 
         /* ---------- risk ---------- */
         .leak-repair-lp-page .section-risk {
-          background-image: url('${assetPath("/images/cta-water-bubbles.jpg")}');
-          background-size: cover;
-          background-position: center;
-          background-repeat: no-repeat;
+          background: var(--navy-dark);
           color: #fff;
           position: relative;
           overflow: hidden;
@@ -976,8 +973,8 @@ export default function Page() {
           margin: 0 auto 18px;
           font-size: 1.9rem;
           color: #fff;
-          background: linear-gradient(135deg, var(--aqua) 0%, var(--blue) 100%);
-          box-shadow: 0 8px 20px rgba(47, 182, 214, 0.3);
+          background: var(--blue);
+          box-shadow: 0 8px 20px rgba(47, 182, 214, 0.15);
         }
 
         .leak-repair-lp-page .risk-card h3 {
@@ -1078,7 +1075,7 @@ export default function Page() {
           margin: 0 auto 20px;
           font-size: 2rem;
           color: #fff;
-          background: linear-gradient(135deg,var(--blue),var(--aqua));
+          background: var(--blue);
         }
 
         .leak-repair-lp-page .service-card h3 {

@@ -471,6 +471,7 @@ export default function Page() {
           cursor: pointer;
           border: none;
           text-align: center;
+          white-space: nowrap;
         }
 
         .leak-repair-lp-page .btn i {
@@ -485,8 +486,9 @@ export default function Page() {
         }
 
         .leak-repair-lp-page .btn-lg {
-          padding: 18px 42px;
-          font-size: 1.15rem;
+          padding: 18px 24px;
+          font-size: 1.1rem;
+          white-space: nowrap;
         }
 
         .leak-repair-lp-page .btn-block {
@@ -634,7 +636,7 @@ export default function Page() {
             text-align: right;
           }
           .leak-repair-lp-page .hero-badges {
-            width: 520px;
+            width: 580px;
             margin-left: auto;
             display: flex;
             justify-content: space-between;
@@ -645,15 +647,17 @@ export default function Page() {
             height: 150px;
           }
           .leak-repair-lp-page .hero-actions {
-            width: 520px;
+            width: 580px;
             margin-left: auto;
             display: flex;
             justify-content: space-between;
             gap: 0;
           }
           .leak-repair-lp-page .hero-actions .btn {
-            width: 250px;
-            padding: 18px 0;
+            width: 280px;
+            padding: 18px 10px;
+            font-size: 1.08rem;
+            white-space: nowrap;
           }
         }
 

@@ -179,7 +179,73 @@ export default function Page() {
                 </div>
               </div>
 
-              {/* 5. 施工の流れ */}
+              {/* 5. 建物別の配慮ポイント */}
+              <div className="lsr-section-title">
+                <span className="lsr-section-title__en">BUILDING TYPE POINTS</span>
+                <h3>建物・施設別の配慮ポイント</h3>
+              </div>
+              <p style={{ marginBottom: '24px', fontSize: '15px', lineHeight: '1.8' }}>
+                マンション、工場、学校など、建物の用途や環境によって、着工前および工事中に配慮すべき重要ポイントは大きく異なります。
+                久米技建では、それぞれの特徴や利用者の安全を熟知したうえで最適な施工計画を立て、安全管理を徹底して工事を進めます。
+              </p>
+
+              <div className="lsr-building-types-grid" style={{ marginBottom: '40px' }}>
+                <div className="lsr-menu-card" style={{ background: 'var(--color-bg-light)', border: '1px solid var(--color-border-light)', borderRadius: '12px', padding: '0', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+                  <div style={{ width: '100%', aspectRatio: '16/10', overflow: 'hidden' }}>
+                    <img src={assetPath("/images/building.jpeg")} alt="マンション・団地" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  </div>
+                  <div style={{ padding: '24px', flex: '1', display: 'flex', flexDirection: 'column' }}>
+                    <div className="lsr-menu-card__header" style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
+                      <i className="fas fa-building" style={{ color: 'var(--color-accent)', fontSize: '20px' }}></i>
+                      <h4 style={{ margin: 0, fontSize: '18px', fontWeight: '700' }}>マンション・団地</h4>
+                    </div>
+                    <p style={{ fontSize: '14px', lineHeight: '1.7', color: 'var(--color-text-light)', marginBottom: '16px', flexGrow: 1 }}>
+                      多くの居住者様が生活されている中での工事となります。バルコニーの使用制限や防犯対策（足場からの侵入防止）、洗濯物情報の事前周知など、細やかな配慮と安全確保を第一に進めます。
+                    </p>
+                    <a href={routePath("/service/large-scale-repair/mansion")} className="service-card__link" style={{ fontSize: '14px' }}>
+                      マンション向け配慮を見る <i className="fas fa-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <div className="lsr-menu-card" style={{ background: 'var(--color-bg-light)', border: '1px solid var(--color-border-light)', borderRadius: '12px', padding: '0', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+                  <div style={{ width: '100%', aspectRatio: '16/10', overflow: 'hidden' }}>
+                    <img src={assetPath("/images/industrial.jpeg")} alt="工場・倉庫" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  </div>
+                  <div style={{ padding: '24px', flex: '1', display: 'flex', flexDirection: 'column' }}>
+                    <div className="lsr-menu-card__header" style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
+                      <i className="fas fa-warehouse" style={{ color: 'var(--color-accent)', fontSize: '20px' }}></i>
+                      <h4 style={{ margin: 0, fontSize: '18px', fontWeight: '700' }}>工場・倉庫</h4>
+                    </div>
+                    <p style={{ fontSize: '14px', lineHeight: '1.7', color: 'var(--color-text-light)', marginBottom: '16px', flexGrow: 1 }}>
+                      工場の操業や物流ラインを止めない施工計画が求められます。高所の熱源や精密機械への安全対策、フォークリフトや大型車の動線確保、作業音・臭気への対策を徹底します。
+                    </p>
+                    <a href={routePath("/service/large-scale-repair/factory")} className="service-card__link" style={{ fontSize: '14px' }}>
+                      工場向け配慮を見る <i className="fas fa-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <div className="lsr-menu-card" style={{ background: 'var(--color-bg-light)', border: '1px solid var(--color-border-light)', borderRadius: '12px', padding: '0', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+                  <div style={{ width: '100%', aspectRatio: '16/10', overflow: 'hidden' }}>
+                    <img src={assetPath("/images/school.jpeg")} alt="学校・福祉施設" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  </div>
+                  <div style={{ padding: '24px', flex: '1', display: 'flex', flexDirection: 'column' }}>
+                    <div className="lsr-menu-card__header" style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
+                      <i className="fas fa-school" style={{ color: 'var(--color-accent)', fontSize: '20px' }}></i>
+                      <h4 style={{ margin: 0, fontSize: '18px', fontWeight: '700' }}>学校・福祉施設</h4>
+                    </div>
+                    <p style={{ fontSize: '14px', lineHeight: '1.7', color: 'var(--color-text-light)', marginBottom: '16px', flexGrow: 1 }}>
+                      児童・生徒や施設利用者様の安全が最優先です。休校日や長期休暇（夏休み等）を利用した集中施工、通行ルートの区分け、ガードマンの適切な配置など、万全の安全対策を講じます。
+                    </p>
+                    <a href={routePath("/service/large-scale-repair/facility")} className="service-card__link" style={{ fontSize: '14px' }}>
+                      学校・施設向け配慮を見る <i className="fas fa-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* 6. 施工の流れ */}
               <div className="lsr-section-title">
                 <span className="lsr-section-title__en">PROCESS</span>
                 <h3>大規模修繕工事の流れ</h3>
@@ -283,7 +349,7 @@ export default function Page() {
 
       <section className="cta-section">
         <div className="container">
-          <h2 className="cta-section__title reveal">大規模修繕のご相談はお気軽に</h2>
+          <h2 className="cta-section__title reveal">大規模修繕・建物診断はお気軽に</h2>
           <p className="cta-section__text reveal">まずは無料の建物診断から。最適な修繕計画をご提案します。</p>
           <div className="cta-section__phone reveal">
             <a href="tel:0798-27-5653" className="cta-section__phone-number" style={{ color: 'white', textDecoration: 'none' }}>
@@ -292,7 +358,7 @@ export default function Page() {
             <div className="cta-section__phone-sub">受付時間：平日 9:00〜18:00</div>
           </div>
           <div className="cta-section__buttons reveal">
-            <a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> 無料相談・お見積もり</a>
+            <a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> 無料の建物診断・お見積もり</a>
             <a href={routePath("/simulation")} className="btn btn--outline btn--lg"><i className="fas fa-calculator"></i> 見積もりシミュレーション</a>
           </div>
         </div>
@@ -411,6 +477,12 @@ export default function Page() {
         .lsr-menu-grid {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+          margin-bottom: 48px;
+        }
+        .lsr-building-types-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
           gap: 20px;
           margin-bottom: 48px;
         }
@@ -630,6 +702,9 @@ export default function Page() {
           .lsr-building-grid {
             grid-template-columns: repeat(2, 1fr);
           }
+          .lsr-building-types-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
         }
         @media (max-width: 768px) {
           .lsr-pillars-grid {
@@ -637,6 +712,10 @@ export default function Page() {
             gap: 16px;
           }
           .lsr-menu-grid {
+            grid-template-columns: 1fr;
+            gap: 16px;
+          }
+          .lsr-building-types-grid {
             grid-template-columns: 1fr;
             gap: 16px;
           }

@@ -13,9 +13,9 @@ export const serviceCards = [
     href: "/service/large-scale-repair",
     image: "/images/large-scale-repair-hero.png",
     title: "大規模修繕事業",
-    descriptionHome: "マンション・ビルの大規模修繕を、診断から施工まで一貫対応。建物の長寿命化を実現します。",
+    descriptionHome: "マンション、工場、学校等の大規模修繕を一貫対応。建物別の着工前・工事中の配慮ポイントも熟知しています。",
     descriptionService:
-      "マンション・ビルの長寿命化を実現する包括的な修繕工事。建物診断から施工計画、施工、アフターフォローまで一貫対応。居住者様への配慮も含めた丁寧な施工管理で、資産価値を維持します。",
+      "マンション、工場、学校・福祉施設などの大規模修繕工事。建物診断から施工計画、施工、アフターフォローまで一貫対応。それぞれの建物種別に応じた配慮と安全管理で資産価値を維持します。",
   },
   {
     key: "waterproofing",

@@ -2,7 +2,7 @@
 import { routePath } from "@/lib/routePath";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Page() {
   const [formData, setFormData] = useState({
@@ -21,6 +21,19 @@ export default function Page() {
 
   const [errors, setErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const typeParam = params.get('type');
+      if (typeParam) {
+        setFormData(prev => ({
+          ...prev,
+          type: typeParam
+        }));
+      }
+    }
+  }, []);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -114,6 +127,10 @@ export default function Page() {
             <select id="contact-type" name="type" value={formData.type} onChange={handleChange} className={`form-select ${errors.type ? 'error' : ''}`}>
               <option value="">選択してください</option>
               <option value="diagnosis">無料建物診断のお申し込み</option>
+              <option value="leak">無料 雨漏り診断のお申し込み</option>
+              <option value="waterproof">無料 防水点検のお申し込み</option>
+              <option value="wall">無料 外壁劣化診断のお申し込み</option>
+              <option value="total">無料 建物全体の健康診断のお申し込み</option>
               <option value="estimate">お見積もりのご依頼</option>
               <option value="consultation">ご相談・ご質問</option>
               <option value="emergency">雨漏り緊急対応</option>

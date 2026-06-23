@@ -65,6 +65,68 @@ export default function Page() {
             <li>天井や壁にシミ・カビがある</li>
           </ul>
 
+          <h2>建物・施設別の防水工事の配慮ポイント</h2>
+          <p>
+            マンション、工場、学校など、建物の用途や環境によって、防水工事の際に配慮すべきポイント（騒音・臭気対策、住民・利用者の安全確保、操業スケジュールの調整など）は異なります。
+            久米技建では、それぞれの特徴を熟知したうえで、最適な防水工法と安全管理計画をご提案いたします。
+          </p>
+
+          <div className="lsr-building-types-grid">
+            <div className="lsr-menu-card">
+              <div style={{ width: '100%', aspectRatio: '16/10', overflow: 'hidden' }}>
+                <img src={assetPath("/images/building.jpeg")} alt="マンション・団地" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              </div>
+              <div style={{ padding: '24px', flex: '1', display: 'flex', flexDirection: 'column' }}>
+                <div className="lsr-menu-card__header">
+                  <i className="fas fa-building" style={{ color: 'var(--color-accent)', fontSize: '20px' }}></i>
+                  <h4>マンション・団地</h4>
+                </div>
+                <p style={{ fontSize: '14px', lineHeight: '1.7', color: 'var(--color-text-light)', marginBottom: '16px', flexGrow: 1 }}>
+                  多くの居住者様が生活されている中での工事となります。バルコニーの使用制限や防犯対策（足場からの侵入防止）、洗濯物情報の事前周知など、細やかな配慮と安全確保を第一に進めます。
+                </p>
+                <a href={routePath("/service/large-scale-repair/mansion")} className="service-card__link" style={{ fontSize: '14px' }}>
+                  マンション向け配慮を見る <i className="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+
+            <div className="lsr-menu-card">
+              <div style={{ width: '100%', aspectRatio: '16/10', overflow: 'hidden' }}>
+                <img src={assetPath("/images/industrial.jpeg")} alt="工場・倉庫" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              </div>
+              <div style={{ padding: '24px', flex: '1', display: 'flex', flexDirection: 'column' }}>
+                <div className="lsr-menu-card__header">
+                  <i className="fas fa-warehouse" style={{ color: 'var(--color-accent)', fontSize: '20px' }}></i>
+                  <h4>工場・倉庫</h4>
+                </div>
+                <p style={{ fontSize: '14px', lineHeight: '1.7', color: 'var(--color-text-light)', marginBottom: '16px', flexGrow: 1 }}>
+                  工場の操業や物流ラインを止めない施工計画が求められます。高所の熱源や精密機械への安全対策、フォークリフトや大型車の動線確保、作業音・臭気への対策を徹底します。
+                </p>
+                <a href={routePath("/service/large-scale-repair/factory")} className="service-card__link" style={{ fontSize: '14px' }}>
+                  工場向け配慮を見る <i className="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+
+            <div className="lsr-menu-card">
+              <div style={{ width: '100%', aspectRatio: '16/10', overflow: 'hidden' }}>
+                <img src={assetPath("/images/school.jpeg")} alt="学校・福祉施設" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              </div>
+              <div style={{ padding: '24px', flex: '1', display: 'flex', flexDirection: 'column' }}>
+                <div className="lsr-menu-card__header">
+                  <i className="fas fa-school" style={{ color: 'var(--color-accent)', fontSize: '20px' }}></i>
+                  <h4>学校・福祉施設</h4>
+                </div>
+                <p style={{ fontSize: '14px', lineHeight: '1.7', color: 'var(--color-text-light)', marginBottom: '16px', flexGrow: 1 }}>
+                  児童・生徒や施設利用者様の安全が最優先です。休校日や長期休暇（夏休み等）を利用した集中施工、通行ルートの区分け、ガードマンの適切な配置など、万全の安全対策を講じます。
+                </p>
+                <a href={routePath("/service/large-scale-repair/facility")} className="service-card__link" style={{ fontSize: '14px' }}>
+                  学校・施設向け配慮を見る <i className="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
           <h2>関連するご相談先</h2>
           <p>症状や建物条件によっては、防水工事だけでなく雨漏り調査や建物診断、大規模修繕工事として整理した方が判断しやすいケースもあります。</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px', marginTop: '20px' }}>
@@ -78,7 +140,7 @@ export default function Page() {
   </section>
   <FaqSection faqs={seoData.faqs} />
 
-  <section className="cta-section"><div className="container"><h2 className="cta-section__title reveal">防水工事のご相談はお気軽に</h2><p className="cta-section__text reveal">建物の防水が気になったら、まずは無料診断から。</p><div className="cta-section__buttons reveal"><a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> 無料相談・お見積もり</a><a href={routePath("/simulation")} className="btn btn--outline btn--lg"><i className="fas fa-calculator"></i> 見積もりシミュレーション</a></div></div></section>
+  <section className="cta-section"><div className="container"><h2 className="cta-section__title reveal">防水点検・防水工事はお気軽に</h2><p className="cta-section__text reveal">建物の防水が気になったら、まずは無料診断から。</p><div className="cta-section__buttons reveal"><a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> 無料の防水点検・お見積もり</a><a href={routePath("/simulation")} className="btn btn--outline btn--lg"><i className="fas fa-calculator"></i> 見積もりシミュレーション</a></div></div></section>
 
   <style dangerouslySetInnerHTML={{__html: `
     /* このページ限定でコンテンツ最大幅を1080pxに拡張 */
@@ -87,6 +149,58 @@ export default function Page() {
     }
     .container--narrow .article-content {
       max-width: none;
+    }
+
+    /* ヒーロー説明文の最大幅を拡張して1行表示にする */
+    .page-hero__description {
+      max-width: 800px;
+    }
+
+    /* 建物種別カード用グリッド */
+    .lsr-building-types-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 24px;
+      margin-bottom: 48px;
+    }
+    .lsr-menu-card {
+      background: var(--color-bg-light);
+      border: 1px solid var(--color-border-light);
+      border-radius: 12px;
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .lsr-menu-card:hover {
+      border-color: var(--color-accent);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.02);
+    }
+    .lsr-menu-card__header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .lsr-menu-card__header h4 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    @media (max-width: 991px) {
+      .lsr-building-types-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 768px) {
+      .lsr-building-types-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
     }
   `}} />
 

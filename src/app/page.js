@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { routePath } from "@/lib/routePath";
 import { assetPath } from "@/lib/assetPath";
 import { serviceCards } from "@/lib/serviceCards";
@@ -29,6 +30,7 @@ const reasonItems = [
     alt: "現地調査へ向かう担当者",
     question: "01",
     concern: "こんな不安はありませんか？",
+    concernTitle: "業者が変わるたび、\n話が伝わっているか不安…",
     concernText:
       "業者が変わるたび、話が伝わっているか不安…\n調査した人、判断する人、施工する人が分かれていると、伝達ミスや判断のズレが起きやすくなります。",
     solutionLead: "久米技建の答え",
@@ -41,6 +43,8 @@ const reasonItems = [
       "調査した人、判断する人、施工する人が分かれていると、伝達ミスや判断のズレが起こりやすくなります。久米技建では、建物を診た技術者がそのまま施工計画を立て、必要に応じて現場にも入ります。情報ロスを抑えながら、必要な工事を最短工程で進められる体制です。",
     copy4Flow: ["現地調査", "施工計画", "現場対応"],
     copy4Outcome: ["情報ロスを抑制", "判断のズレを防止"],
+    linkHref: "/#flow",
+    linkLabel: "施工の流れを見る",
   },
   {
     number: "02",
@@ -60,6 +64,8 @@ const reasonItems = [
       "見えている症状だけを追いかける補修では、再発の不安が残ります。久米技建は、目に見えない原因まで丁寧に特定し、必要な工事を根本から組み立てます。その場しのぎではなく、再発しにくい状態を目指すことで、長く安心が続く修繕につなげます。",
     copy4Flow: ["症状の確認", "原因を特定", "根本から対処"],
     copy4Outcome: ["再発しにくい修繕", "長く安心が続く"],
+    linkHref: "/service/leak-repair",
+    linkLabel: "雨漏り補修のこだわり",
   },
   {
     number: "03",
@@ -72,13 +78,15 @@ const reasonItems = [
     solutionLead: "久米技建の答え",
     solutionTitle: "自社職人を中心に、一貫した品質で対応します",
     solutionText:
-      "防水工事は自社職人が責任を持って施工。塗装・足場は連携する協力会社と、いつも同じチームで対応するため、品質のばらつきなく安心してお任せいただけます。",
+      "防水工事は、国家資格である「1級施工管理技士」や「防水施工技能士」を持つ自社職人が責任を持って施工。塗装・足場は連携する協力会社と、いつも同じチームで対応するため、品質のばらつきなく安心してお任せいただけます。",
     icon: "fa-solid fa-helmet-safety",
     copy4Title: "どんな人が来るのか分からず、品質面が心配です。",
     copy4Body:
-      "スタッフの質は、そのまま仕上がりの質につながります。久米技建では、防水工事は自社職人が責任を持って施工し、塗装や足場も連携する協力会社と固定チームで対応します。現場ごとの品質のばらつきを抑え、説明から施工まで一貫した安心感を保ちます。",
+      "スタッフの質は、そのまま仕上がりの質につながります。久米技建では、国家資格である「1級施工管理技士」や「防水施工技能士」を持つ自社職人が責任を持って防水工事を施工し、塗装や足場も連携する協力会社と固定チームで対応します。現場ごとの品質のばらつきを抑え、説明から施工まで一貫した安心感を保ちます。",
     copy4Flow: ["自社職人が施工", "固定チームで連携", "品質を一定化"],
     copy4Outcome: ["説明と施工に一貫性", "ばらつきの少ない品質"],
+    linkHref: "/company/staff",
+    linkLabel: "スタッフを見る",
   },
 ];
 
@@ -484,6 +492,13 @@ export function TopCopyPageContent({ rootClassName = "top-copy-page" } = {}) {
                         ))}
                       </p>
                     </div>
+                    {item.linkHref && (
+                      <div className="reason__link">
+                        <a href={routePath(item.linkHref)} className="reason__link-anchor">
+                          {item.linkLabel} <i className="fas fa-chevron-right"></i>
+                        </a>
+                      </div>
+                    )}
                   </div>
                   <div className="reason__visual">
                     <TopScopedImage src={item.image} alt={item.alt} optimizeForCopy3={optimizeForCopy3} />
@@ -735,6 +750,43 @@ export function TopCopyPageContent({ rootClassName = "top-copy-page" } = {}) {
         </div>
       </section>
 
+      {/* ========== FREE DIAGNOSIS MENU SECTION ========== */}
+      <section className="section section-diagnosis-menu" id="diagnosis-menu">
+        <div className="container">
+          <div className="section-head reveal">
+            <p className="section-eyebrow">DIAGNOSIS MENU</p>
+            <h2 className="section-title">選べる4つの無料診断・点検メニュー</h2>
+            <p className="section-desc">久米技建では、お客様の建物の状態やご要望に合わせて選べる、4つの無料診断・点検サービスをご用意しています。強引な営業は一切いたしませんので、お気軽にご相談ください。</p>
+          </div>
+          <div className="diagnosis-grid reveal">
+            <div className="diagnosis-card diagnosis-card--has-bg" style={{ "--card-bg": `url('${assetPath("/images/diagnosis-leak-bg.png")}')` }}>
+              <div className="diagnosis-card__icon"><i className="fa-solid fa-droplet-slash"></i></div>
+              <h3 className="diagnosis-card__title">無料 雨漏り診断</h3>
+              <p className="diagnosis-card__desc">「雨漏りが起きている」「どこから漏れているか原因を特定してほしい」方向け。防水・雨漏り修理のプロが徹底調査します。</p>
+              <Link href={routePath("/contact?type=leak")} className="btn-outline">この診断を申し込む</Link>
+            </div>
+            <div className="diagnosis-card diagnosis-card--has-bg" style={{ "--card-bg": `url('${assetPath("/images/diagnosis-waterproof-bg.png")}')` }}>
+              <div className="diagnosis-card__icon"><i className="fa-solid fa-umbrella"></i></div>
+              <h3 className="diagnosis-card__title">無料 防水点検</h3>
+              <p className="diagnosis-card__desc">「ベランダや屋上の床のひび割れが気になる」「前回の工事から10年以上経過している」方向け。防水層の劣化状況を点検します。</p>
+              <Link href={routePath("/contact?type=waterproof")} className="btn-outline">この診断を申し込む</Link>
+            </div>
+            <div className="diagnosis-card diagnosis-card--has-bg" style={{ "--card-bg": `url('${assetPath("/images/diagnosis-wall-bg.png")}')` }}>
+              <div className="diagnosis-card__icon"><i className="fa-solid fa-paint-roller"></i></div>
+              <h3 className="diagnosis-card__title">無料 外壁劣化診断</h3>
+              <p className="diagnosis-card__desc">「外壁のクラック（ひび割れ）を見つけた」「壁を触ると手に白い粉がつく」方向け。外壁の傷み具合や修繕 of 必要性を診断します。</p>
+              <Link href={routePath("/contact?type=wall")} className="btn-outline">この診断を申し込む</Link>
+            </div>
+            <div className="diagnosis-card diagnosis-card--has-bg" style={{ "--card-bg": `url('${assetPath("/images/diagnosis-total-bg.jpg")}')` }}>
+              <div className="diagnosis-card__icon"><i className="fa-solid fa-building-circle-check"></i></div>
+              <h3 className="diagnosis-card__title">無料 建物全体の健康診断</h3>
+              <p className="diagnosis-card__desc">「マンションや工場の大規模修繕を検討している」「建物全体の劣化状況をトータルで調査してほしい」オーナー様・管理組合様向け。</p>
+              <Link href={routePath("/contact?type=total")} className="btn-outline">この診断を申し込む</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ========== CTA SECTION ========== */}
       <section className="cta-v2">
         <div className="cta-v2__shell">
@@ -745,7 +797,7 @@ export function TopCopyPageContent({ rootClassName = "top-copy-page" } = {}) {
                 建物のことで、お困りではありませんか？
                 <span className="cta-v2__title-accent">／</span>
               </h2>
-              <p className="cta-v2__subtext">専門スタッフが丁寧に対応いたします。ご相談・お見積もりは無料です。</p>
+              <p className="cta-v2__subtext">専門スタッフが丁寧に対応いたします。ご相談・お見積もり・現地診断はすべて無料です。</p>
 
               <div className="cta-v2__actions">
                 <a href="tel:0798-27-5653" className="cta-v2__action cta-v2__action--phone">
@@ -762,7 +814,7 @@ export function TopCopyPageContent({ rootClassName = "top-copy-page" } = {}) {
                   <span className="cta-v2__primary-copy">
                     <span className="cta-v2__primary-sub">＼ 30秒で完了・相談無料 ／</span>
                     <span className="cta-v2__primary-main">
-                      <i className="far fa-envelope"></i> 無料で相談する
+                      <i className="far fa-envelope"></i> 無料診断・見積もりを依頼する
                     </span>
                   </span>
                   <span className="cta-v2__primary-arrow" aria-hidden="true">

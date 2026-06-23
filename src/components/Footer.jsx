@@ -118,27 +118,28 @@ export default function Footer() {
         </div>
       </footer>
 
-      {/* ========== FIXED CTA (Mobile) ========== */}
       <div className={`fixed-cta ${showTokens.fixedCta ? 'visible' : ''}`}>
         <div className="fixed-cta__inner">
           <a href={`tel:${siteConfig.phone.tel}`} className="fixed-cta__btn fixed-cta__btn--phone">
-            <i className="fas fa-phone-alt"></i> 電話で相談
+            <i className="fas fa-phone-alt"></i>
+            <span>電話で相談</span>
           </a>
           <Link prefetch={false} href="/contact" className="fixed-cta__btn fixed-cta__btn--contact">
-            <i className="fas fa-envelope"></i> 無料見積もり
+            <i className="fas fa-envelope"></i>
+            <span>無料診断・見積もり</span>
           </Link>
         </div>
       </div>
 
       {/* ========== FIXED CTA (PC Float) ========== */}
       <div className={`fixed-cta__float ${showTokens.fixedCta ? 'visible' : ''}`}>
-        <Link prefetch={false} href="/contact" className="fixed-cta__contact-card" aria-label="お問い合わせはこちら">
-          <span className="fixed-cta__contact-sub">＼ ご相談・お見積りは無料です ／</span>
+        <Link prefetch={false} href="/contact" className="fixed-cta__contact-card" aria-label="無料診断・お見積りはこちら">
+          <span className="fixed-cta__contact-sub">＼ 現地調査・お見積りは無料です ／</span>
           <span className="fixed-cta__contact-main">
             <span className="fixed-cta__contact-icon">
               <i className="far fa-envelope"></i>
             </span>
-            <span>お問い合わせはこちら</span>
+            <span>無料診断・お見積りはこちら</span>
             <span className="fixed-cta__contact-arrow">›</span>
           </span>
         </Link>

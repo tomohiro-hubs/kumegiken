@@ -66,8 +66,8 @@ export default function Page() {
               </a>
               <Link href={routePath("/contact")} className="btn btn-secondary btn-lg">
                 <i className="fa-solid fa-envelope"></i>
-                メールで相談する
-                <small>24時間受付中 ／ 返信無料</small>
+                無料の雨漏り調査を依頼する
+                <small>24時間受付中 ／ 調査・見積無料</small>
               </Link>
             </div>
           </div>
@@ -142,13 +142,13 @@ export default function Page() {
             </article>
           </div>
           <div className="symptom-cta">
-            <p>気になる症状があれば、まずは<strong>無料建物診断</strong>をご利用ください。</p>
+            <p>気になる症状があれば、まずは<strong>無料の雨漏り調査・診断</strong>をご利用ください。</p>
             <div className="symptom-cta-actions">
               <a href={`tel:${siteConfig.phone.tel}`} className="btn btn-primary">
                 <i className="fa-solid fa-phone"></i> お電話で相談してみる
               </a>
               <Link href={routePath("/contact")} className="btn btn-secondary">
-                <i className="fa-solid fa-envelope"></i> メールで相談してみる
+                <i className="fa-solid fa-envelope"></i> 無料の雨漏り調査を依頼する
               </Link>
             </div>
           </div>
@@ -378,7 +378,7 @@ export default function Page() {
             <div className="cta-band-actions">
               <Link href={routePath("/contact")} className="cta-box cta-box-form">
                 <i className="fa-solid fa-envelope"></i>
-                <span><strong>メールで相談する</strong><small>24時間受付中 ／ 返信無料</small></span>
+                <span><strong>無料の雨漏り調査を依頼する</strong><small>24時間受付中 ／ 調査・見積無料</small></span>
               </Link>
               <a href={`tel:${siteConfig.phone.tel}`} className="cta-box cta-box-tel">
                 <i className="fa-solid fa-phone"></i>
@@ -414,6 +414,16 @@ export default function Page() {
           line-height: 1.8;
           background: var(--white);
           overflow-x: hidden;
+        }
+
+        /* breadcrumb styling override to counter global reset */
+        .leak-repair-lp-page .breadcrumb {
+          margin-top: var(--header-height);
+          padding: 16px 0;
+        }
+        .leak-repair-lp-page .breadcrumb__list {
+          margin: 0;
+          padding: 0;
         }
 
         .leak-repair-lp-page * {
@@ -927,13 +937,24 @@ export default function Page() {
 
         /* ---------- risk ---------- */
         .leak-repair-lp-page .section-risk {
-          background: var(--navy-dark);
+          background-image: url('${assetPath("/images/cta-water-bubbles.jpg")}');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
           color: #fff;
           position: relative;
           overflow: hidden;
           z-index: 1;
-          /* 背景のフィルター削除に伴い、文字の視認性を確保するための影を追加 */
+          /* 文字の視認性を確保するための影を追加 */
           text-shadow: 0 2px 10px rgba(7, 32, 57, 0.7);
+        }
+
+        .leak-repair-lp-page .section-risk::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: rgba(7, 32, 57, 0.85);
+          z-index: -1;
         }
 
 

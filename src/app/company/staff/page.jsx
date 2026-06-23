@@ -29,6 +29,10 @@ export default function Page() {
   </div>
 </section>
 <section className="content-section"><div className="container">
+  <h2 className="reveal" style={{ fontSize: '24px', fontWeight: '700', color: 'var(--color-primary)', marginBottom: '8px' }}>国家資格を持つプロフェッショナル</h2>
+  <p className="reveal" style={{ fontSize: '15px', color: 'var(--color-text-light)', marginBottom: '32px', lineHeight: '1.8' }}>
+    久米技建には、国家資格である「1級建築施工管理技士」や「1級防水施工技能士」などの有資格者が多数在籍しています。確かな専門知識と高い技術力を持ったプロフェッショナルが、お客様の建物を責任を持って施工いたします。
+  </p>
   <div className="staff-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))', gap: '30px' }}>
     <div style={{ textAlign: 'center', background: 'var(--color-white)', borderRadius: '16px', padding: '30px', boxShadow: 'var(--shadow-sm)' }} className="reveal">
       <img src={assetPath("/images/staff-yoshi.jpeg")} alt="スタッフY" style={{ width: '150px', height: '150px', borderRadius: '50%', margin: '0 auto 16px', objectFit: 'cover' }} />
@@ -57,8 +61,8 @@ export default function Page() {
   </div>
   <div style={{ textAlign: 'center', marginTop: '60px', padding: '40px', background: 'var(--color-bg-light)', borderRadius: '16px' }} className="reveal">
     <img src={assetPath("/images/team-group.jpg")} alt="久米技建チーム集合写真" style={{ aspectRatio: '16/7', width: '100%', objectFit: 'cover', borderRadius: '8px', minHeight: '250px' }} />
-    <p style={{ marginTop: '16px', fontSize: '16px', fontWeight: '700', color: 'var(--color-primary)' }}>現場を支えるスタッフ体制</p>
-    <p style={{ fontSize: '14px', color: 'var(--color-text-light)' }}>経験豊富な自社職人と施工管理スタッフが連携し、診断から施工、完了後のフォローまで責任を持って対応します。大切な建物を、安心してお任せいただける体制です。</p>
+    <p style={{ marginTop: '16px', fontSize: '16px', fontWeight: '700', color: 'var(--color-primary)' }}>有資格の職人・施工管理スタッフによるサポート体制</p>
+    <p style={{ fontSize: '14px', color: 'var(--color-text-light)', lineHeight: '1.8' }}>1級建築施工管理技士や1級防水施工技能士などの国家資格を持つ自社職人と施工管理スタッフが連携し、診断から施工、完了後のフォローまで責任を持って対応します。大切な建物を、安心してお任せいただける体制です。</p>
   </div>
 </div></section>
 

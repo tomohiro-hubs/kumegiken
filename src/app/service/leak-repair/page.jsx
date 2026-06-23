@@ -953,7 +953,7 @@ export default function Page() {
           content: "";
           position: absolute;
           inset: 0;
-          background: rgba(7, 32, 57, 0.85);
+          background: rgba(7, 32, 57, 0.15);
           z-index: -1;
         }
 

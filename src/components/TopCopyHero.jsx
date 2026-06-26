@@ -92,25 +92,30 @@ export default function TopCopyHero({ optimizeForCopy3 = false, optimizeForCopy6
         <div className={styles.copy6Inner}>
           <div className={styles.copy6CopyBlock}>
             <h1 id="top-copy-hero-title" className={styles.copy6Headline}>
-              <span className={styles.copy6HeadlineLine}>
-                <span className={styles.copy6HeadlineText}>建物</span>
-                <span className={styles.copy6Particle}>の</span>
-                <span className={styles.copy6HeadlineText}>価値</span>
-                <span className={styles.copy6Particle}>を</span>
-                <span className={styles.copy6HeadlineText}>守り、</span>
-              </span>
-              <span className={styles.copy6HeadlineLine}>未来へつなぐ</span>
+              <div className={styles.copy6TitleWrapper}>
+                <span className={styles.copy6TitleLine}>建物資産保全の専門会社</span>
+              </div>
+              <div className={styles.copy6TitleWrapper}>
+                <span className={styles.copy6TitleLine}>雨漏り・防水工事に強い</span>
+              </div>
             </h1>
             <p className={styles.copy6SubHeadline}>
-              「大規模修繕」と「防水工事」の
-              <br className={styles.spOnly} />
-              プロフェッショナル
+              学校・福祉施設・工場・マンション　<br className={styles.spOnly} />あらゆる建物寿命を延ばす修繕パートナー
             </p>
-            <p className={styles.copy6Description}>
-              マンション・ビルの大規模修繕から、雨漏り修理まで
-              <br />
-              確かな診断力と誠実な施工で未来の価値を守ります。
-            </p>
+            <div className={styles.copy6BannerContainer}>
+              <img
+                src={assetPath("/images/top-copy6-hero-banner.png")}
+                alt="無料診断受付中 建物の劣化・雨漏りはまず無料診断へ"
+                className={styles.copy6BannerImg}
+              />
+              <a href={routePath("/contact")} className={styles.copy6BannerBtnLink}>
+                <img
+                  src={assetPath("/images/top-copy6-hero-banner-btn.png")}
+                  alt="無料診断・見積もりを依頼する"
+                  className={styles.copy6BannerBtnImg}
+                />
+              </a>
+            </div>
           </div>
         </div>
       </section>

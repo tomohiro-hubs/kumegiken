@@ -7,4 +7,4 @@
 :HL["/images/inspection-scene.jpg","image"]
 :HL["/images/thermal_inspection_chart.png","image"]
 :HL["/images/insurance-banner.jpg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"service","param":null,"prefetchHints":0,"slots":{"children":{"name":"building-inspection","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"OehIJqTA-h_j1TTB7V6SJ"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"service","param":null,"prefetchHints":0,"slots":{"children":{"name":"building-inspection","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"YlWWCCssq5vDCtwbW9E-m"}

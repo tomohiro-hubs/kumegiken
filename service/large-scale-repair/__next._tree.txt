@@ -11,4 +11,4 @@
 :HL["/images/works-osaka-rental-mansion-fv.jpg","image"]
 :HL["/images/works-osaka-rental-mansion-02-fv.jpg","image"]
 :HL["/images/works-hyogo-rental-mansion-01-fv.jpg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"service","param":null,"prefetchHints":0,"slots":{"children":{"name":"large-scale-repair","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"OehIJqTA-h_j1TTB7V6SJ"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"service","param":null,"prefetchHints":0,"slots":{"children":{"name":"large-scale-repair","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"YlWWCCssq5vDCtwbW9E-m"}

@@ -267,8 +267,8 @@ export default function Page() {
           <h2 className="cta-section__title">無料建物診断のお申し込み</h2>
           <p className="cta-section__text">「まずは現状を知りたい」「他社見積もりの診断を依頼したい」など、お気軽にお申し込みください。</p>
           <div className="cta-section__phone">
-            <a href="tel:0798-27-5653" className="cta-section__phone-number" style={{ color: 'white', textDecoration: 'none' }}>
-              <i className="fas fa-phone-alt"></i> 0798-27-5653
+            <a href="tel:0120-449-802" className="cta-section__phone-number" style={{ color: 'white', textDecoration: 'none' }}>
+              <i className="fas fa-phone-alt"></i> 0120-449-802
             </a>
             <div className="cta-section__phone-sub">受付時間：平日 9:00〜18:00</div>
           </div>

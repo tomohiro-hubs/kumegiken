@@ -139,7 +139,7 @@ export default function Page() {
     </div>
   </div>
 </div></section>
-<section className="cta-section"><div className="container"><span className="page-hero__label">Contact</span><h2 className="cta-section__title">ご応募・ご質問はこちら</h2><p className="cta-section__text">まずはお気軽にお問い合わせください。見学も歓迎します。</p><div className="cta-section__phone"><a href="tel:0798-27-5653" className="cta-section__phone-number" style={{ color: 'white', textDecoration: 'none' }}><i className="fas fa-phone-alt"></i> 0798-27-5653</a><div className="cta-section__phone-sub">採用担当まで</div></div><div className="cta-section__buttons"><a href={routePath("/recruit/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> 応募・お問い合わせ</a></div></div></section>
+<section className="cta-section"><div className="container"><span className="page-hero__label">Contact</span><h2 className="cta-section__title">ご応募・ご質問はこちら</h2><p className="cta-section__text">まずはお気軽にお問い合わせください。見学も歓迎します。</p><div className="cta-section__phone"><a href="tel:0120-449-802" className="cta-section__phone-number" style={{ color: 'white', textDecoration: 'none' }}><i className="fas fa-phone-alt"></i> 0120-449-802</a><div className="cta-section__phone-sub">採用担当まで</div></div><div className="cta-section__buttons"><a href={routePath("/recruit/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> 応募・お問い合わせ</a></div></div></section>
   
     </main>
   );

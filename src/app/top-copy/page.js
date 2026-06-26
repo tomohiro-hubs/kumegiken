@@ -673,13 +673,13 @@ export default function TopCopyPage() {
               <p className="cta-v2__subtext">専門スタッフが丁寧に対応いたします。ご相談・お見積もりは無料です。</p>
 
               <div className="cta-v2__actions">
-                <a href="tel:0798-27-5653" className="cta-v2__action cta-v2__action--phone">
+                <a href="tel:0120-449-802" className="cta-v2__action cta-v2__action--phone">
                   <span className="cta-v2__phone-icon" aria-hidden="true">
                     <i className="fas fa-phone-alt"></i>
                   </span>
                   <span className="cta-v2__phone-copy">
                     <span className="cta-v2__phone-label">受付時間 平日9:00-18:00</span>
-                    <span className="cta-v2__phone-number">0798-27-5653</span>
+                    <span className="cta-v2__phone-number">0120-449-802</span>
                   </span>
                 </a>
 

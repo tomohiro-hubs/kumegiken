@@ -41,7 +41,7 @@ export default function Page() {
     <p>協力会社としてのお問い合わせは、以下の電話番号またはメールフォームからお願いいたします。</p>
     <div style={{ background: 'var(--color-primary)', color: 'white', padding: '30px', borderRadius: '12px', textAlign: 'center', margin: '30px 0' }}>
       <p style={{ marginBottom: '12px' }}>お電話でのお問い合わせ</p>
-      <a href="tel:0798-27-5653" style={{ fontFamily: 'var(--font-en)', fontSize: '28px', fontWeight: '900', color: 'white', textDecoration: 'none' }}><i className="fas fa-phone-alt"></i> 0798-27-5653</a>
+      <a href="tel:0120-449-802" style={{ fontFamily: 'var(--font-en)', fontSize: '28px', fontWeight: '900', color: 'white', textDecoration: 'none' }}><i className="fas fa-phone-alt"></i> 0120-449-802</a>
       <p style={{ fontSize: '12px', marginTop: '8px', opacity: '0.6' }}>受付時間：平日 9:00〜18:00（担当：総務部）</p>
     </div>
     <div style={{ textAlign: 'center' }}><a href={routePath("/contact")} className="btn btn--primary btn--lg"><i className="fas fa-envelope"></i> メールでお問い合わせ</a></div>

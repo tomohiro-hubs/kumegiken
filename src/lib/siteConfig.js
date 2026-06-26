@@ -11,9 +11,9 @@ export const siteConfig = {
     locale: "ja-JP",
   },
   phone: {
-    display: "0798-27-5653",
-    tel: "0798275653",
-    international: "+81-798-27-5653",
+    display: "0120-449-802",
+    tel: "0120449802",
+    international: "+81-120-449-802",
   },
   address: {
     postalCode: "663-8152",

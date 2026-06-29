@@ -87,7 +87,10 @@ export default function TopCopyHero({ optimizeForCopy3 = false, optimizeForCopy6
       <section
         className={cx(styles.root, styles.copy6Root)}
         aria-labelledby="top-copy-hero-title"
-        style={{ "--top-copy-hero-bg-image": `url('${assetPath(heroBgImage)}')` }}
+        style={{
+          "--top-copy-hero-bg-image": `url('${assetPath(heroBgImage)}')`,
+          "--top-copy-hero-bg-image-sp": `url('${assetPath("/images/top-copy6-hero-fv-sp.png")}')`
+        }}
       >
         <div className={styles.copy6Inner}>
           <div className={styles.copy6CopyBlock}>

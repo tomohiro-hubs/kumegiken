@@ -252,7 +252,7 @@
   .copy6Root {
     aspect-ratio: 800 / 1520 !important;
     min-height: auto;
-    background-image: url("/images/top-copy6-hero-fv-sp.png") !important;
+    background-image: var(--top-copy-hero-bg-image-sp) !important;
   }
 
   .copy6Inner {

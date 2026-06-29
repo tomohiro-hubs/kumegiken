@@ -256,16 +256,23 @@
   }
 
   .copy6Inner {
-    min-height: auto;
-    height: auto;
-    padding: clamp(20px, 5vw, 36px) 12px;
-    aspect-ratio: auto;
+    min-height: 100% !important;
+    height: 100% !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    padding: 20px 12px !important;
+    box-sizing: border-box;
   }
 
   .copy6CopyBlock {
     gap: 8px;
-    padding-top: 100px !important;
+    padding-top: 0 !important;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .copy6Headline {

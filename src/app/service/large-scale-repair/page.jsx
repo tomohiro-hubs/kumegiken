@@ -720,15 +720,16 @@ export default function Page() {
             gap: 16px;
           }
           .lsr-timeline {
-            padding-left: 30px;
+            padding-left: 40px;
           }
           .lsr-timeline::before {
-            left: 10px;
+            left: 15px;
           }
           .lsr-timeline-item__badge {
-            left: -30px;
-            font-size: 10px;
-            padding: 2px 6px;
+            left: -15px;
+            font-size: 9px;
+            padding: 1.5px 5px;
+            letter-spacing: -0.2px;
           }
           .lsr-timeline-item__content {
             padding: 16px 20px;

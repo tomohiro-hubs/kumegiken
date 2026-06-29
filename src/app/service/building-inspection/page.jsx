@@ -750,25 +750,56 @@ export default function Page() {
             margin: 40px 0;
           }
           .bi-insurance-banner-wrapper {
-            flex-direction: column;
-            min-height: auto;
+            position: relative;
+            min-height: 380px;
+            display: flex;
+            align-items: center;
             background: #fff5eb;
           }
           .bi-insurance-banner-image {
-            position: static;
-            height: 200px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+          }
+          .bi-insurance-banner-image img {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+          }
+          .bi-insurance-banner-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.45);
+            z-index: 2;
           }
           .bi-insurance-banner-content {
-            position: static;
+            position: relative;
+            z-index: 3;
             max-width: 100%;
             margin: 0;
             background: transparent;
             box-shadow: none;
             backdrop-filter: none;
-            padding: 24px 20px;
+            padding: 24px 16px 24px 34%;
+            box-sizing: border-box;
           }
           .bi-insurance-banner-title {
-            font-size: 18px;
+            font-size: clamp(14px, 4.2vw, 16.5px);
+            line-height: 1.4;
+          }
+          .bi-insurance-banner-text {
+            font-size: clamp(11.5px, 3.2vw, 12.5px);
+            line-height: 1.55;
           }
           .bi-tech-grid {
             grid-template-columns: 1fr;

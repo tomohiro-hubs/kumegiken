@@ -3524,6 +3524,10 @@ input, textarea, select {
   line-height: 1.34;
 }
 
+.top-copy-page .section-title__sp-break {
+  display: none;
+}
+
 .top-copy-page--copy6 {
   --container-width: 1280px;
 }
@@ -3654,6 +3658,10 @@ input, textarea, select {
   .top-copy-page .section-heading__ja {
     font-size: clamp(26px, 7.4vw, 32px);
     line-height: 1.34;
+  }
+
+  .top-copy-page .section-title__sp-break {
+    display: block;
   }
 
   .top-copy-page .section-lead,
@@ -4878,12 +4886,28 @@ input, textarea, select {
 
   .voice-carousel__dots {
     order: 3;
-    margin-top: 8px;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 12px;
+    flex-wrap: wrap;
   }
 
   .voice-carousel__button {
     width: 46px;
     height: 46px;
+  }
+
+  .voice-carousel__dot {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    min-height: 24px;
+  }
+
+  .voice-carousel__dot::before,
+  .voice-carousel__dot.is-active::before {
+    width: 8px;
+    height: 8px;
   }
 
   .voice-card {
@@ -7846,44 +7870,46 @@ input, textarea, select {
 
 @media (max-width: 767px) {
   .top-copy6-features {
-    padding: 18px 0 34px;
+    padding: 12px 0 20px;
   }
 
   .top-copy6-features__inner {
-    width: min(100%, calc(100% - 40px));
-    gap: 14px;
+    width: min(100%, calc(100% - 64px));
+    gap: 8px;
   }
 
   .top-copy6-feature-card {
     min-height: auto;
-    padding: 16px 16px 20px;
-    border-radius: 16px;
+    padding: 10px 10px 12px;
+    border-radius: 12px;
   }
 
   .top-copy6-feature-card__bgnum {
-    left: 16px;
-    top: 14px;
-    font-size: 56px;
+    left: 10px;
+    top: 8px;
+    font-size: 40px;
   }
 
   .top-copy6-feature-card__copy {
-    padding-top: 6px;
-    padding-left: 54px;
+    padding-top: 2px;
+    padding-left: 38px;
   }
 
   .top-copy6-feature-card__title {
-    font-size: clamp(18px, 5vw, 24px);
+    font-size: clamp(14px, 3.9vw, 17px);
+    line-height: 1.15;
   }
 
   .top-copy6-feature-card__text {
-    margin-top: 12px;
-    font-size: clamp(14px, 4vw, 17px);
+    margin-top: 6px;
+    font-size: clamp(11px, 3.1vw, 13px);
+    line-height: 1.48;
   }
 
   .top-copy6-feature-card__icon {
-    right: 14px;
-    bottom: 14px;
-    width: clamp(76px, 24vw, 118px);
+    right: 8px;
+    bottom: 8px;
+    width: clamp(54px, 18vw, 76px);
   }
 
   .top-copy6-phone-cta {
@@ -8011,6 +8037,7 @@ input, textarea, select {
   background: transparent;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 .cta-achievement-image__img {
@@ -8019,6 +8046,14 @@ input, textarea, select {
   max-width: none;
   height: auto;
   margin: 0;
+}
+
+@media (max-width: 767px) {
+  .cta-achievement-image__img {
+    width: 150%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 /* --- Service Section for Copy6 --- */

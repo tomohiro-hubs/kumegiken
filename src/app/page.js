@@ -340,22 +340,7 @@ export function TopCopyPageContent({ rootClassName = "top-copy-page" } = {}) {
           </section>
 
           <section className="top-copy6-phone-cta" aria-label="電話で相談">
-            <div
-              className="top-copy6-phone-cta__inner"
-              style={{ "--top-copy6-phone-cta-bg-image": `url('${assetPath("/images/top-copy6-phone-cta-bg.png")}')` }}
-            >
-              <p className="top-copy6-phone-cta__lead">診断・相談受付中</p>
-              <p className="top-copy6-phone-cta__sub">管理組合・オーナー・個人のお客様まで幅広く対応</p>
-              <div className="top-copy6-phone-cta__row">
-                <a href={`tel:${siteConfig.phone.tel}`} className="top-copy6-phone-cta__link" aria-label={`${siteConfig.phone.display}へ電話する`}>
-                  <span className="top-copy6-phone-cta__icon" aria-hidden="true">
-                    <img src={assetPath("/images/tell2.png")} alt="電話アイコン" />
-                  </span>
-                  <span className="top-copy6-phone-cta__number">{siteConfig.phone.display}</span>
-                </a>
-              </div>
-              <p className="top-copy6-phone-cta__note">まずはお気軽にご相談ください</p>
-            </div>
+
             <div className="top-copy6-phone-cta__buttons" aria-label="相談先を選ぶ">
               <a
                 href={routePath("/service/large-scale-repair")}
@@ -367,7 +352,7 @@ export function TopCopyPageContent({ rootClassName = "top-copy-page" } = {}) {
                 <span className="top-copy6-phone-cta__button-sub">マンション・ビルの大規模修繕はこちら</span>
               </a>
               <a
-                href={routePath("/service/waterproofing")}
+                href={routePath("/service/leak-repair")}
                 className="top-copy6-phone-cta__button top-copy6-phone-cta__button--right"
                 style={{ "--top-copy6-phone-button-bg": `url('${assetPath("/images/top-copy6-cta-waterproof.png")}')` }}
               >
@@ -755,7 +740,11 @@ export function TopCopyPageContent({ rootClassName = "top-copy-page" } = {}) {
         <div className="container">
           <div className="section-head reveal">
             <p className="section-eyebrow">DIAGNOSIS MENU</p>
-            <h2 className="section-title">選べる4つの無料診断・点検メニュー</h2>
+            <h2 className="section-title">
+              選べる4つの無料診断
+              <br className="section-title__sp-break" />
+              点検メニュー
+            </h2>
             <p className="section-desc">久米技建では、お客様の建物の状態やご要望に合わせて選べる、4つの無料診断・点検サービスをご用意しています。強引な営業は一切いたしませんので、お気軽にご相談ください。</p>
           </div>
           <div className="diagnosis-grid reveal">

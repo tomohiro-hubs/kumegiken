@@ -262,6 +262,47 @@ export default function Page() {
         </div>
       </section>
 
+      {/* ========== DIAGNOSIS SECTION ========== */}
+      <section className="diagnosis" id="diagnosis" style={{ padding: '80px 0' }}>
+        <div className="container">
+          <div className="section-head reveal">
+            <p className="section-eyebrow">DIAGNOSIS MENU</p>
+            <h2 className="section-title">
+              選べる4つの無料診断
+              <br className="section-title__sp-break" />
+              点検メニュー
+            </h2>
+            <p className="section-desc">久米技建では、お客様の建物の状態やご要望に合わせて選べる、4つの無料診断・点検サービスをご用意しています。強引な営業は一切いたしませんので、お気軽にご相談ください。</p>
+          </div>
+          <div className="diagnosis-grid reveal">
+            <div className="diagnosis-card diagnosis-card--has-bg" style={{ "--card-bg": `url('${assetPath("/images/diagnosis-leak-bg.png")}')` }}>
+              <div className="diagnosis-card__icon"><i className="fa-solid fa-droplet-slash"></i></div>
+              <h3 className="diagnosis-card__title">無料 雨漏り診断</h3>
+              <p className="diagnosis-card__desc">「雨漏りが起きている」「どこから漏れているか原因を特定してほしい」方向け。防水・雨漏り修理のプロが徹底調査します。</p>
+              <Link href={routePath("/contact?type=leak")} className="btn-outline">この診断を申し込む</Link>
+            </div>
+            <div className="diagnosis-card diagnosis-card--has-bg" style={{ "--card-bg": `url('${assetPath("/images/diagnosis-waterproof-bg.png")}')` }}>
+              <div className="diagnosis-card__icon"><i className="fa-solid fa-umbrella"></i></div>
+              <h3 className="diagnosis-card__title">無料 防水点検</h3>
+              <p className="diagnosis-card__desc">「ベランダや屋上の床のひび割れが気になる」「前回の工事から10年以上経過している」方向け。防水層の劣化状況を点検します。</p>
+              <Link href={routePath("/contact?type=waterproof")} className="btn-outline">この診断を申し込む</Link>
+            </div>
+            <div className="diagnosis-card diagnosis-card--has-bg" style={{ "--card-bg": `url('${assetPath("/images/diagnosis-wall-bg.png")}')` }}>
+              <div className="diagnosis-card__icon"><i className="fa-solid fa-paint-roller"></i></div>
+              <h3 className="diagnosis-card__title">無料 外壁劣化診断</h3>
+              <p className="diagnosis-card__desc">「外壁のクラック（ひび割れ）を見つけた」「壁を触ると手に白い粉がつく」方向け。外壁の傷み具合や修繕の必要性を診断します。</p>
+              <Link href={routePath("/contact?type=wall")} className="btn-outline">この診断を申し込む</Link>
+            </div>
+            <div className="diagnosis-card diagnosis-card--has-bg" style={{ "--card-bg": `url('${assetPath("/images/diagnosis-total-bg.jpg")}')` }}>
+              <div className="diagnosis-card__icon"><i className="fa-solid fa-building-circle-check"></i></div>
+              <h3 className="diagnosis-card__title">無料 建物全体の健康診断</h3>
+              <p className="diagnosis-card__desc">「マンションや工場の大規模修繕を検討している」「建物全体の劣化状況をトータルで調査してほしい」オーナー様・管理組合様向け。</p>
+              <Link href={routePath("/contact?type=total")} className="btn-outline">この診断を申し込む</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="cta-section">
         <div className="container">
           <h2 className="cta-section__title">無料建物診断のお申し込み</h2>
@@ -280,6 +321,11 @@ export default function Page() {
 
       <style dangerouslySetInnerHTML={{__html: `
         /* --- Building Inspection Page Custom Styling --- */
+
+        /* 無料診断セクション追加に伴う余白の二重発生を防止 */
+        .content-section {
+          padding-bottom: 0;
+        }
 
         /* このページ限定でコンテンツ最大幅を1080pxに拡張 */
         .container--narrow {
@@ -645,7 +691,7 @@ export default function Page() {
           border: 1px solid var(--color-border);
           border-radius: 12px;
           padding: 30px;
-          margin-bottom: 48px;
+          margin-bottom: 0;
         }
         .bi-faq-item {
           margin-bottom: 24px;

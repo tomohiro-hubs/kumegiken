@@ -123,8 +123,8 @@
 .copy6TitleWrapper {
   display: inline-block;
   background: rgba(10, 34, 64, 0.8); /* 80%半透明の紺色 */
-  /* 上下の余白を引き締め、文字と下線のバランスを緊密にします */
-  padding: clamp(6px, 0.8vw, 12px) clamp(16px, 2vw, 36px) clamp(3px, 0.4vw, 6px);
+  /* 上下の余白を極限まで引き締め、文字と下線のバランスを緊密にします */
+  padding: 2px clamp(16px, 2vw, 36px);
   border-bottom: clamp(2px, 0.3vw, 4px) solid #ffffff;
   text-align: center;
   box-shadow: 0 8px 20px rgb(10 22 54 / 15%);
@@ -132,12 +132,13 @@
 
 .copy6TitleLine {
   color: #ffffff;
-  /* フォントサイズの上限を少し控えめにしてバランスを良くします */
-  font-size: clamp(24px, 3.8vw, 64px);
+  /* 背景枠の高さまでテキストを大きく調整 */
+  font-size: clamp(28px, 4.5vw, 76px);
   font-weight: 800;
-  line-height: 1.15;
+  line-height: 1.05;
   letter-spacing: 0.05em;
   white-space: nowrap;
+  display: block;
   font-family: "Hiragino Mincho ProN", "Yu Mincho", "MS Mincho", serif;
 }
 
@@ -145,6 +146,7 @@
   display: inline-block; /* 画面幅いっぱいに広がらず、文字幅にフィットするように設定 */
   /* 上部マージンを少し引き締めます */
   margin: clamp(12px, 1.6vw, 20px) auto 0;
+  margin-bottom: 20px;
   padding: clamp(6px, 0.8vw, 12px) clamp(16px, 2vw, 36px);
   color: #ffffff;
   background: rgba(10, 34, 64, 0.8); /* 80%半透明の紺色 */
@@ -225,14 +227,15 @@
     gap: 12px;
   }
 
-  .copy6TitleWrapper {
+  .copy6Root .copy6TitleWrapper {
     width: fit-content;
-    padding: 6px 16px 4px 16px;
+    padding: 2px 8px 3px;
   }
 
-  .copy6TitleLine {
+  .copy6Root .copy6TitleLine {
     white-space: nowrap;
-    font-size: clamp(18px, 2.8vw, 26px);
+    font-size: clamp(32px, 4.4vw, 42px);
+    line-height: 1;
   }
 
   .copy6SubHeadline {
@@ -269,14 +272,15 @@
     gap: 6px;
   }
 
-  .copy6TitleWrapper {
+  .copy6Root .copy6TitleWrapper {
     width: fit-content;
-    padding: 4px 12px 2px 12px;
+    padding: 2px 6px 3px;
   }
 
-  .copy6TitleLine {
+  .copy6Root .copy6TitleLine {
     white-space: nowrap;
-    font-size: clamp(15px, 4.5vw, 20px);
+    font-size: clamp(28px, 6.8vw, 34px);
+    line-height: 0.98;
   }
 
   .copy6SubHeadline {
@@ -1092,14 +1096,58 @@
   .features,
   .cardGrid {
     grid-template-columns: 1fr;
+    width: 94%;
+    margin: 10px auto 0;
+    gap: 4px;
   }
 
   .featureCard,
   .card,
   .reasonCard {
     min-height: auto;
-    padding: 12px;
-    border-radius: 12px;
+    padding: 4px 6px;
+    border-radius: 8px;
+    column-gap: 4px;
+    row-gap: 0;
+  }
+
+  .featureHeadingRow {
+    grid-template-columns: 30px 1fr;
+    column-gap: 3px;
+    margin-bottom: 0;
+  }
+
+  .featureNumber,
+  .featureIndex,
+  .cardNumber {
+    width: 30px;
+    font-size: 24px;
+  }
+
+  .featureTitle,
+  .featureHeading,
+  .cardTitle {
+    font-size: 14px;
+    line-height: 1.05;
+  }
+
+  .featureIcon,
+  .cardIcon,
+  .iconWrap {
+    width: 30px;
+    height: 30px;
+  }
+
+  .featureIcon03 {
+    transform: translateY(-1px);
+  }
+
+  .featureText,
+  .cardText,
+  .featureDescription {
+    height: auto;
+    font-size: 12px;
+    line-height: 1.2;
   }
 
   .phoneCta,

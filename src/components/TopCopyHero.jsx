@@ -36,7 +36,7 @@ const ctaItems = [
     label: "大規模修繕の相談へ進む",
   },
   {
-    href: routePath("/service/waterproofing"),
+    href: routePath("/service/leak-repair"),
     panelClass: styles.bottomCta,
     meta: "個人の方へ",
     title: "雨漏り・防水工事の相談",

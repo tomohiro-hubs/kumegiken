@@ -47,7 +47,7 @@ export default function Page() {
 
   <section className="content-section">
     <div className="container">
-      <div className="service__grid">
+      <div className="service__grid service__grid--service-page">
         {serviceCards.map((card, index) => {
           const revealClass =
             index % 3 === 1 ? "reveal reveal--delay-1" : index % 3 === 2 ? "reveal reveal--delay-2" : "reveal";

@@ -103,17 +103,23 @@ export default function TopCopyHero({ optimizeForCopy3 = false, optimizeForCopy6
               学校・福祉施設・工場・マンション　<br className={styles.spOnly} />あらゆる建物寿命を延ばす修繕パートナー
             </p>
             <div className={styles.copy6BannerContainer}>
-              <img
-                src={assetPath("/images/top-copy6-hero-banner.png")}
-                alt="無料診断受付中 建物の劣化・雨漏りはまず無料診断へ"
-                className={styles.copy6BannerImg}
-              />
-              <a href={routePath("/contact")} className={styles.copy6BannerBtnLink}>
+              <picture>
+                <source media="(max-width: 767px)" srcSet={assetPath("/images/top-copy6-hero-banner-sp.png")} />
                 <img
-                  src={assetPath("/images/top-copy6-hero-banner-btn.png")}
-                  alt="無料診断・見積もりを依頼する"
-                  className={styles.copy6BannerBtnImg}
+                  src={assetPath("/images/top-copy6-hero-banner.png")}
+                  alt="無料診断受付中 建物の劣化・雨漏りはまず無料診断へ"
+                  className={styles.copy6BannerImg}
                 />
+              </picture>
+              <a href={routePath("/contact")} className={styles.copy6BannerBtnLink}>
+                <picture>
+                  <source media="(max-width: 767px)" srcSet={assetPath("/images/top-copy6-hero-banner-btn-sp.png")} />
+                  <img
+                    src={assetPath("/images/top-copy6-hero-banner-btn.png")}
+                    alt="無料診断・見積もりを依頼する"
+                    className={styles.copy6BannerBtnImg}
+                  />
+                </picture>
               </a>
             </div>
           </div>

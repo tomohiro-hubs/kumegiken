@@ -250,8 +250,9 @@
 
 @media (max-width: 767px) {
   .copy6Root {
-    aspect-ratio: auto;
+    aspect-ratio: 800 / 1520 !important;
     min-height: auto;
+    background-image: url("/images/top-copy6-hero-fv-sp.png") !important;
   }
 
   .copy6Inner {
@@ -264,7 +265,7 @@
 
   .copy6CopyBlock {
     gap: 8px;
-    padding-top: 0;
+    padding-top: 100px !important;
   }
 
   .copy6Headline {
@@ -295,6 +296,18 @@
   .copy6BannerContainer {
     border-radius: 0;
     filter: drop-shadow(0 6px 18px rgba(10, 30, 70, 0.1));
+    aspect-ratio: 400 / 760 !important;
+    max-width: 320px;
+    margin: clamp(16px, 4vw, 24px) auto 0;
+  }
+
+  .copy6BannerBtnLink {
+    width: 85% !important;
+    height: 13.15% !important;
+    left: 7.5% !important;
+    right: auto !important;
+    top: 56.5% !important;
+    bottom: auto !important;
   }
 }
 

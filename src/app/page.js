@@ -500,7 +500,7 @@ export function TopCopyPageContent({ rootClassName = "top-copy-page" } = {}) {
         {optimizeForCopy6 ? (
           <div className="service__hero reveal">
             <TopScopedImage
-              src="/images/service-list-bg.png"
+              src="/images/20260628serviceback.png"
               alt="サービス一覧背景"
               optimizeForCopy3={optimizeForCopy3}
               className="service__heroImage"
@@ -592,7 +592,7 @@ export function TopCopyPageContent({ rootClassName = "top-copy-page" } = {}) {
           {optimizeForCopy6 ? (
             <div className="works__hero">
               <TopScopedImage
-                src="/images/works-list-bg.png"
+                src="/images/20260629jirei.png"
                 alt="施工事例背景"
                 optimizeForCopy3={optimizeForCopy3}
                 className="works__heroImage"

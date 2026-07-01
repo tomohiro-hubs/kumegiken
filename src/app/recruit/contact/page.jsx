@@ -31,7 +31,7 @@ export default function Page() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     let newErrors = {};
     let isValid = true;
@@ -52,16 +52,63 @@ export default function Page() {
     }
 
     if (isValid) {
-      setIsSubmitted(true);
-      setFormData({
-        name: "", kana: "", email: "", tel: "", 
-        jobType: "", birth: "", experience: "", 
-        content: "", agreement: false
-      });
-      setTimeout(() => {
-        const msg = document.getElementById("success-message");
-        if (msg) msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }, 100);
+      // 生年月日を年・月・日にパース
+      let year = "", month = "", day = "";
+      if (formData.birth) {
+        const dateParts = formData.birth.match(/\d+/g);
+        if (dateParts && dateParts.length >= 3) {
+          year = dateParts[0];
+          month = dateParts[1];
+          day = dateParts[2];
+        }
+      }
+
+      // 希望職種のマッピング
+      const jobTypeMapping = {
+        sales: "営業職",
+        manager: "防水管理職", // 自社サイトの「施工管理職」に対応
+        craftsman: "防水技能士（職人）",
+        other: "その他"
+      };
+
+      const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSckuZPmadyD6WoyXSea8OiAjhU8o_gIYFmoGXbc7wRV5xYVLA/formResponse";
+      const submitData = new FormData();
+      
+      submitData.append("entry.604602040", formData.name);
+      submitData.append("entry.791067643", formData.kana);
+      submitData.append("entry.1990612682", formData.email);
+      submitData.append("entry.1080677036", formData.tel);
+      submitData.append("entry.1847271753", jobTypeMapping[formData.jobType] || formData.jobType);
+      
+      if (year && month && day) {
+        submitData.append("entry.1494682148_year", year);
+        submitData.append("entry.1494682148_month", month);
+        submitData.append("entry.1494682148_day", day);
+      }
+      
+      submitData.append("entry.354630866", formData.experience);
+      submitData.append("entry.1578454513", formData.content);
+
+      try {
+        await fetch(googleFormUrl, {
+          method: "POST",
+          mode: "no-cors",
+          body: submitData
+        });
+
+        setIsSubmitted(true);
+        setFormData({
+          name: "", kana: "", email: "", tel: "", 
+          jobType: "", birth: "", experience: "", 
+          content: "", agreement: false
+        });
+        setTimeout(() => {
+          const msg = document.getElementById("success-message");
+          if (msg) msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
+      } catch (error) {
+        console.error("送信エラー:", error);
+      }
     }
   };
 

@@ -47,7 +47,7 @@ export default function Page() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     let newErrors = {};
     let isValid = true;
@@ -67,16 +67,70 @@ export default function Page() {
     }
 
     if (isValid) {
-      setIsSubmitted(true);
-      setFormData({
-        type: "", name: "", kana: "", email: "", tel: "", 
-        company: "", address: "", buildingType: "", service: "", 
-        content: "", agreement: false
-      });
-      setTimeout(() => {
-        const msg = document.getElementById("success-message");
-        if (msg) msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }, 100);
+      const typeMapping = {
+        diagnosis: "無料建物診断のお申し込み",
+        leak: "無料 雨漏り診断のお申し込み",
+        waterproof: "無料 防水点検のお申し込み",
+        wall: "無料 外壁劣化診断のお申し込み",
+        total: "無料 建物全体の健康診断のお申し込み",
+        estimate: "お見積もりのご依頼",
+        consultation: "ご相談・ご質問",
+        emergency: "雨漏り緊急対応",
+        partner: "協力会社お問い合わせ",
+        other: "その他"
+      };
+
+      const buildingTypeMapping = {
+        mansion: "マンション",
+        building: "ビル",
+        apartment: "アパート",
+        house: "戸建て",
+        factory: "工場・倉庫",
+        shop: "店舗",
+        other: "その他"
+      };
+
+      const serviceMapping = {
+        "large-scale-repair": "大規模修繕事業",
+        waterproofing: "防水事業",
+        painting: "外壁塗装",
+        undecided: "まだ決まっていない"
+      };
+
+      const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSeuLpqaS7JjRlPO_yuAqMH9YgwS8Jcf1oBkT3NdODN7hwn7YA/formResponse";
+      const submitData = new FormData();
+      
+      submitData.append("entry.1034003434", typeMapping[formData.type] || formData.type);
+      submitData.append("entry.2012174926", formData.name);
+      submitData.append("entry.1820990943", formData.kana);
+      submitData.append("entry.1954388738", formData.email);
+      submitData.append("entry.267966234", formData.tel);
+      submitData.append("entry.1496889019", formData.company);
+      submitData.append("entry.305601857", formData.address);
+      submitData.append("entry.2003064215", buildingTypeMapping[formData.buildingType] || formData.buildingType);
+      submitData.append("entry.1328875328", serviceMapping[formData.service] || formData.service);
+      submitData.append("entry.654460243", formData.content);
+
+      try {
+        await fetch(googleFormUrl, {
+          method: "POST",
+          mode: "no-cors",
+          body: submitData
+        });
+
+        setIsSubmitted(true);
+        setFormData({
+          type: "", name: "", kana: "", email: "", tel: "", 
+          company: "", address: "", buildingType: "", service: "", 
+          content: "", agreement: false
+        });
+        setTimeout(() => {
+          const msg = document.getElementById("success-message");
+          if (msg) msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
+      } catch (error) {
+        console.error("送信エラー:", error);
+      }
     }
   };
 

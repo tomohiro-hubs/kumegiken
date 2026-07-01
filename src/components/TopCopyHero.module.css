@@ -304,8 +304,9 @@
     border-radius: 0;
     filter: drop-shadow(0 6px 18px rgba(10, 30, 70, 0.1));
     aspect-ratio: 400 / 760 !important;
-    max-width: 320px;
-    margin: clamp(16px, 4vw, 24px) auto 0;
+    width: 65%;
+    max-width: 280px;
+    margin: clamp(12px, 3vw, 20px) auto 0;
   }
 
   .copy6BannerBtnLink {

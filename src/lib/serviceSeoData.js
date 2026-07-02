@@ -57,7 +57,7 @@ export const serviceSeoData = {
   sealing: {
     name: "シーリング工事",
     path: "/service/sealing",
-    image: "/images/sealing-work.jpg",
+    image: "/images/sealing-work.jpeg",
     description: "外壁目地やサッシ周りのシーリング打替え・打増しで雨水侵入を防ぎます。",
     faqs: [
       { question: "打替えと打増しはどちらがよいですか？", answer: "劣化が進んでいる場合は既存材を撤去する打替えが基本です。状態が良い場合のみ打増しを検討します。" },

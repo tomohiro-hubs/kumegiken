@@ -32,8 +32,8 @@ export function organizationJsonLd() {
     legalName: siteConfig.company.legalName,
     url: SITE_URL,
     telephone: PHONE,
-    logo: toAbsoluteUrl("/images/hero-main.jpg", { addTrailingSlash: false }),
-    image: toAbsoluteUrl("/images/hero-main.jpg", { addTrailingSlash: false }),
+    logo: toAbsoluteUrl("/images/ロゴ.png", { addTrailingSlash: false }),
+    image: toAbsoluteUrl("/images/ロゴ.png", { addTrailingSlash: false }),
     address: ADDRESS,
     areaServed: mapServiceAreas(),
     contactPoint: [
@@ -70,7 +70,7 @@ export function localBusinessJsonLd({ path = "/", description, image } = {}) {
     name: COMPANY_NAME,
     description: description || siteConfig.company.description,
     url: toAbsoluteUrl(path),
-    image: toAbsoluteUrl(image || "/images/hero-main.jpg", { addTrailingSlash: false }),
+    image: toAbsoluteUrl(image || "/images/ロゴ.png", { addTrailingSlash: false }),
     telephone: PHONE,
     address: ADDRESS,
     geo: {

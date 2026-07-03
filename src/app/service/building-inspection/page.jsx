@@ -279,25 +279,25 @@ export default function Page() {
               <div className="diagnosis-card__icon"><i className="fa-solid fa-droplet-slash"></i></div>
               <h3 className="diagnosis-card__title">無料 雨漏り診断</h3>
               <p className="diagnosis-card__desc">「雨漏りが起きている」「どこから漏れているか原因を特定してほしい」方向け。防水・雨漏り修理のプロが徹底調査します。</p>
-              <Link href={routePath("/contact?type=leak")} className="btn-outline">この診断を申し込む</Link>
+              <Link href={routePath("/contact/?type=leak#contact-form")} className="btn-outline">この診断を申し込む</Link>
             </div>
             <div className="diagnosis-card diagnosis-card--has-bg" style={{ "--card-bg": `url('${assetPath("/images/diagnosis-waterproof-bg.png")}')` }}>
               <div className="diagnosis-card__icon"><i className="fa-solid fa-umbrella"></i></div>
               <h3 className="diagnosis-card__title">無料 防水点検</h3>
               <p className="diagnosis-card__desc">「ベランダや屋上の床のひび割れが気になる」「前回の工事から10年以上経過している」方向け。防水層の劣化状況を点検します。</p>
-              <Link href={routePath("/contact?type=waterproof")} className="btn-outline">この診断を申し込む</Link>
+              <Link href={routePath("/contact/?type=waterproof#contact-form")} className="btn-outline">この診断を申し込む</Link>
             </div>
             <div className="diagnosis-card diagnosis-card--has-bg" style={{ "--card-bg": `url('${assetPath("/images/diagnosis-wall-bg.png")}')` }}>
               <div className="diagnosis-card__icon"><i className="fa-solid fa-paint-roller"></i></div>
               <h3 className="diagnosis-card__title">無料 外壁劣化診断</h3>
               <p className="diagnosis-card__desc">「外壁のクラック（ひび割れ）を見つけた」「壁を触ると手に白い粉がつく」方向け。外壁の傷み具合や修繕の必要性を診断します。</p>
-              <Link href={routePath("/contact?type=wall")} className="btn-outline">この診断を申し込む</Link>
+              <Link href={routePath("/contact/?type=wall#contact-form")} className="btn-outline">この診断を申し込む</Link>
             </div>
             <div className="diagnosis-card diagnosis-card--has-bg" style={{ "--card-bg": `url('${assetPath("/images/diagnosis-total-bg.jpg")}')` }}>
               <div className="diagnosis-card__icon"><i className="fa-solid fa-building-circle-check"></i></div>
               <h3 className="diagnosis-card__title">無料 建物全体の健康診断</h3>
               <p className="diagnosis-card__desc">「マンションや工場の大規模修繕を検討している」「建物全体の劣化状況をトータルで調査してほしい」オーナー様・管理組合様向け。</p>
-              <Link href={routePath("/contact?type=total")} className="btn-outline">この診断を申し込む</Link>
+              <Link href={routePath("/contact/?type=total#contact-form")} className="btn-outline">この診断を申し込む</Link>
             </div>
           </div>
         </div>

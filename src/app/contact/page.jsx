@@ -137,7 +137,7 @@ export default function Page() {
   return (
     <main>
       <nav className="breadcrumb"><div className="container"><ol className="breadcrumb__list"><li><a href={routePath("/")} className="breadcrumb__link">ホーム</a></li><li className="breadcrumb__separator">›</li><li>お問い合わせ</li></ol></div></nav>
-      <section className="page-hero"><span className="page-hero__label">Contact</span><h1 className="page-hero__title">西宮の雨漏り・大規模修繕工事 お問い合わせ</h1><p className="page-hero__description">無料建物診断、雨漏りのご相談、大規模修繕工事のお見積もりなど、お気軽にお問い合わせください</p></section>
+      <section className="page-hero"><span className="page-hero__label">Contact</span><h1 className="page-hero__title">雨漏り・大規模修繕工事 お問い合わせ</h1><p className="page-hero__description">無料建物診断、雨漏りのご相談、大規模修繕工事のお見積もりなど、お気軽にお問い合わせください</p></section>
   
 
   {/* Phone CTA */}

@@ -1,5 +1,5 @@
 const DEFAULT_SITE_NAME = "株式会社久米技建";
-const DEFAULT_OG_IMAGE = "/images/hero-main.jpg";
+const DEFAULT_OG_IMAGE = "/images/ロゴ.png";
 import { toAbsoluteUrl } from "@/lib/siteUrl";
 import { isGithubPagesBuild } from "@/lib/siteUrl";
 

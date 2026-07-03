@@ -18,6 +18,11 @@ export const metadata = {
   title: "西宮の雨漏り・防水工事・大規模修繕工事なら久米技建",
   description:
     "西宮市を拠点に雨漏り補修、防水工事、大規模修繕工事、外壁塗装に対応。自社職人による直営施工と正直な建物診断で、兵庫・大阪の建物修繕を一貫対応します。",
+  icons: {
+    icon: "/images/ロゴ.png",
+    shortcut: "/images/ロゴ.png",
+    apple: "/images/ロゴ.png",
+  },
   openGraph: {
     title: "西宮の雨漏り・防水工事・大規模修繕工事なら久米技建",
     description:
@@ -25,14 +30,14 @@ export const metadata = {
     type: "website",
     locale: "ja_JP",
     siteName: "株式会社久米技建",
-    images: [{ url: "/images/hero-main.jpg" }],
+    images: [{ url: "/images/ロゴ.png" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "西宮の雨漏り・防水工事・大規模修繕工事なら久米技建",
     description:
       "西宮市を拠点に雨漏り補修、防水工事、大規模修繕工事、外壁塗装に対応。自社職人による直営施工と正直な建物診断で、兵庫・大阪の建物修繕を一貫対応します。",
-    images: ["/images/hero-main.jpg"],
+    images: ["/images/ロゴ.png"],
   },
   ...(isGithubPagesBuild()
     ? {

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { siteConfig } from '@/lib/siteConfig';
@@ -74,10 +75,14 @@ export default function Header() {
         <div className="header__inner">
           <div className="header__logo">
             <Link prefetch={false} href="/" onClick={closeMobileMenu}>
-              <div>
-                <span className="header__logo-text">株式会社久米技建</span>
-                <span className="header__logo-sub">KUME GIKEN Co., Ltd.</span>
-              </div>
+              <Image
+                src="/images/コーポレート.png"
+                alt="株式会社久米技建"
+                className="header__logo-img"
+                width={940}
+                height={128}
+                priority
+              />
             </Link>
           </div>
           <nav className="header__nav">
